@@ -1,0 +1,33 @@
+services:
+  api:
+    image: laliga-ai-predictor-api
+    environment:
+      LALIGA_AUTOMATION_ENABLED: "true"
+      LALIGA_AUTOMATION_INTERVAL_MINUTES: "360"
+      LALIGA_FOOTBALL_DATA_URL: https://www.football-data.co.uk/mmz4281/2627/SP1.csv
+      LALIGA_AUTOMATION_TIMEOUT_SECONDS: "30"
+      LALIGA_AUTOMATION_SIMULATIONS: "50000"
+      LALIGA_AUTOMATION_SEED: "42"
+
+  automation:
+    image: laliga-ai-predictor-api
+    command: ["python", "scripts/run_automation.py", "--loop"]
+    restart: unless-stopped
+    environment:
+      LALIGA_DATABASE_URL: postgresql+psycopg://laliga:laliga@db:5432/laliga_predictor
+      LALIGA_PROJECT_ROOT: /app
+      LALIGA_AUTO_SYNC: "false"
+      LALIGA_AUTOMATION_ENABLED: "true"
+      LALIGA_AUTOMATION_INTERVAL_MINUTES: "360"
+      LALIGA_FOOTBALL_DATA_URL: https://www.football-data.co.uk/mmz4281/2627/SP1.csv
+      LALIGA_AUTOMATION_TIMEOUT_SECONDS: "30"
+      LALIGA_AUTOMATION_SIMULATIONS: "50000"
+      LALIGA_AUTOMATION_SEED: "42"
+    depends_on:
+      db:
+        condition: service_healthy
+    volumes:
+      - ./data/incoming:/app/data/incoming
+      - ./data/processed:/app/data/processed
+      - ./reports:/app/reports
+      - ./snapshots:/app/snapshots

@@ -1,0 +1,7 @@
+{
+  "enabled": true,
+  "interval_minutes": 360,
+  "source": "football-data-sp1",
+  "source_url": "https://www.football-data.co.uk/mmz4281/2627/SP1.csv",
+  "latest_run": null
+}

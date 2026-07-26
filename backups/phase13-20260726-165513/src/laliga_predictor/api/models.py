@@ -11,7 +11,6 @@ from sqlalchemy import (
     Index,
     Integer,
     String,
-    Text,
     UniqueConstraint,
 )
 from sqlalchemy.orm import Mapped, mapped_column
@@ -181,55 +180,3 @@ class UpdateRun(Base):
     quality_passed: Mapped[bool] = mapped_column(Boolean)
     pipeline_mode: Mapped[str] = mapped_column(String(32))
     snapshot_path: Mapped[str | None] = mapped_column(String(512))
-
-
-class PipelineRun(Base):
-    __tablename__ = "pipeline_runs"
-
-    run_id: Mapped[str] = mapped_column(String(32), primary_key=True)
-    started_at_utc: Mapped[datetime] = mapped_column(
-        DateTime(timezone=True), index=True
-    )
-    finished_at_utc: Mapped[datetime | None] = mapped_column(
-        DateTime(timezone=True)
-    )
-    status: Mapped[str] = mapped_column(String(24), index=True)
-    trigger: Mapped[str] = mapped_column(String(24))
-    source: Mapped[str] = mapped_column(String(64))
-    source_url: Mapped[str | None] = mapped_column(String(512))
-    source_checksum: Mapped[str | None] = mapped_column(String(64))
-    rows_downloaded: Mapped[int] = mapped_column(Integer, default=0)
-    results_discovered: Mapped[int] = mapped_column(Integer, default=0)
-    results_added: Mapped[int] = mapped_column(Integer, default=0)
-    odds_discovered: Mapped[int] = mapped_column(Integer, default=0)
-    odds_added: Mapped[int] = mapped_column(Integer, default=0)
-    update_id: Mapped[str | None] = mapped_column(String(32), index=True)
-    simulations: Mapped[int] = mapped_column(Integer)
-    model_version: Mapped[str] = mapped_column(String(64))
-    duration_seconds: Mapped[float | None] = mapped_column(Float)
-    error_type: Mapped[str | None] = mapped_column(String(128))
-    error_message: Mapped[str | None] = mapped_column(Text)
-
-
-class PipelineStep(Base):
-    __tablename__ = "pipeline_steps"
-
-    id: Mapped[int] = mapped_column(Integer, primary_key=True)
-    run_id: Mapped[str] = mapped_column(
-        ForeignKey("pipeline_runs.run_id", ondelete="CASCADE"),
-        index=True,
-    )
-    step_order: Mapped[int] = mapped_column(Integer)
-    name: Mapped[str] = mapped_column(String(64))
-    status: Mapped[str] = mapped_column(String(24))
-    started_at_utc: Mapped[datetime] = mapped_column(DateTime(timezone=True))
-    finished_at_utc: Mapped[datetime] = mapped_column(DateTime(timezone=True))
-    duration_seconds: Mapped[float] = mapped_column(Float)
-    rows_processed: Mapped[int | None] = mapped_column(Integer)
-    detail: Mapped[str | None] = mapped_column(Text)
-
-    __table_args__ = (
-        UniqueConstraint(
-            "run_id", "step_order", name="uq_pipeline_step_order"
-        ),
-    )

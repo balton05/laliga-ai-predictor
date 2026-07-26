@@ -10,9 +10,6 @@ from laliga_predictor.config import PROJECT_ROOT
 DEFAULT_DATABASE_URL = (
     "postgresql+psycopg://laliga:laliga@localhost:5432/laliga_predictor"
 )
-DEFAULT_FOOTBALL_DATA_URL = (
-    "https://www.football-data.co.uk/mmz4281/2627/SP1.csv"
-)
 
 
 @dataclass(frozen=True)
@@ -24,12 +21,6 @@ class Settings:
     api_title: str = "LaLiga AI Predictor API"
     api_version: str = "1.0.0"
     auto_sync: bool = True
-    automation_enabled: bool = True
-    automation_interval_minutes: int = 360
-    automation_source_url: str = DEFAULT_FOOTBALL_DATA_URL
-    automation_timeout_seconds: int = 30
-    automation_simulations: int = 50_000
-    automation_seed: int = 42
     cors_origins: tuple[str, ...] = (
         "http://localhost:4200",
         "http://127.0.0.1:4200",
@@ -54,30 +45,5 @@ class Settings:
             ).resolve(),
             auto_sync=os.getenv("LALIGA_AUTO_SYNC", "true").lower()
             not in {"0", "false", "no"},
-            automation_enabled=os.getenv(
-                "LALIGA_AUTOMATION_ENABLED", "true"
-            ).lower()
-            not in {"0", "false", "no"},
-            automation_interval_minutes=max(
-                15,
-                int(os.getenv("LALIGA_AUTOMATION_INTERVAL_MINUTES", "360")),
-            ),
-            automation_source_url=os.getenv(
-                "LALIGA_FOOTBALL_DATA_URL", DEFAULT_FOOTBALL_DATA_URL
-            ),
-            automation_timeout_seconds=max(
-                5,
-                int(os.getenv("LALIGA_AUTOMATION_TIMEOUT_SECONDS", "30")),
-            ),
-            automation_simulations=max(
-                100,
-                min(
-                    100_000,
-                    int(os.getenv("LALIGA_AUTOMATION_SIMULATIONS", "50000")),
-                ),
-            ),
-            automation_seed=int(
-                os.getenv("LALIGA_AUTOMATION_SEED", "42")
-            ),
             cors_origins=cors_origins,
         )

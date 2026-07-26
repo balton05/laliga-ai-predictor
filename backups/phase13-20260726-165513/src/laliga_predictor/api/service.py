@@ -2,7 +2,6 @@ from __future__ import annotations
 
 import json
 import threading
-from contextlib import contextmanager
 from datetime import datetime, timezone
 from pathlib import Path
 from tempfile import TemporaryDirectory
@@ -10,7 +9,7 @@ from typing import Any
 
 import numpy as np
 import pandas as pd
-from sqlalchemy import delete, text
+from sqlalchemy import delete
 from sqlalchemy.orm import Session, sessionmaker
 
 from laliga_predictor.dynamic import (
@@ -319,79 +318,52 @@ class DataSyncService:
         return _records(raw, columns)
 
     def apply_update(self, payload: MatchdayUpdateInput) -> dict:
-        with self._update_guard():
-            return self._apply_update(payload)
-
-    @contextmanager
-    def _update_guard(self):
         if not self._update_lock.acquire(blocking=False):
             raise UpdateConflictError(
                 "Another matchday update is already running."
             )
-        lock_session: Session | None = None
-        database_lock = False
         try:
-            lock_session = self.session_factory()
-            if lock_session.get_bind().dialect.name == "postgresql":
-                database_lock = bool(
-                    lock_session.scalar(
-                        text("SELECT pg_try_advisory_lock(202613)")
-                    )
+            combined_results = self._combine_results(payload)
+            combined_odds = self._combine_odds(payload)
+            with TemporaryDirectory(prefix="laliga_phase10_") as temporary:
+                temporary_path = Path(temporary)
+                results_path = temporary_path / "results.csv"
+                odds_path = temporary_path / "odds.csv"
+                combined_results.to_csv(
+                    results_path,
+                    index=False,
+                    columns=RESULT_COLUMNS,
+                    encoding="utf-8-sig",
                 )
-                if not database_lock:
-                    raise UpdateConflictError(
-                        "Another update is running in a different service."
-                    )
-            yield
-        finally:
-            if lock_session is not None:
-                if database_lock:
-                    lock_session.execute(
-                        text("SELECT pg_advisory_unlock(202613)")
-                    )
-                lock_session.close()
-            self._update_lock.release()
-
-    def _apply_update(self, payload: MatchdayUpdateInput) -> dict:
-        combined_results = self._combine_results(payload)
-        combined_odds = self._combine_odds(payload)
-        with TemporaryDirectory(prefix="laliga_phase10_") as temporary:
-            temporary_path = Path(temporary)
-            results_path = temporary_path / "results.csv"
-            odds_path = temporary_path / "odds.csv"
+                combined_odds.to_csv(
+                    odds_path,
+                    index=False,
+                    columns=ODDS_COLUMNS,
+                    encoding="utf-8-sig",
+                )
+                summary = run_phase9(
+                    results_path=results_path,
+                    odds_path=odds_path,
+                    simulations=payload.simulations,
+                    seed=payload.seed,
+                    allow_partial=payload.allow_partial,
+                )
+            self.incoming.mkdir(parents=True, exist_ok=True)
             combined_results.to_csv(
-                results_path,
+                self.incoming / "results_2026_27.csv",
                 index=False,
                 columns=RESULT_COLUMNS,
                 encoding="utf-8-sig",
             )
             combined_odds.to_csv(
-                odds_path,
+                self.incoming / "odds_2026_27.csv",
                 index=False,
                 columns=ODDS_COLUMNS,
                 encoding="utf-8-sig",
             )
-            summary = run_phase9(
-                results_path=results_path,
-                odds_path=odds_path,
-                simulations=payload.simulations,
-                seed=payload.seed,
-                allow_partial=payload.allow_partial,
-            )
-        self.incoming.mkdir(parents=True, exist_ok=True)
-        combined_results.to_csv(
-            self.incoming / "results_2026_27.csv",
-            index=False,
-            columns=RESULT_COLUMNS,
-            encoding="utf-8-sig",
-        )
-        combined_odds.to_csv(
-            self.incoming / "odds_2026_27.csv",
-            index=False,
-            columns=ODDS_COLUMNS,
-            encoding="utf-8-sig",
-        )
-        return self.sync_current_state(summary)
+            return self.sync_current_state(summary)
+        finally:
+            self._update_lock.release()
 
     def _combine_results(
         self, payload: MatchdayUpdateInput

@@ -11,20 +11,15 @@ from .database import Base, build_engine, build_session_factory
 from .models import (
     Fixture,
     MatchResult,
-    PipelineRun,
-    PipelineStep,
     Prediction,
     SimulationSummary,
     Standing,
     UpdateRun,
 )
 from .schemas import (
-    AutomationStatusOut,
     FixtureOut,
     HealthOut,
     MatchdayUpdateInput,
-    PipelineRunOut,
-    PipelineStepOut,
     PredictionOut,
     SimulationOut,
     StandingOut,
@@ -32,7 +27,6 @@ from .schemas import (
 )
 from .service import DataSyncService, UpdateConflictError
 from .settings import Settings
-from laliga_predictor.automation import AutomationConfig, AutomationRunner
 
 
 def create_app(settings: Settings | None = None) -> FastAPI:
@@ -40,16 +34,6 @@ def create_app(settings: Settings | None = None) -> FastAPI:
     engine = build_engine(settings.database_url)
     session_factory = build_session_factory(engine)
     service = DataSyncService(settings.project_root, session_factory)
-    automation = AutomationRunner(
-        settings.project_root,
-        session_factory,
-        AutomationConfig(
-            source_url=settings.automation_source_url,
-            timeout_seconds=settings.automation_timeout_seconds,
-            simulations=settings.automation_simulations,
-            seed=settings.automation_seed,
-        ),
-    )
 
     @asynccontextmanager
     async def lifespan(application: FastAPI):
@@ -72,7 +56,6 @@ def create_app(settings: Settings | None = None) -> FastAPI:
     application.state.engine = engine
     application.state.session_factory = session_factory
     application.state.service = service
-    application.state.automation = automation
     application.state.settings = settings
     application.add_middleware(
         CORSMiddleware,
@@ -264,82 +247,6 @@ def create_app(settings: Settings | None = None) -> FastAPI:
         if latest is None:
             raise HTTPException(status_code=404, detail="No update found.")
         return latest
-
-    @application.get(
-        "/automation/status",
-        response_model=AutomationStatusOut,
-        tags=["automation"],
-    )
-    def automation_status(
-        session: Session = Depends(get_session),
-    ) -> AutomationStatusOut:
-        latest = session.scalar(
-            select(PipelineRun)
-            .order_by(PipelineRun.started_at_utc.desc())
-            .limit(1)
-        )
-        return AutomationStatusOut(
-            enabled=settings.automation_enabled,
-            interval_minutes=settings.automation_interval_minutes,
-            source="football-data-sp1",
-            source_url=settings.automation_source_url,
-            latest_run=latest,
-        )
-
-    @application.get(
-        "/automation/runs",
-        response_model=list[PipelineRunOut],
-        tags=["automation"],
-    )
-    def automation_runs(
-        session: Session = Depends(get_session),
-        limit: int = Query(default=20, ge=1, le=100),
-    ) -> list[PipelineRun]:
-        return list(
-            session.scalars(
-                select(PipelineRun)
-                .order_by(PipelineRun.started_at_utc.desc())
-                .limit(limit)
-            )
-        )
-
-    @application.get(
-        "/automation/runs/{run_id}/steps",
-        response_model=list[PipelineStepOut],
-        tags=["automation"],
-    )
-    def automation_steps(
-        run_id: str,
-        session: Session = Depends(get_session),
-    ) -> list[PipelineStep]:
-        exists = session.get(PipelineRun, run_id)
-        if exists is None:
-            raise HTTPException(status_code=404, detail="Run not found.")
-        return list(
-            session.scalars(
-                select(PipelineStep)
-                .where(PipelineStep.run_id == run_id)
-                .order_by(PipelineStep.step_order)
-            )
-        )
-
-    @application.post(
-        "/automation/run",
-        response_model=PipelineRunOut,
-        status_code=status.HTTP_201_CREATED,
-        tags=["automation"],
-    )
-    def run_automation(request: Request) -> PipelineRun:
-        if not settings.automation_enabled:
-            raise HTTPException(
-                status_code=409, detail="Automation is disabled."
-            )
-        try:
-            return request.app.state.automation.run_once(trigger="manual")
-        except UpdateConflictError as exc:
-            raise HTTPException(status_code=409, detail=str(exc)) from exc
-        except (ValueError, AssertionError) as exc:
-            raise HTTPException(status_code=422, detail=str(exc)) from exc
 
     @application.post(
         "/update-matchday",

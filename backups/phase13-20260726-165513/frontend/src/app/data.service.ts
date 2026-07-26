@@ -2,14 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable, computed, inject, signal } from '@angular/core';
 import { firstValueFrom, timeout } from 'rxjs';
 
-import {
-  AutomationStatus,
-  Fixture,
-  Health,
-  Prediction,
-  Simulation,
-  Standing,
-} from './models';
+import { Fixture, Health, Prediction, Simulation, Standing } from './models';
 
 type DataMode = 'connecting' | 'api' | 'demo';
 
@@ -61,12 +54,5 @@ export class DataService {
 
   simulation(): Promise<Simulation[]> {
     return this.request<Simulation[]>('/simulation', 'simulation.json');
-  }
-
-  automationStatus(): Promise<AutomationStatus> {
-    return this.request<AutomationStatus>(
-      '/automation/status',
-      'automation.json',
-    );
   }
 }

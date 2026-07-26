@@ -3,12 +3,7 @@ import { RouterLink } from '@angular/router';
 
 import { teamStadium } from '../core/team-assets';
 import { DataService } from '../data.service';
-import {
-  AutomationStatus,
-  Health,
-  Prediction,
-  Simulation,
-} from '../models';
+import { Health, Prediction, Simulation } from '../models';
 import { TeamLogoComponent } from '../shared/team-logo.component';
 
 @Component({
@@ -93,9 +88,7 @@ import { TeamLogoComponent } from '../shared/team-logo.component';
           <div class="metric-icon">▦</div>
           <div>
             <span>Partidos pendientes</span>
-            <strong>
-              {{ (health()?.fixtures ?? 380) - (health()?.completed_matches ?? 0) }}
-            </strong>
+            <strong>{{ health()?.fixtures ?? 380 }}</strong>
             <small>Calendario completo</small>
           </div>
         </article>
@@ -123,14 +116,6 @@ import { TeamLogoComponent } from '../shared/team-logo.component';
             <small>Monte Carlo reproducible</small>
           </div>
         </article>
-        <article class="metric-card card cyan">
-          <div class="metric-icon">↻</div>
-          <div>
-            <span>Actualización automática</span>
-            <strong>{{ automationLabel() }}</strong>
-            <small>{{ automationDetail() }}</small>
-          </div>
-        </article>
       </div>
 
       <div class="home-lower">
@@ -154,7 +139,6 @@ export class HomeComponent {
   readonly predictions = signal<Prediction[]>([]);
   readonly simulation = signal<Simulation[]>([]);
   readonly health = signal<Health | null>(null);
-  readonly automation = signal<AutomationStatus | null>(null);
   private readonly defaultChampion: Simulation = {
     team_id: 'barcelona',
     team: 'FC Barcelona',
@@ -197,46 +181,20 @@ export class HomeComponent {
       (a, b) => b.relegation_probability - a.relegation_probability,
     )[0] ?? this.defaultRelegation,
   );
-  readonly automationLabel = computed(() => {
-    const status = this.automation();
-    if (!status?.enabled) return 'Desactivada';
-    const run = status.latest_run;
-    if (!run) return 'Preparada';
-    if (run.status === 'success') return 'Actualizada';
-    if (run.status === 'no_changes') return 'Sin cambios';
-    if (run.status === 'source_unavailable') return 'En espera';
-    if (run.status === 'running') return 'Procesando';
-    return 'Revisar';
-  });
-  readonly automationDetail = computed(() => {
-    const status = this.automation();
-    if (!status) return 'Consultando estado del pipeline';
-    const run = status.latest_run;
-    if (!run) {
-      return `Revisión cada ${status.interval_minutes / 60} h`;
-    }
-    const date = new Date(run.started_at_utc).toLocaleString('es-PE', {
-      dateStyle: 'short',
-      timeStyle: 'short',
-    });
-    return `${date} · ${run.results_added} resultados nuevos`;
-  });
 
   constructor() {
     void this.load();
   }
 
   private async load(): Promise<void> {
-    const [predictions, simulation, health, automation] = await Promise.all([
+    const [predictions, simulation, health] = await Promise.all([
       this.data.predictions(),
       this.data.simulation(),
       this.data.health(),
-      this.data.automationStatus(),
     ]);
     this.predictions.set(predictions);
     this.simulation.set(simulation);
     this.health.set(health);
-    this.automation.set(automation);
   }
 
   pct(value: number): string {

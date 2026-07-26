@@ -1,0 +1,31 @@
+{
+  "phase": 13,
+  "name": "automation_and_observability",
+  "status": "passed",
+  "source": "football-data-sp1",
+  "default_interval_minutes": 360,
+  "simulations_per_update": 50000,
+  "pipeline_statuses": [
+    "running",
+    "success",
+    "no_changes",
+    "source_unavailable",
+    "failed"
+  ],
+  "database_tables_added": [
+    "pipeline_runs",
+    "pipeline_steps"
+  ],
+  "api_endpoints_added": [
+    "GET /automation/status",
+    "GET /automation/runs",
+    "GET /automation/runs/{run_id}/steps",
+    "POST /automation/run"
+  ],
+  "validation": {
+    "python_tests_passed": 77,
+    "phase13_tests_passed": 5,
+    "angular_production_build": "passed",
+    "python_compileall": "passed"
+  }
+}

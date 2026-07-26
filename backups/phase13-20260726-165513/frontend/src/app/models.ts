@@ -68,38 +68,3 @@ export interface Simulation {
   europe_top7_probability: number;
   relegation_probability: number;
 }
-
-export interface PipelineRun {
-  run_id: string;
-  started_at_utc: string;
-  finished_at_utc: string | null;
-  status:
-    | 'running'
-    | 'success'
-    | 'no_changes'
-    | 'source_unavailable'
-    | 'failed';
-  trigger: string;
-  source: string;
-  source_url: string | null;
-  source_checksum: string | null;
-  rows_downloaded: number;
-  results_discovered: number;
-  results_added: number;
-  odds_discovered: number;
-  odds_added: number;
-  update_id: string | null;
-  simulations: number;
-  model_version: string;
-  duration_seconds: number | null;
-  error_type: string | null;
-  error_message: string | null;
-}
-
-export interface AutomationStatus {
-  enabled: boolean;
-  interval_minutes: number;
-  source: string;
-  source_url: string;
-  latest_run: PipelineRun | null;
-}
