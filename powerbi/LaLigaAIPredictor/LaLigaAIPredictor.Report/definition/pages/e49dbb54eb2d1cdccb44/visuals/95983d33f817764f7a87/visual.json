@@ -1,0 +1,144 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "name": "95983d33f817764f7a87",
+  "position": {
+    "x": 32.555831265508687,
+    "y": 235.83126550868488,
+    "z": 5000,
+    "height": 451.81141439205959,
+    "width": 600.29776674937966,
+    "tabOrder": 5000
+  },
+  "visual": {
+    "visualType": "clusteredColumnChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Partidos"
+                    }
+                  },
+                  "Property": "Partido"
+                }
+              },
+              "queryRef": "Partidos.Partido",
+              "nativeQueryRef": "Partido",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Partidos"
+                    }
+                  },
+                  "Property": "Probabilidad Local promedio"
+                }
+              },
+              "queryRef": "Partidos.Probabilidad Local promedio",
+              "nativeQueryRef": "Probabilidad Local promedio"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Partidos"
+                    }
+                  },
+                  "Property": "Probabilidad Empate promedio"
+                }
+              },
+              "queryRef": "Partidos.Probabilidad Empate promedio",
+              "nativeQueryRef": "Probabilidad Empate promedio"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Partidos"
+                    }
+                  },
+                  "Property": "Probabilidad Visitante promedio"
+                }
+              },
+              "queryRef": "Partidos.Probabilidad Visitante promedio",
+              "nativeQueryRef": "Probabilidad Visitante promedio"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "e59db7e45e30800b47de",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Partidos"
+              }
+            },
+            "Property": "Partido"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "a8a8ddfc9a037252eb2e",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Partidos"
+              }
+            },
+            "Property": "Probabilidad Local promedio"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "15caba328904eb5b13ea",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Partidos"
+              }
+            },
+            "Property": "Probabilidad Empate promedio"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "6403cffceb100074842d",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Partidos"
+              }
+            },
+            "Property": "Probabilidad Visitante promedio"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "validation_protocol": [
+    {
+      "train": "2016/17–2022/23",
+      "evaluate": "2023/24"
+    },
+    {
+      "train": "2016/17–2023/24",
+      "evaluate": "2024/25"
+    }
+  ],
+  "test_protocol": {
+    "train": "2016/17–2024/25",
+    "evaluate_once": "2025/26"
+  },
+  "selected_c": {
+    "logistic_sports": 0.05,
+    "logistic_market": 0.05
+  },
+  "champion_by_validation_log_loss": "market"
+}

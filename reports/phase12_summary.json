@@ -1,0 +1,14 @@
+{
+  "phase": 12,
+  "framework": "Angular 20",
+  "pages": 5,
+  "fixtures": 380,
+  "predictions": 380,
+  "teams": 20,
+  "simulations": 50000,
+  "api": "FastAPI",
+  "database": "PostgreSQL",
+  "fallback": "preseason_snapshot",
+  "quality_checks": 12,
+  "quality_passed": true
+}

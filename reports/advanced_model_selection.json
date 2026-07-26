@@ -1,0 +1,73 @@
+{
+  "validation_protocol": [
+    {
+      "train": "2016/17–2022/23",
+      "evaluate": "2023/24"
+    },
+    {
+      "train": "2016/17–2023/24",
+      "evaluate": "2024/25"
+    }
+  ],
+  "test_protocol": {
+    "train": "2016/17–2024/25",
+    "evaluate_once": "2025/26"
+  },
+  "selection_metric": "combined_walk_forward_log_loss",
+  "selected": {
+    "random_forest_sports": {
+      "family": "random_forest",
+      "config": {
+        "config_id": "rf_depth6_leaf10",
+        "n_estimators": 400,
+        "max_depth": 6,
+        "min_samples_leaf": 10,
+        "max_features": "sqrt",
+        "class_weight": null
+      },
+      "prior_blend": 0.0,
+      "validation_log_loss": 0.9702840066250279
+    },
+    "random_forest_market": {
+      "family": "random_forest",
+      "config": {
+        "config_id": "rf_depth6_leaf10",
+        "n_estimators": 400,
+        "max_depth": 6,
+        "min_samples_leaf": 10,
+        "max_features": "sqrt",
+        "class_weight": null
+      },
+      "prior_blend": 0.0,
+      "validation_log_loss": 0.9557971736219291
+    },
+    "hist_boost_sports": {
+      "family": "hist_boost",
+      "config": {
+        "config_id": "hgb_lr003_leaf7",
+        "learning_rate": 0.03,
+        "max_iter": 250,
+        "max_leaf_nodes": 7,
+        "min_samples_leaf": 20,
+        "l2_regularization": 1.0
+      },
+      "prior_blend": 0.1,
+      "validation_log_loss": 0.9846605446213319
+    },
+    "hist_boost_market": {
+      "family": "hist_boost",
+      "config": {
+        "config_id": "hgb_lr003_leaf7",
+        "learning_rate": 0.03,
+        "max_iter": 250,
+        "max_leaf_nodes": 7,
+        "min_samples_leaf": 20,
+        "l2_regularization": 1.0
+      },
+      "prior_blend": 0.05,
+      "validation_log_loss": 0.9690398033962776
+    }
+  },
+  "advanced_champion": "random_forest_market",
+  "sports_champion_for_2026_27": "random_forest_sports"
+}

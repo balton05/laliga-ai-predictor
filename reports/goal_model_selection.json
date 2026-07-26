@@ -1,0 +1,28 @@
+{
+  "validation_protocol": [
+    {
+      "train": "2016/17–2022/23",
+      "evaluate": "2023/24"
+    },
+    {
+      "train": "2016/17–2023/24",
+      "evaluate": "2024/25"
+    }
+  ],
+  "test_protocol": {
+    "train": "2016/17–2024/25",
+    "evaluate_once": "2025/26"
+  },
+  "half_life_candidates_days": [
+    "365",
+    "730",
+    "1460",
+    "none"
+  ],
+  "selected_half_life_days": {
+    "poisson": "365",
+    "dixon_coles": "365"
+  },
+  "selected_goal_model_by_validation_log_loss": "poisson",
+  "max_goals_in_score_matrix": 10
+}

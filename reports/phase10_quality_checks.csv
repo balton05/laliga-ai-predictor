@@ -1,0 +1,16 @@
+﻿check,passed,value
+health_200,True,200
+phase9_update_id_preserved,True,7f6a923c1a4600d7
+fixtures_380,True,380
+fixture_ids_unique,True,380
+predictions_380,True,380
+probabilities_sum_to_one,True,2.220446049250313e-16
+preseason_uses_sports_ensemble,True,ensemble_sports
+standings_20,True,20
+simulation_20,True,20
+champion_probability_reconciles,True,1.0
+top4_probability_reconciles,True,4.0
+top7_probability_reconciles,True,7.0
+relegation_probability_reconciles,True,3.0
+openapi_required_routes,True,7
+latest_update_quality_passed,True,True

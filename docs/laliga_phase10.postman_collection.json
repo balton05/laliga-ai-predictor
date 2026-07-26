@@ -1,0 +1,56 @@
+{
+  "info": {
+    "name": "LaLiga AI Predictor — Fase 10",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8000"
+    }
+  ],
+  "item": [
+    {
+      "name": "Health",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/health"
+      }
+    },
+    {
+      "name": "Fixtures Jornada 1",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/fixtures?matchday=1"
+      }
+    },
+    {
+      "name": "Predictions Jornada 1",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/predictions?matchday=1"
+      }
+    },
+    {
+      "name": "Standings",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/standings"
+      }
+    },
+    {
+      "name": "Simulation",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/simulation"
+      }
+    },
+    {
+      "name": "Latest Update",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/updates/latest"
+      }
+    }
+  ]
+}

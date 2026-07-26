@@ -1,0 +1,11 @@
+check,passed
+validation_rows_per_model,True
+test_rows_per_model,True
+five_models_evaluated,True
+probabilities_sum_to_one,True
+probabilities_are_finite,True
+probabilities_within_bounds,True
+all_metrics_are_finite,True
+logistic_c_selected,True
+test_season_is_2025_26,True
+validation_is_walk_forward_seasons,True

@@ -1,0 +1,74 @@
+table 'Estado API'
+	lineageTag: e32caf38-8571-422d-808f-6df55effd101
+
+	measure 'Estado de la API' = SELECTEDVALUE('Estado API'[Estado], "Sin conexión")
+		displayFolder: Sistema
+		lineageTag: bca31e04-f0fc-486d-87db-10ba9deb3e58
+
+	column Estado
+		dataType: string
+		lineageTag: 4bb7cb35-4e14-47bd-8e96-c509910be849
+		summarizeBy: none
+		sourceColumn: status
+
+	column 'Base de datos'
+		dataType: string
+		lineageTag: f50c742a-4154-4aaf-a352-4a50647e96ca
+		summarizeBy: none
+		sourceColumn: database
+
+	column Temporada
+		dataType: string
+		lineageTag: 2e1a15cc-6abc-4448-a120-88a5b414b7fd
+		summarizeBy: none
+		sourceColumn: season
+
+	column 'Update ID'
+		dataType: string
+		lineageTag: 316e524e-5aa8-44f8-98ab-ed5cabe8e42b
+		summarizeBy: none
+		sourceColumn: latest_update_id
+
+	column Fixtures
+		dataType: string
+		lineageTag: 2a950736-bd3e-4d56-b218-a97b8f603c22
+		summarizeBy: none
+		sourceColumn: fixtures
+
+		annotation SummarizationSetBy = Automatic
+
+	column Predicciones
+		dataType: string
+		lineageTag: 0fefde1f-4413-4c60-8bbd-6a9c732324df
+		summarizeBy: none
+		sourceColumn: predictions
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Partidos completados'
+		dataType: string
+		lineageTag: 1d5e2f35-c9b8-4e75-9ee6-76f653ff9bdf
+		summarizeBy: none
+		sourceColumn: completed_matches
+
+		annotation SummarizationSetBy = Automatic
+
+	column Simulaciones
+		dataType: string
+		lineageTag: 8b5ab509-3263-44e8-b0d4-73a0b76e37fb
+		summarizeBy: none
+		sourceColumn: simulations
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Estado API' = m
+		mode: import
+		source =
+				let
+				    Response = Json.Document(
+				        Web.Contents(pApiBaseUrl, [RelativePath="health"])
+				    ),
+				    Source = Table.FromRecords({Response})
+				in
+				    Source
+

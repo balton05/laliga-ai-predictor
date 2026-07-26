@@ -1,0 +1,34 @@
+model Model
+	culture: es-ES
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: es-ES
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation PBI_QueryOrder = ["Dim Equipo","Dim Jornada","Dim Posición","Partidos","Equipo-Partido","Clasificación","Simulación","Probabilidad Posición","Actualizaciones","Estado API","pPostgresServer","pPostgresDatabase","pApiBaseUrl"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+ref table 'Dim Equipo'
+ref table 'Dim Jornada'
+ref table 'Dim Posición'
+ref table Partidos
+ref table Equipo-Partido
+ref table Clasificación
+ref table Simulación
+ref table 'Probabilidad Posición'
+ref table Actualizaciones
+ref table 'Estado API'
+ref table DateTableTemplate_4ecec91a-a11e-460a-9bd1-f2c39ab47f9a
+ref table LocalDateTable_c1ba4fab-dca3-4b6b-ad8e-eb2234caf0d3
+ref table LocalDateTable_a8eed26d-13d6-49b6-8a91-6cd8843c0cf8
+ref table LocalDateTable_403224a9-9a70-4816-8fcf-57b61a58ca3c
+ref table LocalDateTable_2e257390-5498-44be-94d9-f91fc65f87aa
+ref table LocalDateTable_6880603f-3c3f-4568-a30f-0db983bd5634
+ref table LocalDateTable_4f51e648-b686-450a-ae13-3a0e80aefef7
+ref table LocalDateTable_682cd9be-9dde-4c62-9568-0aff542cfa5c
+ref table LocalDateTable_29700243-b536-469b-aba8-866520d00b6f
+

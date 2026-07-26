@@ -1,0 +1,97 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "fa86f5cb8bf300f010a7",
+  "position": {
+    "x": 24,
+    "y": 92,
+    "z": 2000,
+    "height": 132,
+    "width": 1232,
+    "tabOrder": 2000
+  },
+  "visual": {
+    "visualType": "cardVisual",
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Partidos"
+                    }
+                  },
+                  "Property": "Partidos jugados"
+                }
+              },
+              "queryRef": "Partidos.Partidos jugados",
+              "nativeQueryRef": "Partidos jugados"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Partidos"
+                    }
+                  },
+                  "Property": "Partidos pendientes"
+                }
+              },
+              "queryRef": "Partidos.Partidos pendientes",
+              "nativeQueryRef": "Partidos pendientes"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Partidos"
+                    }
+                  },
+                  "Property": "Próxima jornada"
+                }
+              },
+              "queryRef": "Partidos.Próxima jornada",
+              "nativeQueryRef": "Próxima jornada"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Simulación"
+                    }
+                  },
+                  "Property": "Número de simulaciones"
+                }
+              },
+              "queryRef": "Simulación.Número de simulaciones",
+              "nativeQueryRef": "Número de simulaciones"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "outline": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "default"
+          }
+        }
+      ]
+    }
+  }
+}

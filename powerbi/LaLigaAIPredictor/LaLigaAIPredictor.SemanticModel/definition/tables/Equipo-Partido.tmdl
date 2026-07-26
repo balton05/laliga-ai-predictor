@@ -1,0 +1,179 @@
+table Equipo-Partido
+	lineageTag: b5c78eb5-90c7-4473-b851-0a6174116a52
+
+	column 'Fixture ID'
+		dataType: string
+		lineageTag: ba5df765-24fa-4aba-9fd0-a89f67fff9d1
+		summarizeBy: none
+		sourceColumn: fixture_id
+
+	column Temporada
+		dataType: string
+		lineageTag: 21fc7178-4d4b-4b24-816f-1dea331211ab
+		summarizeBy: none
+		sourceColumn: season
+
+	column Jornada
+		dataType: int64
+		formatString: 0
+		lineageTag: a7d13a31-08ed-458d-a725-1e1b6033390d
+		summarizeBy: sum
+		sourceColumn: matchday
+
+		annotation SummarizationSetBy = Automatic
+
+	column Fecha
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: fdc7efc4-8226-4381-bdb5-c9fe25b1cacf
+		summarizeBy: none
+		sourceColumn: reference_date
+
+		variation Variación
+			isDefault
+			relationship: 5acb7b56-f0e5-43dc-803a-ff217a0b39f2
+			defaultHierarchy: LocalDateTable_403224a9-9a70-4816-8fcf-57b61a58ca3c.'Jerarquía de fechas'
+
+	column 'Equipo ID'
+		dataType: string
+		lineageTag: 87f94066-63f6-4a89-977f-e4405da44abc
+		summarizeBy: none
+		sourceColumn: team_id
+
+	column Equipo
+		dataType: string
+		lineageTag: d7cbd788-448d-4505-86be-096879da086e
+		summarizeBy: none
+		sourceColumn: team
+
+	column 'Rival ID'
+		dataType: string
+		lineageTag: f2ae7742-b053-459f-a224-1496c2f82cb7
+		summarizeBy: none
+		sourceColumn: opponent_id
+
+	column Rival
+		dataType: string
+		lineageTag: 28894751-464d-4e7b-a91a-5845c9d66c43
+		summarizeBy: none
+		sourceColumn: opponent
+
+	column Condición
+		dataType: string
+		lineageTag: df607478-0ba7-4b95-95fb-30857028674e
+		summarizeBy: none
+		sourceColumn: venue
+
+	column Estado
+		dataType: string
+		lineageTag: 7b15e593-d2e6-476f-8f68-371b9ed46130
+		summarizeBy: none
+		sourceColumn: status
+
+	column Jugado
+		dataType: boolean
+		lineageTag: 553ede6a-0f94-464c-80ed-8469b7acf7f0
+		summarizeBy: none
+		sourceColumn: is_played
+
+	column 'Goles a favor'
+		dataType: int64
+		formatString: 0
+		lineageTag: a51cb707-6ec8-4c59-a6a9-555bb4839db0
+		summarizeBy: sum
+		sourceColumn: goals_for
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Goles en contra'
+		dataType: int64
+		formatString: 0
+		lineageTag: 0e901697-a006-4f4a-b61e-cb3757cf7d86
+		summarizeBy: sum
+		sourceColumn: goals_against
+
+		annotation SummarizationSetBy = Automatic
+
+	column Resultado
+		dataType: string
+		lineageTag: a656e2a0-ebef-475c-b894-aba8be7b3399
+		summarizeBy: none
+		sourceColumn: team_result
+
+	column 'Probabilidad victoria'
+		dataType: double
+		formatString: 0.0%
+		lineageTag: df9e14c9-fdfd-4c15-8d04-276ac0e045a1
+		summarizeBy: sum
+		sourceColumn: win_probability
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Probabilidad empate'
+		dataType: double
+		formatString: 0.0%
+		lineageTag: 452541fd-49b9-48bd-9173-6fa78e5c2687
+		summarizeBy: sum
+		sourceColumn: draw_probability
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Probabilidad derrota'
+		dataType: double
+		formatString: 0.0%
+		lineageTag: 80d3ffa3-c5db-4c21-aff3-60a7554aa049
+		summarizeBy: sum
+		sourceColumn: loss_probability
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'xG a favor'
+		dataType: double
+		formatString: 0.0
+		lineageTag: 7f9f33e3-4403-40ac-a538-aa66777d15ec
+		summarizeBy: sum
+		sourceColumn: expected_goals_for
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'xG en contra'
+		dataType: double
+		formatString: 0.0
+		lineageTag: 09f3b40f-96ec-4c46-bca0-7cf6f36914b2
+		summarizeBy: sum
+		sourceColumn: expected_goals_against
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Update ID'
+		dataType: string
+		lineageTag: d41a75f2-a330-470b-90b1-93f16a223eee
+		summarizeBy: none
+		sourceColumn: update_id
+
+	column scheduled_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 9e4d0121-b254-422c-9a92-62123c18be1e
+		summarizeBy: none
+		sourceColumn: scheduled_date
+
+		variation Variación
+			isDefault
+			relationship: 592cf7f4-8f9b-4b05-9848-311b8e63e5f4
+			defaultHierarchy: LocalDateTable_29700243-b536-469b-aba8-866520d00b6f.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Equipo-Partido = m
+		mode: import
+		source =
+				let
+				    Source = PostgreSQL.Database(
+				        pPostgresServer,
+				        pPostgresDatabase,
+				        [Query="SELECT * FROM bi_fact_team_matches"]
+				    )
+				in
+				    Source
+

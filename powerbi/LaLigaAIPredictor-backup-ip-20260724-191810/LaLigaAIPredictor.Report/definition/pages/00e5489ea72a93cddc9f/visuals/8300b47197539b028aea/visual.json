@@ -1,0 +1,98 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "8300b47197539b028aea",
+  "position": {
+    "x": 24,
+    "y": 228,
+    "z": 5000,
+    "height": 460,
+    "width": 760,
+    "tabOrder": 5000
+  },
+  "visual": {
+    "visualType": "clusteredBarChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Simulación"
+                    }
+                  },
+                  "Property": "Equipo"
+                }
+              },
+              "queryRef": "Simulación.Equipo",
+              "nativeQueryRef": "Equipo",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Simulación"
+                    }
+                  },
+                  "Property": "P Campeón"
+                }
+              },
+              "queryRef": "Simulación.P Campeón",
+              "nativeQueryRef": "P Campeón"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Simulación"
+                    }
+                  },
+                  "Property": "P Top 4"
+                }
+              },
+              "queryRef": "Simulación.P Top 4",
+              "nativeQueryRef": "P Top 4"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Simulación"
+                    }
+                  },
+                  "Property": "P Europa"
+                }
+              },
+              "queryRef": "Simulación.P Europa",
+              "nativeQueryRef": "P Europa"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Simulación"
+                    }
+                  },
+                  "Property": "P Descenso"
+                }
+              },
+              "queryRef": "Simulación.P Descenso",
+              "nativeQueryRef": "P Descenso"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

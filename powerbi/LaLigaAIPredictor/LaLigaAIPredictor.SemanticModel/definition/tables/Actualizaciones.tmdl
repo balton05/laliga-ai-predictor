@@ -1,0 +1,164 @@
+table Actualizaciones
+	lineageTag: a8260384-3090-4400-b0a8-bbf47b822960
+
+	measure 'Última actualización' = CONCATENATEX(TOPN(1, 'Actualizaciones', 'Actualizaciones'[Creado UTC], DESC), 'Actualizaciones'[Update ID], "")
+		displayFolder: Auditoría
+		lineageTag: 50a194a0-4c52-4017-adb3-acb5e527d9f7
+
+	measure 'Calidad actual' =
+			
+			VAR UltimoRegistro =
+			    TOPN(
+			        1,
+			        'Actualizaciones',
+			        'Actualizaciones'[Creado UTC], DESC,
+			        'Actualizaciones'[Update ID], DESC
+			    )
+			VAR Superada =
+			    COUNTROWS(
+			        FILTER(
+			            UltimoRegistro,
+			            'Actualizaciones'[Calidad superada] = TRUE()
+			        )
+			    ) > 0
+			RETURN
+			    IF(Superada, "Correcta", "Revisar")
+		displayFolder: Auditoría
+		lineageTag: ac16cf60-7c02-4aee-8411-977725890a57
+
+	measure 'Jornadas cerradas' = MAX('Actualizaciones'[Jornadas completadas])
+		formatString: 0
+		displayFolder: Auditoría
+		lineageTag: 000f05e3-9ba3-47ab-abdc-36c3248449b4
+
+	measure 'Predicciones con mercado' = MAX('Actualizaciones'[Predicciones mercado])
+		formatString: 0
+		displayFolder: Auditoría
+		lineageTag: a46d9a74-8710-4eba-98b3-1eedc5e52a42
+
+	column 'Update ID'
+		dataType: string
+		lineageTag: 076036ef-811c-42c6-ae48-b9794dd60e94
+		summarizeBy: none
+		sourceColumn: update_id
+
+	column 'Creado UTC'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: ed9874b5-f8ae-433e-934b-fdbb1f695528
+		summarizeBy: none
+		sourceColumn: created_at_utc
+
+		variation Variación
+			isDefault
+			relationship: 7d6f838a-89a1-4de6-b230-647cad655399
+			defaultHierarchy: LocalDateTable_2e257390-5498-44be-94d9-f91fc65f87aa.'Jerarquía de fechas'
+
+	column 'Fecha snapshot'
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 39538995-f4ac-4b92-9aa8-583d679dd9ee
+		summarizeBy: none
+		sourceColumn: snapshot_date
+
+		variation Variación
+			isDefault
+			relationship: b887ed3d-eaa5-4fc4-98fd-564c88fca5ce
+			defaultHierarchy: LocalDateTable_6880603f-3c3f-4568-a30f-0db983bd5634.'Jerarquía de fechas'
+
+	column 'Partidos completados'
+		dataType: int64
+		formatString: 0
+		lineageTag: 651d236e-07e4-49d3-a7b8-8292477fdc17
+		summarizeBy: sum
+		sourceColumn: completed_matches
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Jornadas completadas'
+		dataType: int64
+		formatString: 0
+		lineageTag: 7ab1c651-cbc6-4157-86bf-8504ba5a4d58
+		summarizeBy: sum
+		sourceColumn: completed_matchdays
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Partidos restantes'
+		dataType: int64
+		formatString: 0
+		lineageTag: 3c29719b-b8ed-44b4-a4e5-80aa3e0a6a0e
+		summarizeBy: sum
+		sourceColumn: remaining_matches
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Próxima jornada'
+		dataType: int64
+		formatString: 0
+		lineageTag: 1e01b383-4dfd-4876-b5e2-21efd3ee14f5
+		summarizeBy: sum
+		sourceColumn: next_matchday
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Predicciones mercado'
+		dataType: int64
+		formatString: 0
+		lineageTag: 13e5b6d5-0542-41c8-a01e-39118b44756b
+		summarizeBy: sum
+		sourceColumn: market_predictions
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Predicciones deportivas'
+		dataType: int64
+		formatString: 0
+		lineageTag: 2293b742-85d9-4511-b37d-e733838a9c47
+		summarizeBy: sum
+		sourceColumn: sports_predictions
+
+		annotation SummarizationSetBy = Automatic
+
+	column Simulaciones
+		dataType: int64
+		formatString: #,0
+		lineageTag: 52fb7c5b-1f98-4b5a-ae29-6551c1700680
+		summarizeBy: sum
+		sourceColumn: simulations
+
+		annotation SummarizationSetBy = Automatic
+
+	column Semilla
+		dataType: int64
+		formatString: 0
+		lineageTag: e13ce460-e806-4871-892a-25479666023c
+		summarizeBy: sum
+		sourceColumn: seed
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Calidad superada'
+		dataType: boolean
+		lineageTag: 0f0fca29-3b7e-4a9a-bf50-f9743bfa0ff1
+		summarizeBy: none
+		sourceColumn: quality_passed
+
+	column 'Modo pipeline'
+		dataType: string
+		lineageTag: 7bef4ce8-ca9e-4891-bc8b-bfba9dfe5c15
+		summarizeBy: none
+		sourceColumn: pipeline_mode
+
+	partition Actualizaciones = m
+		mode: import
+		source =
+				let
+				    Source = PostgreSQL.Database(
+				        pPostgresServer,
+				        pPostgresDatabase,
+				        [Query="SELECT * FROM bi_update_status"]
+				    )
+				in
+				    Source
+

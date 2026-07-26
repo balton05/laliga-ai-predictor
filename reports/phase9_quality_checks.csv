@@ -1,0 +1,17 @@
+﻿check,passed,value
+fixture_calendar_380,True,380.0
+fixture_ids_unique,True,380.0
+result_ids_unique,True,0.0
+results_and_predictions_partition_calendar,True,380.0
+no_completed_fixture_is_predicted,True,0.0
+prediction_probabilities_sum_to_one,True,3.3306690738754696e-16
+prediction_probabilities_in_range,True,380.0
+market_model_only_with_odds,True,0.0
+latest_odds_one_row_per_fixture,True,0.0
+simulation_has_20_teams,True,20.0
+champion_probability_reconciles,True,0.9999999999999999
+top4_probability_reconciles,True,4.0
+top7_probability_reconciles,True,7.0
+relegation_probability_reconciles,True,2.9999999999999996
+position_distribution_400_rows,True,400.0
+each_team_position_probabilities_sum_to_one,True,20.0

@@ -1,0 +1,28 @@
+table 'Dim Posición'
+	lineageTag: 4be8d396-27ff-4e1d-913a-0892b577b9ac
+
+	column Posición
+		dataType: int64
+		formatString: 0
+		lineageTag: fdce43e6-332a-45bf-abdb-88f5693378cb
+		summarizeBy: none
+		sourceColumn: position
+
+	column Zona
+		dataType: string
+		lineageTag: eb928aa0-23ea-4111-a8f2-2f70b436cf4a
+		summarizeBy: none
+		sourceColumn: position_zone
+
+	partition 'Dim Posición' = m
+		mode: import
+		source =
+				let
+				    Source = PostgreSQL.Database(
+				        pPostgresServer,
+				        pPostgresDatabase,
+				        [Query="SELECT * FROM bi_dim_position"]
+				    )
+				in
+				    Source
+

@@ -1,0 +1,97 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "73ae799c68ac6d71552e",
+  "position": {
+    "x": 24,
+    "y": 88,
+    "z": 2000,
+    "height": 132,
+    "width": 1232,
+    "tabOrder": 2000
+  },
+  "visual": {
+    "visualType": "cardVisual",
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Estado API"
+                    }
+                  },
+                  "Property": "Estado de la API"
+                }
+              },
+              "queryRef": "Estado API.Estado de la API",
+              "nativeQueryRef": "Estado de la API"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Actualizaciones"
+                    }
+                  },
+                  "Property": "Última actualización"
+                }
+              },
+              "queryRef": "Actualizaciones.Última actualización",
+              "nativeQueryRef": "Última actualización"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Actualizaciones"
+                    }
+                  },
+                  "Property": "Calidad actual"
+                }
+              },
+              "queryRef": "Actualizaciones.Calidad actual",
+              "nativeQueryRef": "Calidad actual"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Actualizaciones"
+                    }
+                  },
+                  "Property": "Predicciones con mercado"
+                }
+              },
+              "queryRef": "Actualizaciones.Predicciones con mercado",
+              "nativeQueryRef": "Predicciones con mercado"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "outline": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "default"
+          }
+        }
+      ]
+    }
+  }
+}

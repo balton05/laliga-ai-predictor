@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720">
+  <defs>
+    <linearGradient id="sky" x1="640" y1="0" x2="640" y2="720" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#080d1b"/>
+      <stop offset="1" stop-color="#162238"/>
+    </linearGradient>
+    <linearGradient id="pitch" x1="640" y1="440" x2="640" y2="720" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#19733f"/>
+      <stop offset="1" stop-color="#0b4328"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="720" fill="url(#sky)"/>
+  <path d="M0 220 160 120h960l160 100v290H0V220Z" fill="#111a2e" stroke="#293851" stroke-width="8"/>
+  <path d="M80 250h1120v210H80z" fill="#1c2941"/>
+  <g fill="#ff4b45" opacity=".72">
+    <circle cx="150" cy="310" r="5"/><circle cx="230" cy="350" r="5"/><circle cx="340" cy="290" r="5"/><circle cx="450" cy="370" r="5"/>
+    <circle cx="565" cy="305" r="5"/><circle cx="685" cy="345" r="5"/><circle cx="800" cy="285" r="5"/><circle cx="920" cy="365" r="5"/>
+    <circle cx="1035" cy="315" r="5"/><circle cx="1130" cy="355" r="5"/>
+  </g>
+  <path d="M190 470h900l150 250H40l150-250Z" fill="url(#pitch)"/>
+  <path d="M640 470v250M190 470l-150 250m1050-250 150 250M490 470l-50 250m350-250 50 250" fill="none" stroke="#f8fafc" stroke-opacity=".7" stroke-width="5"/>
+  <ellipse cx="640" cy="585" rx="92" ry="58" fill="none" stroke="#f8fafc" stroke-opacity=".7" stroke-width="5"/>
+  <rect x="40" y="24" width="1200" height="672" rx="26" fill="none" stroke="#3478f6" stroke-opacity=".35" stroke-width="4"/>
+</svg>

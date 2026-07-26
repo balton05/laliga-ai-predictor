@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "LaLiga AI Predictor"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "d3822c11-8588-4f18-b8fd-32e54879c0af"
+  }
+}

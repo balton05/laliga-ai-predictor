@@ -1,0 +1,143 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "339e570ebf71c4942717",
+  "position": {
+    "x": 648,
+    "y": 236,
+    "z": 4000,
+    "height": 452,
+    "width": 608,
+    "tabOrder": 4000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Partidos"
+                    }
+                  },
+                  "Property": "Partido"
+                }
+              },
+              "queryRef": "Partidos.Partido",
+              "nativeQueryRef": "Partido"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Partidos"
+                    }
+                  },
+                  "Property": "Pronóstico"
+                }
+              },
+              "queryRef": "Partidos.Pronóstico",
+              "nativeQueryRef": "Pronóstico"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Partidos"
+                    }
+                  },
+                  "Property": "Marcador previsto"
+                }
+              },
+              "queryRef": "Partidos.Marcador previsto",
+              "nativeQueryRef": "Marcador previsto"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Partidos"
+                    }
+                  },
+                  "Property": "Confianza"
+                }
+              },
+              "queryRef": "Partidos.Confianza",
+              "nativeQueryRef": "Confianza"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Partidos"
+                    }
+                  },
+                  "Property": "Probabilidad local"
+                }
+              },
+              "queryRef": "Partidos.Probabilidad local",
+              "nativeQueryRef": "Probabilidad local"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Partidos"
+                    }
+                  },
+                  "Property": "Probabilidad empate"
+                }
+              },
+              "queryRef": "Partidos.Probabilidad empate",
+              "nativeQueryRef": "Probabilidad empate"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Partidos"
+                    }
+                  },
+                  "Property": "Probabilidad visitante"
+                }
+              },
+              "queryRef": "Partidos.Probabilidad visitante",
+              "nativeQueryRef": "Probabilidad visitante"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "columnHeaders": [
+        {
+          "properties": {
+            "columnAdjustment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'growToFit'"
+                }
+              }
+            },
+            "autoSizeColumnWidth": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

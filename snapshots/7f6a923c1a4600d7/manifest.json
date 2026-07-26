@@ -1,0 +1,82 @@
+{
+  "update_id": "7f6a923c1a4600d7",
+  "created_at_utc": "2026-07-25T01:59:31.186375+00:00",
+  "summary": {
+    "phase": 9,
+    "update_id": "7f6a923c1a4600d7",
+    "created_at_utc": "2026-07-25T01:59:30.810964+00:00",
+    "season": "2026/27",
+    "snapshot_date": "2026-08-16",
+    "completed_matches": 0,
+    "completed_matchdays": 0,
+    "remaining_matches": 380,
+    "next_matchday": 1,
+    "market_predictions": 0,
+    "sports_predictions": 380,
+    "simulations": 50000,
+    "seed": 42,
+    "quality_checks": 16,
+    "quality_passed": true,
+    "pipeline_mode": "preseason_noop",
+    "partial_update_allowed": false,
+    "market_policy": "Use ensemble_market per fixture only when a complete current 1X2 odds snapshot is available; otherwise use ensemble_sports.",
+    "model_retraining_policy": "Classifiers remain frozen through 2025/26; sports features and Elo update each run; Poisson is refitted when 2026/27 results exist."
+  },
+  "files": [
+    {
+      "file": "current_results_2026_27.csv",
+      "sha256": "9957f9408e623130c6e4f6fbb8374dc9db42c47c49a64bd90a5a91a79228c4a9",
+      "bytes": 284
+    },
+    {
+      "file": "current_team_state_2026_27.csv",
+      "sha256": "4f1661b4d790cc3b5f2fcb6e17b3d4192fe8f963c070a033e20e2ccaa45d5a9b",
+      "bytes": 4682
+    },
+    {
+      "file": "current_fixture_features_2026_27.csv",
+      "sha256": "cdfeb1daca9aba5fb1162b936da2a7a76fab05409559c7b135104752ce1e68a6",
+      "bytes": 194954
+    },
+    {
+      "file": "current_predictions_2026_27.csv",
+      "sha256": "d5df70fc8857e959cddf2ec3c3a6ff5d4040c4e81eb2fa8da7de2fcd75ccc398",
+      "bytes": 111681
+    },
+    {
+      "file": "current_table_2026_27.csv",
+      "sha256": "5cb873b56636564bd5f18fd30b03db0e9264a27eaefb228566db65df80cb693b",
+      "bytes": 919
+    },
+    {
+      "file": "dynamic_next_matchday_predictions.csv",
+      "sha256": "0f9830271a250ff6df4ee1d84eceda964cedf8b9ccf3b79c898ad8f03fc707e0",
+      "bytes": 3333
+    },
+    {
+      "file": "dynamic_season_simulation_summary.csv",
+      "sha256": "eadf4cacd3144099084922ae8c32b8050f92395b0c41fef5eda17b8cfc7ef3d6",
+      "bytes": 3077
+    },
+    {
+      "file": "dynamic_position_distribution.csv",
+      "sha256": "1227aa224c405551dc45eb6f0a818c688a31076e23fc1ad9fc50ab63669e4ca1",
+      "bytes": 15136
+    },
+    {
+      "file": "dynamic_preseason_comparison.csv",
+      "sha256": "47e2fd46ec6fe463827c6f72d394f902614b6b1901e445a861409255c6461012",
+      "bytes": 4599
+    },
+    {
+      "file": "phase9_quality_checks.csv",
+      "sha256": "759cc7ad25d2e655c56126e16d073a24a8be23fbb10b9ab1ec0d06d8834ef5de",
+      "bytes": 713
+    },
+    {
+      "file": "phase9_summary.json",
+      "sha256": "efc34391931eda876813a2929718621458ef817c62e56c1221afe1fe9dc4ee1a",
+      "bytes": 793
+    }
+  ]
+}

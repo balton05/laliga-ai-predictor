@@ -1,0 +1,381 @@
+﻿temporada,jornada,fecha_referencia_jornada,match_id_laliga,equipo_local,local_slug,equipo_visitante,visitante_slug
+2026/2027,1,2026-08-16,102249,Deportivo Alavés,d-alaves,Getafe CF,getafe-cf
+2026/2027,1,2026-08-16,102250,Atlético de Madrid,atletico-de-madrid,Málaga CF,malaga-cf
+2026/2027,1,2026-08-16,102251,RC Celta,rc-celta,CA Osasuna,c-a-osasuna
+2026/2027,1,2026-08-16,102252,RC Deportivo,rc-deportivo,Elche CF,elche-c-f
+2026/2027,1,2026-08-16,102253,RCD Espanyol de Barcelona,rcd-espanyol,Levante UD,levante-ud
+2026/2027,1,2026-08-16,102254,FC Barcelona,fc-barcelona,Athletic Club,athletic-club
+2026/2027,1,2026-08-16,102255,R. Racing Club,r-racing-club,Villarreal CF,villarreal-cf
+2026/2027,1,2026-08-16,102256,Real Madrid,real-madrid,Real Sociedad,real-sociedad
+2026/2027,1,2026-08-16,102257,Sevilla FC,sevilla-fc,Rayo Vallecano,rayo-vallecano
+2026/2027,1,2026-08-16,102258,Valencia CF,valencia-cf,Real Betis,real-betis
+2026/2027,2,2026-08-23,102259,Athletic Club,athletic-club,Sevilla FC,sevilla-fc
+2026/2027,2,2026-08-23,102260,Atlético de Madrid,atletico-de-madrid,Villarreal CF,villarreal-cf
+2026/2027,2,2026-08-23,102261,Real Betis,real-betis,Real Sociedad,real-sociedad
+2026/2027,2,2026-08-23,102262,Elche CF,elche-c-f,FC Barcelona,fc-barcelona
+2026/2027,2,2026-08-23,102263,RCD Espanyol de Barcelona,rcd-espanyol,Real Madrid,real-madrid
+2026/2027,2,2026-08-23,102264,Getafe CF,getafe-cf,R. Racing Club,r-racing-club
+2026/2027,2,2026-08-23,102265,Málaga CF,malaga-cf,RC Deportivo,rc-deportivo
+2026/2027,2,2026-08-23,102266,CA Osasuna,c-a-osasuna,Levante UD,levante-ud
+2026/2027,2,2026-08-23,102267,Rayo Vallecano,rayo-vallecano,Deportivo Alavés,d-alaves
+2026/2027,2,2026-08-23,102268,Valencia CF,valencia-cf,RC Celta,rc-celta
+2026/2027,3,2026-08-30,102269,Deportivo Alavés,d-alaves,Villarreal CF,villarreal-cf
+2026/2027,3,2026-08-30,102270,RC Celta,rc-celta,Athletic Club,athletic-club
+2026/2027,3,2026-08-30,102271,RC Deportivo,rc-deportivo,Valencia CF,valencia-cf
+2026/2027,3,2026-08-30,102272,FC Barcelona,fc-barcelona,Rayo Vallecano,rayo-vallecano
+2026/2027,3,2026-08-30,102273,Levante UD,levante-ud,Real Betis,real-betis
+2026/2027,3,2026-08-30,102274,CA Osasuna,c-a-osasuna,Getafe CF,getafe-cf
+2026/2027,3,2026-08-30,102275,R. Racing Club,r-racing-club,Elche CF,elche-c-f
+2026/2027,3,2026-08-30,102276,Real Madrid,real-madrid,Málaga CF,malaga-cf
+2026/2027,3,2026-08-30,102277,Real Sociedad,real-sociedad,RCD Espanyol de Barcelona,rcd-espanyol
+2026/2027,3,2026-08-30,102278,Sevilla FC,sevilla-fc,Atlético de Madrid,atletico-de-madrid
+2026/2027,4,2026-09-06,102279,Deportivo Alavés,d-alaves,CA Osasuna,c-a-osasuna
+2026/2027,4,2026-09-06,102280,Athletic Club,athletic-club,Atlético de Madrid,atletico-de-madrid
+2026/2027,4,2026-09-06,102281,Real Betis,real-betis,Real Madrid,real-madrid
+2026/2027,4,2026-09-06,102282,Elche CF,elche-c-f,Real Sociedad,real-sociedad
+2026/2027,4,2026-09-06,102283,RCD Espanyol de Barcelona,rcd-espanyol,Sevilla FC,sevilla-fc
+2026/2027,4,2026-09-06,102284,Getafe CF,getafe-cf,RC Celta,rc-celta
+2026/2027,4,2026-09-06,102285,Málaga CF,malaga-cf,Levante UD,levante-ud
+2026/2027,4,2026-09-06,102286,Rayo Vallecano,rayo-vallecano,R. Racing Club,r-racing-club
+2026/2027,4,2026-09-06,102287,Valencia CF,valencia-cf,FC Barcelona,fc-barcelona
+2026/2027,4,2026-09-06,102288,Villarreal CF,villarreal-cf,RC Deportivo,rc-deportivo
+2026/2027,5,2026-09-13,102289,Athletic Club,athletic-club,Elche CF,elche-c-f
+2026/2027,5,2026-09-13,102290,RC Celta,rc-celta,Málaga CF,malaga-cf
+2026/2027,5,2026-09-13,102291,Getafe CF,getafe-cf,RC Deportivo,rc-deportivo
+2026/2027,5,2026-09-13,102292,Levante UD,levante-ud,FC Barcelona,fc-barcelona
+2026/2027,5,2026-09-13,102293,CA Osasuna,c-a-osasuna,RCD Espanyol de Barcelona,rcd-espanyol
+2026/2027,5,2026-09-13,102294,R. Racing Club,r-racing-club,Deportivo Alavés,d-alaves
+2026/2027,5,2026-09-13,102295,Real Madrid,real-madrid,Rayo Vallecano,rayo-vallecano
+2026/2027,5,2026-09-13,102296,Real Sociedad,real-sociedad,Atlético de Madrid,atletico-de-madrid
+2026/2027,5,2026-09-13,102297,Sevilla FC,sevilla-fc,Valencia CF,valencia-cf
+2026/2027,5,2026-09-13,102298,Villarreal CF,villarreal-cf,Real Betis,real-betis
+2026/2027,6,2026-09-16,102299,Deportivo Alavés,d-alaves,Valencia CF,valencia-cf
+2026/2027,6,2026-09-16,102300,Atlético de Madrid,atletico-de-madrid,CA Osasuna,c-a-osasuna
+2026/2027,6,2026-09-16,102301,Real Betis,real-betis,Getafe CF,getafe-cf
+2026/2027,6,2026-09-16,102302,RC Deportivo,rc-deportivo,Sevilla FC,sevilla-fc
+2026/2027,6,2026-09-16,102303,Elche CF,elche-c-f,Real Madrid,real-madrid
+2026/2027,6,2026-09-16,102304,FC Barcelona,fc-barcelona,R. Racing Club,r-racing-club
+2026/2027,6,2026-09-16,102305,Levante UD,levante-ud,Athletic Club,athletic-club
+2026/2027,6,2026-09-16,102306,Málaga CF,malaga-cf,Villarreal CF,villarreal-cf
+2026/2027,6,2026-09-16,102307,Rayo Vallecano,rayo-vallecano,RCD Espanyol de Barcelona,rcd-espanyol
+2026/2027,6,2026-09-16,102308,Real Sociedad,real-sociedad,RC Celta,rc-celta
+2026/2027,7,2026-09-20,102309,Athletic Club,athletic-club,Deportivo Alavés,d-alaves
+2026/2027,7,2026-09-20,102310,Atlético de Madrid,atletico-de-madrid,Real Madrid,real-madrid
+2026/2027,7,2026-09-20,102311,RC Celta,rc-celta,R. Racing Club,r-racing-club
+2026/2027,7,2026-09-20,102312,RC Deportivo,rc-deportivo,Real Betis,real-betis
+2026/2027,7,2026-09-20,102313,RCD Espanyol de Barcelona,rcd-espanyol,Elche CF,elche-c-f
+2026/2027,7,2026-09-20,102314,Getafe CF,getafe-cf,Málaga CF,malaga-cf
+2026/2027,7,2026-09-20,102315,CA Osasuna,c-a-osasuna,Rayo Vallecano,rayo-vallecano
+2026/2027,7,2026-09-20,102316,Sevilla FC,sevilla-fc,FC Barcelona,fc-barcelona
+2026/2027,7,2026-09-20,102317,Valencia CF,valencia-cf,Real Sociedad,real-sociedad
+2026/2027,7,2026-09-20,102318,Villarreal CF,villarreal-cf,Levante UD,levante-ud
+2026/2027,8,2026-10-11,102319,Deportivo Alavés,d-alaves,Atlético de Madrid,atletico-de-madrid
+2026/2027,8,2026-10-11,102320,Real Betis,real-betis,CA Osasuna,c-a-osasuna
+2026/2027,8,2026-10-11,102321,Elche CF,elche-c-f,RC Celta,rc-celta
+2026/2027,8,2026-10-11,102322,FC Barcelona,fc-barcelona,Getafe CF,getafe-cf
+2026/2027,8,2026-10-11,102323,Levante UD,levante-ud,Sevilla FC,sevilla-fc
+2026/2027,8,2026-10-11,102324,Málaga CF,malaga-cf,RCD Espanyol de Barcelona,rcd-espanyol
+2026/2027,8,2026-10-11,102325,R. Racing Club,r-racing-club,Valencia CF,valencia-cf
+2026/2027,8,2026-10-11,102326,Rayo Vallecano,rayo-vallecano,Athletic Club,athletic-club
+2026/2027,8,2026-10-11,102327,Real Madrid,real-madrid,Villarreal CF,villarreal-cf
+2026/2027,8,2026-10-11,102328,Real Sociedad,real-sociedad,RC Deportivo,rc-deportivo
+2026/2027,9,2026-10-18,102329,Real Betis,real-betis,FC Barcelona,fc-barcelona
+2026/2027,9,2026-10-18,102330,RC Celta,rc-celta,Deportivo Alavés,d-alaves
+2026/2027,9,2026-10-18,102331,RC Deportivo,rc-deportivo,Levante UD,levante-ud
+2026/2027,9,2026-10-18,102332,RCD Espanyol de Barcelona,rcd-espanyol,Atlético de Madrid,atletico-de-madrid
+2026/2027,9,2026-10-18,102333,Getafe CF,getafe-cf,Rayo Vallecano,rayo-vallecano
+2026/2027,9,2026-10-18,102334,Málaga CF,malaga-cf,Real Sociedad,real-sociedad
+2026/2027,9,2026-10-18,102335,CA Osasuna,c-a-osasuna,R. Racing Club,r-racing-club
+2026/2027,9,2026-10-18,102336,Real Madrid,real-madrid,Sevilla FC,sevilla-fc
+2026/2027,9,2026-10-18,102337,Valencia CF,valencia-cf,Athletic Club,athletic-club
+2026/2027,9,2026-10-18,102338,Villarreal CF,villarreal-cf,Elche CF,elche-c-f
+2026/2027,10,2026-10-25,102339,Deportivo Alavés,d-alaves,Málaga CF,malaga-cf
+2026/2027,10,2026-10-25,102340,Athletic Club,athletic-club,Getafe CF,getafe-cf
+2026/2027,10,2026-10-25,102341,Atlético de Madrid,atletico-de-madrid,RC Deportivo,rc-deportivo
+2026/2027,10,2026-10-25,102342,RC Celta,rc-celta,Real Betis,real-betis
+2026/2027,10,2026-10-25,102343,FC Barcelona,fc-barcelona,Real Madrid,real-madrid
+2026/2027,10,2026-10-25,102344,R. Racing Club,r-racing-club,RCD Espanyol de Barcelona,rcd-espanyol
+2026/2027,10,2026-10-25,102345,Rayo Vallecano,rayo-vallecano,Elche CF,elche-c-f
+2026/2027,10,2026-10-25,102346,Real Sociedad,real-sociedad,Levante UD,levante-ud
+2026/2027,10,2026-10-25,102347,Sevilla FC,sevilla-fc,CA Osasuna,c-a-osasuna
+2026/2027,10,2026-10-25,102348,Valencia CF,valencia-cf,Villarreal CF,villarreal-cf
+2026/2027,11,2026-11-01,102349,Athletic Club,athletic-club,Real Sociedad,real-sociedad
+2026/2027,11,2026-11-01,102350,Real Betis,real-betis,Málaga CF,malaga-cf
+2026/2027,11,2026-11-01,102351,RC Deportivo,rc-deportivo,CA Osasuna,c-a-osasuna
+2026/2027,11,2026-11-01,102352,Elche CF,elche-c-f,Valencia CF,valencia-cf
+2026/2027,11,2026-11-01,102353,FC Barcelona,fc-barcelona,Deportivo Alavés,d-alaves
+2026/2027,11,2026-11-01,102354,Getafe CF,getafe-cf,Sevilla FC,sevilla-fc
+2026/2027,11,2026-11-01,102355,Levante UD,levante-ud,Atlético de Madrid,atletico-de-madrid
+2026/2027,11,2026-11-01,102356,R. Racing Club,r-racing-club,Real Madrid,real-madrid
+2026/2027,11,2026-11-01,102357,Rayo Vallecano,rayo-vallecano,RC Celta,rc-celta
+2026/2027,11,2026-11-01,102358,Villarreal CF,villarreal-cf,RCD Espanyol de Barcelona,rcd-espanyol
+2026/2027,12,2026-11-08,102359,Atlético de Madrid,atletico-de-madrid,FC Barcelona,fc-barcelona
+2026/2027,12,2026-11-08,102360,RC Celta,rc-celta,Levante UD,levante-ud
+2026/2027,12,2026-11-08,102361,Elche CF,elche-c-f,Real Betis,real-betis
+2026/2027,12,2026-11-08,102362,RCD Espanyol de Barcelona,rcd-espanyol,RC Deportivo,rc-deportivo
+2026/2027,12,2026-11-08,102363,Málaga CF,malaga-cf,R. Racing Club,r-racing-club
+2026/2027,12,2026-11-08,102364,CA Osasuna,c-a-osasuna,Athletic Club,athletic-club
+2026/2027,12,2026-11-08,102365,Real Sociedad,real-sociedad,Rayo Vallecano,rayo-vallecano
+2026/2027,12,2026-11-08,102366,Sevilla FC,sevilla-fc,Deportivo Alavés,d-alaves
+2026/2027,12,2026-11-08,102367,Valencia CF,valencia-cf,Real Madrid,real-madrid
+2026/2027,12,2026-11-08,102368,Villarreal CF,villarreal-cf,Getafe CF,getafe-cf
+2026/2027,13,2026-11-22,102369,Deportivo Alavés,d-alaves,RC Deportivo,rc-deportivo
+2026/2027,13,2026-11-22,102370,Athletic Club,athletic-club,RCD Espanyol de Barcelona,rcd-espanyol
+2026/2027,13,2026-11-22,102371,FC Barcelona,fc-barcelona,Villarreal CF,villarreal-cf
+2026/2027,13,2026-11-22,102372,Getafe CF,getafe-cf,Atlético de Madrid,atletico-de-madrid
+2026/2027,13,2026-11-22,102373,Levante UD,levante-ud,Elche CF,elche-c-f
+2026/2027,13,2026-11-22,102374,CA Osasuna,c-a-osasuna,Málaga CF,malaga-cf
+2026/2027,13,2026-11-22,102375,R. Racing Club,r-racing-club,Real Sociedad,real-sociedad
+2026/2027,13,2026-11-22,102376,Rayo Vallecano,rayo-vallecano,Valencia CF,valencia-cf
+2026/2027,13,2026-11-22,102377,Real Madrid,real-madrid,RC Celta,rc-celta
+2026/2027,13,2026-11-22,102378,Sevilla FC,sevilla-fc,Real Betis,real-betis
+2026/2027,14,2026-11-29,102379,Real Betis,real-betis,Rayo Vallecano,rayo-vallecano
+2026/2027,14,2026-11-29,102380,RC Celta,rc-celta,Villarreal CF,villarreal-cf
+2026/2027,14,2026-11-29,102381,RC Deportivo,rc-deportivo,FC Barcelona,fc-barcelona
+2026/2027,14,2026-11-29,102382,Elche CF,elche-c-f,Atlético de Madrid,atletico-de-madrid
+2026/2027,14,2026-11-29,102383,RCD Espanyol de Barcelona,rcd-espanyol,Getafe CF,getafe-cf
+2026/2027,14,2026-11-29,102384,Levante UD,levante-ud,R. Racing Club,r-racing-club
+2026/2027,14,2026-11-29,102385,Málaga CF,malaga-cf,Athletic Club,athletic-club
+2026/2027,14,2026-11-29,102386,Real Madrid,real-madrid,Deportivo Alavés,d-alaves
+2026/2027,14,2026-11-29,102387,Real Sociedad,real-sociedad,Sevilla FC,sevilla-fc
+2026/2027,14,2026-11-29,102388,Valencia CF,valencia-cf,CA Osasuna,c-a-osasuna
+2026/2027,15,2026-12-06,102389,Deportivo Alavés,d-alaves,RCD Espanyol de Barcelona,rcd-espanyol
+2026/2027,15,2026-12-06,102390,Athletic Club,athletic-club,Real Madrid,real-madrid
+2026/2027,15,2026-12-06,102391,Atlético de Madrid,atletico-de-madrid,Real Betis,real-betis
+2026/2027,15,2026-12-06,102392,FC Barcelona,fc-barcelona,RC Celta,rc-celta
+2026/2027,15,2026-12-06,102393,Getafe CF,getafe-cf,Valencia CF,valencia-cf
+2026/2027,15,2026-12-06,102394,CA Osasuna,c-a-osasuna,Elche CF,elche-c-f
+2026/2027,15,2026-12-06,102395,R. Racing Club,r-racing-club,RC Deportivo,rc-deportivo
+2026/2027,15,2026-12-06,102396,Rayo Vallecano,rayo-vallecano,Levante UD,levante-ud
+2026/2027,15,2026-12-06,102397,Sevilla FC,sevilla-fc,Málaga CF,malaga-cf
+2026/2027,15,2026-12-06,102398,Villarreal CF,villarreal-cf,Real Sociedad,real-sociedad
+2026/2027,16,2026-12-13,102399,Atlético de Madrid,atletico-de-madrid,Valencia CF,valencia-cf
+2026/2027,16,2026-12-13,102400,Real Betis,real-betis,R. Racing Club,r-racing-club
+2026/2027,16,2026-12-13,102401,RC Deportivo,rc-deportivo,Athletic Club,athletic-club
+2026/2027,16,2026-12-13,102402,Elche CF,elche-c-f,Sevilla FC,sevilla-fc
+2026/2027,16,2026-12-13,102403,RCD Espanyol de Barcelona,rcd-espanyol,RC Celta,rc-celta
+2026/2027,16,2026-12-13,102404,Levante UD,levante-ud,Deportivo Alavés,d-alaves
+2026/2027,16,2026-12-13,102405,Málaga CF,malaga-cf,FC Barcelona,fc-barcelona
+2026/2027,16,2026-12-13,102406,Real Madrid,real-madrid,CA Osasuna,c-a-osasuna
+2026/2027,16,2026-12-13,102407,Real Sociedad,real-sociedad,Getafe CF,getafe-cf
+2026/2027,16,2026-12-13,102408,Villarreal CF,villarreal-cf,Rayo Vallecano,rayo-vallecano
+2026/2027,17,2026-12-20,102409,Deportivo Alavés,d-alaves,Elche CF,elche-c-f
+2026/2027,17,2026-12-20,102410,Athletic Club,athletic-club,Real Betis,real-betis
+2026/2027,17,2026-12-20,102411,RC Celta,rc-celta,Atlético de Madrid,atletico-de-madrid
+2026/2027,17,2026-12-20,102412,RC Deportivo,rc-deportivo,Real Madrid,real-madrid
+2026/2027,17,2026-12-20,102413,FC Barcelona,fc-barcelona,Real Sociedad,real-sociedad
+2026/2027,17,2026-12-20,102414,Getafe CF,getafe-cf,Levante UD,levante-ud
+2026/2027,17,2026-12-20,102415,CA Osasuna,c-a-osasuna,Villarreal CF,villarreal-cf
+2026/2027,17,2026-12-20,102416,Rayo Vallecano,rayo-vallecano,Málaga CF,malaga-cf
+2026/2027,17,2026-12-20,102417,Sevilla FC,sevilla-fc,R. Racing Club,r-racing-club
+2026/2027,17,2026-12-20,102418,Valencia CF,valencia-cf,RCD Espanyol de Barcelona,rcd-espanyol
+2026/2027,18,2027-01-03,102419,Real Betis,real-betis,Deportivo Alavés,d-alaves
+2026/2027,18,2027-01-03,102420,RC Celta,rc-celta,RC Deportivo,rc-deportivo
+2026/2027,18,2027-01-03,102421,RCD Espanyol de Barcelona,rcd-espanyol,FC Barcelona,fc-barcelona
+2026/2027,18,2027-01-03,102422,Levante UD,levante-ud,Valencia CF,valencia-cf
+2026/2027,18,2027-01-03,102423,Málaga CF,malaga-cf,Elche CF,elche-c-f
+2026/2027,18,2027-01-03,102424,R. Racing Club,r-racing-club,Athletic Club,athletic-club
+2026/2027,18,2027-01-03,102425,Rayo Vallecano,rayo-vallecano,Atlético de Madrid,atletico-de-madrid
+2026/2027,18,2027-01-03,102426,Real Madrid,real-madrid,Getafe CF,getafe-cf
+2026/2027,18,2027-01-03,102427,Real Sociedad,real-sociedad,CA Osasuna,c-a-osasuna
+2026/2027,18,2027-01-03,102428,Villarreal CF,villarreal-cf,Sevilla FC,sevilla-fc
+2026/2027,19,2027-01-10,102429,Deportivo Alavés,d-alaves,Real Sociedad,real-sociedad
+2026/2027,19,2027-01-10,102430,Athletic Club,athletic-club,Villarreal CF,villarreal-cf
+2026/2027,19,2027-01-10,102431,Atlético de Madrid,atletico-de-madrid,R. Racing Club,r-racing-club
+2026/2027,19,2027-01-10,102432,RC Deportivo,rc-deportivo,Rayo Vallecano,rayo-vallecano
+2026/2027,19,2027-01-10,102433,Elche CF,elche-c-f,Getafe CF,getafe-cf
+2026/2027,19,2027-01-10,102434,RCD Espanyol de Barcelona,rcd-espanyol,Real Betis,real-betis
+2026/2027,19,2027-01-10,102435,CA Osasuna,c-a-osasuna,FC Barcelona,fc-barcelona
+2026/2027,19,2027-01-10,102436,Real Madrid,real-madrid,Levante UD,levante-ud
+2026/2027,19,2027-01-10,102437,Sevilla FC,sevilla-fc,RC Celta,rc-celta
+2026/2027,19,2027-01-10,102438,Valencia CF,valencia-cf,Málaga CF,malaga-cf
+2026/2027,20,2027-01-17,102439,Atlético de Madrid,atletico-de-madrid,Real Sociedad,real-sociedad
+2026/2027,20,2027-01-17,102440,Real Betis,real-betis,RC Deportivo,rc-deportivo
+2026/2027,20,2027-01-17,102441,RC Celta,rc-celta,Valencia CF,valencia-cf
+2026/2027,20,2027-01-17,102442,FC Barcelona,fc-barcelona,Elche CF,elche-c-f
+2026/2027,20,2027-01-17,102443,Getafe CF,getafe-cf,Athletic Club,athletic-club
+2026/2027,20,2027-01-17,102444,Levante UD,levante-ud,RCD Espanyol de Barcelona,rcd-espanyol
+2026/2027,20,2027-01-17,102445,Málaga CF,malaga-cf,Real Madrid,real-madrid
+2026/2027,20,2027-01-17,102446,R. Racing Club,r-racing-club,CA Osasuna,c-a-osasuna
+2026/2027,20,2027-01-17,102447,Rayo Vallecano,rayo-vallecano,Sevilla FC,sevilla-fc
+2026/2027,20,2027-01-17,102448,Villarreal CF,villarreal-cf,Deportivo Alavés,d-alaves
+2026/2027,21,2027-01-24,102449,Deportivo Alavés,d-alaves,FC Barcelona,fc-barcelona
+2026/2027,21,2027-01-24,102450,Athletic Club,athletic-club,Levante UD,levante-ud
+2026/2027,21,2027-01-24,102451,RC Deportivo,rc-deportivo,Atlético de Madrid,atletico-de-madrid
+2026/2027,21,2027-01-24,102452,Elche CF,elche-c-f,Rayo Vallecano,rayo-vallecano
+2026/2027,21,2027-01-24,102453,RCD Espanyol de Barcelona,rcd-espanyol,Villarreal CF,villarreal-cf
+2026/2027,21,2027-01-24,102454,Getafe CF,getafe-cf,CA Osasuna,c-a-osasuna
+2026/2027,21,2027-01-24,102455,R. Racing Club,r-racing-club,RC Celta,rc-celta
+2026/2027,21,2027-01-24,102456,Real Madrid,real-madrid,Real Betis,real-betis
+2026/2027,21,2027-01-24,102457,Real Sociedad,real-sociedad,Málaga CF,malaga-cf
+2026/2027,21,2027-01-24,102458,Valencia CF,valencia-cf,Sevilla FC,sevilla-fc
+2026/2027,22,2027-01-31,102459,Atlético de Madrid,atletico-de-madrid,RCD Espanyol de Barcelona,rcd-espanyol
+2026/2027,22,2027-01-31,102460,Real Betis,real-betis,Elche CF,elche-c-f
+2026/2027,22,2027-01-31,102461,RC Celta,rc-celta,Getafe CF,getafe-cf
+2026/2027,22,2027-01-31,102462,FC Barcelona,fc-barcelona,Valencia CF,valencia-cf
+2026/2027,22,2027-01-31,102463,Levante UD,levante-ud,Real Sociedad,real-sociedad
+2026/2027,22,2027-01-31,102464,Málaga CF,malaga-cf,Deportivo Alavés,d-alaves
+2026/2027,22,2027-01-31,102465,CA Osasuna,c-a-osasuna,RC Deportivo,rc-deportivo
+2026/2027,22,2027-01-31,102466,Rayo Vallecano,rayo-vallecano,Real Madrid,real-madrid
+2026/2027,22,2027-01-31,102467,Sevilla FC,sevilla-fc,Athletic Club,athletic-club
+2026/2027,22,2027-01-31,102468,Villarreal CF,villarreal-cf,R. Racing Club,r-racing-club
+2026/2027,23,2027-02-07,102469,Deportivo Alavés,d-alaves,RC Celta,rc-celta
+2026/2027,23,2027-02-07,102470,Athletic Club,athletic-club,CA Osasuna,c-a-osasuna
+2026/2027,23,2027-02-07,102471,Real Betis,real-betis,Sevilla FC,sevilla-fc
+2026/2027,23,2027-02-07,102472,RC Deportivo,rc-deportivo,Málaga CF,malaga-cf
+2026/2027,23,2027-02-07,102473,Elche CF,elche-c-f,Levante UD,levante-ud
+2026/2027,23,2027-02-07,102474,RCD Espanyol de Barcelona,rcd-espanyol,Rayo Vallecano,rayo-vallecano
+2026/2027,23,2027-02-07,102475,FC Barcelona,fc-barcelona,Atlético de Madrid,atletico-de-madrid
+2026/2027,23,2027-02-07,102476,Getafe CF,getafe-cf,Villarreal CF,villarreal-cf
+2026/2027,23,2027-02-07,102477,Real Sociedad,real-sociedad,Real Madrid,real-madrid
+2026/2027,23,2027-02-07,102478,Valencia CF,valencia-cf,R. Racing Club,r-racing-club
+2026/2027,24,2027-02-14,102479,RC Celta,rc-celta,Rayo Vallecano,rayo-vallecano
+2026/2027,24,2027-02-14,102480,Elche CF,elche-c-f,RC Deportivo,rc-deportivo
+2026/2027,24,2027-02-14,102481,Levante UD,levante-ud,Málaga CF,malaga-cf
+2026/2027,24,2027-02-14,102482,CA Osasuna,c-a-osasuna,Atlético de Madrid,atletico-de-madrid
+2026/2027,24,2027-02-14,102483,R. Racing Club,r-racing-club,Getafe CF,getafe-cf
+2026/2027,24,2027-02-14,102484,Real Madrid,real-madrid,Athletic Club,athletic-club
+2026/2027,24,2027-02-14,102485,Real Sociedad,real-sociedad,Real Betis,real-betis
+2026/2027,24,2027-02-14,102486,Sevilla FC,sevilla-fc,RCD Espanyol de Barcelona,rcd-espanyol
+2026/2027,24,2027-02-14,102487,Valencia CF,valencia-cf,Deportivo Alavés,d-alaves
+2026/2027,24,2027-02-14,102488,Villarreal CF,villarreal-cf,FC Barcelona,fc-barcelona
+2026/2027,25,2027-02-21,102489,Deportivo Alavés,d-alaves,R. Racing Club,r-racing-club
+2026/2027,25,2027-02-21,102490,Athletic Club,athletic-club,RC Celta,rc-celta
+2026/2027,25,2027-02-21,102491,Atlético de Madrid,atletico-de-madrid,Elche CF,elche-c-f
+2026/2027,25,2027-02-21,102492,RC Deportivo,rc-deportivo,Real Sociedad,real-sociedad
+2026/2027,25,2027-02-21,102493,RCD Espanyol de Barcelona,rcd-espanyol,CA Osasuna,c-a-osasuna
+2026/2027,25,2027-02-21,102494,FC Barcelona,fc-barcelona,Levante UD,levante-ud
+2026/2027,25,2027-02-21,102495,Málaga CF,malaga-cf,Real Betis,real-betis
+2026/2027,25,2027-02-21,102496,Rayo Vallecano,rayo-vallecano,Getafe CF,getafe-cf
+2026/2027,25,2027-02-21,102497,Sevilla FC,sevilla-fc,Real Madrid,real-madrid
+2026/2027,25,2027-02-21,102498,Villarreal CF,villarreal-cf,Valencia CF,valencia-cf
+2026/2027,26,2027-02-28,102499,Athletic Club,athletic-club,FC Barcelona,fc-barcelona
+2026/2027,26,2027-02-28,102500,Real Betis,real-betis,Villarreal CF,villarreal-cf
+2026/2027,26,2027-02-28,102501,RC Celta,rc-celta,RCD Espanyol de Barcelona,rcd-espanyol
+2026/2027,26,2027-02-28,102502,Getafe CF,getafe-cf,Deportivo Alavés,d-alaves
+2026/2027,26,2027-02-28,102503,Levante UD,levante-ud,RC Deportivo,rc-deportivo
+2026/2027,26,2027-02-28,102504,Málaga CF,malaga-cf,Atlético de Madrid,atletico-de-madrid
+2026/2027,26,2027-02-28,102505,CA Osasuna,c-a-osasuna,Sevilla FC,sevilla-fc
+2026/2027,26,2027-02-28,102506,R. Racing Club,r-racing-club,Rayo Vallecano,rayo-vallecano
+2026/2027,26,2027-02-28,102507,Real Madrid,real-madrid,Valencia CF,valencia-cf
+2026/2027,26,2027-02-28,102508,Real Sociedad,real-sociedad,Elche CF,elche-c-f
+2026/2027,27,2027-03-07,102509,Deportivo Alavés,d-alaves,Athletic Club,athletic-club
+2026/2027,27,2027-03-07,102510,Atlético de Madrid,atletico-de-madrid,RC Celta,rc-celta
+2026/2027,27,2027-03-07,102511,RC Deportivo,rc-deportivo,Getafe CF,getafe-cf
+2026/2027,27,2027-03-07,102512,Elche CF,elche-c-f,Málaga CF,malaga-cf
+2026/2027,27,2027-03-07,102513,RCD Espanyol de Barcelona,rcd-espanyol,R. Racing Club,r-racing-club
+2026/2027,27,2027-03-07,102514,FC Barcelona,fc-barcelona,Real Betis,real-betis
+2026/2027,27,2027-03-07,102515,Rayo Vallecano,rayo-vallecano,CA Osasuna,c-a-osasuna
+2026/2027,27,2027-03-07,102516,Sevilla FC,sevilla-fc,Real Sociedad,real-sociedad
+2026/2027,27,2027-03-07,102517,Valencia CF,valencia-cf,Levante UD,levante-ud
+2026/2027,27,2027-03-07,102518,Villarreal CF,villarreal-cf,Real Madrid,real-madrid
+2026/2027,28,2027-03-14,102519,Deportivo Alavés,d-alaves,Sevilla FC,sevilla-fc
+2026/2027,28,2027-03-14,102520,Athletic Club,athletic-club,Valencia CF,valencia-cf
+2026/2027,28,2027-03-14,102521,Real Betis,real-betis,Levante UD,levante-ud
+2026/2027,28,2027-03-14,102522,Elche CF,elche-c-f,Villarreal CF,villarreal-cf
+2026/2027,28,2027-03-14,102523,FC Barcelona,fc-barcelona,RC Deportivo,rc-deportivo
+2026/2027,28,2027-03-14,102524,Getafe CF,getafe-cf,Real Sociedad,real-sociedad
+2026/2027,28,2027-03-14,102525,Málaga CF,malaga-cf,Rayo Vallecano,rayo-vallecano
+2026/2027,28,2027-03-14,102526,CA Osasuna,c-a-osasuna,RC Celta,rc-celta
+2026/2027,28,2027-03-14,102527,R. Racing Club,r-racing-club,Atlético de Madrid,atletico-de-madrid
+2026/2027,28,2027-03-14,102528,Real Madrid,real-madrid,RCD Espanyol de Barcelona,rcd-espanyol
+2026/2027,29,2027-03-21,102529,Atlético de Madrid,atletico-de-madrid,Getafe CF,getafe-cf
+2026/2027,29,2027-03-21,102530,RC Celta,rc-celta,Real Madrid,real-madrid
+2026/2027,29,2027-03-21,102531,RCD Espanyol de Barcelona,rcd-espanyol,Athletic Club,athletic-club
+2026/2027,29,2027-03-21,102532,Levante UD,levante-ud,CA Osasuna,c-a-osasuna
+2026/2027,29,2027-03-21,102533,R. Racing Club,r-racing-club,Real Betis,real-betis
+2026/2027,29,2027-03-21,102534,Rayo Vallecano,rayo-vallecano,FC Barcelona,fc-barcelona
+2026/2027,29,2027-03-21,102535,Real Sociedad,real-sociedad,Deportivo Alavés,d-alaves
+2026/2027,29,2027-03-21,102536,Sevilla FC,sevilla-fc,Elche CF,elche-c-f
+2026/2027,29,2027-03-21,102537,Valencia CF,valencia-cf,RC Deportivo,rc-deportivo
+2026/2027,29,2027-03-21,102538,Villarreal CF,villarreal-cf,Málaga CF,malaga-cf
+2026/2027,30,2027-04-04,102539,Athletic Club,athletic-club,R. Racing Club,r-racing-club
+2026/2027,30,2027-04-04,102540,Real Betis,real-betis,RC Celta,rc-celta
+2026/2027,30,2027-04-04,102541,RC Deportivo,rc-deportivo,Villarreal CF,villarreal-cf
+2026/2027,30,2027-04-04,102542,Elche CF,elche-c-f,Deportivo Alavés,d-alaves
+2026/2027,30,2027-04-04,102543,FC Barcelona,fc-barcelona,Sevilla FC,sevilla-fc
+2026/2027,30,2027-04-04,102544,Getafe CF,getafe-cf,RCD Espanyol de Barcelona,rcd-espanyol
+2026/2027,30,2027-04-04,102545,Levante UD,levante-ud,Rayo Vallecano,rayo-vallecano
+2026/2027,30,2027-04-04,102546,Málaga CF,malaga-cf,CA Osasuna,c-a-osasuna
+2026/2027,30,2027-04-04,102547,Real Madrid,real-madrid,Atlético de Madrid,atletico-de-madrid
+2026/2027,30,2027-04-04,102548,Real Sociedad,real-sociedad,Valencia CF,valencia-cf
+2026/2027,31,2027-04-11,102549,Deportivo Alavés,d-alaves,Real Betis,real-betis
+2026/2027,31,2027-04-11,102550,Atlético de Madrid,atletico-de-madrid,Levante UD,levante-ud
+2026/2027,31,2027-04-11,102551,RC Celta,rc-celta,Elche CF,elche-c-f
+2026/2027,31,2027-04-11,102552,RCD Espanyol de Barcelona,rcd-espanyol,Málaga CF,malaga-cf
+2026/2027,31,2027-04-11,102553,CA Osasuna,c-a-osasuna,Real Madrid,real-madrid
+2026/2027,31,2027-04-11,102554,R. Racing Club,r-racing-club,FC Barcelona,fc-barcelona
+2026/2027,31,2027-04-11,102555,Rayo Vallecano,rayo-vallecano,Real Sociedad,real-sociedad
+2026/2027,31,2027-04-11,102556,Sevilla FC,sevilla-fc,RC Deportivo,rc-deportivo
+2026/2027,31,2027-04-11,102557,Valencia CF,valencia-cf,Getafe CF,getafe-cf
+2026/2027,31,2027-04-11,102558,Villarreal CF,villarreal-cf,Athletic Club,athletic-club
+2026/2027,32,2027-04-18,102559,Deportivo Alavés,d-alaves,Rayo Vallecano,rayo-vallecano
+2026/2027,32,2027-04-18,102560,Atlético de Madrid,atletico-de-madrid,Sevilla FC,sevilla-fc
+2026/2027,32,2027-04-18,102561,Real Betis,real-betis,Athletic Club,athletic-club
+2026/2027,32,2027-04-18,102562,RC Deportivo,rc-deportivo,RC Celta,rc-celta
+2026/2027,32,2027-04-18,102563,Elche CF,elche-c-f,CA Osasuna,c-a-osasuna
+2026/2027,32,2027-04-18,102564,FC Barcelona,fc-barcelona,RCD Espanyol de Barcelona,rcd-espanyol
+2026/2027,32,2027-04-18,102565,Getafe CF,getafe-cf,Real Madrid,real-madrid
+2026/2027,32,2027-04-18,102566,Levante UD,levante-ud,Villarreal CF,villarreal-cf
+2026/2027,32,2027-04-18,102567,Málaga CF,malaga-cf,Valencia CF,valencia-cf
+2026/2027,32,2027-04-18,102568,Real Sociedad,real-sociedad,R. Racing Club,r-racing-club
+2026/2027,33,2027-04-21,102569,Athletic Club,athletic-club,RC Deportivo,rc-deportivo
+2026/2027,33,2027-04-21,102570,RC Celta,rc-celta,FC Barcelona,fc-barcelona
+2026/2027,33,2027-04-21,102571,RCD Espanyol de Barcelona,rcd-espanyol,Real Sociedad,real-sociedad
+2026/2027,33,2027-04-21,102572,Getafe CF,getafe-cf,Real Betis,real-betis
+2026/2027,33,2027-04-21,102573,CA Osasuna,c-a-osasuna,Deportivo Alavés,d-alaves
+2026/2027,33,2027-04-21,102574,R. Racing Club,r-racing-club,Málaga CF,malaga-cf
+2026/2027,33,2027-04-21,102575,Real Madrid,real-madrid,Elche CF,elche-c-f
+2026/2027,33,2027-04-21,102576,Sevilla FC,sevilla-fc,Levante UD,levante-ud
+2026/2027,33,2027-04-21,102577,Valencia CF,valencia-cf,Rayo Vallecano,rayo-vallecano
+2026/2027,33,2027-04-21,102578,Villarreal CF,villarreal-cf,Atlético de Madrid,atletico-de-madrid
+2026/2027,34,2027-05-02,102579,Atlético de Madrid,atletico-de-madrid,Deportivo Alavés,d-alaves
+2026/2027,34,2027-05-02,102580,Real Betis,real-betis,Valencia CF,valencia-cf
+2026/2027,34,2027-05-02,102581,RC Celta,rc-celta,Sevilla FC,sevilla-fc
+2026/2027,34,2027-05-02,102582,RC Deportivo,rc-deportivo,R. Racing Club,r-racing-club
+2026/2027,34,2027-05-02,102583,Elche CF,elche-c-f,RCD Espanyol de Barcelona,rcd-espanyol
+2026/2027,34,2027-05-02,102584,FC Barcelona,fc-barcelona,CA Osasuna,c-a-osasuna
+2026/2027,34,2027-05-02,102585,Levante UD,levante-ud,Real Madrid,real-madrid
+2026/2027,34,2027-05-02,102586,Málaga CF,malaga-cf,Getafe CF,getafe-cf
+2026/2027,34,2027-05-02,102587,Rayo Vallecano,rayo-vallecano,Villarreal CF,villarreal-cf
+2026/2027,34,2027-05-02,102588,Real Sociedad,real-sociedad,Athletic Club,athletic-club
+2026/2027,35,2027-05-09,102589,Deportivo Alavés,d-alaves,Levante UD,levante-ud
+2026/2027,35,2027-05-09,102590,Athletic Club,athletic-club,Málaga CF,malaga-cf
+2026/2027,35,2027-05-09,102591,Real Betis,real-betis,RCD Espanyol de Barcelona,rcd-espanyol
+2026/2027,35,2027-05-09,102592,Getafe CF,getafe-cf,Elche CF,elche-c-f
+2026/2027,35,2027-05-09,102593,CA Osasuna,c-a-osasuna,Real Sociedad,real-sociedad
+2026/2027,35,2027-05-09,102594,R. Racing Club,r-racing-club,Sevilla FC,sevilla-fc
+2026/2027,35,2027-05-09,102595,Rayo Vallecano,rayo-vallecano,RC Deportivo,rc-deportivo
+2026/2027,35,2027-05-09,102596,Real Madrid,real-madrid,FC Barcelona,fc-barcelona
+2026/2027,35,2027-05-09,102597,Valencia CF,valencia-cf,Atlético de Madrid,atletico-de-madrid
+2026/2027,35,2027-05-09,102598,Villarreal CF,villarreal-cf,RC Celta,rc-celta
+2026/2027,36,2027-05-16,102599,Atlético de Madrid,atletico-de-madrid,Rayo Vallecano,rayo-vallecano
+2026/2027,36,2027-05-16,102600,RC Deportivo,rc-deportivo,Deportivo Alavés,d-alaves
+2026/2027,36,2027-05-16,102601,Elche CF,elche-c-f,Athletic Club,athletic-club
+2026/2027,36,2027-05-16,102602,RCD Espanyol de Barcelona,rcd-espanyol,Valencia CF,valencia-cf
+2026/2027,36,2027-05-16,102603,Levante UD,levante-ud,Getafe CF,getafe-cf
+2026/2027,36,2027-05-16,102604,Málaga CF,malaga-cf,RC Celta,rc-celta
+2026/2027,36,2027-05-16,102605,CA Osasuna,c-a-osasuna,Real Betis,real-betis
+2026/2027,36,2027-05-16,102606,Real Madrid,real-madrid,R. Racing Club,r-racing-club
+2026/2027,36,2027-05-16,102607,Real Sociedad,real-sociedad,FC Barcelona,fc-barcelona
+2026/2027,36,2027-05-16,102608,Sevilla FC,sevilla-fc,Villarreal CF,villarreal-cf
+2026/2027,37,2027-05-23,102609,Deportivo Alavés,d-alaves,Real Madrid,real-madrid
+2026/2027,37,2027-05-23,102610,Atlético de Madrid,atletico-de-madrid,Athletic Club,athletic-club
+2026/2027,37,2027-05-23,102611,RC Celta,rc-celta,Real Sociedad,real-sociedad
+2026/2027,37,2027-05-23,102612,RC Deportivo,rc-deportivo,RCD Espanyol de Barcelona,rcd-espanyol
+2026/2027,37,2027-05-23,102613,FC Barcelona,fc-barcelona,Málaga CF,malaga-cf
+2026/2027,37,2027-05-23,102614,R. Racing Club,r-racing-club,Levante UD,levante-ud
+2026/2027,37,2027-05-23,102615,Rayo Vallecano,rayo-vallecano,Real Betis,real-betis
+2026/2027,37,2027-05-23,102616,Sevilla FC,sevilla-fc,Getafe CF,getafe-cf
+2026/2027,37,2027-05-23,102617,Valencia CF,valencia-cf,Elche CF,elche-c-f
+2026/2027,37,2027-05-23,102618,Villarreal CF,villarreal-cf,CA Osasuna,c-a-osasuna
+2026/2027,38,2027-05-30,102619,Athletic Club,athletic-club,Rayo Vallecano,rayo-vallecano
+2026/2027,38,2027-05-30,102620,Real Betis,real-betis,Atlético de Madrid,atletico-de-madrid
+2026/2027,38,2027-05-30,102621,Elche CF,elche-c-f,R. Racing Club,r-racing-club
+2026/2027,38,2027-05-30,102622,RCD Espanyol de Barcelona,rcd-espanyol,Deportivo Alavés,d-alaves
+2026/2027,38,2027-05-30,102623,Getafe CF,getafe-cf,FC Barcelona,fc-barcelona
+2026/2027,38,2027-05-30,102624,Levante UD,levante-ud,RC Celta,rc-celta
+2026/2027,38,2027-05-30,102625,Málaga CF,malaga-cf,Sevilla FC,sevilla-fc
+2026/2027,38,2027-05-30,102626,CA Osasuna,c-a-osasuna,Valencia CF,valencia-cf
+2026/2027,38,2027-05-30,102627,Real Madrid,real-madrid,RC Deportivo,rc-deportivo
+2026/2027,38,2027-05-30,102628,Real Sociedad,real-sociedad,Villarreal CF,villarreal-cf

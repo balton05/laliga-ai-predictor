@@ -1,0 +1,56 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "60e59a882db79b41e892",
+  "position": {
+    "x": 648,
+    "y": 270,
+    "z": 5000,
+    "height": 418,
+    "width": 608,
+    "tabOrder": 5000
+  },
+  "visual": {
+    "visualType": "clusteredBarChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Simulación"
+                    }
+                  },
+                  "Property": "Equipo"
+                }
+              },
+              "queryRef": "Simulación.Equipo",
+              "nativeQueryRef": "Equipo",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Simulación"
+                    }
+                  },
+                  "Property": "P Descenso"
+                }
+              },
+              "queryRef": "Simulación.P Descenso",
+              "nativeQueryRef": "P Descenso"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

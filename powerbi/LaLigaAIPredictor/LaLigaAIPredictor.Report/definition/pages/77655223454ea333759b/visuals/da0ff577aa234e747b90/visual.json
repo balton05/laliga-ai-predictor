@@ -1,0 +1,56 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "da0ff577aa234e747b90",
+  "position": {
+    "x": 658,
+    "y": 84,
+    "z": 5000,
+    "height": 604,
+    "width": 598,
+    "tabOrder": 5000
+  },
+  "visual": {
+    "visualType": "clusteredBarChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Simulación"
+                    }
+                  },
+                  "Property": "Equipo"
+                }
+              },
+              "queryRef": "Simulación.Equipo",
+              "nativeQueryRef": "Equipo",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Simulación"
+                    }
+                  },
+                  "Property": "Puntos esperados equipo"
+                }
+              },
+              "queryRef": "Simulación.Puntos esperados equipo",
+              "nativeQueryRef": "Puntos esperados equipo"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

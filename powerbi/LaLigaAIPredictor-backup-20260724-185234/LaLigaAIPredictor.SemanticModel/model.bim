@@ -1,0 +1,1214 @@
+{
+  "name": "LaLigaAIPredictor",
+  "compatibilityLevel": 1600,
+  "model": {
+    "culture": "es-ES",
+    "defaultPowerBIDataSourceVersion": "powerBI_V3",
+    "sourceQueryCulture": "es-ES",
+    "dataAccessOptions": {
+      "legacyRedirects": true,
+      "returnErrorValuesAsNull": true
+    },
+    "expressions": [
+      {
+        "name": "pPostgresServer",
+        "kind": "m",
+        "expression": "\"localhost:5432\""
+      },
+      {
+        "name": "pPostgresDatabase",
+        "kind": "m",
+        "expression": "\"laliga_predictor\""
+      },
+      {
+        "name": "pApiBaseUrl",
+        "kind": "m",
+        "expression": "\"http://localhost:8000\""
+      }
+    ],
+    "tables": [
+      {
+        "name": "Dim Equipo",
+        "columns": [
+          {
+            "name": "Equipo ID",
+            "dataType": "string",
+            "sourceColumn": "team_id",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Equipo",
+            "dataType": "string",
+            "sourceColumn": "team",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Recién ascendido",
+            "dataType": "boolean",
+            "sourceColumn": "is_promoted",
+            "summarizeBy": "none"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Dim Equipo",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = PostgreSQL.Database(",
+                "        pPostgresServer,",
+                "        pPostgresDatabase,",
+                "        [Query=\"SELECT * FROM bi_dim_team\"]",
+                "    )",
+                "in",
+                "    Source"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "Dim Jornada",
+        "columns": [
+          {
+            "name": "Jornada",
+            "dataType": "int64",
+            "sourceColumn": "matchday",
+            "summarizeBy": "none",
+            "formatString": "0"
+          },
+          {
+            "name": "Etiqueta jornada",
+            "dataType": "string",
+            "sourceColumn": "matchday_label",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Tramo temporada",
+            "dataType": "string",
+            "sourceColumn": "season_stage",
+            "summarizeBy": "none"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Dim Jornada",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = PostgreSQL.Database(",
+                "        pPostgresServer,",
+                "        pPostgresDatabase,",
+                "        [Query=\"SELECT * FROM bi_dim_matchday\"]",
+                "    )",
+                "in",
+                "    Source"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "Dim Posición",
+        "columns": [
+          {
+            "name": "Posición",
+            "dataType": "int64",
+            "sourceColumn": "position",
+            "summarizeBy": "none",
+            "formatString": "0"
+          },
+          {
+            "name": "Zona",
+            "dataType": "string",
+            "sourceColumn": "position_zone",
+            "summarizeBy": "none"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Dim Posición",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = PostgreSQL.Database(",
+                "        pPostgresServer,",
+                "        pPostgresDatabase,",
+                "        [Query=\"SELECT * FROM bi_dim_position\"]",
+                "    )",
+                "in",
+                "    Source"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "Partidos",
+        "columns": [
+          {
+            "name": "Fixture ID",
+            "dataType": "string",
+            "sourceColumn": "fixture_id",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Temporada",
+            "dataType": "string",
+            "sourceColumn": "season",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Jornada",
+            "dataType": "int64",
+            "sourceColumn": "matchday",
+            "summarizeBy": "none",
+            "formatString": "0"
+          },
+          {
+            "name": "Fecha referencia",
+            "dataType": "dateTime",
+            "sourceColumn": "reference_date",
+            "summarizeBy": "none",
+            "formatString": "Short Date"
+          },
+          {
+            "name": "Fecha programada",
+            "dataType": "dateTime",
+            "sourceColumn": "scheduled_date",
+            "summarizeBy": "none",
+            "formatString": "General Date"
+          },
+          {
+            "name": "Local ID",
+            "dataType": "string",
+            "sourceColumn": "home_team_id",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Local",
+            "dataType": "string",
+            "sourceColumn": "home_team",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Visitante ID",
+            "dataType": "string",
+            "sourceColumn": "away_team_id",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Visitante",
+            "dataType": "string",
+            "sourceColumn": "away_team",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Partido",
+            "dataType": "string",
+            "sourceColumn": "match_label",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Estado",
+            "dataType": "string",
+            "sourceColumn": "status",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Jugado",
+            "dataType": "boolean",
+            "sourceColumn": "is_played",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Goles local",
+            "dataType": "int64",
+            "sourceColumn": "home_goals",
+            "summarizeBy": "none",
+            "formatString": "0"
+          },
+          {
+            "name": "Goles visitante",
+            "dataType": "int64",
+            "sourceColumn": "away_goals",
+            "summarizeBy": "none",
+            "formatString": "0"
+          },
+          {
+            "name": "Resultado real",
+            "dataType": "string",
+            "sourceColumn": "actual_result_label",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Modelo",
+            "dataType": "string",
+            "sourceColumn": "model",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Probabilidad local",
+            "dataType": "double",
+            "sourceColumn": "probability_home",
+            "summarizeBy": "none",
+            "formatString": "0.0%"
+          },
+          {
+            "name": "Probabilidad empate",
+            "dataType": "double",
+            "sourceColumn": "probability_draw",
+            "summarizeBy": "none",
+            "formatString": "0.0%"
+          },
+          {
+            "name": "Probabilidad visitante",
+            "dataType": "double",
+            "sourceColumn": "probability_away",
+            "summarizeBy": "none",
+            "formatString": "0.0%"
+          },
+          {
+            "name": "Pronóstico",
+            "dataType": "string",
+            "sourceColumn": "predicted_result_label",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Confianza",
+            "dataType": "string",
+            "sourceColumn": "confidence",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Goles esperados local",
+            "dataType": "double",
+            "sourceColumn": "expected_home_goals",
+            "summarizeBy": "none",
+            "formatString": "0.0"
+          },
+          {
+            "name": "Goles esperados visitante",
+            "dataType": "double",
+            "sourceColumn": "expected_away_goals",
+            "summarizeBy": "none",
+            "formatString": "0.0"
+          },
+          {
+            "name": "Marcador previsto",
+            "dataType": "string",
+            "sourceColumn": "predicted_score",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Cuotas disponibles",
+            "dataType": "boolean",
+            "sourceColumn": "market_odds_available",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Predicción correcta",
+            "dataType": "boolean",
+            "sourceColumn": "prediction_correct",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Update ID",
+            "dataType": "string",
+            "sourceColumn": "update_id",
+            "summarizeBy": "none"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partidos",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = PostgreSQL.Database(",
+                "        pPostgresServer,",
+                "        pPostgresDatabase,",
+                "        [Query=\"SELECT * FROM bi_fact_matches\"]",
+                "    )",
+                "in",
+                "    Source"
+              ]
+            }
+          }
+        ],
+        "measures": [
+          {
+            "name": "Total partidos",
+            "expression": "COUNTROWS('Partidos')",
+            "formatString": "0",
+            "displayFolder": "Operación"
+          },
+          {
+            "name": "Partidos jugados",
+            "expression": "CALCULATE(COUNTROWS('Partidos'), 'Partidos'[Jugado] = TRUE())",
+            "formatString": "0",
+            "displayFolder": "Operación"
+          },
+          {
+            "name": "Partidos pendientes",
+            "expression": "[Total partidos] - [Partidos jugados]",
+            "formatString": "0",
+            "displayFolder": "Operación"
+          },
+          {
+            "name": "Próxima jornada",
+            "expression": "MINX(FILTER('Partidos', 'Partidos'[Jugado] = FALSE()), 'Partidos'[Jornada])",
+            "formatString": "0",
+            "displayFolder": "Operación"
+          },
+          {
+            "name": "Precisión del pronóstico",
+            "expression": "DIVIDE(CALCULATE(COUNTROWS('Partidos'), 'Partidos'[Predicción correcta] = TRUE()), [Partidos jugados])",
+            "formatString": "0.0%",
+            "displayFolder": "Calidad"
+          },
+          {
+            "name": "Promedio de goles",
+            "expression": "DIVIDE(SUM('Partidos'[Goles local]) + SUM('Partidos'[Goles visitante]), [Partidos jugados])",
+            "formatString": "0.0",
+            "displayFolder": "Resultados"
+          },
+          {
+            "name": "Probabilidad Local",
+            "expression": "AVERAGE('Partidos'[Probabilidad local])",
+            "formatString": "0.0%",
+            "displayFolder": "Predicción"
+          },
+          {
+            "name": "Probabilidad Empate",
+            "expression": "AVERAGE('Partidos'[Probabilidad empate])",
+            "formatString": "0.0%",
+            "displayFolder": "Predicción"
+          },
+          {
+            "name": "Probabilidad Visitante",
+            "expression": "AVERAGE('Partidos'[Probabilidad visitante])",
+            "formatString": "0.0%",
+            "displayFolder": "Predicción"
+          },
+          {
+            "name": "Victorias locales esperadas",
+            "expression": "SUM('Partidos'[Probabilidad local])",
+            "formatString": "0.0",
+            "displayFolder": "Predicción"
+          },
+          {
+            "name": "Empates esperados",
+            "expression": "SUM('Partidos'[Probabilidad empate])",
+            "formatString": "0.0",
+            "displayFolder": "Predicción"
+          },
+          {
+            "name": "Victorias visitantes esperadas",
+            "expression": "SUM('Partidos'[Probabilidad visitante])",
+            "formatString": "0.0",
+            "displayFolder": "Predicción"
+          },
+          {
+            "name": "Partidos con mercado",
+            "expression": "CALCULATE(COUNTROWS('Partidos'), 'Partidos'[Cuotas disponibles] = TRUE())",
+            "formatString": "0",
+            "displayFolder": "Mercado"
+          }
+        ]
+      },
+      {
+        "name": "Equipo-Partido",
+        "columns": [
+          {
+            "name": "Fixture ID",
+            "dataType": "string",
+            "sourceColumn": "fixture_id",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Temporada",
+            "dataType": "string",
+            "sourceColumn": "season",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Jornada",
+            "dataType": "int64",
+            "sourceColumn": "matchday",
+            "summarizeBy": "none",
+            "formatString": "0"
+          },
+          {
+            "name": "Fecha",
+            "dataType": "dateTime",
+            "sourceColumn": "reference_date",
+            "summarizeBy": "none",
+            "formatString": "Short Date"
+          },
+          {
+            "name": "Equipo ID",
+            "dataType": "string",
+            "sourceColumn": "team_id",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Equipo",
+            "dataType": "string",
+            "sourceColumn": "team",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Rival ID",
+            "dataType": "string",
+            "sourceColumn": "opponent_id",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Rival",
+            "dataType": "string",
+            "sourceColumn": "opponent",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Condición",
+            "dataType": "string",
+            "sourceColumn": "venue",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Estado",
+            "dataType": "string",
+            "sourceColumn": "status",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Jugado",
+            "dataType": "boolean",
+            "sourceColumn": "is_played",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Goles a favor",
+            "dataType": "int64",
+            "sourceColumn": "goals_for",
+            "summarizeBy": "none",
+            "formatString": "0"
+          },
+          {
+            "name": "Goles en contra",
+            "dataType": "int64",
+            "sourceColumn": "goals_against",
+            "summarizeBy": "none",
+            "formatString": "0"
+          },
+          {
+            "name": "Resultado",
+            "dataType": "string",
+            "sourceColumn": "team_result",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Probabilidad victoria",
+            "dataType": "double",
+            "sourceColumn": "win_probability",
+            "summarizeBy": "none",
+            "formatString": "0.0%"
+          },
+          {
+            "name": "Probabilidad empate",
+            "dataType": "double",
+            "sourceColumn": "draw_probability",
+            "summarizeBy": "none",
+            "formatString": "0.0%"
+          },
+          {
+            "name": "Probabilidad derrota",
+            "dataType": "double",
+            "sourceColumn": "loss_probability",
+            "summarizeBy": "none",
+            "formatString": "0.0%"
+          },
+          {
+            "name": "xG a favor",
+            "dataType": "double",
+            "sourceColumn": "expected_goals_for",
+            "summarizeBy": "none",
+            "formatString": "0.0"
+          },
+          {
+            "name": "xG en contra",
+            "dataType": "double",
+            "sourceColumn": "expected_goals_against",
+            "summarizeBy": "none",
+            "formatString": "0.0"
+          },
+          {
+            "name": "Update ID",
+            "dataType": "string",
+            "sourceColumn": "update_id",
+            "summarizeBy": "none"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Equipo-Partido",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = PostgreSQL.Database(",
+                "        pPostgresServer,",
+                "        pPostgresDatabase,",
+                "        [Query=\"SELECT * FROM bi_fact_team_matches\"]",
+                "    )",
+                "in",
+                "    Source"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "Clasificación",
+        "columns": [
+          {
+            "name": "Equipo ID",
+            "dataType": "string",
+            "sourceColumn": "team_id",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Equipo",
+            "dataType": "string",
+            "sourceColumn": "team",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "PJ",
+            "dataType": "int64",
+            "sourceColumn": "played",
+            "summarizeBy": "none",
+            "formatString": "0"
+          },
+          {
+            "name": "PG",
+            "dataType": "int64",
+            "sourceColumn": "wins",
+            "summarizeBy": "none",
+            "formatString": "0"
+          },
+          {
+            "name": "PE",
+            "dataType": "int64",
+            "sourceColumn": "draws",
+            "summarizeBy": "none",
+            "formatString": "0"
+          },
+          {
+            "name": "PP",
+            "dataType": "int64",
+            "sourceColumn": "losses",
+            "summarizeBy": "none",
+            "formatString": "0"
+          },
+          {
+            "name": "GF",
+            "dataType": "int64",
+            "sourceColumn": "goals_for",
+            "summarizeBy": "none",
+            "formatString": "0"
+          },
+          {
+            "name": "GC",
+            "dataType": "int64",
+            "sourceColumn": "goals_against",
+            "summarizeBy": "none",
+            "formatString": "0"
+          },
+          {
+            "name": "DG",
+            "dataType": "int64",
+            "sourceColumn": "goal_difference",
+            "summarizeBy": "none",
+            "formatString": "0"
+          },
+          {
+            "name": "Puntos",
+            "dataType": "int64",
+            "sourceColumn": "points",
+            "summarizeBy": "none",
+            "formatString": "0"
+          },
+          {
+            "name": "Posición actual",
+            "dataType": "int64",
+            "sourceColumn": "position",
+            "summarizeBy": "none",
+            "formatString": "0"
+          },
+          {
+            "name": "PPG",
+            "dataType": "double",
+            "sourceColumn": "ppg",
+            "summarizeBy": "none",
+            "formatString": "0.0"
+          },
+          {
+            "name": "Update ID",
+            "dataType": "string",
+            "sourceColumn": "update_id",
+            "summarizeBy": "none"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Clasificación",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = PostgreSQL.Database(",
+                "        pPostgresServer,",
+                "        pPostgresDatabase,",
+                "        [Query=\"SELECT * FROM bi_current_standings\"]",
+                "    )",
+                "in",
+                "    Source"
+              ]
+            }
+          }
+        ],
+        "measures": [
+          {
+            "name": "Puntos actuales",
+            "expression": "MAX('Clasificación'[Puntos])",
+            "formatString": "0",
+            "displayFolder": "Equipo"
+          },
+          {
+            "name": "Posición actual equipo",
+            "expression": "MIN('Clasificación'[Posición actual])",
+            "formatString": "0",
+            "displayFolder": "Equipo"
+          }
+        ]
+      },
+      {
+        "name": "Simulación",
+        "columns": [
+          {
+            "name": "Equipo ID",
+            "dataType": "string",
+            "sourceColumn": "team_id",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Equipo",
+            "dataType": "string",
+            "sourceColumn": "team",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Simulaciones",
+            "dataType": "int64",
+            "sourceColumn": "simulations",
+            "summarizeBy": "none",
+            "formatString": "#,0"
+          },
+          {
+            "name": "Puntos esperados",
+            "dataType": "double",
+            "sourceColumn": "expected_points",
+            "summarizeBy": "none",
+            "formatString": "0.0"
+          },
+          {
+            "name": "Mediana puntos",
+            "dataType": "double",
+            "sourceColumn": "median_points",
+            "summarizeBy": "none",
+            "formatString": "0.0"
+          },
+          {
+            "name": "Puntos P05",
+            "dataType": "double",
+            "sourceColumn": "points_p05",
+            "summarizeBy": "none",
+            "formatString": "0.0"
+          },
+          {
+            "name": "Puntos P95",
+            "dataType": "double",
+            "sourceColumn": "points_p95",
+            "summarizeBy": "none",
+            "formatString": "0.0"
+          },
+          {
+            "name": "Posición esperada",
+            "dataType": "double",
+            "sourceColumn": "expected_position",
+            "summarizeBy": "none",
+            "formatString": "0.0"
+          },
+          {
+            "name": "Mediana posición",
+            "dataType": "double",
+            "sourceColumn": "median_position",
+            "summarizeBy": "none",
+            "formatString": "0.0"
+          },
+          {
+            "name": "Probabilidad campeón",
+            "dataType": "double",
+            "sourceColumn": "champion_probability",
+            "summarizeBy": "none",
+            "formatString": "0.0%"
+          },
+          {
+            "name": "Probabilidad Top 4",
+            "dataType": "double",
+            "sourceColumn": "top4_probability",
+            "summarizeBy": "none",
+            "formatString": "0.0%"
+          },
+          {
+            "name": "Probabilidad Top 6",
+            "dataType": "double",
+            "sourceColumn": "top6_probability",
+            "summarizeBy": "none",
+            "formatString": "0.0%"
+          },
+          {
+            "name": "Probabilidad Europa",
+            "dataType": "double",
+            "sourceColumn": "europe_top7_probability",
+            "summarizeBy": "none",
+            "formatString": "0.0%"
+          },
+          {
+            "name": "Probabilidad descenso",
+            "dataType": "double",
+            "sourceColumn": "relegation_probability",
+            "summarizeBy": "none",
+            "formatString": "0.0%"
+          },
+          {
+            "name": "Probabilidad último",
+            "dataType": "double",
+            "sourceColumn": "last_place_probability",
+            "summarizeBy": "none",
+            "formatString": "0.0%"
+          },
+          {
+            "name": "Update ID",
+            "dataType": "string",
+            "sourceColumn": "update_id",
+            "summarizeBy": "none"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Simulación",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = PostgreSQL.Database(",
+                "        pPostgresServer,",
+                "        pPostgresDatabase,",
+                "        [Query=\"SELECT * FROM bi_simulation_summary\"]",
+                "    )",
+                "in",
+                "    Source"
+              ]
+            }
+          }
+        ],
+        "measures": [
+          {
+            "name": "Número de simulaciones",
+            "expression": "MAX('Simulación'[Simulaciones])",
+            "formatString": "#,0",
+            "displayFolder": "Operación"
+          },
+          {
+            "name": "Puntos esperados equipo",
+            "expression": "MAX('Simulación'[Puntos esperados])",
+            "formatString": "0.0",
+            "displayFolder": "Equipo"
+          },
+          {
+            "name": "Posición esperada equipo",
+            "expression": "MIN('Simulación'[Posición esperada])",
+            "formatString": "0.0",
+            "displayFolder": "Equipo"
+          },
+          {
+            "name": "P Campeón",
+            "expression": "MAX('Simulación'[Probabilidad campeón])",
+            "formatString": "0.0%",
+            "displayFolder": "Zonas"
+          },
+          {
+            "name": "P Top 4",
+            "expression": "MAX('Simulación'[Probabilidad Top 4])",
+            "formatString": "0.0%",
+            "displayFolder": "Zonas"
+          },
+          {
+            "name": "P Europa",
+            "expression": "MAX('Simulación'[Probabilidad Europa])",
+            "formatString": "0.0%",
+            "displayFolder": "Zonas"
+          },
+          {
+            "name": "P Descenso",
+            "expression": "MAX('Simulación'[Probabilidad descenso])",
+            "formatString": "0.0%",
+            "displayFolder": "Zonas"
+          },
+          {
+            "name": "Favorito al título",
+            "expression": "CONCATENATEX(TOPN(1, ALL('Simulación'), 'Simulación'[Probabilidad campeón], DESC, 'Simulación'[Equipo], ASC), 'Simulación'[Equipo], \"\")",
+            "displayFolder": "Resumen"
+          },
+          {
+            "name": "Mayor riesgo de descenso",
+            "expression": "CONCATENATEX(TOPN(1, ALL('Simulación'), 'Simulación'[Probabilidad descenso], DESC, 'Simulación'[Equipo], ASC), 'Simulación'[Equipo], \"\")",
+            "displayFolder": "Resumen"
+          }
+        ]
+      },
+      {
+        "name": "Probabilidad Posición",
+        "columns": [
+          {
+            "name": "Equipo ID",
+            "dataType": "string",
+            "sourceColumn": "team_id",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Posición",
+            "dataType": "int64",
+            "sourceColumn": "position",
+            "summarizeBy": "none",
+            "formatString": "0"
+          },
+          {
+            "name": "Probabilidad",
+            "dataType": "double",
+            "sourceColumn": "probability",
+            "summarizeBy": "none",
+            "formatString": "0.0%"
+          },
+          {
+            "name": "Update ID",
+            "dataType": "string",
+            "sourceColumn": "update_id",
+            "summarizeBy": "none"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Probabilidad Posición",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = PostgreSQL.Database(",
+                "        pPostgresServer,",
+                "        pPostgresDatabase,",
+                "        [Query=\"SELECT * FROM bi_position_probabilities\"]",
+                "    )",
+                "in",
+                "    Source"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "Actualizaciones",
+        "columns": [
+          {
+            "name": "Update ID",
+            "dataType": "string",
+            "sourceColumn": "update_id",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Creado UTC",
+            "dataType": "dateTime",
+            "sourceColumn": "created_at_utc",
+            "summarizeBy": "none",
+            "formatString": "General Date"
+          },
+          {
+            "name": "Fecha snapshot",
+            "dataType": "dateTime",
+            "sourceColumn": "snapshot_date",
+            "summarizeBy": "none",
+            "formatString": "Short Date"
+          },
+          {
+            "name": "Partidos completados",
+            "dataType": "int64",
+            "sourceColumn": "completed_matches",
+            "summarizeBy": "none",
+            "formatString": "0"
+          },
+          {
+            "name": "Jornadas completadas",
+            "dataType": "int64",
+            "sourceColumn": "completed_matchdays",
+            "summarizeBy": "none",
+            "formatString": "0"
+          },
+          {
+            "name": "Partidos restantes",
+            "dataType": "int64",
+            "sourceColumn": "remaining_matches",
+            "summarizeBy": "none",
+            "formatString": "0"
+          },
+          {
+            "name": "Próxima jornada",
+            "dataType": "int64",
+            "sourceColumn": "next_matchday",
+            "summarizeBy": "none",
+            "formatString": "0"
+          },
+          {
+            "name": "Predicciones mercado",
+            "dataType": "int64",
+            "sourceColumn": "market_predictions",
+            "summarizeBy": "none",
+            "formatString": "0"
+          },
+          {
+            "name": "Predicciones deportivas",
+            "dataType": "int64",
+            "sourceColumn": "sports_predictions",
+            "summarizeBy": "none",
+            "formatString": "0"
+          },
+          {
+            "name": "Simulaciones",
+            "dataType": "int64",
+            "sourceColumn": "simulations",
+            "summarizeBy": "none",
+            "formatString": "#,0"
+          },
+          {
+            "name": "Semilla",
+            "dataType": "int64",
+            "sourceColumn": "seed",
+            "summarizeBy": "none",
+            "formatString": "0"
+          },
+          {
+            "name": "Calidad superada",
+            "dataType": "boolean",
+            "sourceColumn": "quality_passed",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Modo pipeline",
+            "dataType": "string",
+            "sourceColumn": "pipeline_mode",
+            "summarizeBy": "none"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Actualizaciones",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = PostgreSQL.Database(",
+                "        pPostgresServer,",
+                "        pPostgresDatabase,",
+                "        [Query=\"SELECT * FROM bi_update_status\"]",
+                "    )",
+                "in",
+                "    Source"
+              ]
+            }
+          }
+        ],
+        "measures": [
+          {
+            "name": "Última actualización",
+            "expression": "CONCATENATEX(TOPN(1, 'Actualizaciones', 'Actualizaciones'[Creado UTC], DESC), 'Actualizaciones'[Update ID], \"\")",
+            "displayFolder": "Auditoría"
+          },
+          {
+            "name": "Calidad actual",
+            "expression": "IF(MAX('Actualizaciones'[Calidad superada]), \"Correcta\", \"Revisar\")",
+            "displayFolder": "Auditoría"
+          },
+          {
+            "name": "Jornadas cerradas",
+            "expression": "MAX('Actualizaciones'[Jornadas completadas])",
+            "formatString": "0",
+            "displayFolder": "Auditoría"
+          },
+          {
+            "name": "Predicciones con mercado",
+            "expression": "MAX('Actualizaciones'[Predicciones mercado])",
+            "formatString": "0",
+            "displayFolder": "Auditoría"
+          }
+        ]
+      },
+      {
+        "name": "Estado API",
+        "columns": [
+          {
+            "name": "Estado",
+            "dataType": "string",
+            "sourceColumn": "status",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Base de datos",
+            "dataType": "string",
+            "sourceColumn": "database",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Temporada",
+            "dataType": "string",
+            "sourceColumn": "season",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Update ID",
+            "dataType": "string",
+            "sourceColumn": "latest_update_id",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Fixtures",
+            "dataType": "int64",
+            "sourceColumn": "fixtures",
+            "summarizeBy": "none",
+            "formatString": "0"
+          },
+          {
+            "name": "Predicciones",
+            "dataType": "int64",
+            "sourceColumn": "predictions",
+            "summarizeBy": "none",
+            "formatString": "0"
+          },
+          {
+            "name": "Partidos completados",
+            "dataType": "int64",
+            "sourceColumn": "completed_matches",
+            "summarizeBy": "none",
+            "formatString": "0"
+          },
+          {
+            "name": "Simulaciones",
+            "dataType": "int64",
+            "sourceColumn": "simulations",
+            "summarizeBy": "none",
+            "formatString": "#,0"
+          }
+        ],
+        "measures": [
+          {
+            "name": "Estado de la API",
+            "expression": "SELECTEDVALUE('Estado API'[Estado], \"Sin conexión\")",
+            "displayFolder": "Sistema"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Estado API",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Response = Json.Document(",
+                "        Web.Contents(pApiBaseUrl, [RelativePath=\"health\"])",
+                "    ),",
+                "    Source = Table.FromRecords({Response})",
+                "in",
+                "    Source"
+              ]
+            }
+          }
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "name": "afdf88ee88c1a838a76b03bc2266f5a8",
+        "fromTable": "Partidos",
+        "fromColumn": "Jornada",
+        "toTable": "Dim Jornada",
+        "toColumn": "Jornada"
+      },
+      {
+        "name": "c83cfcd0664b2594e191c91d5401ad20",
+        "fromTable": "Equipo-Partido",
+        "fromColumn": "Equipo ID",
+        "toTable": "Dim Equipo",
+        "toColumn": "Equipo ID"
+      },
+      {
+        "name": "978e7032ad0f2d5f28d51036c8e9c20b",
+        "fromTable": "Clasificación",
+        "fromColumn": "Equipo ID",
+        "toTable": "Dim Equipo",
+        "toColumn": "Equipo ID"
+      },
+      {
+        "name": "3a816206ee011e66b99b687cde86d055",
+        "fromTable": "Simulación",
+        "fromColumn": "Equipo ID",
+        "toTable": "Dim Equipo",
+        "toColumn": "Equipo ID"
+      },
+      {
+        "name": "f27e34dde559f579481f1b3a3a3b390f",
+        "fromTable": "Probabilidad Posición",
+        "fromColumn": "Equipo ID",
+        "toTable": "Dim Equipo",
+        "toColumn": "Equipo ID"
+      },
+      {
+        "name": "8a404858e8657661ab03abb1a5ad80f7",
+        "fromTable": "Probabilidad Posición",
+        "fromColumn": "Posición",
+        "toTable": "Dim Posición",
+        "toColumn": "Posición"
+      }
+    ],
+    "annotations": [
+      {
+        "name": "PBI_QueryOrder",
+        "value": "[\"Dim Equipo\", \"Dim Jornada\", \"Dim Posici\\u00f3n\", \"Partidos\", \"Equipo-Partido\", \"Clasificaci\\u00f3n\", \"Simulaci\\u00f3n\", \"Probabilidad Posici\\u00f3n\", \"Actualizaciones\", \"Estado API\"]"
+      }
+    ]
+  }
+}

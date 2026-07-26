@@ -1,0 +1,14 @@
+check,status
+unique_match_ids,PASS
+two_team_feature_rows_per_match,PASS
+valid_targets,PASS
+valid_target_classes,PASS
+elo_complete,PASS
+market_probabilities_sum_to_one,PASS
+no_negative_history_counts,PASS
+first_team_rows_have_zero_prior_matches,PASS
+preseason_has_20_teams,PASS
+preseason_team_ids_unique,PASS
+fixture_seed_has_380_rows,PASS
+fixture_seed_ids_unique,PASS
+promoted_2026_27_count,PASS

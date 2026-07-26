@@ -1,0 +1,1368 @@
+{
+  "compatibilityLevel": 1600,
+  "model": {
+    "annotations": [
+      {
+        "name": "PBI_QueryOrder",
+        "value": "[\"Dim Equipo\", \"Dim Jornada\", \"Dim Posici\\u00f3n\", \"Partidos\", \"Equipo-Partido\", \"Clasificaci\\u00f3n\", \"Simulaci\\u00f3n\", \"Probabilidad Posici\\u00f3n\", \"Actualizaciones\", \"Estado API\"]"
+      },
+      {
+        "name": "PBI_ProTooling",
+        "value": "[\"DevMode\"]"
+      }
+    ],
+    "culture": "es-ES",
+    "dataAccessOptions": {
+      "legacyRedirects": true,
+      "returnErrorValuesAsNull": true
+    },
+    "defaultPowerBIDataSourceVersion": "powerBI_V3",
+    "expressions": [
+      {
+        "name": "pPostgresServer",
+        "expression": "\"localhost:5432\"",
+        "kind": "m",
+        "lineageTag": "be61da0c-d401-44e5-9b9c-2a565ab92e12"
+      },
+      {
+        "name": "pPostgresDatabase",
+        "expression": "\"laliga_predictor\"",
+        "kind": "m",
+        "lineageTag": "7dd095cf-f442-4e9c-85be-8d9239169313"
+      },
+      {
+        "name": "pApiBaseUrl",
+        "expression": "\"http://localhost:8000\"",
+        "kind": "m",
+        "lineageTag": "d7b05d39-68b8-4f11-8bcc-b6eb059a8629"
+      }
+    ],
+    "relationships": [
+      {
+        "name": "afdf88ee88c1a838a76b03bc2266f5a8",
+        "fromColumn": "Jornada",
+        "fromTable": "Partidos",
+        "toColumn": "Jornada",
+        "toTable": "Dim Jornada"
+      },
+      {
+        "name": "c83cfcd0664b2594e191c91d5401ad20",
+        "fromColumn": "Equipo ID",
+        "fromTable": "Equipo-Partido",
+        "toColumn": "Equipo ID",
+        "toTable": "Dim Equipo"
+      },
+      {
+        "name": "978e7032ad0f2d5f28d51036c8e9c20b",
+        "fromColumn": "Equipo ID",
+        "fromTable": "Clasificación",
+        "toColumn": "Equipo ID",
+        "toTable": "Dim Equipo"
+      },
+      {
+        "name": "3a816206ee011e66b99b687cde86d055",
+        "fromColumn": "Equipo ID",
+        "fromTable": "Simulación",
+        "toColumn": "Equipo ID",
+        "toTable": "Dim Equipo"
+      },
+      {
+        "name": "f27e34dde559f579481f1b3a3a3b390f",
+        "fromColumn": "Equipo ID",
+        "fromTable": "Probabilidad Posición",
+        "toColumn": "Equipo ID",
+        "toTable": "Dim Equipo"
+      },
+      {
+        "name": "8a404858e8657661ab03abb1a5ad80f7",
+        "fromColumn": "Posición",
+        "fromTable": "Probabilidad Posición",
+        "toColumn": "Posición",
+        "toTable": "Dim Posición"
+      }
+    ],
+    "sourceQueryCulture": "es-ES",
+    "tables": [
+      {
+        "name": "Dim Equipo",
+        "columns": [
+          {
+            "name": "Equipo ID",
+            "dataType": "string",
+            "lineageTag": "913f6d8d-2c2c-42ab-b433-ed24881659f5",
+            "sourceColumn": "team_id",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Equipo",
+            "dataType": "string",
+            "lineageTag": "2caac018-7985-4c94-887c-5cda2e19d8e5",
+            "sourceColumn": "team",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Recién ascendido",
+            "dataType": "boolean",
+            "lineageTag": "241c4fbe-e741-4208-bf8f-cd95cf9b6518",
+            "sourceColumn": "is_promoted",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "d52bdd2f-3589-40ad-827d-95d1d9451560",
+        "partitions": [
+          {
+            "name": "Dim Equipo",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = PostgreSQL.Database(",
+                "        pPostgresServer,",
+                "        pPostgresDatabase,",
+                "        [Query=\"SELECT * FROM bi_dim_team\"]",
+                "    )",
+                "in",
+                "    Source"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Dim Jornada",
+        "columns": [
+          {
+            "name": "Jornada",
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "0cda89d2-aa8d-45b0-9575-631da5e2ba1e",
+            "sourceColumn": "matchday",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Etiqueta jornada",
+            "dataType": "string",
+            "lineageTag": "8436e3dd-f1f2-4f5c-a2b4-b3bfda74af91",
+            "sourceColumn": "matchday_label",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Tramo temporada",
+            "dataType": "string",
+            "lineageTag": "9d3daa4c-cf3c-4ee3-bbeb-84882af80cbe",
+            "sourceColumn": "season_stage",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "671f11d3-53ee-4703-85f3-9099dd0b436d",
+        "partitions": [
+          {
+            "name": "Dim Jornada",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = PostgreSQL.Database(",
+                "        pPostgresServer,",
+                "        pPostgresDatabase,",
+                "        [Query=\"SELECT * FROM bi_dim_matchday\"]",
+                "    )",
+                "in",
+                "    Source"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Dim Posición",
+        "columns": [
+          {
+            "name": "Posición",
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "fdce43e6-332a-45bf-abdb-88f5693378cb",
+            "sourceColumn": "position",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Zona",
+            "dataType": "string",
+            "lineageTag": "eb928aa0-23ea-4111-a8f2-2f70b436cf4a",
+            "sourceColumn": "position_zone",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "4be8d396-27ff-4e1d-913a-0892b577b9ac",
+        "partitions": [
+          {
+            "name": "Dim Posición",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = PostgreSQL.Database(",
+                "        pPostgresServer,",
+                "        pPostgresDatabase,",
+                "        [Query=\"SELECT * FROM bi_dim_position\"]",
+                "    )",
+                "in",
+                "    Source"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Partidos",
+        "columns": [
+          {
+            "name": "Fixture ID",
+            "dataType": "string",
+            "lineageTag": "a1c627d4-632b-4d83-a8c5-8533c9063cfd",
+            "sourceColumn": "fixture_id",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Temporada",
+            "dataType": "string",
+            "lineageTag": "883f9a11-5297-45e5-9b67-5ab7682553b7",
+            "sourceColumn": "season",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Jornada",
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "5db13c00-14ef-45e3-959d-cbadf4212ccf",
+            "sourceColumn": "matchday",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Fecha referencia",
+            "dataType": "dateTime",
+            "formatString": "Short Date",
+            "lineageTag": "35558924-0bfc-4ba1-b765-b0f6c20a11fd",
+            "sourceColumn": "reference_date",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Fecha programada",
+            "dataType": "dateTime",
+            "formatString": "General Date",
+            "lineageTag": "b74e78b7-e90c-49b1-9807-4c4da890133e",
+            "sourceColumn": "scheduled_date",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Local ID",
+            "dataType": "string",
+            "lineageTag": "ebf8739c-88df-46f7-917d-e437663abb76",
+            "sourceColumn": "home_team_id",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Local",
+            "dataType": "string",
+            "lineageTag": "7b245343-9ea0-4d43-b267-5d1958aa91cb",
+            "sourceColumn": "home_team",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Visitante ID",
+            "dataType": "string",
+            "lineageTag": "f25636b5-24b5-4aa2-908c-01d782d428a1",
+            "sourceColumn": "away_team_id",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Visitante",
+            "dataType": "string",
+            "lineageTag": "1a713c4e-58cd-46a3-b92b-d4284699ad3c",
+            "sourceColumn": "away_team",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Partido",
+            "dataType": "string",
+            "lineageTag": "bba0a526-cc5e-4943-be24-697ba4cc93f2",
+            "sourceColumn": "match_label",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Estado",
+            "dataType": "string",
+            "lineageTag": "1ddf6ce4-cb5a-4720-b006-3df80714d8fc",
+            "sourceColumn": "status",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Jugado",
+            "dataType": "boolean",
+            "lineageTag": "766cd793-cbf2-4d21-b4cc-7bb24944a83f",
+            "sourceColumn": "is_played",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Goles local",
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "bbb1057f-e316-424b-9ee9-26a18b3b438b",
+            "sourceColumn": "home_goals",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Goles visitante",
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "44fa8957-1cef-4207-84a5-5df1134241a2",
+            "sourceColumn": "away_goals",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Resultado real",
+            "dataType": "string",
+            "lineageTag": "4aab8ded-7f41-4964-81f5-b46b96376889",
+            "sourceColumn": "actual_result_label",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Modelo",
+            "dataType": "string",
+            "lineageTag": "9c5bc444-6683-4601-a23f-c732bd30a317",
+            "sourceColumn": "model",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Probabilidad local",
+            "dataType": "double",
+            "formatString": "0.0%",
+            "lineageTag": "c2d7ad59-bfc9-4686-ad3d-1cee8a5227a8",
+            "sourceColumn": "probability_home",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Probabilidad empate",
+            "dataType": "double",
+            "formatString": "0.0%",
+            "lineageTag": "b0d3cd59-7444-47ac-ba0d-506661943b94",
+            "sourceColumn": "probability_draw",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Probabilidad visitante",
+            "dataType": "double",
+            "formatString": "0.0%",
+            "lineageTag": "8677b282-ea45-4c9d-b937-aa4c23edfe52",
+            "sourceColumn": "probability_away",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Pronóstico",
+            "dataType": "string",
+            "lineageTag": "e0577e4e-c1cb-489f-b268-65cdb0fb1fae",
+            "sourceColumn": "predicted_result_label",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Confianza",
+            "dataType": "string",
+            "lineageTag": "a50eff3b-d270-42a3-b4a1-aa2230631c04",
+            "sourceColumn": "confidence",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Goles esperados local",
+            "dataType": "double",
+            "formatString": "0.0",
+            "lineageTag": "406359ec-b3d3-46e0-83f3-2ee6053d414a",
+            "sourceColumn": "expected_home_goals",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Goles esperados visitante",
+            "dataType": "double",
+            "formatString": "0.0",
+            "lineageTag": "e7431dd1-6ce1-41bb-a9cd-9347d27857fd",
+            "sourceColumn": "expected_away_goals",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Marcador previsto",
+            "dataType": "string",
+            "lineageTag": "dbb4a382-387d-4904-8b4c-d80fe942bfdd",
+            "sourceColumn": "predicted_score",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Cuotas disponibles",
+            "dataType": "boolean",
+            "lineageTag": "e3c910ef-bdc7-4dbd-bfe2-3668536e880d",
+            "sourceColumn": "market_odds_available",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Predicción correcta",
+            "dataType": "boolean",
+            "lineageTag": "0d1dcc5d-0482-43ff-9aed-79fc20ff9df0",
+            "sourceColumn": "prediction_correct",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Update ID",
+            "dataType": "string",
+            "lineageTag": "d9c2fc04-bedb-4e99-bc62-797490bfb7a7",
+            "sourceColumn": "update_id",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "62ff5000-79bd-498b-8ab8-f427896f2511",
+        "measures": [
+          {
+            "name": "Total partidos",
+            "displayFolder": "Operación",
+            "expression": "COUNTROWS('Partidos')",
+            "formatString": "0",
+            "lineageTag": "a7ca0cee-8079-4fd2-8330-3fa64f48d66c"
+          },
+          {
+            "name": "Partidos jugados",
+            "displayFolder": "Operación",
+            "expression": "CALCULATE(COUNTROWS('Partidos'), 'Partidos'[Jugado] = TRUE())",
+            "formatString": "0",
+            "lineageTag": "4a4fc3d9-96bf-4d63-a8ab-24bc897db2aa"
+          },
+          {
+            "name": "Partidos pendientes",
+            "displayFolder": "Operación",
+            "expression": "[Total partidos] - [Partidos jugados]",
+            "formatString": "0",
+            "lineageTag": "50d7cda3-93e8-441b-8ab1-5f3be39c57f8"
+          },
+          {
+            "name": "Próxima jornada",
+            "displayFolder": "Operación",
+            "expression": "MINX(FILTER('Partidos', 'Partidos'[Jugado] = FALSE()), 'Partidos'[Jornada])",
+            "formatString": "0",
+            "lineageTag": "94dbd9d0-a2a6-4881-a955-061d2a5d0b2d"
+          },
+          {
+            "name": "Precisión del pronóstico",
+            "displayFolder": "Calidad",
+            "expression": "DIVIDE(CALCULATE(COUNTROWS('Partidos'), 'Partidos'[Predicción correcta] = TRUE()), [Partidos jugados])",
+            "formatString": "0.0%",
+            "lineageTag": "46d4c778-3f40-4a0d-afce-939f4016a7d6"
+          },
+          {
+            "name": "Promedio de goles",
+            "displayFolder": "Resultados",
+            "expression": "DIVIDE(SUM('Partidos'[Goles local]) + SUM('Partidos'[Goles visitante]), [Partidos jugados])",
+            "formatString": "0.0",
+            "lineageTag": "1484623a-4c25-44c9-8744-b20261519782"
+          },
+          {
+            "name": "Probabilidad Local promedio",
+            "displayFolder": "Predicción",
+            "expression": "AVERAGE('Partidos'[Probabilidad local])",
+            "formatString": "0.0%",
+            "lineageTag": "9ce632fa-805a-4632-9ce1-eb75b2d715dd"
+          },
+          {
+            "name": "Probabilidad Empate promedio",
+            "displayFolder": "Predicción",
+            "expression": "AVERAGE('Partidos'[Probabilidad empate])",
+            "formatString": "0.0%",
+            "lineageTag": "333ae09a-c5f8-4672-9b01-93494b1d3ec2"
+          },
+          {
+            "name": "Probabilidad Visitante promedio",
+            "displayFolder": "Predicción",
+            "expression": "AVERAGE('Partidos'[Probabilidad visitante])",
+            "formatString": "0.0%",
+            "lineageTag": "35b3e2da-2efb-44c7-b21e-8dd1d442645e"
+          },
+          {
+            "name": "Victorias locales esperadas",
+            "displayFolder": "Predicción",
+            "expression": "SUM('Partidos'[Probabilidad local])",
+            "formatString": "0.0",
+            "lineageTag": "1ae9a231-b064-47c4-86cd-f22d26d08acc"
+          },
+          {
+            "name": "Empates esperados",
+            "displayFolder": "Predicción",
+            "expression": "SUM('Partidos'[Probabilidad empate])",
+            "formatString": "0.0",
+            "lineageTag": "fa7e8650-0ca4-4583-bc51-3329cdf7e315"
+          },
+          {
+            "name": "Victorias visitantes esperadas",
+            "displayFolder": "Predicción",
+            "expression": "SUM('Partidos'[Probabilidad visitante])",
+            "formatString": "0.0",
+            "lineageTag": "34e723ac-6bc2-4ab0-ba5a-3b4fedf11c89"
+          },
+          {
+            "name": "Partidos con mercado",
+            "displayFolder": "Mercado",
+            "expression": "CALCULATE(COUNTROWS('Partidos'), 'Partidos'[Cuotas disponibles] = TRUE())",
+            "formatString": "0",
+            "lineageTag": "7be454c8-0d16-44db-987b-de10ed7ba0fc"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partidos",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = PostgreSQL.Database(",
+                "        pPostgresServer,",
+                "        pPostgresDatabase,",
+                "        [Query=\"SELECT * FROM bi_fact_matches\"]",
+                "    )",
+                "in",
+                "    Source"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Equipo-Partido",
+        "columns": [
+          {
+            "name": "Fixture ID",
+            "dataType": "string",
+            "lineageTag": "ba5df765-24fa-4aba-9fd0-a89f67fff9d1",
+            "sourceColumn": "fixture_id",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Temporada",
+            "dataType": "string",
+            "lineageTag": "21fc7178-4d4b-4b24-816f-1dea331211ab",
+            "sourceColumn": "season",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Jornada",
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "a7d13a31-08ed-458d-a725-1e1b6033390d",
+            "sourceColumn": "matchday",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Fecha",
+            "dataType": "dateTime",
+            "formatString": "Short Date",
+            "lineageTag": "fdc7efc4-8226-4381-bdb5-c9fe25b1cacf",
+            "sourceColumn": "reference_date",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Equipo ID",
+            "dataType": "string",
+            "lineageTag": "87f94066-63f6-4a89-977f-e4405da44abc",
+            "sourceColumn": "team_id",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Equipo",
+            "dataType": "string",
+            "lineageTag": "d7cbd788-448d-4505-86be-096879da086e",
+            "sourceColumn": "team",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Rival ID",
+            "dataType": "string",
+            "lineageTag": "f2ae7742-b053-459f-a224-1496c2f82cb7",
+            "sourceColumn": "opponent_id",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Rival",
+            "dataType": "string",
+            "lineageTag": "28894751-464d-4e7b-a91a-5845c9d66c43",
+            "sourceColumn": "opponent",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Condición",
+            "dataType": "string",
+            "lineageTag": "df607478-0ba7-4b95-95fb-30857028674e",
+            "sourceColumn": "venue",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Estado",
+            "dataType": "string",
+            "lineageTag": "7b15e593-d2e6-476f-8f68-371b9ed46130",
+            "sourceColumn": "status",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Jugado",
+            "dataType": "boolean",
+            "lineageTag": "553ede6a-0f94-464c-80ed-8469b7acf7f0",
+            "sourceColumn": "is_played",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Goles a favor",
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "a51cb707-6ec8-4c59-a6a9-555bb4839db0",
+            "sourceColumn": "goals_for",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Goles en contra",
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "0e901697-a006-4f4a-b61e-cb3757cf7d86",
+            "sourceColumn": "goals_against",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Resultado",
+            "dataType": "string",
+            "lineageTag": "a656e2a0-ebef-475c-b894-aba8be7b3399",
+            "sourceColumn": "team_result",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Probabilidad victoria",
+            "dataType": "double",
+            "formatString": "0.0%",
+            "lineageTag": "df9e14c9-fdfd-4c15-8d04-276ac0e045a1",
+            "sourceColumn": "win_probability",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Probabilidad empate",
+            "dataType": "double",
+            "formatString": "0.0%",
+            "lineageTag": "452541fd-49b9-48bd-9173-6fa78e5c2687",
+            "sourceColumn": "draw_probability",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Probabilidad derrota",
+            "dataType": "double",
+            "formatString": "0.0%",
+            "lineageTag": "80d3ffa3-c5db-4c21-aff3-60a7554aa049",
+            "sourceColumn": "loss_probability",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "xG a favor",
+            "dataType": "double",
+            "formatString": "0.0",
+            "lineageTag": "7f9f33e3-4403-40ac-a538-aa66777d15ec",
+            "sourceColumn": "expected_goals_for",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "xG en contra",
+            "dataType": "double",
+            "formatString": "0.0",
+            "lineageTag": "09f3b40f-96ec-4c46-bca0-7cf6f36914b2",
+            "sourceColumn": "expected_goals_against",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Update ID",
+            "dataType": "string",
+            "lineageTag": "d41a75f2-a330-470b-90b1-93f16a223eee",
+            "sourceColumn": "update_id",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "b5c78eb5-90c7-4473-b851-0a6174116a52",
+        "partitions": [
+          {
+            "name": "Equipo-Partido",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = PostgreSQL.Database(",
+                "        pPostgresServer,",
+                "        pPostgresDatabase,",
+                "        [Query=\"SELECT * FROM bi_fact_team_matches\"]",
+                "    )",
+                "in",
+                "    Source"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Clasificación",
+        "columns": [
+          {
+            "name": "Equipo ID",
+            "dataType": "string",
+            "lineageTag": "c9211064-226a-413a-a524-bde3ad68cdc8",
+            "sourceColumn": "team_id",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Equipo",
+            "dataType": "string",
+            "lineageTag": "227aa80a-e720-405d-a4ef-faa3ae4819b7",
+            "sourceColumn": "team",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "PJ",
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "ec45bfcc-7839-4463-80a9-c164dde930fb",
+            "sourceColumn": "played",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "PG",
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "03abd754-9173-4d87-bfb3-2f4ce6e9aa16",
+            "sourceColumn": "wins",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "PE",
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "6b9fd389-ba13-4b05-befc-443aa8ba6b4e",
+            "sourceColumn": "draws",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "PP",
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "eb1809bf-dda1-431e-89a0-72770d7b79d9",
+            "sourceColumn": "losses",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "GF",
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "79dcc86a-dec8-4b8f-9d9b-fb57096405ad",
+            "sourceColumn": "goals_for",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "GC",
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "05eb4e2a-532f-4021-b1ca-2bf86ecbb1ef",
+            "sourceColumn": "goals_against",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "DG",
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "9972c9b4-3162-4e19-8dc9-9c6de2b650bc",
+            "sourceColumn": "goal_difference",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Puntos",
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "c5aa9bbd-0de1-4c7d-8607-114016211f3a",
+            "sourceColumn": "points",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Posición actual",
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "73827fdd-e149-409b-be45-00ca1da1a016",
+            "sourceColumn": "position",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "PPG",
+            "dataType": "double",
+            "formatString": "0.0",
+            "lineageTag": "95e477c2-5edb-485a-af97-85ad00eb1127",
+            "sourceColumn": "ppg",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Update ID",
+            "dataType": "string",
+            "lineageTag": "596ac86a-fbbb-4711-9bff-6b67a9d97e7b",
+            "sourceColumn": "update_id",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "a3d09e93-fee5-4bef-b798-ed4743897fec",
+        "measures": [
+          {
+            "name": "Puntos actuales",
+            "displayFolder": "Equipo",
+            "expression": "MAX('Clasificación'[Puntos])",
+            "formatString": "0",
+            "lineageTag": "88d5f50f-665e-4886-af0f-5b422ff35912"
+          },
+          {
+            "name": "Posición actual equipo",
+            "displayFolder": "Equipo",
+            "expression": "MIN('Clasificación'[Posición actual])",
+            "formatString": "0",
+            "lineageTag": "a6c8a752-c22d-425a-94ef-480a39f25afa"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Clasificación",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = PostgreSQL.Database(",
+                "        pPostgresServer,",
+                "        pPostgresDatabase,",
+                "        [Query=\"SELECT * FROM bi_current_standings\"]",
+                "    )",
+                "in",
+                "    Source"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Simulación",
+        "columns": [
+          {
+            "name": "Equipo ID",
+            "dataType": "string",
+            "lineageTag": "95138bb6-b49b-49f3-a0d8-ee06e9fe709c",
+            "sourceColumn": "team_id",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Equipo",
+            "dataType": "string",
+            "lineageTag": "f9a4a6e9-f5f6-4c4a-8026-d08e7a0be732",
+            "sourceColumn": "team",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Simulaciones",
+            "dataType": "int64",
+            "formatString": "#,0",
+            "lineageTag": "ecc5bd2c-4476-41cc-99b3-024bc81a9095",
+            "sourceColumn": "simulations",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Puntos esperados",
+            "dataType": "double",
+            "formatString": "0.0",
+            "lineageTag": "8addf3f5-6a7b-4aaf-b00a-f9a25632d240",
+            "sourceColumn": "expected_points",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Mediana puntos",
+            "dataType": "double",
+            "formatString": "0.0",
+            "lineageTag": "d7bc6649-c13c-4b3c-a5e3-9f72f463d0d2",
+            "sourceColumn": "median_points",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Puntos P05",
+            "dataType": "double",
+            "formatString": "0.0",
+            "lineageTag": "0c0b269d-57c0-41c4-9084-03903ad9a356",
+            "sourceColumn": "points_p05",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Puntos P95",
+            "dataType": "double",
+            "formatString": "0.0",
+            "lineageTag": "e20dfd44-536f-48f9-823e-45e067b15072",
+            "sourceColumn": "points_p95",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Posición esperada",
+            "dataType": "double",
+            "formatString": "0.0",
+            "lineageTag": "95cbe851-48e5-4119-b51c-1b863bafd76e",
+            "sourceColumn": "expected_position",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Mediana posición",
+            "dataType": "double",
+            "formatString": "0.0",
+            "lineageTag": "49b8e0d8-828f-42a7-b5e4-1e4917599395",
+            "sourceColumn": "median_position",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Probabilidad campeón",
+            "dataType": "double",
+            "formatString": "0.0%",
+            "lineageTag": "a273f6b8-54db-4859-8546-023bbd85838e",
+            "sourceColumn": "champion_probability",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Probabilidad Top 4",
+            "dataType": "double",
+            "formatString": "0.0%",
+            "lineageTag": "4c8f0b9b-36e5-4e32-b6da-07729e2593fa",
+            "sourceColumn": "top4_probability",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Probabilidad Top 6",
+            "dataType": "double",
+            "formatString": "0.0%",
+            "lineageTag": "2078a7bc-5b7d-4eae-b7c3-54e943553701",
+            "sourceColumn": "top6_probability",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Probabilidad Europa",
+            "dataType": "double",
+            "formatString": "0.0%",
+            "lineageTag": "9c8d377f-71cc-4a70-b176-3fe243bbeb32",
+            "sourceColumn": "europe_top7_probability",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Probabilidad descenso",
+            "dataType": "double",
+            "formatString": "0.0%",
+            "lineageTag": "827f5775-2993-4258-b97a-1b3a5ca2e776",
+            "sourceColumn": "relegation_probability",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Probabilidad último",
+            "dataType": "double",
+            "formatString": "0.0%",
+            "lineageTag": "46304071-f0c3-4656-a7ea-8a4bb437bc17",
+            "sourceColumn": "last_place_probability",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Update ID",
+            "dataType": "string",
+            "lineageTag": "b86b0fed-0474-486a-bf1e-bf50e79cc0c5",
+            "sourceColumn": "update_id",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "09785197-3a76-43d0-9bd0-47ba6b5a823b",
+        "measures": [
+          {
+            "name": "Número de simulaciones",
+            "displayFolder": "Operación",
+            "expression": "MAX('Simulación'[Simulaciones])",
+            "formatString": "#,0",
+            "lineageTag": "62133039-2233-4667-8b1c-45e4108468ed"
+          },
+          {
+            "name": "Puntos esperados equipo",
+            "displayFolder": "Equipo",
+            "expression": "MAX('Simulación'[Puntos esperados])",
+            "formatString": "0.0",
+            "lineageTag": "4fb1e2ef-79b0-4bb4-bb7c-e5527b8d0691"
+          },
+          {
+            "name": "Posición esperada equipo",
+            "displayFolder": "Equipo",
+            "expression": "MIN('Simulación'[Posición esperada])",
+            "formatString": "0.0",
+            "lineageTag": "4e1c6892-812e-4ec4-8d31-150a4f096641"
+          },
+          {
+            "name": "P Campeón",
+            "displayFolder": "Zonas",
+            "expression": "MAX('Simulación'[Probabilidad campeón])",
+            "formatString": "0.0%",
+            "lineageTag": "33ab3ff3-6ee9-4c5f-b3bb-096b779e92d2"
+          },
+          {
+            "name": "P Top 4",
+            "displayFolder": "Zonas",
+            "expression": "MAX('Simulación'[Probabilidad Top 4])",
+            "formatString": "0.0%",
+            "lineageTag": "2642bf0e-6ba7-4dce-8bd1-2da671d3613f"
+          },
+          {
+            "name": "P Europa",
+            "displayFolder": "Zonas",
+            "expression": "MAX('Simulación'[Probabilidad Europa])",
+            "formatString": "0.0%",
+            "lineageTag": "2cdc31e0-056f-4c37-8fdc-73fa1d0be0d5"
+          },
+          {
+            "name": "P Descenso",
+            "displayFolder": "Zonas",
+            "expression": "MAX('Simulación'[Probabilidad descenso])",
+            "formatString": "0.0%",
+            "lineageTag": "8b98c1dd-ed99-45b4-84fc-8946b6ee2535"
+          },
+          {
+            "name": "Favorito al título",
+            "displayFolder": "Resumen",
+            "expression": "CONCATENATEX(TOPN(1, ALL('Simulación'), 'Simulación'[Probabilidad campeón], DESC, 'Simulación'[Equipo], ASC), 'Simulación'[Equipo], \"\")",
+            "lineageTag": "8c61a44d-7ab1-40d5-a619-2291553ad254"
+          },
+          {
+            "name": "Mayor riesgo de descenso",
+            "displayFolder": "Resumen",
+            "expression": "CONCATENATEX(TOPN(1, ALL('Simulación'), 'Simulación'[Probabilidad descenso], DESC, 'Simulación'[Equipo], ASC), 'Simulación'[Equipo], \"\")",
+            "lineageTag": "3cdcabaf-f9c8-4fc6-9179-b5f5b24b5d9a"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Simulación",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = PostgreSQL.Database(",
+                "        pPostgresServer,",
+                "        pPostgresDatabase,",
+                "        [Query=\"SELECT * FROM bi_simulation_summary\"]",
+                "    )",
+                "in",
+                "    Source"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Probabilidad Posición",
+        "columns": [
+          {
+            "name": "Equipo ID",
+            "dataType": "string",
+            "lineageTag": "795b4798-8057-42e8-baea-15b097b945ef",
+            "sourceColumn": "team_id",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Posición",
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "7c133230-0811-4329-ab69-9c7a22d09fea",
+            "sourceColumn": "position",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Probabilidad",
+            "dataType": "double",
+            "formatString": "0.0%",
+            "lineageTag": "bec72c37-7bc8-42bb-aee0-92982f795536",
+            "sourceColumn": "probability",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Update ID",
+            "dataType": "string",
+            "lineageTag": "6524bc1a-b378-4439-a812-f43e6138eeb4",
+            "sourceColumn": "update_id",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "98a38279-5248-492a-b75f-9700dfb91ed4",
+        "partitions": [
+          {
+            "name": "Probabilidad Posición",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = PostgreSQL.Database(",
+                "        pPostgresServer,",
+                "        pPostgresDatabase,",
+                "        [Query=\"SELECT * FROM bi_position_probabilities\"]",
+                "    )",
+                "in",
+                "    Source"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Actualizaciones",
+        "columns": [
+          {
+            "name": "Update ID",
+            "dataType": "string",
+            "lineageTag": "076036ef-811c-42c6-ae48-b9794dd60e94",
+            "sourceColumn": "update_id",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Creado UTC",
+            "dataType": "dateTime",
+            "formatString": "General Date",
+            "lineageTag": "ed9874b5-f8ae-433e-934b-fdbb1f695528",
+            "sourceColumn": "created_at_utc",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Fecha snapshot",
+            "dataType": "dateTime",
+            "formatString": "Short Date",
+            "lineageTag": "39538995-f4ac-4b92-9aa8-583d679dd9ee",
+            "sourceColumn": "snapshot_date",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Partidos completados",
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "651d236e-07e4-49d3-a7b8-8292477fdc17",
+            "sourceColumn": "completed_matches",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Jornadas completadas",
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "7ab1c651-cbc6-4157-86bf-8504ba5a4d58",
+            "sourceColumn": "completed_matchdays",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Partidos restantes",
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "3c29719b-b8ed-44b4-a4e5-80aa3e0a6a0e",
+            "sourceColumn": "remaining_matches",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Próxima jornada",
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "1e01b383-4dfd-4876-b5e2-21efd3ee14f5",
+            "sourceColumn": "next_matchday",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Predicciones mercado",
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "13e5b6d5-0542-41c8-a01e-39118b44756b",
+            "sourceColumn": "market_predictions",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Predicciones deportivas",
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "2293b742-85d9-4511-b37d-e733838a9c47",
+            "sourceColumn": "sports_predictions",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Simulaciones",
+            "dataType": "int64",
+            "formatString": "#,0",
+            "lineageTag": "52fb7c5b-1f98-4b5a-ae29-6551c1700680",
+            "sourceColumn": "simulations",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Semilla",
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "e13ce460-e806-4871-892a-25479666023c",
+            "sourceColumn": "seed",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Calidad superada",
+            "dataType": "boolean",
+            "lineageTag": "0f0fca29-3b7e-4a9a-bf50-f9743bfa0ff1",
+            "sourceColumn": "quality_passed",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Modo pipeline",
+            "dataType": "string",
+            "lineageTag": "7bef4ce8-ca9e-4891-bc8b-bfba9dfe5c15",
+            "sourceColumn": "pipeline_mode",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "a8260384-3090-4400-b0a8-bbf47b822960",
+        "measures": [
+          {
+            "name": "Última actualización",
+            "displayFolder": "Auditoría",
+            "expression": "CONCATENATEX(TOPN(1, 'Actualizaciones', 'Actualizaciones'[Creado UTC], DESC), 'Actualizaciones'[Update ID], \"\")",
+            "lineageTag": "50a194a0-4c52-4017-adb3-acb5e527d9f7"
+          },
+          {
+            "name": "Calidad actual",
+            "displayFolder": "Auditoría",
+            "expression": "IF(MAX('Actualizaciones'[Calidad superada]), \"Correcta\", \"Revisar\")",
+            "lineageTag": "ac16cf60-7c02-4aee-8411-977725890a57"
+          },
+          {
+            "name": "Jornadas cerradas",
+            "displayFolder": "Auditoría",
+            "expression": "MAX('Actualizaciones'[Jornadas completadas])",
+            "formatString": "0",
+            "lineageTag": "000f05e3-9ba3-47ab-abdc-36c3248449b4"
+          },
+          {
+            "name": "Predicciones con mercado",
+            "displayFolder": "Auditoría",
+            "expression": "MAX('Actualizaciones'[Predicciones mercado])",
+            "formatString": "0",
+            "lineageTag": "a46d9a74-8710-4eba-98b3-1eedc5e52a42"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Actualizaciones",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = PostgreSQL.Database(",
+                "        pPostgresServer,",
+                "        pPostgresDatabase,",
+                "        [Query=\"SELECT * FROM bi_update_status\"]",
+                "    )",
+                "in",
+                "    Source"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Estado API",
+        "columns": [
+          {
+            "name": "Estado",
+            "dataType": "string",
+            "lineageTag": "4bb7cb35-4e14-47bd-8e96-c509910be849",
+            "sourceColumn": "status",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Base de datos",
+            "dataType": "string",
+            "lineageTag": "f50c742a-4154-4aaf-a352-4a50647e96ca",
+            "sourceColumn": "database",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Temporada",
+            "dataType": "string",
+            "lineageTag": "2e1a15cc-6abc-4448-a120-88a5b414b7fd",
+            "sourceColumn": "season",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Update ID",
+            "dataType": "string",
+            "lineageTag": "316e524e-5aa8-44f8-98ab-ed5cabe8e42b",
+            "sourceColumn": "latest_update_id",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Fixtures",
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "2a950736-bd3e-4d56-b218-a97b8f603c22",
+            "sourceColumn": "fixtures",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Predicciones",
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "0fefde1f-4413-4c60-8bbd-6a9c732324df",
+            "sourceColumn": "predictions",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Partidos completados",
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "1d5e2f35-c9b8-4e75-9ee6-76f653ff9bdf",
+            "sourceColumn": "completed_matches",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Simulaciones",
+            "dataType": "int64",
+            "formatString": "#,0",
+            "lineageTag": "8b5ab509-3263-44e8-b0d4-73a0b76e37fb",
+            "sourceColumn": "simulations",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "e32caf38-8571-422d-808f-6df55effd101",
+        "measures": [
+          {
+            "name": "Estado de la API",
+            "displayFolder": "Sistema",
+            "expression": "SELECTEDVALUE('Estado API'[Estado], \"Sin conexión\")",
+            "lineageTag": "bca31e04-f0fc-486d-87db-10ba9deb3e58"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Estado API",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Response = Json.Document(",
+                "        Web.Contents(pApiBaseUrl, [RelativePath=\"health\"])",
+                "    ),",
+                "    Source = Table.FromRecords({Response})",
+                "in",
+                "    Source"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "quality_passed": true,
+  "historical_matches_with_features": 6110,
+  "laliga_matches_with_features": 3800,
+  "team_pre_match_rows": 12220,
+  "model_feature_columns": 206,
+  "recommended_model_features": 76,
+  "laliga_train_rows": 2660,
+  "laliga_validation_rows": 760,
+  "laliga_test_rows": 380,
+  "history_ready_5_rows": 3706,
+  "history_ready_10_rows": 3613,
+  "market_probability_rows": 3800,
+  "preseason_teams": 20,
+  "promoted_preseason_teams": [
+    "Racing de Santander",
+    "RC Deportivo",
+    "Málaga CF"
+  ],
+  "fixture_seed_rows": 380,
+  "elo_parameters": {
+    "sp1_base": 1500.0,
+    "sp2_base": 1350.0,
+    "k": 20.0,
+    "home_advantage": 60.0,
+    "season_regression": 0.25
+  },
+  "outputs": {
+    "all_match_features": "data/processed/all_match_features.csv",
+    "laliga_match_features": "data/processed/laliga_match_features.csv",
+    "laliga_model_dataset": "data/processed/laliga_model_dataset.csv",
+    "team_pre_match_features": "data/processed/team_pre_match_features.csv",
+    "team_preseason_state": "data/processed/team_preseason_state_2026_27.csv",
+    "fixture_preseason_features": "data/processed/fixtures_2026_27_preseason_features.csv",
+    "feature_manifest": "reports/feature_manifest.csv",
+    "feature_missingness": "reports/feature_missingness.csv",
+    "quality_checks": "reports/phase2_quality_checks.csv"
+  }
+}

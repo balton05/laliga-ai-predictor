@@ -1,0 +1,9 @@
+{
+  "phase": 12,
+  "season": "2026/27",
+  "fixtures": 380,
+  "predictions": 380,
+  "teams": 20,
+  "simulations": 50000,
+  "source": "preseason_snapshot"
+}

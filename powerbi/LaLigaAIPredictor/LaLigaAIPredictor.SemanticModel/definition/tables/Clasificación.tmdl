@@ -1,0 +1,113 @@
+table Clasificación
+	lineageTag: a3d09e93-fee5-4bef-b798-ed4743897fec
+
+	measure 'Puntos actuales' = MAX('Clasificación'[Puntos])
+		formatString: 0
+		displayFolder: Equipo
+		lineageTag: 88d5f50f-665e-4886-af0f-5b422ff35912
+
+	measure 'Posición actual equipo' = MIN('Clasificación'[Posición actual])
+		formatString: 0
+		displayFolder: Equipo
+		lineageTag: a6c8a752-c22d-425a-94ef-480a39f25afa
+
+	column 'Equipo ID'
+		dataType: string
+		lineageTag: c9211064-226a-413a-a524-bde3ad68cdc8
+		summarizeBy: none
+		sourceColumn: team_id
+
+	column Equipo
+		dataType: string
+		lineageTag: 227aa80a-e720-405d-a4ef-faa3ae4819b7
+		summarizeBy: none
+		sourceColumn: team
+
+	column PJ
+		dataType: int64
+		formatString: 0
+		lineageTag: ec45bfcc-7839-4463-80a9-c164dde930fb
+		summarizeBy: none
+		sourceColumn: played
+
+	column PG
+		dataType: int64
+		formatString: 0
+		lineageTag: 03abd754-9173-4d87-bfb3-2f4ce6e9aa16
+		summarizeBy: none
+		sourceColumn: wins
+
+	column PE
+		dataType: int64
+		formatString: 0
+		lineageTag: 6b9fd389-ba13-4b05-befc-443aa8ba6b4e
+		summarizeBy: none
+		sourceColumn: draws
+
+	column PP
+		dataType: int64
+		formatString: 0
+		lineageTag: eb1809bf-dda1-431e-89a0-72770d7b79d9
+		summarizeBy: none
+		sourceColumn: losses
+
+	column GF
+		dataType: int64
+		formatString: 0
+		lineageTag: 79dcc86a-dec8-4b8f-9d9b-fb57096405ad
+		summarizeBy: none
+		sourceColumn: goals_for
+
+	column GC
+		dataType: int64
+		formatString: 0
+		lineageTag: 05eb4e2a-532f-4021-b1ca-2bf86ecbb1ef
+		summarizeBy: none
+		sourceColumn: goals_against
+
+	column DG
+		dataType: int64
+		formatString: 0
+		lineageTag: 9972c9b4-3162-4e19-8dc9-9c6de2b650bc
+		summarizeBy: none
+		sourceColumn: goal_difference
+
+	column Puntos
+		dataType: int64
+		formatString: 0
+		lineageTag: c5aa9bbd-0de1-4c7d-8607-114016211f3a
+		summarizeBy: none
+		sourceColumn: points
+
+	column 'Posición actual'
+		dataType: int64
+		formatString: 0
+		lineageTag: 73827fdd-e149-409b-be45-00ca1da1a016
+		summarizeBy: none
+		sourceColumn: position
+
+	column PPG
+		dataType: double
+		formatString: 0.0
+		lineageTag: 95e477c2-5edb-485a-af97-85ad00eb1127
+		summarizeBy: none
+		sourceColumn: ppg
+
+	column 'Update ID'
+		dataType: string
+		lineageTag: 596ac86a-fbbb-4711-9bff-6b67a9d97e7b
+		summarizeBy: none
+		sourceColumn: update_id
+
+	partition Clasificación = m
+		mode: import
+		source =
+				let
+				    Source = PostgreSQL.Database(
+				        pPostgresServer,
+				        pPostgresDatabase,
+				        [Query="SELECT * FROM bi_current_standings"]
+				    )
+				in
+				    Source
+

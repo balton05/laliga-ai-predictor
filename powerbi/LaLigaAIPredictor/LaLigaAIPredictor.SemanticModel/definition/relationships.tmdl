@@ -1,0 +1,64 @@
+relationship afdf88ee88c1a838a76b03bc2266f5a8
+	fromColumn: Partidos.Jornada
+	toColumn: 'Dim Jornada'.Jornada
+
+relationship c83cfcd0664b2594e191c91d5401ad20
+	fromColumn: Equipo-Partido.'Equipo ID'
+	toColumn: 'Dim Equipo'.'Equipo ID'
+
+relationship 978e7032ad0f2d5f28d51036c8e9c20b
+	fromColumn: Clasificación.'Equipo ID'
+	toColumn: 'Dim Equipo'.'Equipo ID'
+
+relationship 3a816206ee011e66b99b687cde86d055
+	fromColumn: Simulación.'Equipo ID'
+	toColumn: 'Dim Equipo'.'Equipo ID'
+
+relationship f27e34dde559f579481f1b3a3a3b390f
+	fromColumn: 'Probabilidad Posición'.'Equipo ID'
+	toColumn: 'Dim Equipo'.'Equipo ID'
+
+relationship 8a404858e8657661ab03abb1a5ad80f7
+	fromColumn: 'Probabilidad Posición'.Posición
+	toColumn: 'Dim Posición'.Posición
+
+relationship 50631614-ef0f-43b4-aa74-09dbead56af4
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Partidos.'Fecha referencia'
+	toColumn: LocalDateTable_c1ba4fab-dca3-4b6b-ad8e-eb2234caf0d3.Date
+
+relationship 098ac907-10a2-4cfe-a4c6-65f7d6865ef9
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Partidos.'Fecha programada'
+	toColumn: LocalDateTable_a8eed26d-13d6-49b6-8a91-6cd8843c0cf8.Date
+
+relationship 5acb7b56-f0e5-43dc-803a-ff217a0b39f2
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Equipo-Partido.Fecha
+	toColumn: LocalDateTable_403224a9-9a70-4816-8fcf-57b61a58ca3c.Date
+
+relationship 7d6f838a-89a1-4de6-b230-647cad655399
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Actualizaciones.'Creado UTC'
+	toColumn: LocalDateTable_2e257390-5498-44be-94d9-f91fc65f87aa.Date
+
+relationship b887ed3d-eaa5-4fc4-98fd-564c88fca5ce
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Actualizaciones.'Fecha snapshot'
+	toColumn: LocalDateTable_6880603f-3c3f-4568-a30f-0db983bd5634.Date
+
+relationship 18d9c048-4297-4980-8527-d041d570cd62
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Partidos.played_date
+	toColumn: LocalDateTable_4f51e648-b686-450a-ae13-3a0e80aefef7.Date
+
+relationship c7b07164-08d0-495a-92c6-76a7cb6b32da
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Partidos.odds_captured_at
+	toColumn: LocalDateTable_682cd9be-9dde-4c62-9568-0aff542cfa5c.Date
+
+relationship 592cf7f4-8f9b-4b05-9848-311b8e63e5f4
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Equipo-Partido.scheduled_date
+	toColumn: LocalDateTable_29700243-b536-469b-aba8-866520d00b6f.Date
+

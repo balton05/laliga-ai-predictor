@@ -1,0 +1,171 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "2b085a6533840bf5509b",
+  "position": {
+    "x": 24,
+    "y": 236,
+    "z": 4000,
+    "height": 452,
+    "width": 1232,
+    "tabOrder": 4000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Equipo-Partido"
+                    }
+                  },
+                  "Property": "Jornada"
+                }
+              },
+              "queryRef": "Equipo-Partido.Jornada",
+              "nativeQueryRef": "Jornada"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Equipo-Partido"
+                    }
+                  },
+                  "Property": "Condición"
+                }
+              },
+              "queryRef": "Equipo-Partido.Condición",
+              "nativeQueryRef": "Condición"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Equipo-Partido"
+                    }
+                  },
+                  "Property": "Rival"
+                }
+              },
+              "queryRef": "Equipo-Partido.Rival",
+              "nativeQueryRef": "Rival"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Equipo-Partido"
+                    }
+                  },
+                  "Property": "Estado"
+                }
+              },
+              "queryRef": "Equipo-Partido.Estado",
+              "nativeQueryRef": "Estado"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Equipo-Partido"
+                    }
+                  },
+                  "Property": "Probabilidad victoria"
+                }
+              },
+              "queryRef": "Equipo-Partido.Probabilidad victoria",
+              "nativeQueryRef": "Probabilidad victoria"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Equipo-Partido"
+                    }
+                  },
+                  "Property": "Probabilidad empate"
+                }
+              },
+              "queryRef": "Equipo-Partido.Probabilidad empate",
+              "nativeQueryRef": "Probabilidad empate"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Equipo-Partido"
+                    }
+                  },
+                  "Property": "Probabilidad derrota"
+                }
+              },
+              "queryRef": "Equipo-Partido.Probabilidad derrota",
+              "nativeQueryRef": "Probabilidad derrota"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Equipo-Partido"
+                    }
+                  },
+                  "Property": "xG a favor"
+                }
+              },
+              "queryRef": "Equipo-Partido.xG a favor",
+              "nativeQueryRef": "xG a favor"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Equipo-Partido"
+                    }
+                  },
+                  "Property": "xG en contra"
+                }
+              },
+              "queryRef": "Equipo-Partido.xG en contra",
+              "nativeQueryRef": "xG en contra"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "columnHeaders": [
+        {
+          "properties": {
+            "columnAdjustment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'growToFit'"
+                }
+              }
+            },
+            "autoSizeColumnWidth": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

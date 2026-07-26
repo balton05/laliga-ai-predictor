@@ -1,0 +1,10 @@
+{
+  "status": "ok",
+  "database": "snapshot",
+  "season": "2026/27",
+  "latest_update_id": "7f6a923c1a4600d7",
+  "fixtures": 380,
+  "predictions": 380,
+  "completed_matches": 0,
+  "simulations": 50000
+}

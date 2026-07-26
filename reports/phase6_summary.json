@@ -1,0 +1,38 @@
+{
+  "quality_passed": true,
+  "quality_checks": 14,
+  "advanced_models_evaluated": 4,
+  "candidate_configurations": 64,
+  "validation_rows_per_model": 760,
+  "test_rows_per_model": 380,
+  "advanced_champion": "random_forest_market",
+  "sports_champion": "random_forest_sports",
+  "advanced_champion_validation_log_loss": 0.9557971736219291,
+  "advanced_champion_test_log_loss": 0.9634610354601497,
+  "advanced_champion_test_accuracy": 0.5394736842105263,
+  "advanced_champion_test_macro_f1": 0.38675385395682427,
+  "sports_champion_test_log_loss": 0.9710953153949028,
+  "market_test_log_loss": 0.964103415733941,
+  "sports_baseline_test_log_loss": 0.9758671364855256,
+  "advanced_champion_beats_market_on_test": true,
+  "sports_champion_beats_sports_baseline_on_test": true,
+  "advanced_champion_test_difference_ci_95": [
+    -0.012610150589390839,
+    0.011219536658168102
+  ],
+  "advanced_champion_improvement_statistically_clear": false,
+  "sports_champion_test_difference_ci_95": [
+    -0.028618761978478173,
+    0.01816409830194628
+  ],
+  "sports_champion_improvement_statistically_clear": false,
+  "fixture_predictions_2026_27": 380,
+  "production_models_trained_through": "2025/26",
+  "figures": [
+    "figures/18_advanced_validation.png",
+    "figures/19_advanced_test.png",
+    "figures/20_advanced_calibration.png",
+    "figures/21_advanced_feature_importance.png",
+    "figures/22_advanced_fixtures.png"
+  ]
+}

@@ -1,0 +1,381 @@
+fixture_id,season,matchday,reference_date,scheduled_date,kickoff_time,home_team_id,home_team,home_team_official,away_team_id,away_team,away_team_official,status
+laliga_102249,2026/27,1,2026-08-16,,,alaves,Deportivo Alavés,Deportivo Alavés,getafe,Getafe CF,Getafe CF,scheduled
+laliga_102250,2026/27,1,2026-08-16,,,atletico_madrid,Atlético de Madrid,Atlético de Madrid,malaga,Málaga CF,Málaga CF,scheduled
+laliga_102251,2026/27,1,2026-08-16,,,celta,RC Celta,RC Celta,osasuna,CA Osasuna,CA Osasuna,scheduled
+laliga_102252,2026/27,1,2026-08-16,,,deportivo,RC Deportivo,RC Deportivo,elche,Elche CF,Elche CF,scheduled
+laliga_102253,2026/27,1,2026-08-16,,,espanyol,RCD Espanyol,RCD Espanyol de Barcelona,levante,Levante UD,Levante UD,scheduled
+laliga_102254,2026/27,1,2026-08-16,,,barcelona,FC Barcelona,FC Barcelona,athletic_bilbao,Athletic Club,Athletic Club,scheduled
+laliga_102255,2026/27,1,2026-08-16,,,racing_santander,Racing de Santander,R. Racing Club,villarreal,Villarreal CF,Villarreal CF,scheduled
+laliga_102256,2026/27,1,2026-08-16,,,real_madrid,Real Madrid,Real Madrid,real_sociedad,Real Sociedad,Real Sociedad,scheduled
+laliga_102257,2026/27,1,2026-08-16,,,sevilla,Sevilla FC,Sevilla FC,vallecano,Rayo Vallecano,Rayo Vallecano,scheduled
+laliga_102258,2026/27,1,2026-08-16,,,valencia,Valencia CF,Valencia CF,betis,Real Betis,Real Betis,scheduled
+laliga_102259,2026/27,2,2026-08-23,,,athletic_bilbao,Athletic Club,Athletic Club,sevilla,Sevilla FC,Sevilla FC,scheduled
+laliga_102260,2026/27,2,2026-08-23,,,atletico_madrid,Atlético de Madrid,Atlético de Madrid,villarreal,Villarreal CF,Villarreal CF,scheduled
+laliga_102261,2026/27,2,2026-08-23,,,betis,Real Betis,Real Betis,real_sociedad,Real Sociedad,Real Sociedad,scheduled
+laliga_102262,2026/27,2,2026-08-23,,,elche,Elche CF,Elche CF,barcelona,FC Barcelona,FC Barcelona,scheduled
+laliga_102263,2026/27,2,2026-08-23,,,espanyol,RCD Espanyol,RCD Espanyol de Barcelona,real_madrid,Real Madrid,Real Madrid,scheduled
+laliga_102264,2026/27,2,2026-08-23,,,getafe,Getafe CF,Getafe CF,racing_santander,Racing de Santander,R. Racing Club,scheduled
+laliga_102265,2026/27,2,2026-08-23,,,malaga,Málaga CF,Málaga CF,deportivo,RC Deportivo,RC Deportivo,scheduled
+laliga_102266,2026/27,2,2026-08-23,,,osasuna,CA Osasuna,CA Osasuna,levante,Levante UD,Levante UD,scheduled
+laliga_102267,2026/27,2,2026-08-23,,,vallecano,Rayo Vallecano,Rayo Vallecano,alaves,Deportivo Alavés,Deportivo Alavés,scheduled
+laliga_102268,2026/27,2,2026-08-23,,,valencia,Valencia CF,Valencia CF,celta,RC Celta,RC Celta,scheduled
+laliga_102269,2026/27,3,2026-08-30,,,alaves,Deportivo Alavés,Deportivo Alavés,villarreal,Villarreal CF,Villarreal CF,scheduled
+laliga_102270,2026/27,3,2026-08-30,,,celta,RC Celta,RC Celta,athletic_bilbao,Athletic Club,Athletic Club,scheduled
+laliga_102271,2026/27,3,2026-08-30,,,deportivo,RC Deportivo,RC Deportivo,valencia,Valencia CF,Valencia CF,scheduled
+laliga_102272,2026/27,3,2026-08-30,,,barcelona,FC Barcelona,FC Barcelona,vallecano,Rayo Vallecano,Rayo Vallecano,scheduled
+laliga_102273,2026/27,3,2026-08-30,,,levante,Levante UD,Levante UD,betis,Real Betis,Real Betis,scheduled
+laliga_102274,2026/27,3,2026-08-30,,,osasuna,CA Osasuna,CA Osasuna,getafe,Getafe CF,Getafe CF,scheduled
+laliga_102275,2026/27,3,2026-08-30,,,racing_santander,Racing de Santander,R. Racing Club,elche,Elche CF,Elche CF,scheduled
+laliga_102276,2026/27,3,2026-08-30,,,real_madrid,Real Madrid,Real Madrid,malaga,Málaga CF,Málaga CF,scheduled
+laliga_102277,2026/27,3,2026-08-30,,,real_sociedad,Real Sociedad,Real Sociedad,espanyol,RCD Espanyol,RCD Espanyol de Barcelona,scheduled
+laliga_102278,2026/27,3,2026-08-30,,,sevilla,Sevilla FC,Sevilla FC,atletico_madrid,Atlético de Madrid,Atlético de Madrid,scheduled
+laliga_102279,2026/27,4,2026-09-06,,,alaves,Deportivo Alavés,Deportivo Alavés,osasuna,CA Osasuna,CA Osasuna,scheduled
+laliga_102280,2026/27,4,2026-09-06,,,athletic_bilbao,Athletic Club,Athletic Club,atletico_madrid,Atlético de Madrid,Atlético de Madrid,scheduled
+laliga_102281,2026/27,4,2026-09-06,,,betis,Real Betis,Real Betis,real_madrid,Real Madrid,Real Madrid,scheduled
+laliga_102282,2026/27,4,2026-09-06,,,elche,Elche CF,Elche CF,real_sociedad,Real Sociedad,Real Sociedad,scheduled
+laliga_102283,2026/27,4,2026-09-06,,,espanyol,RCD Espanyol,RCD Espanyol de Barcelona,sevilla,Sevilla FC,Sevilla FC,scheduled
+laliga_102284,2026/27,4,2026-09-06,,,getafe,Getafe CF,Getafe CF,celta,RC Celta,RC Celta,scheduled
+laliga_102285,2026/27,4,2026-09-06,,,malaga,Málaga CF,Málaga CF,levante,Levante UD,Levante UD,scheduled
+laliga_102286,2026/27,4,2026-09-06,,,vallecano,Rayo Vallecano,Rayo Vallecano,racing_santander,Racing de Santander,R. Racing Club,scheduled
+laliga_102287,2026/27,4,2026-09-06,,,valencia,Valencia CF,Valencia CF,barcelona,FC Barcelona,FC Barcelona,scheduled
+laliga_102288,2026/27,4,2026-09-06,,,villarreal,Villarreal CF,Villarreal CF,deportivo,RC Deportivo,RC Deportivo,scheduled
+laliga_102289,2026/27,5,2026-09-13,,,athletic_bilbao,Athletic Club,Athletic Club,elche,Elche CF,Elche CF,scheduled
+laliga_102290,2026/27,5,2026-09-13,,,celta,RC Celta,RC Celta,malaga,Málaga CF,Málaga CF,scheduled
+laliga_102291,2026/27,5,2026-09-13,,,getafe,Getafe CF,Getafe CF,deportivo,RC Deportivo,RC Deportivo,scheduled
+laliga_102292,2026/27,5,2026-09-13,,,levante,Levante UD,Levante UD,barcelona,FC Barcelona,FC Barcelona,scheduled
+laliga_102293,2026/27,5,2026-09-13,,,osasuna,CA Osasuna,CA Osasuna,espanyol,RCD Espanyol,RCD Espanyol de Barcelona,scheduled
+laliga_102294,2026/27,5,2026-09-13,,,racing_santander,Racing de Santander,R. Racing Club,alaves,Deportivo Alavés,Deportivo Alavés,scheduled
+laliga_102295,2026/27,5,2026-09-13,,,real_madrid,Real Madrid,Real Madrid,vallecano,Rayo Vallecano,Rayo Vallecano,scheduled
+laliga_102296,2026/27,5,2026-09-13,,,real_sociedad,Real Sociedad,Real Sociedad,atletico_madrid,Atlético de Madrid,Atlético de Madrid,scheduled
+laliga_102297,2026/27,5,2026-09-13,,,sevilla,Sevilla FC,Sevilla FC,valencia,Valencia CF,Valencia CF,scheduled
+laliga_102298,2026/27,5,2026-09-13,,,villarreal,Villarreal CF,Villarreal CF,betis,Real Betis,Real Betis,scheduled
+laliga_102299,2026/27,6,2026-09-16,,,alaves,Deportivo Alavés,Deportivo Alavés,valencia,Valencia CF,Valencia CF,scheduled
+laliga_102300,2026/27,6,2026-09-16,,,atletico_madrid,Atlético de Madrid,Atlético de Madrid,osasuna,CA Osasuna,CA Osasuna,scheduled
+laliga_102301,2026/27,6,2026-09-16,,,betis,Real Betis,Real Betis,getafe,Getafe CF,Getafe CF,scheduled
+laliga_102302,2026/27,6,2026-09-16,,,deportivo,RC Deportivo,RC Deportivo,sevilla,Sevilla FC,Sevilla FC,scheduled
+laliga_102303,2026/27,6,2026-09-16,,,elche,Elche CF,Elche CF,real_madrid,Real Madrid,Real Madrid,scheduled
+laliga_102304,2026/27,6,2026-09-16,,,barcelona,FC Barcelona,FC Barcelona,racing_santander,Racing de Santander,R. Racing Club,scheduled
+laliga_102305,2026/27,6,2026-09-16,,,levante,Levante UD,Levante UD,athletic_bilbao,Athletic Club,Athletic Club,scheduled
+laliga_102306,2026/27,6,2026-09-16,,,malaga,Málaga CF,Málaga CF,villarreal,Villarreal CF,Villarreal CF,scheduled
+laliga_102307,2026/27,6,2026-09-16,,,vallecano,Rayo Vallecano,Rayo Vallecano,espanyol,RCD Espanyol,RCD Espanyol de Barcelona,scheduled
+laliga_102308,2026/27,6,2026-09-16,,,real_sociedad,Real Sociedad,Real Sociedad,celta,RC Celta,RC Celta,scheduled
+laliga_102309,2026/27,7,2026-09-20,,,athletic_bilbao,Athletic Club,Athletic Club,alaves,Deportivo Alavés,Deportivo Alavés,scheduled
+laliga_102310,2026/27,7,2026-09-20,,,atletico_madrid,Atlético de Madrid,Atlético de Madrid,real_madrid,Real Madrid,Real Madrid,scheduled
+laliga_102311,2026/27,7,2026-09-20,,,celta,RC Celta,RC Celta,racing_santander,Racing de Santander,R. Racing Club,scheduled
+laliga_102312,2026/27,7,2026-09-20,,,deportivo,RC Deportivo,RC Deportivo,betis,Real Betis,Real Betis,scheduled
+laliga_102313,2026/27,7,2026-09-20,,,espanyol,RCD Espanyol,RCD Espanyol de Barcelona,elche,Elche CF,Elche CF,scheduled
+laliga_102314,2026/27,7,2026-09-20,,,getafe,Getafe CF,Getafe CF,malaga,Málaga CF,Málaga CF,scheduled
+laliga_102315,2026/27,7,2026-09-20,,,osasuna,CA Osasuna,CA Osasuna,vallecano,Rayo Vallecano,Rayo Vallecano,scheduled
+laliga_102316,2026/27,7,2026-09-20,,,sevilla,Sevilla FC,Sevilla FC,barcelona,FC Barcelona,FC Barcelona,scheduled
+laliga_102317,2026/27,7,2026-09-20,,,valencia,Valencia CF,Valencia CF,real_sociedad,Real Sociedad,Real Sociedad,scheduled
+laliga_102318,2026/27,7,2026-09-20,,,villarreal,Villarreal CF,Villarreal CF,levante,Levante UD,Levante UD,scheduled
+laliga_102319,2026/27,8,2026-10-11,,,alaves,Deportivo Alavés,Deportivo Alavés,atletico_madrid,Atlético de Madrid,Atlético de Madrid,scheduled
+laliga_102320,2026/27,8,2026-10-11,,,betis,Real Betis,Real Betis,osasuna,CA Osasuna,CA Osasuna,scheduled
+laliga_102321,2026/27,8,2026-10-11,,,elche,Elche CF,Elche CF,celta,RC Celta,RC Celta,scheduled
+laliga_102322,2026/27,8,2026-10-11,,,barcelona,FC Barcelona,FC Barcelona,getafe,Getafe CF,Getafe CF,scheduled
+laliga_102323,2026/27,8,2026-10-11,,,levante,Levante UD,Levante UD,sevilla,Sevilla FC,Sevilla FC,scheduled
+laliga_102324,2026/27,8,2026-10-11,,,malaga,Málaga CF,Málaga CF,espanyol,RCD Espanyol,RCD Espanyol de Barcelona,scheduled
+laliga_102325,2026/27,8,2026-10-11,,,racing_santander,Racing de Santander,R. Racing Club,valencia,Valencia CF,Valencia CF,scheduled
+laliga_102326,2026/27,8,2026-10-11,,,vallecano,Rayo Vallecano,Rayo Vallecano,athletic_bilbao,Athletic Club,Athletic Club,scheduled
+laliga_102327,2026/27,8,2026-10-11,,,real_madrid,Real Madrid,Real Madrid,villarreal,Villarreal CF,Villarreal CF,scheduled
+laliga_102328,2026/27,8,2026-10-11,,,real_sociedad,Real Sociedad,Real Sociedad,deportivo,RC Deportivo,RC Deportivo,scheduled
+laliga_102329,2026/27,9,2026-10-18,,,betis,Real Betis,Real Betis,barcelona,FC Barcelona,FC Barcelona,scheduled
+laliga_102330,2026/27,9,2026-10-18,,,celta,RC Celta,RC Celta,alaves,Deportivo Alavés,Deportivo Alavés,scheduled
+laliga_102331,2026/27,9,2026-10-18,,,deportivo,RC Deportivo,RC Deportivo,levante,Levante UD,Levante UD,scheduled
+laliga_102332,2026/27,9,2026-10-18,,,espanyol,RCD Espanyol,RCD Espanyol de Barcelona,atletico_madrid,Atlético de Madrid,Atlético de Madrid,scheduled
+laliga_102333,2026/27,9,2026-10-18,,,getafe,Getafe CF,Getafe CF,vallecano,Rayo Vallecano,Rayo Vallecano,scheduled
+laliga_102334,2026/27,9,2026-10-18,,,malaga,Málaga CF,Málaga CF,real_sociedad,Real Sociedad,Real Sociedad,scheduled
+laliga_102335,2026/27,9,2026-10-18,,,osasuna,CA Osasuna,CA Osasuna,racing_santander,Racing de Santander,R. Racing Club,scheduled
+laliga_102336,2026/27,9,2026-10-18,,,real_madrid,Real Madrid,Real Madrid,sevilla,Sevilla FC,Sevilla FC,scheduled
+laliga_102337,2026/27,9,2026-10-18,,,valencia,Valencia CF,Valencia CF,athletic_bilbao,Athletic Club,Athletic Club,scheduled
+laliga_102338,2026/27,9,2026-10-18,,,villarreal,Villarreal CF,Villarreal CF,elche,Elche CF,Elche CF,scheduled
+laliga_102339,2026/27,10,2026-10-25,,,alaves,Deportivo Alavés,Deportivo Alavés,malaga,Málaga CF,Málaga CF,scheduled
+laliga_102340,2026/27,10,2026-10-25,,,athletic_bilbao,Athletic Club,Athletic Club,getafe,Getafe CF,Getafe CF,scheduled
+laliga_102341,2026/27,10,2026-10-25,,,atletico_madrid,Atlético de Madrid,Atlético de Madrid,deportivo,RC Deportivo,RC Deportivo,scheduled
+laliga_102342,2026/27,10,2026-10-25,,,celta,RC Celta,RC Celta,betis,Real Betis,Real Betis,scheduled
+laliga_102343,2026/27,10,2026-10-25,,,barcelona,FC Barcelona,FC Barcelona,real_madrid,Real Madrid,Real Madrid,scheduled
+laliga_102344,2026/27,10,2026-10-25,,,racing_santander,Racing de Santander,R. Racing Club,espanyol,RCD Espanyol,RCD Espanyol de Barcelona,scheduled
+laliga_102345,2026/27,10,2026-10-25,,,vallecano,Rayo Vallecano,Rayo Vallecano,elche,Elche CF,Elche CF,scheduled
+laliga_102346,2026/27,10,2026-10-25,,,real_sociedad,Real Sociedad,Real Sociedad,levante,Levante UD,Levante UD,scheduled
+laliga_102347,2026/27,10,2026-10-25,,,sevilla,Sevilla FC,Sevilla FC,osasuna,CA Osasuna,CA Osasuna,scheduled
+laliga_102348,2026/27,10,2026-10-25,,,valencia,Valencia CF,Valencia CF,villarreal,Villarreal CF,Villarreal CF,scheduled
+laliga_102349,2026/27,11,2026-11-01,,,athletic_bilbao,Athletic Club,Athletic Club,real_sociedad,Real Sociedad,Real Sociedad,scheduled
+laliga_102350,2026/27,11,2026-11-01,,,betis,Real Betis,Real Betis,malaga,Málaga CF,Málaga CF,scheduled
+laliga_102351,2026/27,11,2026-11-01,,,deportivo,RC Deportivo,RC Deportivo,osasuna,CA Osasuna,CA Osasuna,scheduled
+laliga_102352,2026/27,11,2026-11-01,,,elche,Elche CF,Elche CF,valencia,Valencia CF,Valencia CF,scheduled
+laliga_102353,2026/27,11,2026-11-01,,,barcelona,FC Barcelona,FC Barcelona,alaves,Deportivo Alavés,Deportivo Alavés,scheduled
+laliga_102354,2026/27,11,2026-11-01,,,getafe,Getafe CF,Getafe CF,sevilla,Sevilla FC,Sevilla FC,scheduled
+laliga_102355,2026/27,11,2026-11-01,,,levante,Levante UD,Levante UD,atletico_madrid,Atlético de Madrid,Atlético de Madrid,scheduled
+laliga_102356,2026/27,11,2026-11-01,,,racing_santander,Racing de Santander,R. Racing Club,real_madrid,Real Madrid,Real Madrid,scheduled
+laliga_102357,2026/27,11,2026-11-01,,,vallecano,Rayo Vallecano,Rayo Vallecano,celta,RC Celta,RC Celta,scheduled
+laliga_102358,2026/27,11,2026-11-01,,,villarreal,Villarreal CF,Villarreal CF,espanyol,RCD Espanyol,RCD Espanyol de Barcelona,scheduled
+laliga_102359,2026/27,12,2026-11-08,,,atletico_madrid,Atlético de Madrid,Atlético de Madrid,barcelona,FC Barcelona,FC Barcelona,scheduled
+laliga_102360,2026/27,12,2026-11-08,,,celta,RC Celta,RC Celta,levante,Levante UD,Levante UD,scheduled
+laliga_102361,2026/27,12,2026-11-08,,,elche,Elche CF,Elche CF,betis,Real Betis,Real Betis,scheduled
+laliga_102362,2026/27,12,2026-11-08,,,espanyol,RCD Espanyol,RCD Espanyol de Barcelona,deportivo,RC Deportivo,RC Deportivo,scheduled
+laliga_102363,2026/27,12,2026-11-08,,,malaga,Málaga CF,Málaga CF,racing_santander,Racing de Santander,R. Racing Club,scheduled
+laliga_102364,2026/27,12,2026-11-08,,,osasuna,CA Osasuna,CA Osasuna,athletic_bilbao,Athletic Club,Athletic Club,scheduled
+laliga_102365,2026/27,12,2026-11-08,,,real_sociedad,Real Sociedad,Real Sociedad,vallecano,Rayo Vallecano,Rayo Vallecano,scheduled
+laliga_102366,2026/27,12,2026-11-08,,,sevilla,Sevilla FC,Sevilla FC,alaves,Deportivo Alavés,Deportivo Alavés,scheduled
+laliga_102367,2026/27,12,2026-11-08,,,valencia,Valencia CF,Valencia CF,real_madrid,Real Madrid,Real Madrid,scheduled
+laliga_102368,2026/27,12,2026-11-08,,,villarreal,Villarreal CF,Villarreal CF,getafe,Getafe CF,Getafe CF,scheduled
+laliga_102369,2026/27,13,2026-11-22,,,alaves,Deportivo Alavés,Deportivo Alavés,deportivo,RC Deportivo,RC Deportivo,scheduled
+laliga_102370,2026/27,13,2026-11-22,,,athletic_bilbao,Athletic Club,Athletic Club,espanyol,RCD Espanyol,RCD Espanyol de Barcelona,scheduled
+laliga_102371,2026/27,13,2026-11-22,,,barcelona,FC Barcelona,FC Barcelona,villarreal,Villarreal CF,Villarreal CF,scheduled
+laliga_102372,2026/27,13,2026-11-22,,,getafe,Getafe CF,Getafe CF,atletico_madrid,Atlético de Madrid,Atlético de Madrid,scheduled
+laliga_102373,2026/27,13,2026-11-22,,,levante,Levante UD,Levante UD,elche,Elche CF,Elche CF,scheduled
+laliga_102374,2026/27,13,2026-11-22,,,osasuna,CA Osasuna,CA Osasuna,malaga,Málaga CF,Málaga CF,scheduled
+laliga_102375,2026/27,13,2026-11-22,,,racing_santander,Racing de Santander,R. Racing Club,real_sociedad,Real Sociedad,Real Sociedad,scheduled
+laliga_102376,2026/27,13,2026-11-22,,,vallecano,Rayo Vallecano,Rayo Vallecano,valencia,Valencia CF,Valencia CF,scheduled
+laliga_102377,2026/27,13,2026-11-22,,,real_madrid,Real Madrid,Real Madrid,celta,RC Celta,RC Celta,scheduled
+laliga_102378,2026/27,13,2026-11-22,,,sevilla,Sevilla FC,Sevilla FC,betis,Real Betis,Real Betis,scheduled
+laliga_102379,2026/27,14,2026-11-29,,,betis,Real Betis,Real Betis,vallecano,Rayo Vallecano,Rayo Vallecano,scheduled
+laliga_102380,2026/27,14,2026-11-29,,,celta,RC Celta,RC Celta,villarreal,Villarreal CF,Villarreal CF,scheduled
+laliga_102381,2026/27,14,2026-11-29,,,deportivo,RC Deportivo,RC Deportivo,barcelona,FC Barcelona,FC Barcelona,scheduled
+laliga_102382,2026/27,14,2026-11-29,,,elche,Elche CF,Elche CF,atletico_madrid,Atlético de Madrid,Atlético de Madrid,scheduled
+laliga_102383,2026/27,14,2026-11-29,,,espanyol,RCD Espanyol,RCD Espanyol de Barcelona,getafe,Getafe CF,Getafe CF,scheduled
+laliga_102384,2026/27,14,2026-11-29,,,levante,Levante UD,Levante UD,racing_santander,Racing de Santander,R. Racing Club,scheduled
+laliga_102385,2026/27,14,2026-11-29,,,malaga,Málaga CF,Málaga CF,athletic_bilbao,Athletic Club,Athletic Club,scheduled
+laliga_102386,2026/27,14,2026-11-29,,,real_madrid,Real Madrid,Real Madrid,alaves,Deportivo Alavés,Deportivo Alavés,scheduled
+laliga_102387,2026/27,14,2026-11-29,,,real_sociedad,Real Sociedad,Real Sociedad,sevilla,Sevilla FC,Sevilla FC,scheduled
+laliga_102388,2026/27,14,2026-11-29,,,valencia,Valencia CF,Valencia CF,osasuna,CA Osasuna,CA Osasuna,scheduled
+laliga_102389,2026/27,15,2026-12-06,,,alaves,Deportivo Alavés,Deportivo Alavés,espanyol,RCD Espanyol,RCD Espanyol de Barcelona,scheduled
+laliga_102390,2026/27,15,2026-12-06,,,athletic_bilbao,Athletic Club,Athletic Club,real_madrid,Real Madrid,Real Madrid,scheduled
+laliga_102391,2026/27,15,2026-12-06,,,atletico_madrid,Atlético de Madrid,Atlético de Madrid,betis,Real Betis,Real Betis,scheduled
+laliga_102392,2026/27,15,2026-12-06,,,barcelona,FC Barcelona,FC Barcelona,celta,RC Celta,RC Celta,scheduled
+laliga_102393,2026/27,15,2026-12-06,,,getafe,Getafe CF,Getafe CF,valencia,Valencia CF,Valencia CF,scheduled
+laliga_102394,2026/27,15,2026-12-06,,,osasuna,CA Osasuna,CA Osasuna,elche,Elche CF,Elche CF,scheduled
+laliga_102395,2026/27,15,2026-12-06,,,racing_santander,Racing de Santander,R. Racing Club,deportivo,RC Deportivo,RC Deportivo,scheduled
+laliga_102396,2026/27,15,2026-12-06,,,vallecano,Rayo Vallecano,Rayo Vallecano,levante,Levante UD,Levante UD,scheduled
+laliga_102397,2026/27,15,2026-12-06,,,sevilla,Sevilla FC,Sevilla FC,malaga,Málaga CF,Málaga CF,scheduled
+laliga_102398,2026/27,15,2026-12-06,,,villarreal,Villarreal CF,Villarreal CF,real_sociedad,Real Sociedad,Real Sociedad,scheduled
+laliga_102399,2026/27,16,2026-12-13,,,atletico_madrid,Atlético de Madrid,Atlético de Madrid,valencia,Valencia CF,Valencia CF,scheduled
+laliga_102400,2026/27,16,2026-12-13,,,betis,Real Betis,Real Betis,racing_santander,Racing de Santander,R. Racing Club,scheduled
+laliga_102401,2026/27,16,2026-12-13,,,deportivo,RC Deportivo,RC Deportivo,athletic_bilbao,Athletic Club,Athletic Club,scheduled
+laliga_102402,2026/27,16,2026-12-13,,,elche,Elche CF,Elche CF,sevilla,Sevilla FC,Sevilla FC,scheduled
+laliga_102403,2026/27,16,2026-12-13,,,espanyol,RCD Espanyol,RCD Espanyol de Barcelona,celta,RC Celta,RC Celta,scheduled
+laliga_102404,2026/27,16,2026-12-13,,,levante,Levante UD,Levante UD,alaves,Deportivo Alavés,Deportivo Alavés,scheduled
+laliga_102405,2026/27,16,2026-12-13,,,malaga,Málaga CF,Málaga CF,barcelona,FC Barcelona,FC Barcelona,scheduled
+laliga_102406,2026/27,16,2026-12-13,,,real_madrid,Real Madrid,Real Madrid,osasuna,CA Osasuna,CA Osasuna,scheduled
+laliga_102407,2026/27,16,2026-12-13,,,real_sociedad,Real Sociedad,Real Sociedad,getafe,Getafe CF,Getafe CF,scheduled
+laliga_102408,2026/27,16,2026-12-13,,,villarreal,Villarreal CF,Villarreal CF,vallecano,Rayo Vallecano,Rayo Vallecano,scheduled
+laliga_102409,2026/27,17,2026-12-20,,,alaves,Deportivo Alavés,Deportivo Alavés,elche,Elche CF,Elche CF,scheduled
+laliga_102410,2026/27,17,2026-12-20,,,athletic_bilbao,Athletic Club,Athletic Club,betis,Real Betis,Real Betis,scheduled
+laliga_102411,2026/27,17,2026-12-20,,,celta,RC Celta,RC Celta,atletico_madrid,Atlético de Madrid,Atlético de Madrid,scheduled
+laliga_102412,2026/27,17,2026-12-20,,,deportivo,RC Deportivo,RC Deportivo,real_madrid,Real Madrid,Real Madrid,scheduled
+laliga_102413,2026/27,17,2026-12-20,,,barcelona,FC Barcelona,FC Barcelona,real_sociedad,Real Sociedad,Real Sociedad,scheduled
+laliga_102414,2026/27,17,2026-12-20,,,getafe,Getafe CF,Getafe CF,levante,Levante UD,Levante UD,scheduled
+laliga_102415,2026/27,17,2026-12-20,,,osasuna,CA Osasuna,CA Osasuna,villarreal,Villarreal CF,Villarreal CF,scheduled
+laliga_102416,2026/27,17,2026-12-20,,,vallecano,Rayo Vallecano,Rayo Vallecano,malaga,Málaga CF,Málaga CF,scheduled
+laliga_102417,2026/27,17,2026-12-20,,,sevilla,Sevilla FC,Sevilla FC,racing_santander,Racing de Santander,R. Racing Club,scheduled
+laliga_102418,2026/27,17,2026-12-20,,,valencia,Valencia CF,Valencia CF,espanyol,RCD Espanyol,RCD Espanyol de Barcelona,scheduled
+laliga_102419,2026/27,18,2027-01-03,,,betis,Real Betis,Real Betis,alaves,Deportivo Alavés,Deportivo Alavés,scheduled
+laliga_102420,2026/27,18,2027-01-03,,,celta,RC Celta,RC Celta,deportivo,RC Deportivo,RC Deportivo,scheduled
+laliga_102421,2026/27,18,2027-01-03,,,espanyol,RCD Espanyol,RCD Espanyol de Barcelona,barcelona,FC Barcelona,FC Barcelona,scheduled
+laliga_102422,2026/27,18,2027-01-03,,,levante,Levante UD,Levante UD,valencia,Valencia CF,Valencia CF,scheduled
+laliga_102423,2026/27,18,2027-01-03,,,malaga,Málaga CF,Málaga CF,elche,Elche CF,Elche CF,scheduled
+laliga_102424,2026/27,18,2027-01-03,,,racing_santander,Racing de Santander,R. Racing Club,athletic_bilbao,Athletic Club,Athletic Club,scheduled
+laliga_102425,2026/27,18,2027-01-03,,,vallecano,Rayo Vallecano,Rayo Vallecano,atletico_madrid,Atlético de Madrid,Atlético de Madrid,scheduled
+laliga_102426,2026/27,18,2027-01-03,,,real_madrid,Real Madrid,Real Madrid,getafe,Getafe CF,Getafe CF,scheduled
+laliga_102427,2026/27,18,2027-01-03,,,real_sociedad,Real Sociedad,Real Sociedad,osasuna,CA Osasuna,CA Osasuna,scheduled
+laliga_102428,2026/27,18,2027-01-03,,,villarreal,Villarreal CF,Villarreal CF,sevilla,Sevilla FC,Sevilla FC,scheduled
+laliga_102429,2026/27,19,2027-01-10,,,alaves,Deportivo Alavés,Deportivo Alavés,real_sociedad,Real Sociedad,Real Sociedad,scheduled
+laliga_102430,2026/27,19,2027-01-10,,,athletic_bilbao,Athletic Club,Athletic Club,villarreal,Villarreal CF,Villarreal CF,scheduled
+laliga_102431,2026/27,19,2027-01-10,,,atletico_madrid,Atlético de Madrid,Atlético de Madrid,racing_santander,Racing de Santander,R. Racing Club,scheduled
+laliga_102432,2026/27,19,2027-01-10,,,deportivo,RC Deportivo,RC Deportivo,vallecano,Rayo Vallecano,Rayo Vallecano,scheduled
+laliga_102433,2026/27,19,2027-01-10,,,elche,Elche CF,Elche CF,getafe,Getafe CF,Getafe CF,scheduled
+laliga_102434,2026/27,19,2027-01-10,,,espanyol,RCD Espanyol,RCD Espanyol de Barcelona,betis,Real Betis,Real Betis,scheduled
+laliga_102435,2026/27,19,2027-01-10,,,osasuna,CA Osasuna,CA Osasuna,barcelona,FC Barcelona,FC Barcelona,scheduled
+laliga_102436,2026/27,19,2027-01-10,,,real_madrid,Real Madrid,Real Madrid,levante,Levante UD,Levante UD,scheduled
+laliga_102437,2026/27,19,2027-01-10,,,sevilla,Sevilla FC,Sevilla FC,celta,RC Celta,RC Celta,scheduled
+laliga_102438,2026/27,19,2027-01-10,,,valencia,Valencia CF,Valencia CF,malaga,Málaga CF,Málaga CF,scheduled
+laliga_102439,2026/27,20,2027-01-17,,,atletico_madrid,Atlético de Madrid,Atlético de Madrid,real_sociedad,Real Sociedad,Real Sociedad,scheduled
+laliga_102440,2026/27,20,2027-01-17,,,betis,Real Betis,Real Betis,deportivo,RC Deportivo,RC Deportivo,scheduled
+laliga_102441,2026/27,20,2027-01-17,,,celta,RC Celta,RC Celta,valencia,Valencia CF,Valencia CF,scheduled
+laliga_102442,2026/27,20,2027-01-17,,,barcelona,FC Barcelona,FC Barcelona,elche,Elche CF,Elche CF,scheduled
+laliga_102443,2026/27,20,2027-01-17,,,getafe,Getafe CF,Getafe CF,athletic_bilbao,Athletic Club,Athletic Club,scheduled
+laliga_102444,2026/27,20,2027-01-17,,,levante,Levante UD,Levante UD,espanyol,RCD Espanyol,RCD Espanyol de Barcelona,scheduled
+laliga_102445,2026/27,20,2027-01-17,,,malaga,Málaga CF,Málaga CF,real_madrid,Real Madrid,Real Madrid,scheduled
+laliga_102446,2026/27,20,2027-01-17,,,racing_santander,Racing de Santander,R. Racing Club,osasuna,CA Osasuna,CA Osasuna,scheduled
+laliga_102447,2026/27,20,2027-01-17,,,vallecano,Rayo Vallecano,Rayo Vallecano,sevilla,Sevilla FC,Sevilla FC,scheduled
+laliga_102448,2026/27,20,2027-01-17,,,villarreal,Villarreal CF,Villarreal CF,alaves,Deportivo Alavés,Deportivo Alavés,scheduled
+laliga_102449,2026/27,21,2027-01-24,,,alaves,Deportivo Alavés,Deportivo Alavés,barcelona,FC Barcelona,FC Barcelona,scheduled
+laliga_102450,2026/27,21,2027-01-24,,,athletic_bilbao,Athletic Club,Athletic Club,levante,Levante UD,Levante UD,scheduled
+laliga_102451,2026/27,21,2027-01-24,,,deportivo,RC Deportivo,RC Deportivo,atletico_madrid,Atlético de Madrid,Atlético de Madrid,scheduled
+laliga_102452,2026/27,21,2027-01-24,,,elche,Elche CF,Elche CF,vallecano,Rayo Vallecano,Rayo Vallecano,scheduled
+laliga_102453,2026/27,21,2027-01-24,,,espanyol,RCD Espanyol,RCD Espanyol de Barcelona,villarreal,Villarreal CF,Villarreal CF,scheduled
+laliga_102454,2026/27,21,2027-01-24,,,getafe,Getafe CF,Getafe CF,osasuna,CA Osasuna,CA Osasuna,scheduled
+laliga_102455,2026/27,21,2027-01-24,,,racing_santander,Racing de Santander,R. Racing Club,celta,RC Celta,RC Celta,scheduled
+laliga_102456,2026/27,21,2027-01-24,,,real_madrid,Real Madrid,Real Madrid,betis,Real Betis,Real Betis,scheduled
+laliga_102457,2026/27,21,2027-01-24,,,real_sociedad,Real Sociedad,Real Sociedad,malaga,Málaga CF,Málaga CF,scheduled
+laliga_102458,2026/27,21,2027-01-24,,,valencia,Valencia CF,Valencia CF,sevilla,Sevilla FC,Sevilla FC,scheduled
+laliga_102459,2026/27,22,2027-01-31,,,atletico_madrid,Atlético de Madrid,Atlético de Madrid,espanyol,RCD Espanyol,RCD Espanyol de Barcelona,scheduled
+laliga_102460,2026/27,22,2027-01-31,,,betis,Real Betis,Real Betis,elche,Elche CF,Elche CF,scheduled
+laliga_102461,2026/27,22,2027-01-31,,,celta,RC Celta,RC Celta,getafe,Getafe CF,Getafe CF,scheduled
+laliga_102462,2026/27,22,2027-01-31,,,barcelona,FC Barcelona,FC Barcelona,valencia,Valencia CF,Valencia CF,scheduled
+laliga_102463,2026/27,22,2027-01-31,,,levante,Levante UD,Levante UD,real_sociedad,Real Sociedad,Real Sociedad,scheduled
+laliga_102464,2026/27,22,2027-01-31,,,malaga,Málaga CF,Málaga CF,alaves,Deportivo Alavés,Deportivo Alavés,scheduled
+laliga_102465,2026/27,22,2027-01-31,,,osasuna,CA Osasuna,CA Osasuna,deportivo,RC Deportivo,RC Deportivo,scheduled
+laliga_102466,2026/27,22,2027-01-31,,,vallecano,Rayo Vallecano,Rayo Vallecano,real_madrid,Real Madrid,Real Madrid,scheduled
+laliga_102467,2026/27,22,2027-01-31,,,sevilla,Sevilla FC,Sevilla FC,athletic_bilbao,Athletic Club,Athletic Club,scheduled
+laliga_102468,2026/27,22,2027-01-31,,,villarreal,Villarreal CF,Villarreal CF,racing_santander,Racing de Santander,R. Racing Club,scheduled
+laliga_102469,2026/27,23,2027-02-07,,,alaves,Deportivo Alavés,Deportivo Alavés,celta,RC Celta,RC Celta,scheduled
+laliga_102470,2026/27,23,2027-02-07,,,athletic_bilbao,Athletic Club,Athletic Club,osasuna,CA Osasuna,CA Osasuna,scheduled
+laliga_102471,2026/27,23,2027-02-07,,,betis,Real Betis,Real Betis,sevilla,Sevilla FC,Sevilla FC,scheduled
+laliga_102472,2026/27,23,2027-02-07,,,deportivo,RC Deportivo,RC Deportivo,malaga,Málaga CF,Málaga CF,scheduled
+laliga_102473,2026/27,23,2027-02-07,,,elche,Elche CF,Elche CF,levante,Levante UD,Levante UD,scheduled
+laliga_102474,2026/27,23,2027-02-07,,,espanyol,RCD Espanyol,RCD Espanyol de Barcelona,vallecano,Rayo Vallecano,Rayo Vallecano,scheduled
+laliga_102475,2026/27,23,2027-02-07,,,barcelona,FC Barcelona,FC Barcelona,atletico_madrid,Atlético de Madrid,Atlético de Madrid,scheduled
+laliga_102476,2026/27,23,2027-02-07,,,getafe,Getafe CF,Getafe CF,villarreal,Villarreal CF,Villarreal CF,scheduled
+laliga_102477,2026/27,23,2027-02-07,,,real_sociedad,Real Sociedad,Real Sociedad,real_madrid,Real Madrid,Real Madrid,scheduled
+laliga_102478,2026/27,23,2027-02-07,,,valencia,Valencia CF,Valencia CF,racing_santander,Racing de Santander,R. Racing Club,scheduled
+laliga_102479,2026/27,24,2027-02-14,,,celta,RC Celta,RC Celta,vallecano,Rayo Vallecano,Rayo Vallecano,scheduled
+laliga_102480,2026/27,24,2027-02-14,,,elche,Elche CF,Elche CF,deportivo,RC Deportivo,RC Deportivo,scheduled
+laliga_102481,2026/27,24,2027-02-14,,,levante,Levante UD,Levante UD,malaga,Málaga CF,Málaga CF,scheduled
+laliga_102482,2026/27,24,2027-02-14,,,osasuna,CA Osasuna,CA Osasuna,atletico_madrid,Atlético de Madrid,Atlético de Madrid,scheduled
+laliga_102483,2026/27,24,2027-02-14,,,racing_santander,Racing de Santander,R. Racing Club,getafe,Getafe CF,Getafe CF,scheduled
+laliga_102484,2026/27,24,2027-02-14,,,real_madrid,Real Madrid,Real Madrid,athletic_bilbao,Athletic Club,Athletic Club,scheduled
+laliga_102485,2026/27,24,2027-02-14,,,real_sociedad,Real Sociedad,Real Sociedad,betis,Real Betis,Real Betis,scheduled
+laliga_102486,2026/27,24,2027-02-14,,,sevilla,Sevilla FC,Sevilla FC,espanyol,RCD Espanyol,RCD Espanyol de Barcelona,scheduled
+laliga_102487,2026/27,24,2027-02-14,,,valencia,Valencia CF,Valencia CF,alaves,Deportivo Alavés,Deportivo Alavés,scheduled
+laliga_102488,2026/27,24,2027-02-14,,,villarreal,Villarreal CF,Villarreal CF,barcelona,FC Barcelona,FC Barcelona,scheduled
+laliga_102489,2026/27,25,2027-02-21,,,alaves,Deportivo Alavés,Deportivo Alavés,racing_santander,Racing de Santander,R. Racing Club,scheduled
+laliga_102490,2026/27,25,2027-02-21,,,athletic_bilbao,Athletic Club,Athletic Club,celta,RC Celta,RC Celta,scheduled
+laliga_102491,2026/27,25,2027-02-21,,,atletico_madrid,Atlético de Madrid,Atlético de Madrid,elche,Elche CF,Elche CF,scheduled
+laliga_102492,2026/27,25,2027-02-21,,,deportivo,RC Deportivo,RC Deportivo,real_sociedad,Real Sociedad,Real Sociedad,scheduled
+laliga_102493,2026/27,25,2027-02-21,,,espanyol,RCD Espanyol,RCD Espanyol de Barcelona,osasuna,CA Osasuna,CA Osasuna,scheduled
+laliga_102494,2026/27,25,2027-02-21,,,barcelona,FC Barcelona,FC Barcelona,levante,Levante UD,Levante UD,scheduled
+laliga_102495,2026/27,25,2027-02-21,,,malaga,Málaga CF,Málaga CF,betis,Real Betis,Real Betis,scheduled
+laliga_102496,2026/27,25,2027-02-21,,,vallecano,Rayo Vallecano,Rayo Vallecano,getafe,Getafe CF,Getafe CF,scheduled
+laliga_102497,2026/27,25,2027-02-21,,,sevilla,Sevilla FC,Sevilla FC,real_madrid,Real Madrid,Real Madrid,scheduled
+laliga_102498,2026/27,25,2027-02-21,,,villarreal,Villarreal CF,Villarreal CF,valencia,Valencia CF,Valencia CF,scheduled
+laliga_102499,2026/27,26,2027-02-28,,,athletic_bilbao,Athletic Club,Athletic Club,barcelona,FC Barcelona,FC Barcelona,scheduled
+laliga_102500,2026/27,26,2027-02-28,,,betis,Real Betis,Real Betis,villarreal,Villarreal CF,Villarreal CF,scheduled
+laliga_102501,2026/27,26,2027-02-28,,,celta,RC Celta,RC Celta,espanyol,RCD Espanyol,RCD Espanyol de Barcelona,scheduled
+laliga_102502,2026/27,26,2027-02-28,,,getafe,Getafe CF,Getafe CF,alaves,Deportivo Alavés,Deportivo Alavés,scheduled
+laliga_102503,2026/27,26,2027-02-28,,,levante,Levante UD,Levante UD,deportivo,RC Deportivo,RC Deportivo,scheduled
+laliga_102504,2026/27,26,2027-02-28,,,malaga,Málaga CF,Málaga CF,atletico_madrid,Atlético de Madrid,Atlético de Madrid,scheduled
+laliga_102505,2026/27,26,2027-02-28,,,osasuna,CA Osasuna,CA Osasuna,sevilla,Sevilla FC,Sevilla FC,scheduled
+laliga_102506,2026/27,26,2027-02-28,,,racing_santander,Racing de Santander,R. Racing Club,vallecano,Rayo Vallecano,Rayo Vallecano,scheduled
+laliga_102507,2026/27,26,2027-02-28,,,real_madrid,Real Madrid,Real Madrid,valencia,Valencia CF,Valencia CF,scheduled
+laliga_102508,2026/27,26,2027-02-28,,,real_sociedad,Real Sociedad,Real Sociedad,elche,Elche CF,Elche CF,scheduled
+laliga_102509,2026/27,27,2027-03-07,,,alaves,Deportivo Alavés,Deportivo Alavés,athletic_bilbao,Athletic Club,Athletic Club,scheduled
+laliga_102510,2026/27,27,2027-03-07,,,atletico_madrid,Atlético de Madrid,Atlético de Madrid,celta,RC Celta,RC Celta,scheduled
+laliga_102511,2026/27,27,2027-03-07,,,deportivo,RC Deportivo,RC Deportivo,getafe,Getafe CF,Getafe CF,scheduled
+laliga_102512,2026/27,27,2027-03-07,,,elche,Elche CF,Elche CF,malaga,Málaga CF,Málaga CF,scheduled
+laliga_102513,2026/27,27,2027-03-07,,,espanyol,RCD Espanyol,RCD Espanyol de Barcelona,racing_santander,Racing de Santander,R. Racing Club,scheduled
+laliga_102514,2026/27,27,2027-03-07,,,barcelona,FC Barcelona,FC Barcelona,betis,Real Betis,Real Betis,scheduled
+laliga_102515,2026/27,27,2027-03-07,,,vallecano,Rayo Vallecano,Rayo Vallecano,osasuna,CA Osasuna,CA Osasuna,scheduled
+laliga_102516,2026/27,27,2027-03-07,,,sevilla,Sevilla FC,Sevilla FC,real_sociedad,Real Sociedad,Real Sociedad,scheduled
+laliga_102517,2026/27,27,2027-03-07,,,valencia,Valencia CF,Valencia CF,levante,Levante UD,Levante UD,scheduled
+laliga_102518,2026/27,27,2027-03-07,,,villarreal,Villarreal CF,Villarreal CF,real_madrid,Real Madrid,Real Madrid,scheduled
+laliga_102519,2026/27,28,2027-03-14,,,alaves,Deportivo Alavés,Deportivo Alavés,sevilla,Sevilla FC,Sevilla FC,scheduled
+laliga_102520,2026/27,28,2027-03-14,,,athletic_bilbao,Athletic Club,Athletic Club,valencia,Valencia CF,Valencia CF,scheduled
+laliga_102521,2026/27,28,2027-03-14,,,betis,Real Betis,Real Betis,levante,Levante UD,Levante UD,scheduled
+laliga_102522,2026/27,28,2027-03-14,,,elche,Elche CF,Elche CF,villarreal,Villarreal CF,Villarreal CF,scheduled
+laliga_102523,2026/27,28,2027-03-14,,,barcelona,FC Barcelona,FC Barcelona,deportivo,RC Deportivo,RC Deportivo,scheduled
+laliga_102524,2026/27,28,2027-03-14,,,getafe,Getafe CF,Getafe CF,real_sociedad,Real Sociedad,Real Sociedad,scheduled
+laliga_102525,2026/27,28,2027-03-14,,,malaga,Málaga CF,Málaga CF,vallecano,Rayo Vallecano,Rayo Vallecano,scheduled
+laliga_102526,2026/27,28,2027-03-14,,,osasuna,CA Osasuna,CA Osasuna,celta,RC Celta,RC Celta,scheduled
+laliga_102527,2026/27,28,2027-03-14,,,racing_santander,Racing de Santander,R. Racing Club,atletico_madrid,Atlético de Madrid,Atlético de Madrid,scheduled
+laliga_102528,2026/27,28,2027-03-14,,,real_madrid,Real Madrid,Real Madrid,espanyol,RCD Espanyol,RCD Espanyol de Barcelona,scheduled
+laliga_102529,2026/27,29,2027-03-21,,,atletico_madrid,Atlético de Madrid,Atlético de Madrid,getafe,Getafe CF,Getafe CF,scheduled
+laliga_102530,2026/27,29,2027-03-21,,,celta,RC Celta,RC Celta,real_madrid,Real Madrid,Real Madrid,scheduled
+laliga_102531,2026/27,29,2027-03-21,,,espanyol,RCD Espanyol,RCD Espanyol de Barcelona,athletic_bilbao,Athletic Club,Athletic Club,scheduled
+laliga_102532,2026/27,29,2027-03-21,,,levante,Levante UD,Levante UD,osasuna,CA Osasuna,CA Osasuna,scheduled
+laliga_102533,2026/27,29,2027-03-21,,,racing_santander,Racing de Santander,R. Racing Club,betis,Real Betis,Real Betis,scheduled
+laliga_102534,2026/27,29,2027-03-21,,,vallecano,Rayo Vallecano,Rayo Vallecano,barcelona,FC Barcelona,FC Barcelona,scheduled
+laliga_102535,2026/27,29,2027-03-21,,,real_sociedad,Real Sociedad,Real Sociedad,alaves,Deportivo Alavés,Deportivo Alavés,scheduled
+laliga_102536,2026/27,29,2027-03-21,,,sevilla,Sevilla FC,Sevilla FC,elche,Elche CF,Elche CF,scheduled
+laliga_102537,2026/27,29,2027-03-21,,,valencia,Valencia CF,Valencia CF,deportivo,RC Deportivo,RC Deportivo,scheduled
+laliga_102538,2026/27,29,2027-03-21,,,villarreal,Villarreal CF,Villarreal CF,malaga,Málaga CF,Málaga CF,scheduled
+laliga_102539,2026/27,30,2027-04-04,,,athletic_bilbao,Athletic Club,Athletic Club,racing_santander,Racing de Santander,R. Racing Club,scheduled
+laliga_102540,2026/27,30,2027-04-04,,,betis,Real Betis,Real Betis,celta,RC Celta,RC Celta,scheduled
+laliga_102541,2026/27,30,2027-04-04,,,deportivo,RC Deportivo,RC Deportivo,villarreal,Villarreal CF,Villarreal CF,scheduled
+laliga_102542,2026/27,30,2027-04-04,,,elche,Elche CF,Elche CF,alaves,Deportivo Alavés,Deportivo Alavés,scheduled
+laliga_102543,2026/27,30,2027-04-04,,,barcelona,FC Barcelona,FC Barcelona,sevilla,Sevilla FC,Sevilla FC,scheduled
+laliga_102544,2026/27,30,2027-04-04,,,getafe,Getafe CF,Getafe CF,espanyol,RCD Espanyol,RCD Espanyol de Barcelona,scheduled
+laliga_102545,2026/27,30,2027-04-04,,,levante,Levante UD,Levante UD,vallecano,Rayo Vallecano,Rayo Vallecano,scheduled
+laliga_102546,2026/27,30,2027-04-04,,,malaga,Málaga CF,Málaga CF,osasuna,CA Osasuna,CA Osasuna,scheduled
+laliga_102547,2026/27,30,2027-04-04,,,real_madrid,Real Madrid,Real Madrid,atletico_madrid,Atlético de Madrid,Atlético de Madrid,scheduled
+laliga_102548,2026/27,30,2027-04-04,,,real_sociedad,Real Sociedad,Real Sociedad,valencia,Valencia CF,Valencia CF,scheduled
+laliga_102549,2026/27,31,2027-04-11,,,alaves,Deportivo Alavés,Deportivo Alavés,betis,Real Betis,Real Betis,scheduled
+laliga_102550,2026/27,31,2027-04-11,,,atletico_madrid,Atlético de Madrid,Atlético de Madrid,levante,Levante UD,Levante UD,scheduled
+laliga_102551,2026/27,31,2027-04-11,,,celta,RC Celta,RC Celta,elche,Elche CF,Elche CF,scheduled
+laliga_102552,2026/27,31,2027-04-11,,,espanyol,RCD Espanyol,RCD Espanyol de Barcelona,malaga,Málaga CF,Málaga CF,scheduled
+laliga_102553,2026/27,31,2027-04-11,,,osasuna,CA Osasuna,CA Osasuna,real_madrid,Real Madrid,Real Madrid,scheduled
+laliga_102554,2026/27,31,2027-04-11,,,racing_santander,Racing de Santander,R. Racing Club,barcelona,FC Barcelona,FC Barcelona,scheduled
+laliga_102555,2026/27,31,2027-04-11,,,vallecano,Rayo Vallecano,Rayo Vallecano,real_sociedad,Real Sociedad,Real Sociedad,scheduled
+laliga_102556,2026/27,31,2027-04-11,,,sevilla,Sevilla FC,Sevilla FC,deportivo,RC Deportivo,RC Deportivo,scheduled
+laliga_102557,2026/27,31,2027-04-11,,,valencia,Valencia CF,Valencia CF,getafe,Getafe CF,Getafe CF,scheduled
+laliga_102558,2026/27,31,2027-04-11,,,villarreal,Villarreal CF,Villarreal CF,athletic_bilbao,Athletic Club,Athletic Club,scheduled
+laliga_102559,2026/27,32,2027-04-18,,,alaves,Deportivo Alavés,Deportivo Alavés,vallecano,Rayo Vallecano,Rayo Vallecano,scheduled
+laliga_102560,2026/27,32,2027-04-18,,,atletico_madrid,Atlético de Madrid,Atlético de Madrid,sevilla,Sevilla FC,Sevilla FC,scheduled
+laliga_102561,2026/27,32,2027-04-18,,,betis,Real Betis,Real Betis,athletic_bilbao,Athletic Club,Athletic Club,scheduled
+laliga_102562,2026/27,32,2027-04-18,,,deportivo,RC Deportivo,RC Deportivo,celta,RC Celta,RC Celta,scheduled
+laliga_102563,2026/27,32,2027-04-18,,,elche,Elche CF,Elche CF,osasuna,CA Osasuna,CA Osasuna,scheduled
+laliga_102564,2026/27,32,2027-04-18,,,barcelona,FC Barcelona,FC Barcelona,espanyol,RCD Espanyol,RCD Espanyol de Barcelona,scheduled
+laliga_102565,2026/27,32,2027-04-18,,,getafe,Getafe CF,Getafe CF,real_madrid,Real Madrid,Real Madrid,scheduled
+laliga_102566,2026/27,32,2027-04-18,,,levante,Levante UD,Levante UD,villarreal,Villarreal CF,Villarreal CF,scheduled
+laliga_102567,2026/27,32,2027-04-18,,,malaga,Málaga CF,Málaga CF,valencia,Valencia CF,Valencia CF,scheduled
+laliga_102568,2026/27,32,2027-04-18,,,real_sociedad,Real Sociedad,Real Sociedad,racing_santander,Racing de Santander,R. Racing Club,scheduled
+laliga_102569,2026/27,33,2027-04-21,,,athletic_bilbao,Athletic Club,Athletic Club,deportivo,RC Deportivo,RC Deportivo,scheduled
+laliga_102570,2026/27,33,2027-04-21,,,celta,RC Celta,RC Celta,barcelona,FC Barcelona,FC Barcelona,scheduled
+laliga_102571,2026/27,33,2027-04-21,,,espanyol,RCD Espanyol,RCD Espanyol de Barcelona,real_sociedad,Real Sociedad,Real Sociedad,scheduled
+laliga_102572,2026/27,33,2027-04-21,,,getafe,Getafe CF,Getafe CF,betis,Real Betis,Real Betis,scheduled
+laliga_102573,2026/27,33,2027-04-21,,,osasuna,CA Osasuna,CA Osasuna,alaves,Deportivo Alavés,Deportivo Alavés,scheduled
+laliga_102574,2026/27,33,2027-04-21,,,racing_santander,Racing de Santander,R. Racing Club,malaga,Málaga CF,Málaga CF,scheduled
+laliga_102575,2026/27,33,2027-04-21,,,real_madrid,Real Madrid,Real Madrid,elche,Elche CF,Elche CF,scheduled
+laliga_102576,2026/27,33,2027-04-21,,,sevilla,Sevilla FC,Sevilla FC,levante,Levante UD,Levante UD,scheduled
+laliga_102577,2026/27,33,2027-04-21,,,valencia,Valencia CF,Valencia CF,vallecano,Rayo Vallecano,Rayo Vallecano,scheduled
+laliga_102578,2026/27,33,2027-04-21,,,villarreal,Villarreal CF,Villarreal CF,atletico_madrid,Atlético de Madrid,Atlético de Madrid,scheduled
+laliga_102579,2026/27,34,2027-05-02,,,atletico_madrid,Atlético de Madrid,Atlético de Madrid,alaves,Deportivo Alavés,Deportivo Alavés,scheduled
+laliga_102580,2026/27,34,2027-05-02,,,betis,Real Betis,Real Betis,valencia,Valencia CF,Valencia CF,scheduled
+laliga_102581,2026/27,34,2027-05-02,,,celta,RC Celta,RC Celta,sevilla,Sevilla FC,Sevilla FC,scheduled
+laliga_102582,2026/27,34,2027-05-02,,,deportivo,RC Deportivo,RC Deportivo,racing_santander,Racing de Santander,R. Racing Club,scheduled
+laliga_102583,2026/27,34,2027-05-02,,,elche,Elche CF,Elche CF,espanyol,RCD Espanyol,RCD Espanyol de Barcelona,scheduled
+laliga_102584,2026/27,34,2027-05-02,,,barcelona,FC Barcelona,FC Barcelona,osasuna,CA Osasuna,CA Osasuna,scheduled
+laliga_102585,2026/27,34,2027-05-02,,,levante,Levante UD,Levante UD,real_madrid,Real Madrid,Real Madrid,scheduled
+laliga_102586,2026/27,34,2027-05-02,,,malaga,Málaga CF,Málaga CF,getafe,Getafe CF,Getafe CF,scheduled
+laliga_102587,2026/27,34,2027-05-02,,,vallecano,Rayo Vallecano,Rayo Vallecano,villarreal,Villarreal CF,Villarreal CF,scheduled
+laliga_102588,2026/27,34,2027-05-02,,,real_sociedad,Real Sociedad,Real Sociedad,athletic_bilbao,Athletic Club,Athletic Club,scheduled
+laliga_102589,2026/27,35,2027-05-09,,,alaves,Deportivo Alavés,Deportivo Alavés,levante,Levante UD,Levante UD,scheduled
+laliga_102590,2026/27,35,2027-05-09,,,athletic_bilbao,Athletic Club,Athletic Club,malaga,Málaga CF,Málaga CF,scheduled
+laliga_102591,2026/27,35,2027-05-09,,,betis,Real Betis,Real Betis,espanyol,RCD Espanyol,RCD Espanyol de Barcelona,scheduled
+laliga_102592,2026/27,35,2027-05-09,,,getafe,Getafe CF,Getafe CF,elche,Elche CF,Elche CF,scheduled
+laliga_102593,2026/27,35,2027-05-09,,,osasuna,CA Osasuna,CA Osasuna,real_sociedad,Real Sociedad,Real Sociedad,scheduled
+laliga_102594,2026/27,35,2027-05-09,,,racing_santander,Racing de Santander,R. Racing Club,sevilla,Sevilla FC,Sevilla FC,scheduled
+laliga_102595,2026/27,35,2027-05-09,,,vallecano,Rayo Vallecano,Rayo Vallecano,deportivo,RC Deportivo,RC Deportivo,scheduled
+laliga_102596,2026/27,35,2027-05-09,,,real_madrid,Real Madrid,Real Madrid,barcelona,FC Barcelona,FC Barcelona,scheduled
+laliga_102597,2026/27,35,2027-05-09,,,valencia,Valencia CF,Valencia CF,atletico_madrid,Atlético de Madrid,Atlético de Madrid,scheduled
+laliga_102598,2026/27,35,2027-05-09,,,villarreal,Villarreal CF,Villarreal CF,celta,RC Celta,RC Celta,scheduled
+laliga_102599,2026/27,36,2027-05-16,,,atletico_madrid,Atlético de Madrid,Atlético de Madrid,vallecano,Rayo Vallecano,Rayo Vallecano,scheduled
+laliga_102600,2026/27,36,2027-05-16,,,deportivo,RC Deportivo,RC Deportivo,alaves,Deportivo Alavés,Deportivo Alavés,scheduled
+laliga_102601,2026/27,36,2027-05-16,,,elche,Elche CF,Elche CF,athletic_bilbao,Athletic Club,Athletic Club,scheduled
+laliga_102602,2026/27,36,2027-05-16,,,espanyol,RCD Espanyol,RCD Espanyol de Barcelona,valencia,Valencia CF,Valencia CF,scheduled
+laliga_102603,2026/27,36,2027-05-16,,,levante,Levante UD,Levante UD,getafe,Getafe CF,Getafe CF,scheduled
+laliga_102604,2026/27,36,2027-05-16,,,malaga,Málaga CF,Málaga CF,celta,RC Celta,RC Celta,scheduled
+laliga_102605,2026/27,36,2027-05-16,,,osasuna,CA Osasuna,CA Osasuna,betis,Real Betis,Real Betis,scheduled
+laliga_102606,2026/27,36,2027-05-16,,,real_madrid,Real Madrid,Real Madrid,racing_santander,Racing de Santander,R. Racing Club,scheduled
+laliga_102607,2026/27,36,2027-05-16,,,real_sociedad,Real Sociedad,Real Sociedad,barcelona,FC Barcelona,FC Barcelona,scheduled
+laliga_102608,2026/27,36,2027-05-16,,,sevilla,Sevilla FC,Sevilla FC,villarreal,Villarreal CF,Villarreal CF,scheduled
+laliga_102609,2026/27,37,2027-05-23,,,alaves,Deportivo Alavés,Deportivo Alavés,real_madrid,Real Madrid,Real Madrid,scheduled
+laliga_102610,2026/27,37,2027-05-23,,,atletico_madrid,Atlético de Madrid,Atlético de Madrid,athletic_bilbao,Athletic Club,Athletic Club,scheduled
+laliga_102611,2026/27,37,2027-05-23,,,celta,RC Celta,RC Celta,real_sociedad,Real Sociedad,Real Sociedad,scheduled
+laliga_102612,2026/27,37,2027-05-23,,,deportivo,RC Deportivo,RC Deportivo,espanyol,RCD Espanyol,RCD Espanyol de Barcelona,scheduled
+laliga_102613,2026/27,37,2027-05-23,,,barcelona,FC Barcelona,FC Barcelona,malaga,Málaga CF,Málaga CF,scheduled
+laliga_102614,2026/27,37,2027-05-23,,,racing_santander,Racing de Santander,R. Racing Club,levante,Levante UD,Levante UD,scheduled
+laliga_102615,2026/27,37,2027-05-23,,,vallecano,Rayo Vallecano,Rayo Vallecano,betis,Real Betis,Real Betis,scheduled
+laliga_102616,2026/27,37,2027-05-23,,,sevilla,Sevilla FC,Sevilla FC,getafe,Getafe CF,Getafe CF,scheduled
+laliga_102617,2026/27,37,2027-05-23,,,valencia,Valencia CF,Valencia CF,elche,Elche CF,Elche CF,scheduled
+laliga_102618,2026/27,37,2027-05-23,,,villarreal,Villarreal CF,Villarreal CF,osasuna,CA Osasuna,CA Osasuna,scheduled
+laliga_102619,2026/27,38,2027-05-30,,,athletic_bilbao,Athletic Club,Athletic Club,vallecano,Rayo Vallecano,Rayo Vallecano,scheduled
+laliga_102620,2026/27,38,2027-05-30,,,betis,Real Betis,Real Betis,atletico_madrid,Atlético de Madrid,Atlético de Madrid,scheduled
+laliga_102621,2026/27,38,2027-05-30,,,elche,Elche CF,Elche CF,racing_santander,Racing de Santander,R. Racing Club,scheduled
+laliga_102622,2026/27,38,2027-05-30,,,espanyol,RCD Espanyol,RCD Espanyol de Barcelona,alaves,Deportivo Alavés,Deportivo Alavés,scheduled
+laliga_102623,2026/27,38,2027-05-30,,,getafe,Getafe CF,Getafe CF,barcelona,FC Barcelona,FC Barcelona,scheduled
+laliga_102624,2026/27,38,2027-05-30,,,levante,Levante UD,Levante UD,celta,RC Celta,RC Celta,scheduled
+laliga_102625,2026/27,38,2027-05-30,,,malaga,Málaga CF,Málaga CF,sevilla,Sevilla FC,Sevilla FC,scheduled
+laliga_102626,2026/27,38,2027-05-30,,,osasuna,CA Osasuna,CA Osasuna,valencia,Valencia CF,Valencia CF,scheduled
+laliga_102627,2026/27,38,2027-05-30,,,real_madrid,Real Madrid,Real Madrid,deportivo,RC Deportivo,RC Deportivo,scheduled
+laliga_102628,2026/27,38,2027-05-30,,,real_sociedad,Real Sociedad,Real Sociedad,villarreal,Villarreal CF,Villarreal CF,scheduled

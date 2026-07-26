@@ -1,0 +1,33 @@
+table 'Dim Equipo'
+	lineageTag: d52bdd2f-3589-40ad-827d-95d1d9451560
+
+	column 'Equipo ID'
+		dataType: string
+		lineageTag: 913f6d8d-2c2c-42ab-b433-ed24881659f5
+		summarizeBy: none
+		sourceColumn: team_id
+
+	column Equipo
+		dataType: string
+		lineageTag: 2caac018-7985-4c94-887c-5cda2e19d8e5
+		summarizeBy: none
+		sourceColumn: team
+
+	column 'Recién ascendido'
+		dataType: boolean
+		lineageTag: 241c4fbe-e741-4208-bf8f-cd95cf9b6518
+		summarizeBy: none
+		sourceColumn: is_promoted
+
+	partition 'Dim Equipo' = m
+		mode: import
+		source =
+				let
+				    Source = PostgreSQL.Database(
+				        pPostgresServer,
+				        pPostgresDatabase,
+				        [Query="SELECT * FROM bi_dim_team"]
+				    )
+				in
+				    Source
+

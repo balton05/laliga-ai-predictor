@@ -1,0 +1,97 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "8b5b13d2156378672ceb",
+  "position": {
+    "x": 24,
+    "y": 88,
+    "z": 2000,
+    "height": 132,
+    "width": 1232,
+    "tabOrder": 2000
+  },
+  "visual": {
+    "visualType": "cardVisual",
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Clasificación"
+                    }
+                  },
+                  "Property": "Puntos actuales"
+                }
+              },
+              "queryRef": "Clasificación.Puntos actuales",
+              "nativeQueryRef": "Puntos actuales"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Simulación"
+                    }
+                  },
+                  "Property": "Puntos esperados equipo"
+                }
+              },
+              "queryRef": "Simulación.Puntos esperados equipo",
+              "nativeQueryRef": "Puntos esperados equipo"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Simulación"
+                    }
+                  },
+                  "Property": "Posición esperada equipo"
+                }
+              },
+              "queryRef": "Simulación.Posición esperada equipo",
+              "nativeQueryRef": "Posición esperada equipo"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Simulación"
+                    }
+                  },
+                  "Property": "P Descenso"
+                }
+              },
+              "queryRef": "Simulación.P Descenso",
+              "nativeQueryRef": "P Descenso"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "outline": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "default"
+          }
+        }
+      ]
+    }
+  }
+}

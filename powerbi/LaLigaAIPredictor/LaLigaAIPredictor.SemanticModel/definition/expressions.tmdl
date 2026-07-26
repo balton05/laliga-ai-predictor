@@ -1,0 +1,9 @@
+expression pPostgresServer = "127.0.0.1:5433"
+	lineageTag: be61da0c-d401-44e5-9b9c-2a565ab92e12
+
+expression pPostgresDatabase = "laliga_predictor"
+	lineageTag: 7dd095cf-f442-4e9c-85be-8d9239169313
+
+expression pApiBaseUrl = "http://localhost:8000"
+	lineageTag: d7b05d39-68b8-4f11-8bcc-b6eb059a8629
+

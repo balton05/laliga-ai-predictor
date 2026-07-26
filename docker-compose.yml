@@ -1,0 +1,46 @@
+services:
+  db:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_DB: laliga_predictor
+      POSTGRES_USER: laliga
+      POSTGRES_PASSWORD: laliga
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U laliga -d laliga_predictor"]
+      interval: 5s
+      timeout: 5s
+      retries: 12
+    ports:
+      - "5433:5432"
+    volumes:
+      - laliga_postgres_data:/var/lib/postgresql/data
+
+  api:
+    build: .
+    environment:
+      LALIGA_DATABASE_URL: postgresql+psycopg://laliga:laliga@db:5432/laliga_predictor
+      LALIGA_PROJECT_ROOT: /app
+      LALIGA_AUTO_SYNC: "true"
+      LALIGA_CORS_ORIGINS: http://localhost:4200,http://127.0.0.1:4200
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./data/incoming:/app/data/incoming
+      - ./data/processed:/app/data/processed
+      - ./reports:/app/reports
+      - ./snapshots:/app/snapshots
+
+  web:
+    build:
+      context: ./frontend
+    depends_on:
+      api:
+        condition: service_started
+    ports:
+      - "4200:80"
+
+volumes:
+  laliga_postgres_data:

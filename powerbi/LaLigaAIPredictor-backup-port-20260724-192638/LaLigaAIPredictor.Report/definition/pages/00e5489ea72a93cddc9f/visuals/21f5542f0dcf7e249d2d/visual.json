@@ -1,0 +1,143 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "21f5542f0dcf7e249d2d",
+  "position": {
+    "x": 808,
+    "y": 228,
+    "z": 4000,
+    "height": 460,
+    "width": 448,
+    "tabOrder": 4000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Simulación"
+                    }
+                  },
+                  "Property": "Equipo"
+                }
+              },
+              "queryRef": "Simulación.Equipo",
+              "nativeQueryRef": "Equipo"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Simulación"
+                    }
+                  },
+                  "Property": "Puntos esperados"
+                }
+              },
+              "queryRef": "Simulación.Puntos esperados",
+              "nativeQueryRef": "Puntos esperados"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Simulación"
+                    }
+                  },
+                  "Property": "Puntos P05"
+                }
+              },
+              "queryRef": "Simulación.Puntos P05",
+              "nativeQueryRef": "Puntos P05"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Simulación"
+                    }
+                  },
+                  "Property": "Puntos P95"
+                }
+              },
+              "queryRef": "Simulación.Puntos P95",
+              "nativeQueryRef": "Puntos P95"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Simulación"
+                    }
+                  },
+                  "Property": "Posición esperada"
+                }
+              },
+              "queryRef": "Simulación.Posición esperada",
+              "nativeQueryRef": "Posición esperada"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Simulación"
+                    }
+                  },
+                  "Property": "Probabilidad campeón"
+                }
+              },
+              "queryRef": "Simulación.Probabilidad campeón",
+              "nativeQueryRef": "Probabilidad campeón"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Simulación"
+                    }
+                  },
+                  "Property": "Probabilidad descenso"
+                }
+              },
+              "queryRef": "Simulación.Probabilidad descenso",
+              "nativeQueryRef": "Probabilidad descenso"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "columnHeaders": [
+        {
+          "properties": {
+            "columnAdjustment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'growToFit'"
+                }
+              }
+            },
+            "autoSizeColumnWidth": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

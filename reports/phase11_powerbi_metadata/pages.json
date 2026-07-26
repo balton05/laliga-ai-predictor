@@ -1,0 +1,68 @@
+{
+  "data": {
+    "reportPath": "/workspace/scratch/a1e2c01c6813/phase11_work/laliga-ai-predictor/powerbi/LaLigaAIPredictor/LaLigaAIPredictor.Report",
+    "activePage": "4b73deaf930a6b428996",
+    "pages": [
+      {
+        "path": "definition/pages/4b73deaf930a6b428996/page.json",
+        "name": "4b73deaf930a6b428996",
+        "displayName": "Resumen",
+        "displayOption": "FitToPage",
+        "width": 1280,
+        "height": 720,
+        "ordinal": 1,
+        "isActive": true
+      },
+      {
+        "path": "definition/pages/e49dbb54eb2d1cdccb44/page.json",
+        "name": "e49dbb54eb2d1cdccb44",
+        "displayName": "Próxima jornada",
+        "displayOption": "FitToPage",
+        "width": 1280,
+        "height": 720,
+        "ordinal": 2,
+        "isActive": false
+      },
+      {
+        "path": "definition/pages/00e5489ea72a93cddc9f/page.json",
+        "name": "00e5489ea72a93cddc9f",
+        "displayName": "Simulación",
+        "displayOption": "FitToPage",
+        "width": 1280,
+        "height": 720,
+        "ordinal": 3,
+        "isActive": false
+      },
+      {
+        "path": "definition/pages/77655223454ea333759b/page.json",
+        "name": "77655223454ea333759b",
+        "displayName": "Clasificación",
+        "displayOption": "FitToPage",
+        "width": 1280,
+        "height": 720,
+        "ordinal": 4,
+        "isActive": false
+      },
+      {
+        "path": "definition/pages/997fb0f8ae9703f56d0b/page.json",
+        "name": "997fb0f8ae9703f56d0b",
+        "displayName": "Explorador de equipos",
+        "displayOption": "FitToPage",
+        "width": 1280,
+        "height": 720,
+        "ordinal": 5,
+        "isActive": false
+      },
+      {
+        "path": "definition/pages/643836222ab9faaf53b9/page.json",
+        "name": "643836222ab9faaf53b9",
+        "displayName": "Calidad y actualización",
+        "displayOption": "FitToPage",
+        "width": 1280,
+        "height": 720,
+        "ordinal": 6,
+        "isActive": false
+      }
+    ]
+  }
+}

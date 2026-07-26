@@ -1,0 +1,14 @@
+{
+  "validated_at": "2026-07-23",
+  "integrated_tests_collected": 63,
+  "integrated_tests_passed": 63,
+  "integrated_tests_failed": 0,
+  "pbir_validation_errors": 0,
+  "pbir_validation_warnings": 0,
+  "semantic_model_tables_loaded": 10,
+  "semantic_model_measures_loaded": 29,
+  "semantic_model_relationships_loaded": 6,
+  "preseason_fixtures": 380,
+  "preseason_predictions": 380,
+  "monte_carlo_simulations": 50000
+}

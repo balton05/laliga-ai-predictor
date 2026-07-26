@@ -1,0 +1,84 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "95983d33f817764f7a87",
+  "position": {
+    "x": 24,
+    "y": 236,
+    "z": 5000,
+    "height": 452,
+    "width": 600,
+    "tabOrder": 5000
+  },
+  "visual": {
+    "visualType": "clusteredColumnChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Partidos"
+                    }
+                  },
+                  "Property": "Partido"
+                }
+              },
+              "queryRef": "Partidos.Partido",
+              "nativeQueryRef": "Partido",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Partidos"
+                    }
+                  },
+                  "Property": "Probabilidad Local promedio"
+                }
+              },
+              "queryRef": "Partidos.Probabilidad Local promedio",
+              "nativeQueryRef": "Probabilidad Local promedio"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Partidos"
+                    }
+                  },
+                  "Property": "Probabilidad Empate promedio"
+                }
+              },
+              "queryRef": "Partidos.Probabilidad Empate promedio",
+              "nativeQueryRef": "Probabilidad Empate promedio"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Partidos"
+                    }
+                  },
+                  "Property": "Probabilidad Visitante promedio"
+                }
+              },
+              "queryRef": "Partidos.Probabilidad Visitante promedio",
+              "nativeQueryRef": "Probabilidad Visitante promedio"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

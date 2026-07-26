@@ -1,0 +1,10 @@
+check,passed,observed,expected
+laliga_rows,True,3800.0,3800
+seasons,True,10.0,10
+matches_per_season,True,380.0,380
+unique_match_ids,True,3800.0,3800
+target_complete,True,3800.0,3800
+market_probabilities_sum_one,True,4.440892098500626e-16,0.0
+temporal_test_locked,True,380.0,380
+calibration_has_predictions,True,22800.0,> 0
+figures_created,True,7.0,7

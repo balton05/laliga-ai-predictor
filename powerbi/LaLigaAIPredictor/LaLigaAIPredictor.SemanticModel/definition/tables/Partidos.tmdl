@@ -1,0 +1,445 @@
+table Partidos
+	lineageTag: 62ff5000-79bd-498b-8ab8-f427896f2511
+
+	measure 'Total partidos' = COUNTROWS('Partidos')
+		formatString: 0
+		displayFolder: Operación
+		lineageTag: a7ca0cee-8079-4fd2-8330-3fa64f48d66c
+
+	measure 'Partidos jugados' = CALCULATE(COUNTROWS('Partidos'), 'Partidos'[Jugado] = TRUE())
+		formatString: 0
+		displayFolder: Operación
+		lineageTag: 4a4fc3d9-96bf-4d63-a8ab-24bc897db2aa
+
+	measure 'Partidos pendientes' = [Total partidos] - [Partidos jugados]
+		formatString: 0
+		displayFolder: Operación
+		lineageTag: 50d7cda3-93e8-441b-8ab1-5f3be39c57f8
+
+	measure 'Próxima jornada' = MINX(FILTER('Partidos', 'Partidos'[Jugado] = FALSE()), 'Partidos'[Jornada])
+		formatString: 0
+		displayFolder: Operación
+		lineageTag: 94dbd9d0-a2a6-4881-a955-061d2a5d0b2d
+
+	measure 'Precisión del pronóstico' = DIVIDE(CALCULATE(COUNTROWS('Partidos'), 'Partidos'[Predicción correcta] = TRUE()), [Partidos jugados])
+		formatString: 0.0%
+		displayFolder: Calidad
+		lineageTag: 46d4c778-3f40-4a0d-afce-939f4016a7d6
+
+	measure 'Promedio de goles' = DIVIDE(SUM('Partidos'[Goles local]) + SUM('Partidos'[Goles visitante]), [Partidos jugados])
+		formatString: 0.0
+		displayFolder: Resultados
+		lineageTag: 1484623a-4c25-44c9-8744-b20261519782
+
+	measure 'Probabilidad Local promedio' = AVERAGE('Partidos'[Probabilidad local])
+		formatString: 0.0%
+		displayFolder: Predicción
+		lineageTag: 9ce632fa-805a-4632-9ce1-eb75b2d715dd
+
+	measure 'Probabilidad Empate promedio' = AVERAGE('Partidos'[Probabilidad empate])
+		formatString: 0.0%
+		displayFolder: Predicción
+		lineageTag: 333ae09a-c5f8-4672-9b01-93494b1d3ec2
+
+	measure 'Probabilidad Visitante promedio' = AVERAGE('Partidos'[Probabilidad visitante])
+		formatString: 0.0%
+		displayFolder: Predicción
+		lineageTag: 35b3e2da-2efb-44c7-b21e-8dd1d442645e
+
+	measure 'Victorias locales esperadas' = SUM('Partidos'[Probabilidad local])
+		formatString: 0.0
+		displayFolder: Predicción
+		lineageTag: 1ae9a231-b064-47c4-86cd-f22d26d08acc
+
+	measure 'Empates esperados' = SUM('Partidos'[Probabilidad empate])
+		formatString: 0.0
+		displayFolder: Predicción
+		lineageTag: fa7e8650-0ca4-4583-bc51-3329cdf7e315
+
+	measure 'Victorias visitantes esperadas' = SUM('Partidos'[Probabilidad visitante])
+		formatString: 0.0
+		displayFolder: Predicción
+		lineageTag: 34e723ac-6bc2-4ab0-ba5a-3b4fedf11c89
+
+	measure 'Partidos con mercado' = CALCULATE(COUNTROWS('Partidos'), 'Partidos'[Cuotas disponibles] = TRUE())
+		formatString: 0
+		displayFolder: Mercado
+		lineageTag: 7be454c8-0d16-44db-987b-de10ed7ba0fc
+
+	column 'Fixture ID'
+		dataType: string
+		lineageTag: a1c627d4-632b-4d83-a8c5-8533c9063cfd
+		summarizeBy: none
+		sourceColumn: fixture_id
+
+	column Temporada
+		dataType: string
+		lineageTag: 883f9a11-5297-45e5-9b67-5ab7682553b7
+		summarizeBy: none
+		sourceColumn: season
+
+	column Jornada
+		dataType: int64
+		formatString: 0
+		lineageTag: 5db13c00-14ef-45e3-959d-cbadf4212ccf
+		summarizeBy: none
+		sourceColumn: matchday
+
+	column 'Fecha referencia'
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 35558924-0bfc-4ba1-b765-b0f6c20a11fd
+		summarizeBy: none
+		sourceColumn: reference_date
+
+		variation Variación
+			isDefault
+			relationship: 50631614-ef0f-43b4-aa74-09dbead56af4
+			defaultHierarchy: LocalDateTable_c1ba4fab-dca3-4b6b-ad8e-eb2234caf0d3.'Jerarquía de fechas'
+
+	column 'Fecha programada'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: b74e78b7-e90c-49b1-9807-4c4da890133e
+		summarizeBy: none
+		sourceColumn: scheduled_date
+
+		variation Variación
+			isDefault
+			relationship: 098ac907-10a2-4cfe-a4c6-65f7d6865ef9
+			defaultHierarchy: LocalDateTable_a8eed26d-13d6-49b6-8a91-6cd8843c0cf8.'Jerarquía de fechas'
+
+	column 'Local ID'
+		dataType: string
+		lineageTag: ebf8739c-88df-46f7-917d-e437663abb76
+		summarizeBy: none
+		sourceColumn: home_team_id
+
+	column Local
+		dataType: string
+		lineageTag: 7b245343-9ea0-4d43-b267-5d1958aa91cb
+		summarizeBy: none
+		sourceColumn: home_team
+
+	column 'Visitante ID'
+		dataType: string
+		lineageTag: f25636b5-24b5-4aa2-908c-01d782d428a1
+		summarizeBy: none
+		sourceColumn: away_team_id
+
+	column Visitante
+		dataType: string
+		lineageTag: 1a713c4e-58cd-46a3-b92b-d4284699ad3c
+		summarizeBy: none
+		sourceColumn: away_team
+
+	column Partido
+		dataType: string
+		lineageTag: bba0a526-cc5e-4943-be24-697ba4cc93f2
+		summarizeBy: none
+		sourceColumn: match_label
+
+	column Estado
+		dataType: string
+		lineageTag: 1ddf6ce4-cb5a-4720-b006-3df80714d8fc
+		summarizeBy: none
+		sourceColumn: status
+
+	column Jugado
+		dataType: boolean
+		lineageTag: 766cd793-cbf2-4d21-b4cc-7bb24944a83f
+		summarizeBy: none
+		sourceColumn: is_played
+
+	column 'Goles local'
+		dataType: int64
+		formatString: 0
+		lineageTag: bbb1057f-e316-424b-9ee9-26a18b3b438b
+		summarizeBy: sum
+		sourceColumn: home_goals
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Goles visitante'
+		dataType: int64
+		formatString: 0
+		lineageTag: 44fa8957-1cef-4207-84a5-5df1134241a2
+		summarizeBy: sum
+		sourceColumn: away_goals
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Resultado real'
+		dataType: string
+		lineageTag: 4aab8ded-7f41-4964-81f5-b46b96376889
+		summarizeBy: none
+		sourceColumn: actual_result_label
+
+	column Modelo
+		dataType: string
+		lineageTag: 9c5bc444-6683-4601-a23f-c732bd30a317
+		summarizeBy: none
+		sourceColumn: model
+
+	column 'Probabilidad local'
+		dataType: double
+		formatString: 0.0%
+		lineageTag: c2d7ad59-bfc9-4686-ad3d-1cee8a5227a8
+		summarizeBy: sum
+		sourceColumn: probability_home
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Probabilidad empate'
+		dataType: double
+		formatString: 0.0%
+		lineageTag: b0d3cd59-7444-47ac-ba0d-506661943b94
+		summarizeBy: sum
+		sourceColumn: probability_draw
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Probabilidad visitante'
+		dataType: double
+		formatString: 0.0%
+		lineageTag: 8677b282-ea45-4c9d-b937-aa4c23edfe52
+		summarizeBy: sum
+		sourceColumn: probability_away
+
+		annotation SummarizationSetBy = Automatic
+
+	column Pronóstico
+		dataType: string
+		lineageTag: e0577e4e-c1cb-489f-b268-65cdb0fb1fae
+		summarizeBy: none
+		sourceColumn: predicted_result_label
+
+	column Confianza
+		dataType: string
+		lineageTag: a50eff3b-d270-42a3-b4a1-aa2230631c04
+		summarizeBy: none
+		sourceColumn: confidence
+
+	column 'Goles esperados local'
+		dataType: double
+		formatString: 0.0
+		lineageTag: 406359ec-b3d3-46e0-83f3-2ee6053d414a
+		summarizeBy: sum
+		sourceColumn: expected_home_goals
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Goles esperados visitante'
+		dataType: double
+		formatString: 0.0
+		lineageTag: e7431dd1-6ce1-41bb-a9cd-9347d27857fd
+		summarizeBy: sum
+		sourceColumn: expected_away_goals
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Marcador previsto'
+		dataType: string
+		lineageTag: dbb4a382-387d-4904-8b4c-d80fe942bfdd
+		summarizeBy: none
+		sourceColumn: predicted_score
+
+	column 'Cuotas disponibles'
+		dataType: boolean
+		lineageTag: e3c910ef-bdc7-4dbd-bfe2-3668536e880d
+		summarizeBy: none
+		sourceColumn: market_odds_available
+
+	column 'Predicción correcta'
+		dataType: boolean
+		lineageTag: 0d1dcc5d-0482-43ff-9aed-79fc20ff9df0
+		summarizeBy: none
+		sourceColumn: prediction_correct
+
+	column 'Update ID'
+		dataType: string
+		lineageTag: d9c2fc04-bedb-4e99-bc62-797490bfb7a7
+		summarizeBy: none
+		sourceColumn: update_id
+
+	column kickoff_time
+		dataType: string
+		lineageTag: 036fcf0a-f9d0-4009-8346-3310c491aa42
+		summarizeBy: none
+		sourceColumn: kickoff_time
+
+		annotation SummarizationSetBy = Automatic
+
+	column played_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 4e4d5669-f610-40ff-ae67-69c7e9b7ad89
+		summarizeBy: none
+		sourceColumn: played_date
+
+		variation Variación
+			isDefault
+			relationship: 18d9c048-4297-4980-8527-d041d570cd62
+			defaultHierarchy: LocalDateTable_4f51e648-b686-450a-ae13-3a0e80aefef7.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+	column actual_result
+		dataType: string
+		lineageTag: 77bf85b8-8bce-4e7b-8f44-1cee269a60a9
+		summarizeBy: none
+		sourceColumn: actual_result
+
+		annotation SummarizationSetBy = Automatic
+
+	column predicted_ftr
+		dataType: string
+		lineageTag: 35947460-3c28-4a89-bfd5-3c7380105da9
+		summarizeBy: none
+		sourceColumn: predicted_ftr
+
+		annotation SummarizationSetBy = Automatic
+
+	column probability_edge
+		dataType: double
+		lineageTag: 08f1236d-cbad-4e61-94b5-a0c9479adc3f
+		summarizeBy: sum
+		sourceColumn: probability_edge
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column predicted_score_probability
+		dataType: double
+		lineageTag: ba3a0f19-41f6-4287-a50a-b9ba1317e88d
+		summarizeBy: sum
+		sourceColumn: predicted_score_probability
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column promoted_adjustment_applied
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 0b72af72-431b-4060-9bc4-69464c998e55
+		summarizeBy: none
+		sourceColumn: promoted_adjustment_applied
+
+		annotation SummarizationSetBy = Automatic
+
+	column feature_snapshot
+		dataType: string
+		lineageTag: 5547ffba-41f1-4929-b594-aa25d8eb71d9
+		summarizeBy: none
+		sourceColumn: feature_snapshot
+
+		annotation SummarizationSetBy = Automatic
+
+	column odds_captured_at
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 1028fec5-0b62-4f34-8db5-6fa9e4913854
+		summarizeBy: none
+		sourceColumn: odds_captured_at
+
+		variation Variación
+			isDefault
+			relationship: c7b07164-08d0-495a-92c6-76a7cb6b32da
+			defaultHierarchy: LocalDateTable_682cd9be-9dde-4c62-9568-0aff542cfa5c.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+	column odds_b365_home
+		dataType: double
+		lineageTag: 93d17b9e-5880-4c92-af0f-28fe6c591498
+		summarizeBy: sum
+		sourceColumn: odds_b365_home
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column odds_b365_draw
+		dataType: double
+		lineageTag: 3013881d-af54-400a-8282-1e8d599ae251
+		summarizeBy: sum
+		sourceColumn: odds_b365_draw
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column odds_b365_away
+		dataType: double
+		lineageTag: 7373f18a-1668-4a92-9c5d-2e36d4b3e69a
+		summarizeBy: sum
+		sourceColumn: odds_b365_away
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column market_probability_home
+		dataType: double
+		lineageTag: ceca41a7-f7ae-414d-8152-adbe7f4f86e2
+		summarizeBy: sum
+		sourceColumn: market_probability_home
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column market_probability_draw
+		dataType: double
+		lineageTag: a1ad551b-3607-4281-b398-9b4d0f6214e9
+		summarizeBy: sum
+		sourceColumn: market_probability_draw
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column market_probability_away
+		dataType: double
+		lineageTag: ab9f0718-bb2b-4eed-9736-7e1c6d08be58
+		summarizeBy: sum
+		sourceColumn: market_probability_away
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column market_overround
+		dataType: double
+		lineageTag: 2e46d662-0d18-4942-a01f-32b6c2a9dae0
+		summarizeBy: sum
+		sourceColumn: market_overround
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column probability_assigned_to_actual
+		dataType: double
+		lineageTag: fff64175-9677-426c-8169-954e811da5e6
+		summarizeBy: sum
+		sourceColumn: probability_assigned_to_actual
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition Partidos = m
+		mode: import
+		source =
+				let
+				    Source = PostgreSQL.Database(
+				        pPostgresServer,
+				        pPostgresDatabase,
+				        [Query="SELECT * FROM bi_fact_matches"]
+				    )
+				in
+				    Source
+

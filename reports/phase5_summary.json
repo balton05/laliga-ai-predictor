@@ -1,0 +1,30 @@
+{
+  "quality_passed": true,
+  "quality_checks": 14,
+  "goal_models_evaluated": 2,
+  "candidate_configurations": 8,
+  "validation_rows_per_model": 760,
+  "test_rows_per_model": 380,
+  "selected_half_life_days": {
+    "poisson": "365",
+    "dixon_coles": "365"
+  },
+  "selected_goal_model": "poisson",
+  "selected_goal_model_test_log_loss": 0.9844354216295422,
+  "selected_goal_model_test_accuracy": 0.5078947368421053,
+  "selected_goal_model_test_exact_score_accuracy": 0.15789473684210525,
+  "market_test_log_loss": 0.964103415733941,
+  "sports_baseline_test_log_loss": 0.9758671364855256,
+  "beats_market_on_test": false,
+  "beats_sports_baseline_on_test": false,
+  "promoted_adjustments": 3,
+  "fixture_predictions_2026_27": 380,
+  "production_models_trained_through": "2025/26",
+  "figures": [
+    "figures/13_goles_validacion.png",
+    "figures/14_goles_prueba.png",
+    "figures/15_goles_esperados_observados.png",
+    "figures/16_marcadores_prueba.png",
+    "figures/17_fuerza_equipos_2026_27.png"
+  ]
+}

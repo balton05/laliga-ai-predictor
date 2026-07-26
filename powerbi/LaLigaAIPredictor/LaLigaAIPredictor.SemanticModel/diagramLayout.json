@@ -1,0 +1,142 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 202.68379326224363,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 1709.6837932622436,
+            "y": 238.43013066871163
+          },
+          "nodeIndex": "Actualizaciones",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 907.68379326224351,
+            "y": 142.29189290661725
+          },
+          "nodeIndex": "Clasificación",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 337.018992975806,
+            "y": 302.98662588619379
+          },
+          "nodeIndex": "Dim Equipo",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1475.6837932622436,
+            "y": 262.43013066871163
+          },
+          "nodeIndex": "Dim Jornada",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 623.22869185097352,
+            "y": 458.656601543875
+          },
+          "nodeIndex": "Dim Posición",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 473.4161425384533,
+            "y": -50
+          },
+          "nodeIndex": "Equipo-Partido",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1993.6837932622436,
+            "y": 240.43013066871163
+          },
+          "nodeIndex": "Estado API",
+          "size": {
+            "height": 296,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1191.6837932622436,
+            "y": 188.43013066871163
+          },
+          "nodeIndex": "Partidos",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 336.84022056978608,
+            "y": 550.86026133742325
+          },
+          "nodeIndex": "Probabilidad Posición",
+          "size": {
+            "height": 176,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 50,
+            "y": -30.98332102673146
+          },
+          "nodeIndex": "Simulación",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "Todas las tablas",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "Todas las tablas",
+  "defaultDiagram": "Todas las tablas"
+}

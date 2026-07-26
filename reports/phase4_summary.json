@@ -1,0 +1,28 @@
+{
+  "quality_passed": true,
+  "quality_checks": 10,
+  "models_evaluated": 5,
+  "validation_rows_per_model": 760,
+  "test_rows_per_model": 380,
+  "sport_features": 72,
+  "market_features": 75,
+  "selected_c": {
+    "logistic_sports": 0.05,
+    "logistic_market": 0.05
+  },
+  "champion": "market",
+  "champion_validation_log_loss": 0.9512047413914982,
+  "champion_test_log_loss": 0.964103415733941,
+  "champion_test_accuracy": 0.5447368421052632,
+  "champion_test_macro_f1": 0.38372575933551545,
+  "market_fallback_validation_rows": 0,
+  "market_fallback_test_rows": 0,
+  "production_models_trained_through": "2025/26",
+  "figures": [
+    "figures/08_comparacion_validacion.png",
+    "figures/09_comparacion_prueba.png",
+    "figures/10_calibracion_prueba.png",
+    "figures/11_matriz_confusion_campeon.png",
+    "figures/12_coeficientes_logistic_market.png"
+  ]
+}

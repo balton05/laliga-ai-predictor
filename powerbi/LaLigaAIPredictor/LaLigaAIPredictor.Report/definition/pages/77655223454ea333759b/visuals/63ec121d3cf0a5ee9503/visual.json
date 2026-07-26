@@ -1,0 +1,185 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "63ec121d3cf0a5ee9503",
+  "position": {
+    "x": 24,
+    "y": 84,
+    "z": 4000,
+    "height": 604,
+    "width": 610,
+    "tabOrder": 4000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Clasificación"
+                    }
+                  },
+                  "Property": "Posición actual"
+                }
+              },
+              "queryRef": "Clasificación.Posición actual",
+              "nativeQueryRef": "Posición actual"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Clasificación"
+                    }
+                  },
+                  "Property": "Equipo"
+                }
+              },
+              "queryRef": "Clasificación.Equipo",
+              "nativeQueryRef": "Equipo"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Clasificación"
+                    }
+                  },
+                  "Property": "PJ"
+                }
+              },
+              "queryRef": "Clasificación.PJ",
+              "nativeQueryRef": "PJ"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Clasificación"
+                    }
+                  },
+                  "Property": "PG"
+                }
+              },
+              "queryRef": "Clasificación.PG",
+              "nativeQueryRef": "PG"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Clasificación"
+                    }
+                  },
+                  "Property": "PE"
+                }
+              },
+              "queryRef": "Clasificación.PE",
+              "nativeQueryRef": "PE"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Clasificación"
+                    }
+                  },
+                  "Property": "PP"
+                }
+              },
+              "queryRef": "Clasificación.PP",
+              "nativeQueryRef": "PP"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Clasificación"
+                    }
+                  },
+                  "Property": "GF"
+                }
+              },
+              "queryRef": "Clasificación.GF",
+              "nativeQueryRef": "GF"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Clasificación"
+                    }
+                  },
+                  "Property": "GC"
+                }
+              },
+              "queryRef": "Clasificación.GC",
+              "nativeQueryRef": "GC"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Clasificación"
+                    }
+                  },
+                  "Property": "DG"
+                }
+              },
+              "queryRef": "Clasificación.DG",
+              "nativeQueryRef": "DG"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Clasificación"
+                    }
+                  },
+                  "Property": "Puntos"
+                }
+              },
+              "queryRef": "Clasificación.Puntos",
+              "nativeQueryRef": "Puntos"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "columnHeaders": [
+        {
+          "properties": {
+            "columnAdjustment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'growToFit'"
+                }
+              }
+            },
+            "autoSizeColumnWidth": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

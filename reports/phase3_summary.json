@@ -1,0 +1,26 @@
+{
+  "phase": 3,
+  "status": "completed",
+  "quality_passed": true,
+  "laliga_matches": 3800,
+  "seasons": 10,
+  "home_win_rate": 0.455,
+  "draw_rate": 0.26210526315789473,
+  "away_win_rate": 0.28289473684210525,
+  "goals_per_match": 2.6184210526315788,
+  "promoted_team_seasons": 27,
+  "promoted_survival_rate": 0.6666666666666666,
+  "favorite_hit_rate": 0.5373684210526316,
+  "favorite_flat_roi": -0.014886842105263164,
+  "high_correlation_pairs": 24,
+  "figures": [
+    "reports/figures/01_resultados_por_temporada.png",
+    "reports/figures/02_goles_y_ventaja_local.png",
+    "reports/figures/03_matriz_marcadores.png",
+    "reports/figures/04_calibracion_mercado.png",
+    "reports/figures/05_rendimiento_ascendidos.png",
+    "reports/figures/06_asociacion_variables.png",
+    "reports/figures/07_datos_faltantes.png"
+  ],
+  "methodological_guardrail": "Las asociaciones de variables se calculan solo con entrenamiento. La prueba 2025/26 permanece bloqueada para decisiones de modelado."
+}

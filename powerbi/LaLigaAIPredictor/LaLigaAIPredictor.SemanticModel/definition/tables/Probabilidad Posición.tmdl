@@ -1,0 +1,43 @@
+table 'Probabilidad Posición'
+	lineageTag: 98a38279-5248-492a-b75f-9700dfb91ed4
+
+	column 'Equipo ID'
+		dataType: string
+		lineageTag: 795b4798-8057-42e8-baea-15b097b945ef
+		summarizeBy: none
+		sourceColumn: team_id
+
+	column Posición
+		dataType: int64
+		formatString: 0
+		lineageTag: 7c133230-0811-4329-ab69-9c7a22d09fea
+		summarizeBy: none
+		sourceColumn: position
+
+	column Probabilidad
+		dataType: double
+		formatString: 0.0%
+		lineageTag: bec72c37-7bc8-42bb-aee0-92982f795536
+		summarizeBy: none
+		sourceColumn: probability
+
+	column 'Update ID'
+		dataType: string
+		lineageTag: 6524bc1a-b378-4439-a812-f43e6138eeb4
+		summarizeBy: none
+		sourceColumn: update_id
+
+	partition 'Probabilidad Posición' = m
+		mode: import
+		source =
+				let
+				    Source = PostgreSQL.Database(
+				        pPostgresServer,
+				        pPostgresDatabase,
+				        [Query="SELECT * FROM bi_position_probabilities"]
+				    )
+				in
+				    Source
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,13 @@
+{
+  "data": {
+    "reportPath": "/workspace/scratch/a1e2c01c6813/phase11_work/laliga-ai-predictor/powerbi/LaLigaAIPredictor/LaLigaAIPredictor.Report",
+    "themes": [
+      {
+        "reportJsonPath": "definition/report.json",
+        "themeJsonPath": "StaticResources/RegisteredResources/LaLigaAI_20260723.json",
+        "name": "LaLigaAI_20260723.json",
+        "type": "RegisteredResources"
+      }
+    ]
+  }
+}

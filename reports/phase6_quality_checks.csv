@@ -1,0 +1,15 @@
+check,passed
+four_advanced_models,True
+candidate_configurations,True
+validation_rows_per_model,True
+test_rows_per_model,True
+probabilities_sum_to_one,True
+probabilities_are_finite,True
+probabilities_within_bounds,True
+test_is_2025_26,True
+validation_seasons_locked,True
+selection_complete,True
+feature_importance_complete,True
+fixture_predictions_complete,True
+fixture_probabilities_valid,True
+fixture_model_is_sports_only,True

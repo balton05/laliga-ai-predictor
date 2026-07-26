@@ -1,0 +1,397 @@
+{
+  "data": {
+    "reportPath": "/workspace/scratch/a1e2c01c6813/phase11_work/laliga-ai-predictor/powerbi/LaLigaAIPredictor/LaLigaAIPredictor.Report",
+    "visuals": [
+      {
+        "path": "definition/pages/4b73deaf930a6b428996/visuals/32815840d115244cec45/visual.json",
+        "pageName": "4b73deaf930a6b428996",
+        "pageDisplayName": "Resumen",
+        "visualName": "32815840d115244cec45",
+        "visualType": "textbox",
+        "position": {
+          "x": 24,
+          "y": 236,
+          "z": 1000,
+          "height": 30,
+          "width": 590,
+          "tabOrder": 1000
+        }
+      },
+      {
+        "path": "definition/pages/4b73deaf930a6b428996/visuals/60e59a882db79b41e892/visual.json",
+        "pageName": "4b73deaf930a6b428996",
+        "pageDisplayName": "Resumen",
+        "visualName": "60e59a882db79b41e892",
+        "visualType": "clusteredBarChart",
+        "position": {
+          "x": 648,
+          "y": 270,
+          "z": 5000,
+          "height": 418,
+          "width": 608,
+          "tabOrder": 5000
+        }
+      },
+      {
+        "path": "definition/pages/4b73deaf930a6b428996/visuals/7ba3ba4f80790b42b53f/visual.json",
+        "pageName": "4b73deaf930a6b428996",
+        "pageDisplayName": "Resumen",
+        "visualName": "7ba3ba4f80790b42b53f",
+        "visualType": "textbox",
+        "position": {
+          "x": 24,
+          "y": 16,
+          "z": 1000,
+          "height": 44,
+          "width": 850,
+          "tabOrder": 1000
+        }
+      },
+      {
+        "path": "definition/pages/4b73deaf930a6b428996/visuals/982d00e54127a97d924c/visual.json",
+        "pageName": "4b73deaf930a6b428996",
+        "pageDisplayName": "Resumen",
+        "visualName": "982d00e54127a97d924c",
+        "visualType": "textbox",
+        "position": {
+          "x": 24,
+          "y": 54,
+          "z": 1000,
+          "height": 24,
+          "width": 850,
+          "tabOrder": 1000
+        }
+      },
+      {
+        "path": "definition/pages/4b73deaf930a6b428996/visuals/c523b8755bc83750d412/visual.json",
+        "pageName": "4b73deaf930a6b428996",
+        "pageDisplayName": "Resumen",
+        "visualName": "c523b8755bc83750d412",
+        "visualType": "clusteredBarChart",
+        "position": {
+          "x": 24,
+          "y": 270,
+          "z": 5000,
+          "height": 418,
+          "width": 596,
+          "tabOrder": 5000
+        }
+      },
+      {
+        "path": "definition/pages/4b73deaf930a6b428996/visuals/db2b1e272e761094bab7/visual.json",
+        "pageName": "4b73deaf930a6b428996",
+        "pageDisplayName": "Resumen",
+        "visualName": "db2b1e272e761094bab7",
+        "visualType": "textbox",
+        "position": {
+          "x": 648,
+          "y": 236,
+          "z": 1000,
+          "height": 30,
+          "width": 590,
+          "tabOrder": 1000
+        }
+      },
+      {
+        "path": "definition/pages/4b73deaf930a6b428996/visuals/fa86f5cb8bf300f010a7/visual.json",
+        "pageName": "4b73deaf930a6b428996",
+        "pageDisplayName": "Resumen",
+        "visualName": "fa86f5cb8bf300f010a7",
+        "visualType": "cardVisual",
+        "position": {
+          "x": 24,
+          "y": 92,
+          "z": 2000,
+          "height": 132,
+          "width": 1232,
+          "tabOrder": 2000
+        }
+      },
+      {
+        "path": "definition/pages/e49dbb54eb2d1cdccb44/visuals/27ea724eacfcb047767c/visual.json",
+        "pageName": "e49dbb54eb2d1cdccb44",
+        "pageDisplayName": "Próxima jornada",
+        "visualName": "27ea724eacfcb047767c",
+        "visualType": "cardVisual",
+        "position": {
+          "x": 24,
+          "y": 88,
+          "z": 2000,
+          "height": 132,
+          "width": 1232,
+          "tabOrder": 2000
+        }
+      },
+      {
+        "path": "definition/pages/e49dbb54eb2d1cdccb44/visuals/339e570ebf71c4942717/visual.json",
+        "pageName": "e49dbb54eb2d1cdccb44",
+        "pageDisplayName": "Próxima jornada",
+        "visualName": "339e570ebf71c4942717",
+        "visualType": "tableEx",
+        "position": {
+          "x": 648,
+          "y": 236,
+          "z": 4000,
+          "height": 452,
+          "width": 608,
+          "tabOrder": 4000
+        }
+      },
+      {
+        "path": "definition/pages/e49dbb54eb2d1cdccb44/visuals/95983d33f817764f7a87/visual.json",
+        "pageName": "e49dbb54eb2d1cdccb44",
+        "pageDisplayName": "Próxima jornada",
+        "visualName": "95983d33f817764f7a87",
+        "visualType": "clusteredColumnChart",
+        "position": {
+          "x": 24,
+          "y": 236,
+          "z": 5000,
+          "height": 452,
+          "width": 600,
+          "tabOrder": 5000
+        }
+      },
+      {
+        "path": "definition/pages/e49dbb54eb2d1cdccb44/visuals/d79574275be9e40f4625/visual.json",
+        "pageName": "e49dbb54eb2d1cdccb44",
+        "pageDisplayName": "Próxima jornada",
+        "visualName": "d79574275be9e40f4625",
+        "visualType": "slicer",
+        "position": {
+          "x": 1032,
+          "y": 8,
+          "z": 3000,
+          "height": 80,
+          "width": 224,
+          "tabOrder": 3000
+        }
+      },
+      {
+        "path": "definition/pages/e49dbb54eb2d1cdccb44/visuals/fe32dbca7b56f1cad973/visual.json",
+        "pageName": "e49dbb54eb2d1cdccb44",
+        "pageDisplayName": "Próxima jornada",
+        "visualName": "fe32dbca7b56f1cad973",
+        "visualType": "textbox",
+        "position": {
+          "x": 24,
+          "y": 16,
+          "z": 1000,
+          "height": 44,
+          "width": 800,
+          "tabOrder": 1000
+        }
+      },
+      {
+        "path": "definition/pages/00e5489ea72a93cddc9f/visuals/21f5542f0dcf7e249d2d/visual.json",
+        "pageName": "00e5489ea72a93cddc9f",
+        "pageDisplayName": "Simulación",
+        "visualName": "21f5542f0dcf7e249d2d",
+        "visualType": "tableEx",
+        "position": {
+          "x": 808,
+          "y": 228,
+          "z": 4000,
+          "height": 460,
+          "width": 448,
+          "tabOrder": 4000
+        }
+      },
+      {
+        "path": "definition/pages/00e5489ea72a93cddc9f/visuals/3b93b0149e566f79ea50/visual.json",
+        "pageName": "00e5489ea72a93cddc9f",
+        "pageDisplayName": "Simulación",
+        "visualName": "3b93b0149e566f79ea50",
+        "visualType": "cardVisual",
+        "position": {
+          "x": 24,
+          "y": 80,
+          "z": 2000,
+          "height": 132,
+          "width": 1232,
+          "tabOrder": 2000
+        }
+      },
+      {
+        "path": "definition/pages/00e5489ea72a93cddc9f/visuals/478998445614ac0c5b7a/visual.json",
+        "pageName": "00e5489ea72a93cddc9f",
+        "pageDisplayName": "Simulación",
+        "visualName": "478998445614ac0c5b7a",
+        "visualType": "textbox",
+        "position": {
+          "x": 24,
+          "y": 16,
+          "z": 1000,
+          "height": 44,
+          "width": 800,
+          "tabOrder": 1000
+        }
+      },
+      {
+        "path": "definition/pages/00e5489ea72a93cddc9f/visuals/8300b47197539b028aea/visual.json",
+        "pageName": "00e5489ea72a93cddc9f",
+        "pageDisplayName": "Simulación",
+        "visualName": "8300b47197539b028aea",
+        "visualType": "clusteredBarChart",
+        "position": {
+          "x": 24,
+          "y": 228,
+          "z": 5000,
+          "height": 460,
+          "width": 760,
+          "tabOrder": 5000
+        }
+      },
+      {
+        "path": "definition/pages/77655223454ea333759b/visuals/581f123f661444eba0cc/visual.json",
+        "pageName": "77655223454ea333759b",
+        "pageDisplayName": "Clasificación",
+        "visualName": "581f123f661444eba0cc",
+        "visualType": "textbox",
+        "position": {
+          "x": 24,
+          "y": 16,
+          "z": 1000,
+          "height": 44,
+          "width": 900,
+          "tabOrder": 1000
+        }
+      },
+      {
+        "path": "definition/pages/77655223454ea333759b/visuals/63ec121d3cf0a5ee9503/visual.json",
+        "pageName": "77655223454ea333759b",
+        "pageDisplayName": "Clasificación",
+        "visualName": "63ec121d3cf0a5ee9503",
+        "visualType": "tableEx",
+        "position": {
+          "x": 24,
+          "y": 84,
+          "z": 4000,
+          "height": 604,
+          "width": 610,
+          "tabOrder": 4000
+        }
+      },
+      {
+        "path": "definition/pages/77655223454ea333759b/visuals/da0ff577aa234e747b90/visual.json",
+        "pageName": "77655223454ea333759b",
+        "pageDisplayName": "Clasificación",
+        "visualName": "da0ff577aa234e747b90",
+        "visualType": "clusteredBarChart",
+        "position": {
+          "x": 658,
+          "y": 84,
+          "z": 5000,
+          "height": 604,
+          "width": 598,
+          "tabOrder": 5000
+        }
+      },
+      {
+        "path": "definition/pages/997fb0f8ae9703f56d0b/visuals/00f31ee02609c6764529/visual.json",
+        "pageName": "997fb0f8ae9703f56d0b",
+        "pageDisplayName": "Explorador de equipos",
+        "visualName": "00f31ee02609c6764529",
+        "visualType": "textbox",
+        "position": {
+          "x": 24,
+          "y": 16,
+          "z": 1000,
+          "height": 44,
+          "width": 800,
+          "tabOrder": 1000
+        }
+      },
+      {
+        "path": "definition/pages/997fb0f8ae9703f56d0b/visuals/2b085a6533840bf5509b/visual.json",
+        "pageName": "997fb0f8ae9703f56d0b",
+        "pageDisplayName": "Explorador de equipos",
+        "visualName": "2b085a6533840bf5509b",
+        "visualType": "tableEx",
+        "position": {
+          "x": 24,
+          "y": 236,
+          "z": 4000,
+          "height": 452,
+          "width": 1232,
+          "tabOrder": 4000
+        }
+      },
+      {
+        "path": "definition/pages/997fb0f8ae9703f56d0b/visuals/8b5b13d2156378672ceb/visual.json",
+        "pageName": "997fb0f8ae9703f56d0b",
+        "pageDisplayName": "Explorador de equipos",
+        "visualName": "8b5b13d2156378672ceb",
+        "visualType": "cardVisual",
+        "position": {
+          "x": 24,
+          "y": 88,
+          "z": 2000,
+          "height": 132,
+          "width": 1232,
+          "tabOrder": 2000
+        }
+      },
+      {
+        "path": "definition/pages/997fb0f8ae9703f56d0b/visuals/cffada4454bccd374814/visual.json",
+        "pageName": "997fb0f8ae9703f56d0b",
+        "pageDisplayName": "Explorador de equipos",
+        "visualName": "cffada4454bccd374814",
+        "visualType": "slicer",
+        "position": {
+          "x": 976,
+          "y": 8,
+          "z": 3000,
+          "height": 80,
+          "width": 280,
+          "tabOrder": 3000
+        }
+      },
+      {
+        "path": "definition/pages/643836222ab9faaf53b9/visuals/73ae799c68ac6d71552e/visual.json",
+        "pageName": "643836222ab9faaf53b9",
+        "pageDisplayName": "Calidad y actualización",
+        "visualName": "73ae799c68ac6d71552e",
+        "visualType": "cardVisual",
+        "position": {
+          "x": 24,
+          "y": 88,
+          "z": 2000,
+          "height": 132,
+          "width": 1232,
+          "tabOrder": 2000
+        }
+      },
+      {
+        "path": "definition/pages/643836222ab9faaf53b9/visuals/b9ce0f10f1b7a4793986/visual.json",
+        "pageName": "643836222ab9faaf53b9",
+        "pageDisplayName": "Calidad y actualización",
+        "visualName": "b9ce0f10f1b7a4793986",
+        "visualType": "tableEx",
+        "position": {
+          "x": 24,
+          "y": 236,
+          "z": 4000,
+          "height": 452,
+          "width": 1232,
+          "tabOrder": 4000
+        }
+      },
+      {
+        "path": "definition/pages/643836222ab9faaf53b9/visuals/f27844a02faac64da73e/visual.json",
+        "pageName": "643836222ab9faaf53b9",
+        "pageDisplayName": "Calidad y actualización",
+        "visualName": "f27844a02faac64da73e",
+        "visualType": "textbox",
+        "position": {
+          "x": 24,
+          "y": 16,
+          "z": 1000,
+          "height": 44,
+          "width": 900,
+          "tabOrder": 1000
+        }
+      }
+    ]
+  }
+}

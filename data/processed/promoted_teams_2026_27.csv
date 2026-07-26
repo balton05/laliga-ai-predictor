@@ -1,0 +1,4 @@
+team_id,team,segunda_season,laliga_season,has_segunda_statistics,segunda_position,segunda_played,segunda_wins,segunda_draws,segunda_losses,segunda_goals_for,segunda_goals_against,segunda_goal_difference,segunda_points,laliga_position,laliga_played,laliga_wins,laliga_draws,laliga_losses,laliga_goals_for,laliga_goals_against,laliga_goal_difference,laliga_points,promotion_type,relegated_after_first_season,identification_method
+racing_santander,Racing de Santander,2025/26,2026/27,True,1,42,25,7,10,90,61,29,82,,,,,,,,,,direct,,new_team_in_official_2026_27_fixture
+deportivo,RC Deportivo,2025/26,2026/27,True,2,42,22,11,9,65,44,21,77,,,,,,,,,,direct,,new_team_in_official_2026_27_fixture
+malaga,Málaga CF,2025/26,2026/27,True,4,42,21,10,11,75,52,23,73,,,,,,,,,,playoff,,new_team_in_official_2026_27_fixture

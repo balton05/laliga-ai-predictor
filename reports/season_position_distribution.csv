@@ -1,0 +1,401 @@
+team_id,team,position,count,probability
+athletic_bilbao,Athletic Club,1,100,0.002
+athletic_bilbao,Athletic Club,2,442,0.00884
+athletic_bilbao,Athletic Club,3,1320,0.0264
+athletic_bilbao,Athletic Club,4,2274,0.04548
+athletic_bilbao,Athletic Club,5,3060,0.0612
+athletic_bilbao,Athletic Club,6,3652,0.07304
+athletic_bilbao,Athletic Club,7,3820,0.0764
+athletic_bilbao,Athletic Club,8,3663,0.07326
+athletic_bilbao,Athletic Club,9,3781,0.07562
+athletic_bilbao,Athletic Club,10,3716,0.07432
+athletic_bilbao,Athletic Club,11,3487,0.06974
+athletic_bilbao,Athletic Club,12,3288,0.06576
+athletic_bilbao,Athletic Club,13,3117,0.06234
+athletic_bilbao,Athletic Club,14,2818,0.05636
+athletic_bilbao,Athletic Club,15,2593,0.05186
+athletic_bilbao,Athletic Club,16,2368,0.04736
+athletic_bilbao,Athletic Club,17,2198,0.04396
+athletic_bilbao,Athletic Club,18,1852,0.03704
+athletic_bilbao,Athletic Club,19,1472,0.02944
+athletic_bilbao,Athletic Club,20,979,0.01958
+atletico_madrid,Atlético de Madrid,1,2108,0.04216
+atletico_madrid,Atlético de Madrid,2,5495,0.1099
+atletico_madrid,Atlético de Madrid,3,9479,0.18958
+atletico_madrid,Atlético de Madrid,4,8913,0.17826
+atletico_madrid,Atlético de Madrid,5,6702,0.13404
+atletico_madrid,Atlético de Madrid,6,4634,0.09268
+atletico_madrid,Atlético de Madrid,7,3252,0.06504
+atletico_madrid,Atlético de Madrid,8,2515,0.0503
+atletico_madrid,Atlético de Madrid,9,1787,0.03574
+atletico_madrid,Atlético de Madrid,10,1383,0.02766
+atletico_madrid,Atlético de Madrid,11,1022,0.02044
+atletico_madrid,Atlético de Madrid,12,760,0.0152
+atletico_madrid,Atlético de Madrid,13,546,0.01092
+atletico_madrid,Atlético de Madrid,14,449,0.00898
+atletico_madrid,Atlético de Madrid,15,354,0.00708
+atletico_madrid,Atlético de Madrid,16,248,0.00496
+atletico_madrid,Atlético de Madrid,17,155,0.0031
+atletico_madrid,Atlético de Madrid,18,106,0.00212
+atletico_madrid,Atlético de Madrid,19,73,0.00146
+atletico_madrid,Atlético de Madrid,20,19,0.00038
+osasuna,CA Osasuna,1,30,0.0006
+osasuna,CA Osasuna,2,165,0.0033
+osasuna,CA Osasuna,3,620,0.0124
+osasuna,CA Osasuna,4,1162,0.02324
+osasuna,CA Osasuna,5,1808,0.03616
+osasuna,CA Osasuna,6,2375,0.0475
+osasuna,CA Osasuna,7,2702,0.05404
+osasuna,CA Osasuna,8,2989,0.05978
+osasuna,CA Osasuna,9,3197,0.06394
+osasuna,CA Osasuna,10,3278,0.06556
+osasuna,CA Osasuna,11,3347,0.06694
+osasuna,CA Osasuna,12,3519,0.07038
+osasuna,CA Osasuna,13,3350,0.067
+osasuna,CA Osasuna,14,3484,0.06968
+osasuna,CA Osasuna,15,3428,0.06856
+osasuna,CA Osasuna,16,3368,0.06736
+osasuna,CA Osasuna,17,3158,0.06316
+osasuna,CA Osasuna,18,3032,0.06064
+osasuna,CA Osasuna,19,2697,0.05394
+osasuna,CA Osasuna,20,2291,0.04582
+alaves,Deportivo Alavés,1,17,0.00034
+alaves,Deportivo Alavés,2,125,0.0025
+alaves,Deportivo Alavés,3,509,0.01018
+alaves,Deportivo Alavés,4,980,0.0196
+alaves,Deportivo Alavés,5,1505,0.0301
+alaves,Deportivo Alavés,6,1991,0.03982
+alaves,Deportivo Alavés,7,2364,0.04728
+alaves,Deportivo Alavés,8,2685,0.0537
+alaves,Deportivo Alavés,9,2939,0.05878
+alaves,Deportivo Alavés,10,3076,0.06152
+alaves,Deportivo Alavés,11,3231,0.06462
+alaves,Deportivo Alavés,12,3415,0.0683
+alaves,Deportivo Alavés,13,3502,0.07004
+alaves,Deportivo Alavés,14,3545,0.0709
+alaves,Deportivo Alavés,15,3475,0.0695
+alaves,Deportivo Alavés,16,3552,0.07104
+alaves,Deportivo Alavés,17,3572,0.07144
+alaves,Deportivo Alavés,18,3436,0.06872
+alaves,Deportivo Alavés,19,3284,0.06568
+alaves,Deportivo Alavés,20,2797,0.05594
+elche,Elche CF,1,26,0.00052
+elche,Elche CF,2,133,0.00266
+elche,Elche CF,3,399,0.00798
+elche,Elche CF,4,834,0.01668
+elche,Elche CF,5,1420,0.0284
+elche,Elche CF,6,1836,0.03672
+elche,Elche CF,7,2335,0.0467
+elche,Elche CF,8,2621,0.05242
+elche,Elche CF,9,2856,0.05712
+elche,Elche CF,10,3003,0.06006
+elche,Elche CF,11,3131,0.06262
+elche,Elche CF,12,3232,0.06464
+elche,Elche CF,13,3423,0.06846
+elche,Elche CF,14,3555,0.0711
+elche,Elche CF,15,3687,0.07374
+elche,Elche CF,16,3677,0.07354
+elche,Elche CF,17,3736,0.07472
+elche,Elche CF,18,3609,0.07218
+elche,Elche CF,19,3416,0.06832
+elche,Elche CF,20,3071,0.06142
+barcelona,FC Barcelona,1,26874,0.53748
+barcelona,FC Barcelona,2,13741,0.27482
+barcelona,FC Barcelona,3,5412,0.10824
+barcelona,FC Barcelona,4,2130,0.0426
+barcelona,FC Barcelona,5,948,0.01896
+barcelona,FC Barcelona,6,415,0.0083
+barcelona,FC Barcelona,7,219,0.00438
+barcelona,FC Barcelona,8,96,0.00192
+barcelona,FC Barcelona,9,79,0.00158
+barcelona,FC Barcelona,10,41,0.00082
+barcelona,FC Barcelona,11,19,0.00038
+barcelona,FC Barcelona,12,10,0.0002
+barcelona,FC Barcelona,13,10,0.0002
+barcelona,FC Barcelona,14,3,6e-05
+barcelona,FC Barcelona,15,2,4e-05
+barcelona,FC Barcelona,16,0,0.0
+barcelona,FC Barcelona,17,1,2e-05
+barcelona,FC Barcelona,18,0,0.0
+barcelona,FC Barcelona,19,0,0.0
+barcelona,FC Barcelona,20,0,0.0
+getafe,Getafe CF,1,29,0.00058
+getafe,Getafe CF,2,162,0.00324
+getafe,Getafe CF,3,483,0.00966
+getafe,Getafe CF,4,1017,0.02034
+getafe,Getafe CF,5,1676,0.03352
+getafe,Getafe CF,6,2071,0.04142
+getafe,Getafe CF,7,2527,0.05054
+getafe,Getafe CF,8,2794,0.05588
+getafe,Getafe CF,9,3017,0.06034
+getafe,Getafe CF,10,3252,0.06504
+getafe,Getafe CF,11,3313,0.06626
+getafe,Getafe CF,12,3430,0.0686
+getafe,Getafe CF,13,3451,0.06902
+getafe,Getafe CF,14,3581,0.07162
+getafe,Getafe CF,15,3460,0.0692
+getafe,Getafe CF,16,3574,0.07148
+getafe,Getafe CF,17,3440,0.0688
+getafe,Getafe CF,18,3304,0.06608
+getafe,Getafe CF,19,3041,0.06082
+getafe,Getafe CF,20,2378,0.04756
+levante,Levante UD,1,38,0.00076
+levante,Levante UD,2,184,0.00368
+levante,Levante UD,3,684,0.01368
+levante,Levante UD,4,1281,0.02562
+levante,Levante UD,5,1910,0.0382
+levante,Levante UD,6,2553,0.05106
+levante,Levante UD,7,2834,0.05668
+levante,Levante UD,8,2983,0.05966
+levante,Levante UD,9,3200,0.064
+levante,Levante UD,10,3247,0.06494
+levante,Levante UD,11,3531,0.07062
+levante,Levante UD,12,3433,0.06866
+levante,Levante UD,13,3426,0.06852
+levante,Levante UD,14,3387,0.06774
+levante,Levante UD,15,3422,0.06844
+levante,Levante UD,16,3297,0.06594
+levante,Levante UD,17,3124,0.06248
+levante,Levante UD,18,2817,0.05634
+levante,Levante UD,19,2582,0.05164
+levante,Levante UD,20,2067,0.04134
+malaga,Málaga CF,1,3,6e-05
+malaga,Málaga CF,2,27,0.00054
+malaga,Málaga CF,3,147,0.00294
+malaga,Málaga CF,4,351,0.00702
+malaga,Málaga CF,5,619,0.01238
+malaga,Málaga CF,6,930,0.0186
+malaga,Málaga CF,7,1169,0.02338
+malaga,Málaga CF,8,1573,0.03146
+malaga,Málaga CF,9,1736,0.03472
+malaga,Málaga CF,10,2032,0.04064
+malaga,Málaga CF,11,2270,0.0454
+malaga,Málaga CF,12,2634,0.05268
+malaga,Málaga CF,13,2926,0.05852
+malaga,Málaga CF,14,3334,0.06668
+malaga,Málaga CF,15,3729,0.07458
+malaga,Málaga CF,16,4035,0.0807
+malaga,Málaga CF,17,4617,0.09234
+malaga,Málaga CF,18,5219,0.10438
+malaga,Málaga CF,19,5981,0.11962
+malaga,Málaga CF,20,6668,0.13336
+racing_santander,R. Racing Club,1,7,0.00014
+racing_santander,R. Racing Club,2,29,0.00058
+racing_santander,R. Racing Club,3,133,0.00266
+racing_santander,R. Racing Club,4,317,0.00634
+racing_santander,R. Racing Club,5,579,0.01158
+racing_santander,R. Racing Club,6,828,0.01656
+racing_santander,R. Racing Club,7,1044,0.02088
+racing_santander,R. Racing Club,8,1355,0.0271
+racing_santander,R. Racing Club,9,1618,0.03236
+racing_santander,R. Racing Club,10,1883,0.03766
+racing_santander,R. Racing Club,11,2256,0.04512
+racing_santander,R. Racing Club,12,2629,0.05258
+racing_santander,R. Racing Club,13,2808,0.05616
+racing_santander,R. Racing Club,14,3147,0.06294
+racing_santander,R. Racing Club,15,3689,0.07378
+racing_santander,R. Racing Club,16,4122,0.08244
+racing_santander,R. Racing Club,17,4549,0.09098
+racing_santander,R. Racing Club,18,5267,0.10534
+racing_santander,R. Racing Club,19,6205,0.1241
+racing_santander,R. Racing Club,20,7535,0.1507
+celta,RC Celta,1,151,0.00302
+celta,RC Celta,2,676,0.01352
+celta,RC Celta,3,1874,0.03748
+celta,RC Celta,4,2962,0.05924
+celta,RC Celta,5,3764,0.07528
+celta,RC Celta,6,4203,0.08406
+celta,RC Celta,7,4182,0.08364
+celta,RC Celta,8,4018,0.08036
+celta,RC Celta,9,3857,0.07714
+celta,RC Celta,10,3557,0.07114
+celta,RC Celta,11,3368,0.06736
+celta,RC Celta,12,2985,0.0597
+celta,RC Celta,13,2804,0.05608
+celta,RC Celta,14,2424,0.04848
+celta,RC Celta,15,2257,0.04514
+celta,RC Celta,16,1997,0.03994
+celta,RC Celta,17,1692,0.03384
+celta,RC Celta,18,1424,0.02848
+celta,RC Celta,19,1127,0.02254
+celta,RC Celta,20,678,0.01356
+deportivo,RC Deportivo,1,1,2e-05
+deportivo,RC Deportivo,2,14,0.00028
+deportivo,RC Deportivo,3,61,0.00122
+deportivo,RC Deportivo,4,156,0.00312
+deportivo,RC Deportivo,5,255,0.0051
+deportivo,RC Deportivo,6,448,0.00896
+deportivo,RC Deportivo,7,608,0.01216
+deportivo,RC Deportivo,8,841,0.01682
+deportivo,RC Deportivo,9,1048,0.02096
+deportivo,RC Deportivo,10,1331,0.02662
+deportivo,RC Deportivo,11,1519,0.03038
+deportivo,RC Deportivo,12,1929,0.03858
+deportivo,RC Deportivo,13,2340,0.0468
+deportivo,RC Deportivo,14,2748,0.05496
+deportivo,RC Deportivo,15,3169,0.06338
+deportivo,RC Deportivo,16,3867,0.07734
+deportivo,RC Deportivo,17,4645,0.0929
+deportivo,RC Deportivo,18,5806,0.11612
+deportivo,RC Deportivo,19,7546,0.15092
+deportivo,RC Deportivo,20,11668,0.23336
+espanyol,RCD Espanyol de Barcelona,1,14,0.00028
+espanyol,RCD Espanyol de Barcelona,2,100,0.002
+espanyol,RCD Espanyol de Barcelona,3,398,0.00796
+espanyol,RCD Espanyol de Barcelona,4,857,0.01714
+espanyol,RCD Espanyol de Barcelona,5,1350,0.027
+espanyol,RCD Espanyol de Barcelona,6,1747,0.03494
+espanyol,RCD Espanyol de Barcelona,7,2206,0.04412
+espanyol,RCD Espanyol de Barcelona,8,2443,0.04886
+espanyol,RCD Espanyol de Barcelona,9,2709,0.05418
+espanyol,RCD Espanyol de Barcelona,10,2975,0.0595
+espanyol,RCD Espanyol de Barcelona,11,3046,0.06092
+espanyol,RCD Espanyol de Barcelona,12,3264,0.06528
+espanyol,RCD Espanyol de Barcelona,13,3471,0.06942
+espanyol,RCD Espanyol de Barcelona,14,3629,0.07258
+espanyol,RCD Espanyol de Barcelona,15,3684,0.07368
+espanyol,RCD Espanyol de Barcelona,16,3689,0.07378
+espanyol,RCD Espanyol de Barcelona,17,3796,0.07592
+espanyol,RCD Espanyol de Barcelona,18,3735,0.0747
+espanyol,RCD Espanyol de Barcelona,19,3685,0.0737
+espanyol,RCD Espanyol de Barcelona,20,3202,0.06404
+vallecano,Rayo Vallecano,1,85,0.0017
+vallecano,Rayo Vallecano,2,448,0.00896
+vallecano,Rayo Vallecano,3,1278,0.02556
+vallecano,Rayo Vallecano,4,2344,0.04688
+vallecano,Rayo Vallecano,5,3201,0.06402
+vallecano,Rayo Vallecano,6,3696,0.07392
+vallecano,Rayo Vallecano,7,3887,0.07774
+vallecano,Rayo Vallecano,8,3979,0.07958
+vallecano,Rayo Vallecano,9,3697,0.07394
+vallecano,Rayo Vallecano,10,3617,0.07234
+vallecano,Rayo Vallecano,11,3466,0.06932
+vallecano,Rayo Vallecano,12,3261,0.06522
+vallecano,Rayo Vallecano,13,3006,0.06012
+vallecano,Rayo Vallecano,14,2825,0.0565
+vallecano,Rayo Vallecano,15,2666,0.05332
+vallecano,Rayo Vallecano,16,2322,0.04644
+vallecano,Rayo Vallecano,17,2019,0.04038
+vallecano,Rayo Vallecano,18,1804,0.03608
+vallecano,Rayo Vallecano,19,1455,0.0291
+vallecano,Rayo Vallecano,20,944,0.01888
+betis,Real Betis,1,884,0.01768
+betis,Real Betis,2,2898,0.05796
+betis,Real Betis,3,5622,0.11244
+betis,Real Betis,4,7256,0.14512
+betis,Real Betis,5,6743,0.13486
+betis,Real Betis,6,5371,0.10742
+betis,Real Betis,7,4425,0.0885
+betis,Real Betis,8,3543,0.07086
+betis,Real Betis,9,2789,0.05578
+betis,Real Betis,10,2318,0.04636
+betis,Real Betis,11,1881,0.03762
+betis,Real Betis,12,1550,0.031
+betis,Real Betis,13,1275,0.0255
+betis,Real Betis,14,940,0.0188
+betis,Real Betis,15,740,0.0148
+betis,Real Betis,16,645,0.0129
+betis,Real Betis,17,464,0.00928
+betis,Real Betis,18,327,0.00654
+betis,Real Betis,19,213,0.00426
+betis,Real Betis,20,116,0.00232
+real_madrid,Real Madrid,1,16527,0.33054
+real_madrid,Real Madrid,2,17696,0.35392
+real_madrid,Real Madrid,3,7956,0.15912
+real_madrid,Real Madrid,4,3728,0.07456
+real_madrid,Real Madrid,5,1815,0.0363
+real_madrid,Real Madrid,6,976,0.01952
+real_madrid,Real Madrid,7,503,0.01006
+real_madrid,Real Madrid,8,330,0.0066
+real_madrid,Real Madrid,9,179,0.00358
+real_madrid,Real Madrid,10,116,0.00232
+real_madrid,Real Madrid,11,66,0.00132
+real_madrid,Real Madrid,12,47,0.00094
+real_madrid,Real Madrid,13,31,0.00062
+real_madrid,Real Madrid,14,14,0.00028
+real_madrid,Real Madrid,15,9,0.00018
+real_madrid,Real Madrid,16,3,6e-05
+real_madrid,Real Madrid,17,1,2e-05
+real_madrid,Real Madrid,18,2,4e-05
+real_madrid,Real Madrid,19,1,2e-05
+real_madrid,Real Madrid,20,0,0.0
+real_sociedad,Real Sociedad,1,57,0.00114
+real_sociedad,Real Sociedad,2,288,0.00576
+real_sociedad,Real Sociedad,3,985,0.0197
+real_sociedad,Real Sociedad,4,1831,0.03662
+real_sociedad,Real Sociedad,5,2535,0.0507
+real_sociedad,Real Sociedad,6,3042,0.06084
+real_sociedad,Real Sociedad,7,3371,0.06742
+real_sociedad,Real Sociedad,8,3463,0.06926
+real_sociedad,Real Sociedad,9,3585,0.0717
+real_sociedad,Real Sociedad,10,3509,0.07018
+real_sociedad,Real Sociedad,11,3526,0.07052
+real_sociedad,Real Sociedad,12,3378,0.06756
+real_sociedad,Real Sociedad,13,3336,0.06672
+real_sociedad,Real Sociedad,14,2977,0.05954
+real_sociedad,Real Sociedad,15,2960,0.0592
+real_sociedad,Real Sociedad,16,2804,0.05608
+real_sociedad,Real Sociedad,17,2576,0.05152
+real_sociedad,Real Sociedad,18,2369,0.04738
+real_sociedad,Real Sociedad,19,1972,0.03944
+real_sociedad,Real Sociedad,20,1436,0.02872
+sevilla,Sevilla FC,1,17,0.00034
+sevilla,Sevilla FC,2,119,0.00238
+sevilla,Sevilla FC,3,456,0.00912
+sevilla,Sevilla FC,4,886,0.01772
+sevilla,Sevilla FC,5,1371,0.02742
+sevilla,Sevilla FC,6,1946,0.03892
+sevilla,Sevilla FC,7,2321,0.04642
+sevilla,Sevilla FC,8,2620,0.0524
+sevilla,Sevilla FC,9,2936,0.05872
+sevilla,Sevilla FC,10,3012,0.06024
+sevilla,Sevilla FC,11,3153,0.06306
+sevilla,Sevilla FC,12,3274,0.06548
+sevilla,Sevilla FC,13,3461,0.06922
+sevilla,Sevilla FC,14,3642,0.07284
+sevilla,Sevilla FC,15,3607,0.07214
+sevilla,Sevilla FC,16,3551,0.07102
+sevilla,Sevilla FC,17,3719,0.07438
+sevilla,Sevilla FC,18,3586,0.07172
+sevilla,Sevilla FC,19,3436,0.06872
+sevilla,Sevilla FC,20,2887,0.05774
+valencia,Valencia CF,1,58,0.00116
+valencia,Valencia CF,2,321,0.00642
+valencia,Valencia CF,3,1113,0.02226
+valencia,Valencia CF,4,1923,0.03846
+valencia,Valencia CF,5,2670,0.0534
+valencia,Valencia CF,6,3194,0.06388
+valencia,Valencia CF,7,3390,0.0678
+valencia,Valencia CF,8,3565,0.0713
+valencia,Valencia CF,9,3472,0.06944
+valencia,Valencia CF,10,3564,0.07128
+valencia,Valencia CF,11,3563,0.07126
+valencia,Valencia CF,12,3418,0.06836
+valencia,Valencia CF,13,3289,0.06578
+valencia,Valencia CF,14,3186,0.06372
+valencia,Valencia CF,15,2864,0.05728
+valencia,Valencia CF,16,2710,0.0542
+valencia,Valencia CF,17,2437,0.04874
+valencia,Valencia CF,18,2231,0.04462
+valencia,Valencia CF,19,1784,0.03568
+valencia,Valencia CF,20,1248,0.02496
+villarreal,Villarreal CF,1,2974,0.05948
+villarreal,Villarreal CF,2,6937,0.13874
+villarreal,Villarreal CF,3,11071,0.22142
+villarreal,Villarreal CF,4,8798,0.17596
+villarreal,Villarreal CF,5,6069,0.12138
+villarreal,Villarreal CF,6,4092,0.08184
+villarreal,Villarreal CF,7,2841,0.05682
+villarreal,Villarreal CF,8,1924,0.03848
+villarreal,Villarreal CF,9,1518,0.03036
+villarreal,Villarreal CF,10,1090,0.0218
+villarreal,Villarreal CF,11,805,0.0161
+villarreal,Villarreal CF,12,544,0.01088
+villarreal,Villarreal CF,13,428,0.00856
+villarreal,Villarreal CF,14,312,0.00624
+villarreal,Villarreal CF,15,205,0.0041
+villarreal,Villarreal CF,16,171,0.00342
+villarreal,Villarreal CF,17,101,0.00202
+villarreal,Villarreal CF,18,74,0.00148
+villarreal,Villarreal CF,19,30,0.0006
+villarreal,Villarreal CF,20,16,0.00032

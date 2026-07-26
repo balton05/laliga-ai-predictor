@@ -1,0 +1,33 @@
+{
+  "quality_passed": true,
+  "quality_checks": 22,
+  "simulations": 50000,
+  "random_seed": 42,
+  "fixtures": 380,
+  "teams": 20,
+  "scoreline_method": "poisson_conditioned_on_ensemble_1x2",
+  "ranking_method": "points, mini-league head-to-head points, mini-league goal difference, overall goal difference, goals scored",
+  "title_favorite": "FC Barcelona",
+  "title_favorite_probability": 0.53748,
+  "highest_expected_points_team": "FC Barcelona",
+  "highest_expected_points": 74.66914,
+  "highest_relegation_risk_teams": [
+    "RC Deportivo",
+    "R. Racing Club",
+    "Málaga CF"
+  ],
+  "highest_relegation_risks": [
+    0.5004,
+    0.38014,
+    0.35736
+  ],
+  "europe_definition": "Top 7 league-position proxy; cup winners and UEFA performance spots can change the final allocation.",
+  "preseason_snapshot": true,
+  "requires_dynamic_update": true,
+  "figures": [
+    "figures/27_champion_probabilities.png",
+    "figures/28_zone_probabilities.png",
+    "figures/29_points_intervals.png",
+    "figures/30_position_heatmap.png"
+  ]
+}

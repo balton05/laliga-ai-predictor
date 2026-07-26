@@ -1,0 +1,27 @@
+{
+  "audit_passed": true,
+  "source_files": 15,
+  "laliga_matches": 3800,
+  "segunda_matches": 2310,
+  "historical_matches": 6110,
+  "team_history_rows": 12220,
+  "fixtures_2026_27": 380,
+  "fixture_teams": 20,
+  "promotion_records": 30,
+  "promotions_with_segunda_stats": 15,
+  "promoted_2026_27": [
+    "Racing de Santander",
+    "RC Deportivo",
+    "Málaga CF"
+  ],
+  "outputs": {
+    "matches_master": "data/processed/matches_master.csv",
+    "team_match_history": "data/processed/team_match_history.csv",
+    "fixtures": "data/processed/fixtures_2026_27.csv",
+    "historical_promotions": "data/processed/historical_promotions.csv",
+    "promoted_2026_27": "data/processed/promoted_teams_2026_27.csv",
+    "team_name_mapping": "data/processed/team_name_mapping.csv",
+    "data_audit": "reports/data_audit.csv",
+    "column_coverage": "reports/column_coverage.csv"
+  }
+}

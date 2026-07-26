@@ -1,0 +1,13 @@
+check,passed,value
+angular_major_version,True,20
+web_routes,True,5
+fixtures,True,380
+predictions,True,380
+teams,True,20
+simulation_teams,True,20
+probabilities_sum_one,True,380/380
+champion_zone,True,1
+top4_zone,True,4
+top7_zone,True,7
+relegation_zone,True,3
+cors_configured,True,localhost:4200

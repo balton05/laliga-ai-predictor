@@ -1,0 +1,21 @@
+{
+  "phase": 9,
+  "update_id": "5661090f9f4db83f",
+  "created_at_utc": "2026-07-23T22:10:27.260524+00:00",
+  "season": "2026/27",
+  "snapshot_date": "2026-08-16",
+  "completed_matches": 0,
+  "completed_matchdays": 0,
+  "remaining_matches": 380,
+  "next_matchday": 1,
+  "market_predictions": 0,
+  "sports_predictions": 380,
+  "simulations": 50000,
+  "seed": 42,
+  "quality_checks": 16,
+  "quality_passed": true,
+  "pipeline_mode": "preseason_noop",
+  "partial_update_allowed": false,
+  "market_policy": "Use ensemble_market per fixture only when a complete current 1X2 odds snapshot is available; otherwise use ensemble_sports.",
+  "model_retraining_policy": "Classifiers remain frozen through 2025/26; sports features and Elo update each run; Poisson is refitted when 2026/27 results exist."
+}

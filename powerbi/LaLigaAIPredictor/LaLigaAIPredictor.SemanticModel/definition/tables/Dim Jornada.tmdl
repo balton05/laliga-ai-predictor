@@ -1,0 +1,34 @@
+table 'Dim Jornada'
+	lineageTag: 671f11d3-53ee-4703-85f3-9099dd0b436d
+
+	column Jornada
+		dataType: int64
+		formatString: 0
+		lineageTag: 0cda89d2-aa8d-45b0-9575-631da5e2ba1e
+		summarizeBy: none
+		sourceColumn: matchday
+
+	column 'Etiqueta jornada'
+		dataType: string
+		lineageTag: 8436e3dd-f1f2-4f5c-a2b4-b3bfda74af91
+		summarizeBy: none
+		sourceColumn: matchday_label
+
+	column 'Tramo temporada'
+		dataType: string
+		lineageTag: 9d3daa4c-cf3c-4ee3-bbeb-84882af80cbe
+		summarizeBy: none
+		sourceColumn: season_stage
+
+	partition 'Dim Jornada' = m
+		mode: import
+		source =
+				let
+				    Source = PostgreSQL.Database(
+				        pPostgresServer,
+				        pPostgresDatabase,
+				        [Query="SELECT * FROM bi_dim_matchday"]
+				    )
+				in
+				    Source
+

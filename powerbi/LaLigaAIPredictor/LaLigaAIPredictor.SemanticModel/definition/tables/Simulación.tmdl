@@ -1,0 +1,167 @@
+table Simulación
+	lineageTag: 09785197-3a76-43d0-9bd0-47ba6b5a823b
+
+	measure 'Número de simulaciones' = MAX('Simulación'[Simulaciones])
+		formatString: #,0
+		displayFolder: Operación
+		lineageTag: 62133039-2233-4667-8b1c-45e4108468ed
+
+	measure 'Puntos esperados equipo' = MAX('Simulación'[Puntos esperados])
+		formatString: 0.0
+		displayFolder: Equipo
+		lineageTag: 4fb1e2ef-79b0-4bb4-bb7c-e5527b8d0691
+
+	measure 'Posición esperada equipo' = MIN('Simulación'[Posición esperada])
+		formatString: 0.0
+		displayFolder: Equipo
+		lineageTag: 4e1c6892-812e-4ec4-8d31-150a4f096641
+
+	measure 'P Campeón' = MAX('Simulación'[Probabilidad campeón])
+		formatString: 0.0%
+		displayFolder: Zonas
+		lineageTag: 33ab3ff3-6ee9-4c5f-b3bb-096b779e92d2
+
+	measure 'P Top 4' = MAX('Simulación'[Probabilidad Top 4])
+		formatString: 0.0%
+		displayFolder: Zonas
+		lineageTag: 2642bf0e-6ba7-4dce-8bd1-2da671d3613f
+
+	measure 'P Europa' = MAX('Simulación'[Probabilidad Europa])
+		formatString: 0.0%
+		displayFolder: Zonas
+		lineageTag: 2cdc31e0-056f-4c37-8fdc-73fa1d0be0d5
+
+	measure 'P Descenso' = MAX('Simulación'[Probabilidad descenso])
+		formatString: 0.0%
+		displayFolder: Zonas
+		lineageTag: 8b98c1dd-ed99-45b4-84fc-8946b6ee2535
+
+	measure 'Favorito al título' = CONCATENATEX(TOPN(1, ALL('Simulación'), 'Simulación'[Probabilidad campeón], DESC, 'Simulación'[Equipo], ASC), 'Simulación'[Equipo], "")
+		displayFolder: Resumen
+		lineageTag: 8c61a44d-7ab1-40d5-a619-2291553ad254
+
+	measure 'Mayor riesgo de descenso' = CONCATENATEX(TOPN(1, ALL('Simulación'), 'Simulación'[Probabilidad descenso], DESC, 'Simulación'[Equipo], ASC), 'Simulación'[Equipo], "")
+		displayFolder: Resumen
+		lineageTag: 3cdcabaf-f9c8-4fc6-9179-b5f5b24b5d9a
+
+	column 'Equipo ID'
+		dataType: string
+		lineageTag: 95138bb6-b49b-49f3-a0d8-ee06e9fe709c
+		summarizeBy: none
+		sourceColumn: team_id
+
+	column Equipo
+		dataType: string
+		lineageTag: f9a4a6e9-f5f6-4c4a-8026-d08e7a0be732
+		summarizeBy: none
+		sourceColumn: team
+
+	column Simulaciones
+		dataType: int64
+		formatString: #,0
+		lineageTag: ecc5bd2c-4476-41cc-99b3-024bc81a9095
+		summarizeBy: none
+		sourceColumn: simulations
+
+	column 'Puntos esperados'
+		dataType: double
+		formatString: 0.0
+		lineageTag: 8addf3f5-6a7b-4aaf-b00a-f9a25632d240
+		summarizeBy: none
+		sourceColumn: expected_points
+
+	column 'Mediana puntos'
+		dataType: double
+		formatString: 0.0
+		lineageTag: d7bc6649-c13c-4b3c-a5e3-9f72f463d0d2
+		summarizeBy: none
+		sourceColumn: median_points
+
+	column 'Puntos P05'
+		dataType: double
+		formatString: 0.0
+		lineageTag: 0c0b269d-57c0-41c4-9084-03903ad9a356
+		summarizeBy: none
+		sourceColumn: points_p05
+
+	column 'Puntos P95'
+		dataType: double
+		formatString: 0.0
+		lineageTag: e20dfd44-536f-48f9-823e-45e067b15072
+		summarizeBy: none
+		sourceColumn: points_p95
+
+	column 'Posición esperada'
+		dataType: double
+		formatString: 0.0
+		lineageTag: 95cbe851-48e5-4119-b51c-1b863bafd76e
+		summarizeBy: none
+		sourceColumn: expected_position
+
+	column 'Mediana posición'
+		dataType: double
+		formatString: 0.0
+		lineageTag: 49b8e0d8-828f-42a7-b5e4-1e4917599395
+		summarizeBy: none
+		sourceColumn: median_position
+
+	column 'Probabilidad campeón'
+		dataType: double
+		formatString: 0.0%
+		lineageTag: a273f6b8-54db-4859-8546-023bbd85838e
+		summarizeBy: none
+		sourceColumn: champion_probability
+
+	column 'Probabilidad Top 4'
+		dataType: double
+		formatString: 0.0%
+		lineageTag: 4c8f0b9b-36e5-4e32-b6da-07729e2593fa
+		summarizeBy: none
+		sourceColumn: top4_probability
+
+	column 'Probabilidad Top 6'
+		dataType: double
+		formatString: 0.0%
+		lineageTag: 2078a7bc-5b7d-4eae-b7c3-54e943553701
+		summarizeBy: none
+		sourceColumn: top6_probability
+
+	column 'Probabilidad Europa'
+		dataType: double
+		formatString: 0.0%
+		lineageTag: 9c8d377f-71cc-4a70-b176-3fe243bbeb32
+		summarizeBy: none
+		sourceColumn: europe_top7_probability
+
+	column 'Probabilidad descenso'
+		dataType: double
+		formatString: 0.0%
+		lineageTag: 827f5775-2993-4258-b97a-1b3a5ca2e776
+		summarizeBy: none
+		sourceColumn: relegation_probability
+
+	column 'Probabilidad último'
+		dataType: double
+		formatString: 0.0%
+		lineageTag: 46304071-f0c3-4656-a7ea-8a4bb437bc17
+		summarizeBy: none
+		sourceColumn: last_place_probability
+
+	column 'Update ID'
+		dataType: string
+		lineageTag: b86b0fed-0474-486a-bf1e-bf50e79cc0c5
+		summarizeBy: none
+		sourceColumn: update_id
+
+	partition Simulación = m
+		mode: import
+		source =
+				let
+				    Source = PostgreSQL.Database(
+				        pPostgresServer,
+				        pPostgresDatabase,
+				        [Query="SELECT * FROM bi_simulation_summary"]
+				    )
+				in
+				    Source
+

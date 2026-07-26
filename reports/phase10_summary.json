@@ -1,0 +1,23 @@
+{
+  "phase": 10,
+  "api_framework": "FastAPI",
+  "production_database": "PostgreSQL",
+  "test_database": "SQLite",
+  "season": "2026/27",
+  "source_update_id": "7f6a923c1a4600d7",
+  "fixtures": 380,
+  "predictions": 380,
+  "completed_matches": 0,
+  "simulations": 50000,
+  "endpoints": [
+    "/fixtures",
+    "/health",
+    "/predictions",
+    "/simulation",
+    "/standings",
+    "/update-matchday",
+    "/updates/latest"
+  ],
+  "quality_checks": 15,
+  "quality_passed": true
+}

@@ -1,0 +1,157 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "b9ce0f10f1b7a4793986",
+  "position": {
+    "x": 24,
+    "y": 236,
+    "z": 4000,
+    "height": 452,
+    "width": 1232,
+    "tabOrder": 4000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Actualizaciones"
+                    }
+                  },
+                  "Property": "Update ID"
+                }
+              },
+              "queryRef": "Actualizaciones.Update ID",
+              "nativeQueryRef": "Update ID"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Actualizaciones"
+                    }
+                  },
+                  "Property": "Creado UTC"
+                }
+              },
+              "queryRef": "Actualizaciones.Creado UTC",
+              "nativeQueryRef": "Creado UTC"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Actualizaciones"
+                    }
+                  },
+                  "Property": "Partidos completados"
+                }
+              },
+              "queryRef": "Actualizaciones.Partidos completados",
+              "nativeQueryRef": "Partidos completados"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Actualizaciones"
+                    }
+                  },
+                  "Property": "Jornadas completadas"
+                }
+              },
+              "queryRef": "Actualizaciones.Jornadas completadas",
+              "nativeQueryRef": "Jornadas completadas"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Actualizaciones"
+                    }
+                  },
+                  "Property": "Partidos restantes"
+                }
+              },
+              "queryRef": "Actualizaciones.Partidos restantes",
+              "nativeQueryRef": "Partidos restantes"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Actualizaciones"
+                    }
+                  },
+                  "Property": "Predicciones mercado"
+                }
+              },
+              "queryRef": "Actualizaciones.Predicciones mercado",
+              "nativeQueryRef": "Predicciones mercado"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Actualizaciones"
+                    }
+                  },
+                  "Property": "Calidad superada"
+                }
+              },
+              "queryRef": "Actualizaciones.Calidad superada",
+              "nativeQueryRef": "Calidad superada"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Actualizaciones"
+                    }
+                  },
+                  "Property": "Modo pipeline"
+                }
+              },
+              "queryRef": "Actualizaciones.Modo pipeline",
+              "nativeQueryRef": "Modo pipeline"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "columnHeaders": [
+        {
+          "properties": {
+            "columnAdjustment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'growToFit'"
+                }
+              }
+            },
+            "autoSizeColumnWidth": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "27ea724eacfcb047767c",
+  "position": {
+    "x": 24,
+    "y": 88,
+    "z": 2000,
+    "height": 132,
+    "width": 1232,
+    "tabOrder": 2000
+  },
+  "visual": {
+    "visualType": "cardVisual",
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Partidos"
+                    }
+                  },
+                  "Property": "Victorias locales esperadas"
+                }
+              },
+              "queryRef": "Partidos.Victorias locales esperadas",
+              "nativeQueryRef": "Victorias locales esperadas"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Partidos"
+                    }
+                  },
+                  "Property": "Empates esperados"
+                }
+              },
+              "queryRef": "Partidos.Empates esperados",
+              "nativeQueryRef": "Empates esperados"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Partidos"
+                    }
+                  },
+                  "Property": "Victorias visitantes esperadas"
+                }
+              },
+              "queryRef": "Partidos.Victorias visitantes esperadas",
+              "nativeQueryRef": "Victorias visitantes esperadas"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Partidos"
+                    }
+                  },
+                  "Property": "Partidos con mercado"
+                }
+              },
+              "queryRef": "Partidos.Partidos con mercado",
+              "nativeQueryRef": "Partidos con mercado"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "outline": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "default"
+          }
+        }
+      ]
+    }
+  }
+}

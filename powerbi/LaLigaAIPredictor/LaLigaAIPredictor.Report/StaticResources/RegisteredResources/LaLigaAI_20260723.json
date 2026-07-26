@@ -1,0 +1,121 @@
+{
+  "name": "LaLigaAI_20260723.json",
+  "dataColors": [
+    "#38BDF8",
+    "#FBBF24",
+    "#F97316",
+    "#22C55E",
+    "#A78BFA",
+    "#F43F5E",
+    "#14B8A6",
+    "#E879F9"
+  ],
+  "background": "#0F172A",
+  "foreground": "#F8FAFC",
+  "tableAccent": "#38BDF8",
+  "good": "#22C55E",
+  "neutral": "#FBBF24",
+  "bad": "#F43F5E",
+  "textClasses": {
+    "title": {
+      "fontFace": "Segoe UI Semibold",
+      "fontSize": 16,
+      "color": "#F8FAFC"
+    },
+    "callout": {
+      "fontFace": "Segoe UI Semibold",
+      "fontSize": 24,
+      "color": "#F8FAFC"
+    },
+    "label": {
+      "fontFace": "Segoe UI",
+      "fontSize": 10,
+      "color": "#CBD5E1"
+    }
+  },
+  "visualStyles": {
+    "*": {
+      "*": {
+        "background": [
+          {
+            "show": true,
+            "color": {
+              "solid": {
+                "color": "#172033"
+              }
+            },
+            "transparency": 0
+          }
+        ],
+        "border": [
+          {
+            "show": true,
+            "color": {
+              "solid": {
+                "color": "#334155"
+              }
+            },
+            "radius": 8
+          }
+        ],
+        "visualHeader": [
+          {
+            "show": false
+          }
+        ],
+        "padding": [
+          {
+            "top": 8,
+            "bottom": 8,
+            "left": 8,
+            "right": 8
+          }
+        ]
+      }
+    },
+    "tableEx": {
+      "*": {
+        "columnHeaders": [
+          {
+            "autoSizeColumnWidth": true,
+            "columnAdjustment": "growToFit",
+            "backColor": {
+              "solid": {
+                "color": "#1E293B"
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": "#F8FAFC"
+              }
+            }
+          }
+        ],
+        "values": [
+          {
+            "backColorPrimary": {
+              "solid": {
+                "color": "#172033"
+              }
+            },
+            "backColorSecondary": {
+              "solid": {
+                "color": "#1E293B"
+              }
+            },
+            "fontColorPrimary": {
+              "solid": {
+                "color": "#E2E8F0"
+              }
+            },
+            "fontColorSecondary": {
+              "solid": {
+                "color": "#E2E8F0"
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

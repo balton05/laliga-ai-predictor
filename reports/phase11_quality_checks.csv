@@ -1,0 +1,13 @@
+﻿check,passed,value
+fixtures_380,True,380
+next_matchday_10,True,10
+teams_20,True,20
+champion_sum_1,True,0.9999999999999999
+top4_sum_4,True,4.0
+top7_sum_7,True,7.0
+relegation_sum_3,True,2.9999999999999996
+report_pages_6,True,6
+powerbi_views_9,True,9
+pbip_entrypoint_present,True,True
+semantic_model_present,True,True
+theme_present,True,True

@@ -1,0 +1,16 @@
+{
+  "phase": 11,
+  "bi_tool": "Power BI Desktop",
+  "project_format": "PBIP + PBIR + TMSL",
+  "storage_mode": "Import",
+  "production_source": "PostgreSQL analytical views",
+  "api_source": "FastAPI /health",
+  "semantic_tables": 10,
+  "relationships": 6,
+  "measures": 29,
+  "report_pages": 6,
+  "fixtures": 380,
+  "teams": 20,
+  "quality_checks": 12,
+  "quality_passed": true
+}

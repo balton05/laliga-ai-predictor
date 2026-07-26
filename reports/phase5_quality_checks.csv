@@ -1,0 +1,15 @@
+check,passed
+validation_rows_per_goal_model,True
+test_rows_per_goal_model,True
+two_goal_models_evaluated,True
+candidate_grid_complete,True
+probabilities_sum_to_one,True
+probabilities_are_finite,True
+probabilities_within_bounds,True
+expected_goals_are_positive,True
+test_season_is_2025_26,True
+validation_uses_only_locked_seasons,True
+baseline_comparison_contains_market,True
+fixtures_are_complete,True
+fixture_probabilities_sum_to_one,True
+three_promoted_adjustments,True
