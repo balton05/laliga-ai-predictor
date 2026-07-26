@@ -20,14 +20,9 @@ from .models import (
 )
 from .schemas import (
     AutomationStatusOut,
-    CalibrationBinOut,
-    ConfusionCellOut,
     FixtureOut,
     HealthOut,
     MatchdayUpdateInput,
-    MatchdayPerformanceOut,
-    PerformanceHistoryOut,
-    PerformanceSummaryOut,
     PipelineRunOut,
     PipelineStepOut,
     PredictionOut,
@@ -38,13 +33,6 @@ from .schemas import (
 from .service import DataSyncService, UpdateConflictError
 from .settings import Settings
 from laliga_predictor.automation import AutomationConfig, AutomationRunner
-from laliga_predictor.evaluation import (
-    calibration_bins,
-    confusion_matrix,
-    performance_by_matchday,
-    performance_history_query,
-    performance_summary,
-)
 
 
 def create_app(settings: Settings | None = None) -> FastAPI:
@@ -334,66 +322,6 @@ def create_app(settings: Settings | None = None) -> FastAPI:
                 .order_by(PipelineStep.step_order)
             )
         )
-
-    @application.get(
-        "/performance/summary",
-        response_model=PerformanceSummaryOut,
-        tags=["performance"],
-    )
-    def performance_summary_endpoint(
-        session: Session = Depends(get_session),
-    ) -> dict:
-        return performance_summary(session)
-
-    @application.get(
-        "/performance/history",
-        response_model=list[PerformanceHistoryOut],
-        tags=["performance"],
-    )
-    def performance_history(
-        session: Session = Depends(get_session),
-        matchday: int | None = Query(default=None, ge=1, le=38),
-        team: str | None = None,
-        limit: int = Query(default=100, ge=1, le=380),
-        offset: int = Query(default=0, ge=0),
-    ) -> list:
-        return performance_history_query(
-            session,
-            matchday=matchday,
-            team=team,
-            limit=limit,
-            offset=offset,
-        )
-
-    @application.get(
-        "/performance/by-matchday",
-        response_model=list[MatchdayPerformanceOut],
-        tags=["performance"],
-    )
-    def matchday_performance(
-        session: Session = Depends(get_session),
-    ) -> list[dict]:
-        return performance_by_matchday(session)
-
-    @application.get(
-        "/performance/confusion",
-        response_model=list[ConfusionCellOut],
-        tags=["performance"],
-    )
-    def performance_confusion(
-        session: Session = Depends(get_session),
-    ) -> list[dict]:
-        return confusion_matrix(session)
-
-    @application.get(
-        "/performance/calibration",
-        response_model=list[CalibrationBinOut],
-        tags=["performance"],
-    )
-    def performance_calibration(
-        session: Session = Depends(get_session),
-    ) -> list[dict]:
-        return calibration_bins(session)
 
     @application.post(
         "/automation/run",

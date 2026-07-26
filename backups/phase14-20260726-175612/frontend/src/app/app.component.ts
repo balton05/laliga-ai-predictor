@@ -79,7 +79,7 @@ import { DataService } from './data.service';
         </main>
 
         <footer>
-          <span>LaLiga AI Predictor · Fase 14</span>
+          <span>LaLiga AI Predictor · Fase 12</span>
           <span>Las probabilidades son estimaciones, no certezas.</span>
         </footer>
       </section>
@@ -95,7 +95,6 @@ export class AppComponent {
     { path: '/calendario', label: 'Calendario', icon: '▦' },
     { path: '/clasificacion', label: 'Clasificación', icon: '≡' },
     { path: '/simulacion', label: 'Simulación', icon: '↗' },
-    { path: '/rendimiento', label: 'Rendimiento', icon: '◉' },
     { path: '/equipos', label: 'Equipos', icon: '◇' },
   ];
 

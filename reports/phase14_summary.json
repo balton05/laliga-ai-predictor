@@ -1,0 +1,26 @@
+{
+  "phase": 14,
+  "name": "Immutable prediction history and live performance evaluation",
+  "season": "2026/27",
+  "status": "completed",
+  "model_version": "ensemble-v1-trained-through-2025-26",
+  "features": [
+    "append_only_prediction_snapshots",
+    "pre_match_integrity_guard",
+    "automatic_result_evaluation",
+    "accuracy_log_loss_brier",
+    "market_benchmark",
+    "confusion_matrix",
+    "calibration_bins",
+    "performance_web_page"
+  ],
+  "api_endpoints": [
+    "/performance/summary",
+    "/performance/history",
+    "/performance/by-matchday",
+    "/performance/confusion",
+    "/performance/calibration"
+  ],
+  "tests_passed": 79,
+  "angular_production_build": true
+}

@@ -1,0 +1,18 @@
+{
+  "season": "2026/27",
+  "prediction_snapshots": 380,
+  "fixtures_with_snapshot": 380,
+  "completed_matches": 0,
+  "evaluated_matches": 0,
+  "pending_evaluation": 0,
+  "correct_predictions": 0,
+  "accuracy": null,
+  "log_loss": null,
+  "brier_score": null,
+  "market_matches": 0,
+  "market_accuracy": null,
+  "market_log_loss": null,
+  "market_brier_score": null,
+  "model_versions": ["ensemble-v1-trained-through-2025-26"],
+  "last_evaluated_at_utc": null
+}

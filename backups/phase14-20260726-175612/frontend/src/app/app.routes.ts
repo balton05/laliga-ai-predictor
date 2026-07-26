@@ -2,7 +2,6 @@ import { Routes } from '@angular/router';
 
 import { CalendarComponent } from './pages/calendar.component';
 import { HomeComponent } from './pages/home.component';
-import { PerformanceComponent } from './pages/performance.component';
 import { PredictionsComponent } from './pages/predictions.component';
 import { SimulationComponent } from './pages/simulation.component';
 import { StandingsComponent } from './pages/standings.component';
@@ -30,11 +29,6 @@ export const routes: Routes = [
     path: 'simulacion',
     component: SimulationComponent,
     title: 'Simulación · LaLiga AI',
-  },
-  {
-    path: 'rendimiento',
-    component: PerformanceComponent,
-    title: 'Rendimiento · LaLiga AI',
   },
   {
     path: 'equipos',

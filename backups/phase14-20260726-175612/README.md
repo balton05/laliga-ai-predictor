@@ -533,14 +533,7 @@ La guía completa está en `docs/phase11_powerbi_report.md`.
 La temporada 2025/26 no debe utilizarse para seleccionar variables,
 hiperparámetros ni métodos de imputación.
 
-## Estado actual
+## Próxima fase
 
-Las Fases 12–14 incorporan la aplicación Angular, la actualización automática
-desde Football-Data y la evaluación real. La ruta `/rendimiento` conserva las
-probabilidades conocidas antes de cada partido y presenta Accuracy, Log Loss,
-Brier Score, calibración, matriz de confusión y comparación con las cuotas.
-
-Los endpoints nuevos están disponibles bajo `/performance/*`. Antes del inicio
-de la temporada muestran cero encuentros evaluados y la cobertura de
-pronósticos prepartido, sin inventar resultados retrospectivos. Consulta
-`docs/phase14_performance_report.md` para el diseño completo.
+La Fase 12 construirá la aplicación web en Angular, consumiendo los endpoints
+de FastAPI y reutilizando el lenguaje visual y las métricas de Power BI.

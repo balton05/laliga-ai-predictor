@@ -15,7 +15,6 @@ from sqlalchemy.orm import Session, sessionmaker
 from laliga_predictor.api.models import PipelineRun, PipelineStep
 from laliga_predictor.api.schemas import MatchdayUpdateInput
 from laliga_predictor.api.service import DataSyncService
-from laliga_predictor.evaluation import MODEL_VERSION
 from laliga_predictor.sources.football_data import (
     FootballDataSnapshot,
     SourceUnavailableError,
@@ -24,6 +23,7 @@ from laliga_predictor.sources.football_data import (
 
 
 LOGGER = logging.getLogger(__name__)
+MODEL_VERSION = "ensemble-v1-trained-through-2025-26"
 T = TypeVar("T")
 
 

@@ -18,10 +18,6 @@ from laliga_predictor.dynamic import (
     RESULT_COLUMNS,
     run_phase9,
 )
-from laliga_predictor.evaluation import (
-    capture_current_predictions,
-    evaluate_pending_results,
-)
 
 from .models import (
     Fixture,
@@ -230,11 +226,6 @@ class DataSyncService:
         positions["update_id"] = update_id
 
         with self.session_factory.begin() as session:
-            capture_current_predictions(
-                session,
-                capture_source="before_sync",
-                exclude_fixture_ids=completed_ids,
-            )
             for model in [
                 PositionProbability,
                 SimulationSummary,
@@ -290,13 +281,6 @@ class DataSyncService:
                     snapshot_path=summary.get("snapshot_path"),
                 )
             )
-            snapshots_created = capture_current_predictions(
-                session,
-                capture_source="after_sync",
-            )
-            evaluations_created = evaluate_pending_results(session)
-        summary["prediction_snapshots_created"] = snapshots_created
-        summary["prediction_evaluations_created"] = evaluations_created
         return summary
 
     def _odds_records(self, fixtures: pd.DataFrame) -> list[dict]:

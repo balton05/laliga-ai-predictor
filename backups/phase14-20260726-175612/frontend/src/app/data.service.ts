@@ -4,13 +4,8 @@ import { firstValueFrom, timeout } from 'rxjs';
 
 import {
   AutomationStatus,
-  CalibrationBin,
-  ConfusionCell,
   Fixture,
   Health,
-  MatchdayPerformance,
-  PerformanceHistory,
-  PerformanceSummary,
   Prediction,
   Simulation,
   Standing,
@@ -72,41 +67,6 @@ export class DataService {
     return this.request<AutomationStatus>(
       '/automation/status',
       'automation.json',
-    );
-  }
-
-  performanceSummary(): Promise<PerformanceSummary> {
-    return this.request<PerformanceSummary>(
-      '/performance/summary',
-      'performance-summary.json',
-    );
-  }
-
-  performanceHistory(): Promise<PerformanceHistory[]> {
-    return this.request<PerformanceHistory[]>(
-      '/performance/history?limit=100',
-      'performance-history.json',
-    );
-  }
-
-  performanceByMatchday(): Promise<MatchdayPerformance[]> {
-    return this.request<MatchdayPerformance[]>(
-      '/performance/by-matchday',
-      'performance-by-matchday.json',
-    );
-  }
-
-  performanceConfusion(): Promise<ConfusionCell[]> {
-    return this.request<ConfusionCell[]>(
-      '/performance/confusion',
-      'performance-confusion.json',
-    );
-  }
-
-  performanceCalibration(): Promise<CalibrationBin[]> {
-    return this.request<CalibrationBin[]>(
-      '/performance/calibration',
-      'performance-calibration.json',
     );
   }
 }

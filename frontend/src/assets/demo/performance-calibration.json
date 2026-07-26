@@ -1,0 +1,12 @@
+[
+  {"bin_lower":0.0,"bin_upper":0.1,"label":"0-10%","matches":0,"mean_confidence":null,"observed_accuracy":null},
+  {"bin_lower":0.1,"bin_upper":0.2,"label":"10-20%","matches":0,"mean_confidence":null,"observed_accuracy":null},
+  {"bin_lower":0.2,"bin_upper":0.3,"label":"20-30%","matches":0,"mean_confidence":null,"observed_accuracy":null},
+  {"bin_lower":0.3,"bin_upper":0.4,"label":"30-40%","matches":0,"mean_confidence":null,"observed_accuracy":null},
+  {"bin_lower":0.4,"bin_upper":0.5,"label":"40-50%","matches":0,"mean_confidence":null,"observed_accuracy":null},
+  {"bin_lower":0.5,"bin_upper":0.6,"label":"50-60%","matches":0,"mean_confidence":null,"observed_accuracy":null},
+  {"bin_lower":0.6,"bin_upper":0.7,"label":"60-70%","matches":0,"mean_confidence":null,"observed_accuracy":null},
+  {"bin_lower":0.7,"bin_upper":0.8,"label":"70-80%","matches":0,"mean_confidence":null,"observed_accuracy":null},
+  {"bin_lower":0.8,"bin_upper":0.9,"label":"80-90%","matches":0,"mean_confidence":null,"observed_accuracy":null},
+  {"bin_lower":0.9,"bin_upper":1.0,"label":"90-100%","matches":0,"mean_confidence":null,"observed_accuracy":null}
+]

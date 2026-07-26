@@ -1,0 +1,11 @@
+[
+  {"actual_ftr":"H","predicted_ftr":"H","matches":0},
+  {"actual_ftr":"H","predicted_ftr":"D","matches":0},
+  {"actual_ftr":"H","predicted_ftr":"A","matches":0},
+  {"actual_ftr":"D","predicted_ftr":"H","matches":0},
+  {"actual_ftr":"D","predicted_ftr":"D","matches":0},
+  {"actual_ftr":"D","predicted_ftr":"A","matches":0},
+  {"actual_ftr":"A","predicted_ftr":"H","matches":0},
+  {"actual_ftr":"A","predicted_ftr":"D","matches":0},
+  {"actual_ftr":"A","predicted_ftr":"A","matches":0}
+]
