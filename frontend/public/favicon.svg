@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#111a33"/>
+      <stop offset="1" stop-color="#070b18"/>
+    </linearGradient>
+    <linearGradient id="ball" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ff5a45"/>
+      <stop offset="1" stop-color="#ff302f"/>
+    </linearGradient>
+    <linearGradient id="chart" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0" stop-color="#00b8ff"/>
+      <stop offset="1" stop-color="#2768ff"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="512" height="512" rx="112" fill="url(#bg)"/>
+
+  <path
+    d="M92 286A174 174 0 0 1 353 102"
+    fill="none"
+    stroke="url(#ball)"
+    stroke-linecap="round"
+    stroke-width="24"
+  />
+  <path
+    d="M164 123 222 105l45 29-2 65-52 37-61-22-16-57Z"
+    fill="url(#ball)"
+  />
+  <path
+    d="m285 132 49-22 50 31 7 60-51 29-58-28Z"
+    fill="url(#ball)"
+  />
+  <path
+    d="m119 239 47-29 50 35 1 59-43 39-55-20-23-50Z"
+    fill="url(#ball)"
+  />
+  <path
+    d="m230 248 53-33 52 32-10 61-56 23-39-33Z"
+    fill="url(#ball)"
+  />
+
+  <path
+    d="m88 402 99-82 73 35 124-122"
+    fill="none"
+    stroke="url(#chart)"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-width="25"
+  />
+  <path d="m348 224 74-29-25 76Z" fill="#2768ff"/>
+  <g fill="#0a1020" stroke="url(#chart)" stroke-width="20">
+    <circle cx="88" cy="402" r="31"/>
+    <circle cx="187" cy="320" r="31"/>
+    <circle cx="260" cy="355" r="31"/>
+  </g>
+</svg>

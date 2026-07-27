@@ -10,9 +10,6 @@
       name="description"
       content="Predicciones 1X2, evaluación real y simulaciones Monte Carlo para LaLiga 2026/27."
     >
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-    <link rel="icon" href="/favicon.ico" sizes="any">
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   </head>
   <body>
     <div data-laliga-root></div>
