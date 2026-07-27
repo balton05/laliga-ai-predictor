@@ -1,0 +1,7 @@
+{
+  "version": "ensemble-v1-trained-through-2025-26",
+  "family": "ensemble",
+  "transformation": "identity",
+  "temperature": 1.0,
+  "trained_through": "2025/26"
+}

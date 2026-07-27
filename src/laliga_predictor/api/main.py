@@ -1,8 +1,22 @@
 from __future__ import annotations
 
 from contextlib import asynccontextmanager
-from fastapi import Depends, FastAPI, HTTPException, Query, Request, status
+import logging
+from secrets import compare_digest
+from uuid import uuid4
+
+from fastapi import (
+    Depends,
+    FastAPI,
+    Header,
+    HTTPException,
+    Query,
+    Request,
+    status,
+)
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.middleware.trustedhost import TrustedHostMiddleware
+from fastapi.responses import JSONResponse
 from sqlalchemy import func, or_, select, text
 from sqlalchemy.orm import Session
 
@@ -11,6 +25,8 @@ from .database import Base, build_engine, build_session_factory
 from .models import (
     Fixture,
     MatchResult,
+    ModelTrainingRun,
+    ModelVersion,
     PipelineRun,
     PipelineStep,
     Prediction,
@@ -26,11 +42,16 @@ from .schemas import (
     HealthOut,
     MatchdayUpdateInput,
     MatchdayPerformanceOut,
+    ModelStatusOut,
+    ModelTrainingRunOut,
+    ModelVersionOut,
     PerformanceHistoryOut,
     PerformanceSummaryOut,
     PipelineRunOut,
     PipelineStepOut,
     PredictionOut,
+    PromoteModelInput,
+    PromotionOut,
     SimulationOut,
     StandingOut,
     UpdateRunOut,
@@ -45,6 +66,17 @@ from laliga_predictor.evaluation import (
     performance_history_query,
     performance_summary,
 )
+from laliga_predictor.model_management import (
+    ModelTrainingService,
+    bootstrap_model_registry,
+    list_models,
+    list_training_runs,
+    promote_model,
+    promotion_readiness,
+)
+
+
+LOGGER = logging.getLogger(__name__)
 
 
 def create_app(settings: Settings | None = None) -> FastAPI:
@@ -62,10 +94,18 @@ def create_app(settings: Settings | None = None) -> FastAPI:
             seed=settings.automation_seed,
         ),
     )
+    model_training = ModelTrainingService(
+        settings.project_root,
+        session_factory,
+        minimum_matches=settings.retraining_minimum_matches,
+        minimum_matchdays=settings.retraining_minimum_matchdays,
+    )
 
     @asynccontextmanager
     async def lifespan(application: FastAPI):
         Base.metadata.create_all(engine)
+        with session_factory.begin() as session:
+            bootstrap_model_registry(session, settings.project_root)
         if settings.auto_sync:
             service.sync_current_state()
         apply_powerbi_views(engine, settings.project_root)
@@ -80,19 +120,68 @@ def create_app(settings: Settings | None = None) -> FastAPI:
             "Carlo para LaLiga 2026/27."
         ),
         lifespan=lifespan,
+        docs_url="/docs" if settings.docs_enabled else None,
+        redoc_url="/redoc" if settings.docs_enabled else None,
+        openapi_url="/openapi.json" if settings.docs_enabled else None,
     )
     application.state.engine = engine
     application.state.session_factory = session_factory
     application.state.service = service
     application.state.automation = automation
+    application.state.model_training = model_training
     application.state.settings = settings
+    application.add_middleware(
+        TrustedHostMiddleware,
+        allowed_hosts=list(settings.allowed_hosts),
+    )
     application.add_middleware(
         CORSMiddleware,
         allow_origins=list(settings.cors_origins),
         allow_credentials=False,
         allow_methods=["GET", "POST", "OPTIONS"],
-        allow_headers=["Content-Type", "Authorization"],
+        allow_headers=["Content-Type", "Authorization", "X-API-Key"],
     )
+
+    @application.middleware("http")
+    async def enforce_request_and_response_security(
+        request: Request,
+        call_next,
+    ):
+        content_length = request.headers.get("content-length")
+        if content_length:
+            try:
+                too_large = (
+                    int(content_length) > settings.max_request_body_bytes
+                )
+            except ValueError:
+                too_large = True
+            if too_large:
+                return JSONResponse(
+                    status_code=status.HTTP_413_CONTENT_TOO_LARGE,
+                    content={"detail": "Request body is too large."},
+                )
+
+        response = await call_next(request)
+        if settings.security_headers_enabled:
+            response.headers["X-Content-Type-Options"] = "nosniff"
+            response.headers["X-Frame-Options"] = "DENY"
+            response.headers["Referrer-Policy"] = "no-referrer"
+            response.headers["Permissions-Policy"] = (
+                "camera=(), microphone=(), geolocation=()"
+            )
+            response.headers["Content-Security-Policy"] = (
+                "default-src 'none'; frame-ancestors 'none'; "
+                "base-uri 'none'"
+            )
+            response.headers["Cache-Control"] = "no-store"
+            if settings.is_production:
+                response.headers["Strict-Transport-Security"] = (
+                    "max-age=31536000; includeSubDomains"
+                )
+        response.headers["X-Request-ID"] = (
+            request.headers.get("X-Request-ID") or uuid4().hex
+        )
+        return response
 
     def get_session(request: Request):
         session = request.app.state.session_factory()
@@ -101,12 +190,31 @@ def create_app(settings: Settings | None = None) -> FastAPI:
         finally:
             session.close()
 
+    def require_admin_api_key(
+        x_api_key: str | None = Header(default=None, alias="X-API-Key"),
+        authorization: str | None = Header(default=None),
+    ) -> None:
+        expected = settings.admin_api_key
+        if expected is None:
+            return
+
+        bearer = None
+        if authorization and authorization.lower().startswith("bearer "):
+            bearer = authorization[7:].strip()
+        supplied = x_api_key or bearer
+        if supplied is None or not compare_digest(supplied, expected):
+            raise HTTPException(
+                status_code=status.HTTP_401_UNAUTHORIZED,
+                detail="A valid administrative API key is required.",
+                headers={"WWW-Authenticate": "Bearer"},
+            )
+
     @application.get("/", include_in_schema=False)
     def root() -> dict:
         return {
             "name": settings.api_title,
             "version": settings.api_version,
-            "docs": "/docs",
+            "docs": "/docs" if settings.docs_enabled else None,
             "health": "/health",
         }
 
@@ -139,9 +247,10 @@ def create_app(settings: Settings | None = None) -> FastAPI:
                 simulations=latest.simulations if latest else 0,
             )
         except Exception as exc:
+            LOGGER.exception("Database health check failed.")
             raise HTTPException(
                 status_code=status.HTTP_503_SERVICE_UNAVAILABLE,
-                detail=f"Database unavailable: {exc}",
+                detail="Database unavailable.",
             ) from exc
 
     @application.get(
@@ -395,11 +504,92 @@ def create_app(settings: Settings | None = None) -> FastAPI:
     ) -> list[dict]:
         return calibration_bins(session)
 
+    @application.get(
+        "/models/status",
+        response_model=ModelStatusOut,
+        tags=["models"],
+    )
+    def model_status(
+        session: Session = Depends(get_session),
+    ) -> dict:
+        return promotion_readiness(
+            session,
+            settings.retraining_minimum_matches,
+            settings.retraining_minimum_matchdays,
+        )
+
+    @application.get(
+        "/models",
+        response_model=list[ModelVersionOut],
+        tags=["models"],
+    )
+    def model_versions(
+        session: Session = Depends(get_session),
+    ) -> list[ModelVersion]:
+        return list_models(session)
+
+    @application.get(
+        "/models/training-runs",
+        response_model=list[ModelTrainingRunOut],
+        tags=["models"],
+    )
+    def model_training_runs(
+        session: Session = Depends(get_session),
+        limit: int = Query(default=20, ge=1, le=100),
+    ) -> list[ModelTrainingRun]:
+        return list_training_runs(session, limit)
+
+    @application.post(
+        "/models/retrain",
+        response_model=ModelTrainingRunOut,
+        status_code=status.HTTP_201_CREATED,
+        tags=["models"],
+        dependencies=[Depends(require_admin_api_key)],
+    )
+    def retrain_model(request: Request) -> ModelTrainingRun:
+        try:
+            return request.app.state.model_training.run_once(
+                trigger="manual"
+            )
+        except ValueError as exc:
+            raise HTTPException(status_code=409, detail=str(exc)) from exc
+
+    @application.post(
+        "/models/{version}/promote",
+        response_model=PromotionOut,
+        tags=["models"],
+        dependencies=[Depends(require_admin_api_key)],
+    )
+    def promote_model_endpoint(
+        version: str,
+        payload: PromoteModelInput,
+        session: Session = Depends(get_session),
+    ) -> PromotionOut:
+        if not payload.confirm:
+            raise HTTPException(
+                status_code=422,
+                detail="Explicit confirmation is required.",
+            )
+        try:
+            promoted, previous = promote_model(
+                session, settings.project_root, version
+            )
+            session.commit()
+            return PromotionOut(
+                active_model=promoted.version,
+                previous_model=previous,
+            )
+        except LookupError as exc:
+            raise HTTPException(status_code=404, detail=str(exc)) from exc
+        except ValueError as exc:
+            raise HTTPException(status_code=409, detail=str(exc)) from exc
+
     @application.post(
         "/automation/run",
         response_model=PipelineRunOut,
         status_code=status.HTTP_201_CREATED,
         tags=["automation"],
+        dependencies=[Depends(require_admin_api_key)],
     )
     def run_automation(request: Request) -> PipelineRun:
         if not settings.automation_enabled:
@@ -418,6 +608,7 @@ def create_app(settings: Settings | None = None) -> FastAPI:
         response_model=UpdateRunOut,
         status_code=status.HTTP_201_CREATED,
         tags=["updates"],
+        dependencies=[Depends(require_admin_api_key)],
     )
     def update_matchday(
         payload: MatchdayUpdateInput,

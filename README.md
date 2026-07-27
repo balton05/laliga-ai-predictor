@@ -3,6 +3,48 @@
 Proyecto de Ciencia de Datos para predecir resultados 1X2, modelar goles,
 simular la temporada 2026/27 y evaluar probabilidades frente al mercado.
 
+El sistema integra un pipeline temporal sin fuga de información, modelos
+calibrados, 50,000 simulaciones Monte Carlo, actualización desde Football-Data,
+API FastAPI, PostgreSQL y una aplicación Angular responsive. Las predicciones
+prepartido y las versiones de modelos se conservan para que el rendimiento
+pueda auditarse con resultados reales.
+
+## Capacidades principales
+
+| Área | Implementación |
+|---|---|
+| Datos | 10 temporadas de Primera, 5 de Segunda y calendario 2026/27 |
+| Modelado | Elo, logística, Poisson/Dixon–Coles, Random Forest y boosting |
+| Ensemble | Probabilidades calibradas con y sin referencia del mercado |
+| Simulación | 50,000 temporadas con reglas de tabla y partidos jugados fijos |
+| Evaluación | Accuracy, Log Loss, Brier Score, calibración y comparación de cuotas |
+| MLOps | Automatización, snapshots, modelos versionados y champion–challenger |
+| Producto | Angular 20, FastAPI, PostgreSQL, Docker y Power BI |
+| Calidad | 16 fases, pruebas automatizadas, CI y controles de seguridad |
+
+## Inicio rápido
+
+```powershell
+docker compose up -d --build
+```
+
+Después abre:
+
+- Aplicación: `http://localhost:4200`
+- API: `http://localhost:8000`
+- Swagger local: `http://localhost:8000/docs`
+
+La aplicación web consume la API mediante el proxy `/api`. Si la API no está
+disponible, muestra explícitamente la fotografía de pretemporada.
+
+Documentación complementaria:
+
+- [Arquitectura](docs/architecture.md)
+- [Seguridad](docs/security.md)
+- [Pruebas y lanzamiento](docs/testing_and_release.md)
+- [Contribución](CONTRIBUTING.md)
+- [Historial de cambios](CHANGELOG.md)
+
 ## Estado actual
 
 La Fase 1 implementa:
@@ -535,7 +577,7 @@ hiperparámetros ni métodos de imputación.
 
 ## Estado actual
 
-Las Fases 12–14 incorporan la aplicación Angular, la actualización automática
+Las Fases 12–16 incorporan la aplicación Angular, la actualización automática
 desde Football-Data y la evaluación real. La ruta `/rendimiento` conserva las
 probabilidades conocidas antes de cada partido y presenta Accuracy, Log Loss,
 Brier Score, calibración, matriz de confusión y comparación con las cuotas.
@@ -544,3 +586,30 @@ Los endpoints nuevos están disponibles bajo `/performance/*`. Antes del inicio
 de la temporada muestran cero encuentros evaluados y la cobertura de
 pronósticos prepartido, sin inventar resultados retrospectivos. Consulta
 `docs/phase14_performance_report.md` para el diseño completo.
+
+La Fase 15 añade un registro inmutable de versiones, historial de
+reentrenamientos y una comparación champion–challenger. El modelo activo
+permanece congelado hasta acumular al menos 80 partidos evaluados y 8 jornadas.
+Después, el challenger se ajusta con el primer 70% de la muestra y se evalúa
+en el 30% temporal posterior. La promoción exige mejorar Log Loss sin
+deteriorar Brier Score y requiere confirmación explícita. La página
+`/modelos` permite auditar el campeón, el progreso de la muestra y todas las
+versiones conservadas.
+
+Los endpoints de gobierno están disponibles en `/models/*`. Consulta
+`docs/phase15_model_governance_report.md` para el protocolo completo.
+
+La Fase 16 completa la preparación para publicación: protege operaciones de
+escritura, valida obligatoriamente los secretos en producción, endurece FastAPI,
+Nginx y Docker, conserva de forma persistente el modelo activo y añade
+integración continua. El script `scripts/verify_release.py` comprueba contratos
+de datos, configuración, documentación y estado vivo de la API.
+
+Para ejecutar el control final:
+
+```powershell
+.venv\Scripts\python.exe scripts\verify_release.py `
+  --api-url "http://localhost:8000"
+```
+
+El diseño completo se documenta en `docs/phase16_release_report.md`.

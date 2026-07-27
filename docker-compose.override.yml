@@ -2,12 +2,18 @@ services:
   api:
     image: laliga-ai-predictor-api
     environment:
+      LALIGA_ENVIRONMENT: development
       LALIGA_AUTOMATION_ENABLED: "true"
       LALIGA_AUTOMATION_INTERVAL_MINUTES: "360"
       LALIGA_FOOTBALL_DATA_URL: https://www.football-data.co.uk/mmz4281/2627/SP1.csv
       LALIGA_AUTOMATION_TIMEOUT_SECONDS: "30"
       LALIGA_AUTOMATION_SIMULATIONS: "50000"
       LALIGA_AUTOMATION_SEED: "42"
+      LALIGA_DOCS_ENABLED: "true"
+      LALIGA_SECURITY_HEADERS_ENABLED: "true"
+      LALIGA_ALLOWED_HOSTS: localhost,127.0.0.1,api
+    volumes:
+      - ./models:/app/models
 
   automation:
     image: laliga-ai-predictor-api
@@ -23,6 +29,7 @@ services:
       LALIGA_AUTOMATION_TIMEOUT_SECONDS: "30"
       LALIGA_AUTOMATION_SIMULATIONS: "50000"
       LALIGA_AUTOMATION_SEED: "42"
+      LALIGA_ENVIRONMENT: development
     depends_on:
       db:
         condition: service_healthy
@@ -31,3 +38,4 @@ services:
       - ./data/processed:/app/data/processed
       - ./reports:/app/reports
       - ./snapshots:/app/snapshots
+      - ./models:/app/models

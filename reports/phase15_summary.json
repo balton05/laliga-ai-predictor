@@ -1,0 +1,37 @@
+{
+  "phase": 15,
+  "name": "Model registry, controlled retraining and champion-challenger governance",
+  "season": "2026/27",
+  "status": "completed",
+  "active_model": "ensemble-v1-trained-through-2025-26",
+  "minimum_evaluated_matches": 80,
+  "minimum_matchdays": 8,
+  "temporal_split": {
+    "training": 0.7,
+    "validation": 0.3
+  },
+  "promotion_gates": {
+    "minimum_log_loss_improvement": 0.002,
+    "maximum_brier_deterioration": 0.002,
+    "manual_confirmation_required": true
+  },
+  "features": [
+    "immutable_model_registry",
+    "auditable_training_runs",
+    "temperature_calibration_challenger",
+    "temporal_champion_challenger_comparison",
+    "manual_promotion",
+    "active_model_runtime",
+    "models_web_page"
+  ],
+  "api_endpoints": [
+    "/models/status",
+    "/models",
+    "/models/training-runs",
+    "/models/retrain",
+    "/models/{version}/promote"
+  ],
+  "tests_passed": 82,
+  "angular_production_build": true,
+  "incremental_installation_verified": true
+}

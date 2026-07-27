@@ -4,5 +4,11 @@ __pycache__/
 .ipynb_checkpoints/
 *.py[cod]
 .env
+.env.*
+!.env.example
 *.db
 *.sqlite
+backups/
+frontend/node_modules/
+frontend/dist/
+reports/phase16_release_check.local.json

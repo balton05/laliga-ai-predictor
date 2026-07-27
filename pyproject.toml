@@ -1,6 +1,6 @@
 [project]
 name = "laliga-ai-predictor"
-version = "1.0.0"
+version = "1.6.0"
 description = "Prediction and simulation pipeline for LaLiga 2026/27."
 requires-python = ">=3.10"
 dependencies = [

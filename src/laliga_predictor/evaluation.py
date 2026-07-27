@@ -17,10 +17,12 @@ from laliga_predictor.api.models import (
     Prediction,
     PredictionEvaluation,
     PredictionSnapshot,
+    ModelVersion,
 )
+from laliga_predictor.model_runtime import DEFAULT_MODEL_VERSION
 
 
-MODEL_VERSION = "ensemble-v1-trained-through-2025-26"
+MODEL_VERSION = DEFAULT_MODEL_VERSION
 OUTCOMES = ("H", "D", "A")
 LIMA = ZoneInfo("America/Lima")
 EPSILON = 1e-15
@@ -77,7 +79,7 @@ def capture_current_predictions(
     *,
     captured_at_utc: datetime | None = None,
     capture_source: str,
-    model_version: str = MODEL_VERSION,
+    model_version: str | None = None,
     exclude_fixture_ids: set[str] | None = None,
 ) -> int:
     """Append prediction versions without altering any existing snapshot."""
@@ -85,6 +87,16 @@ def capture_current_predictions(
     captured_at_utc = _as_utc(
         captured_at_utc or datetime.now(timezone.utc)
     )
+    if model_version is None:
+        model_version = (
+            session.scalar(
+                select(ModelVersion.version)
+                .where(ModelVersion.stage == "active")
+                .order_by(ModelVersion.activated_at_utc.desc())
+                .limit(1)
+            )
+            or MODEL_VERSION
+        )
     session.flush()
     played_ids = set(session.scalars(select(MatchResult.fixture_id)))
     played_ids.update(exclude_fixture_ids or set())

@@ -1,0 +1,114 @@
+services:
+  db:
+    image: postgres:17-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-laliga_predictor}
+      POSTGRES_USER: ${POSTGRES_USER:-laliga}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Define POSTGRES_PASSWORD}
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          "pg_isready -U ${POSTGRES_USER:-laliga} -d ${POSTGRES_DB:-laliga_predictor}",
+        ]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+    volumes:
+      - laliga_postgres_data:/var/lib/postgresql/data
+    networks:
+      - backend
+
+  api:
+    build: .
+    restart: unless-stopped
+    environment:
+      LALIGA_ENVIRONMENT: production
+      LALIGA_DATABASE_URL: postgresql+psycopg://${POSTGRES_USER:-laliga}:${POSTGRES_PASSWORD}@db:5432/${POSTGRES_DB:-laliga_predictor}
+      LALIGA_PROJECT_ROOT: /app
+      LALIGA_AUTO_SYNC: "true"
+      LALIGA_AUTOMATION_ENABLED: "true"
+      LALIGA_AUTOMATION_INTERVAL_MINUTES: ${LALIGA_AUTOMATION_INTERVAL_MINUTES:-360}
+      LALIGA_FOOTBALL_DATA_URL: ${LALIGA_FOOTBALL_DATA_URL:-https://www.football-data.co.uk/mmz4281/2627/SP1.csv}
+      LALIGA_AUTOMATION_TIMEOUT_SECONDS: ${LALIGA_AUTOMATION_TIMEOUT_SECONDS:-30}
+      LALIGA_AUTOMATION_SIMULATIONS: ${LALIGA_AUTOMATION_SIMULATIONS:-50000}
+      LALIGA_AUTOMATION_SEED: ${LALIGA_AUTOMATION_SEED:-42}
+      LALIGA_ADMIN_API_KEY: ${LALIGA_ADMIN_API_KEY:?Define LALIGA_ADMIN_API_KEY}
+      LALIGA_DOCS_ENABLED: "false"
+      LALIGA_SECURITY_HEADERS_ENABLED: "true"
+      LALIGA_ALLOWED_HOSTS: ${LALIGA_ALLOWED_HOSTS:?Define LALIGA_ALLOWED_HOSTS}
+      LALIGA_CORS_ORIGINS: ${LALIGA_CORS_ORIGINS:?Define LALIGA_CORS_ORIGINS}
+    depends_on:
+      db:
+        condition: service_healthy
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    volumes:
+      - ./data/incoming:/app/data/incoming
+      - ./data/processed:/app/data/processed
+      - ./reports:/app/reports
+      - ./snapshots:/app/snapshots
+      - ./models:/app/models
+    networks:
+      - backend
+      - frontend
+
+  automation:
+    build: .
+    command: ["python", "scripts/run_automation.py", "--loop"]
+    restart: unless-stopped
+    environment:
+      LALIGA_ENVIRONMENT: production
+      LALIGA_DATABASE_URL: postgresql+psycopg://${POSTGRES_USER:-laliga}:${POSTGRES_PASSWORD}@db:5432/${POSTGRES_DB:-laliga_predictor}
+      LALIGA_PROJECT_ROOT: /app
+      LALIGA_AUTO_SYNC: "false"
+      LALIGA_AUTOMATION_ENABLED: "true"
+      LALIGA_AUTOMATION_INTERVAL_MINUTES: ${LALIGA_AUTOMATION_INTERVAL_MINUTES:-360}
+      LALIGA_FOOTBALL_DATA_URL: ${LALIGA_FOOTBALL_DATA_URL:-https://www.football-data.co.uk/mmz4281/2627/SP1.csv}
+      LALIGA_AUTOMATION_TIMEOUT_SECONDS: ${LALIGA_AUTOMATION_TIMEOUT_SECONDS:-30}
+      LALIGA_AUTOMATION_SIMULATIONS: ${LALIGA_AUTOMATION_SIMULATIONS:-50000}
+      LALIGA_AUTOMATION_SEED: ${LALIGA_AUTOMATION_SEED:-42}
+      LALIGA_ADMIN_API_KEY: ${LALIGA_ADMIN_API_KEY:?Define LALIGA_ADMIN_API_KEY}
+      LALIGA_DOCS_ENABLED: "false"
+      LALIGA_ALLOWED_HOSTS: automation
+      LALIGA_CORS_ORIGINS: ${LALIGA_CORS_ORIGINS:?Define LALIGA_CORS_ORIGINS}
+    depends_on:
+      db:
+        condition: service_healthy
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    volumes:
+      - ./data/incoming:/app/data/incoming
+      - ./data/processed:/app/data/processed
+      - ./reports:/app/reports
+      - ./snapshots:/app/snapshots
+      - ./models:/app/models
+    networks:
+      - backend
+
+  web:
+    build:
+      context: ./frontend
+    restart: unless-stopped
+    depends_on:
+      api:
+        condition: service_healthy
+    ports:
+      - "${WEB_PORT:-80}:80"
+    security_opt:
+      - no-new-privileges:true
+    networks:
+      - frontend
+
+volumes:
+  laliga_postgres_data:
+
+networks:
+  backend:
+    internal: true
+  frontend:

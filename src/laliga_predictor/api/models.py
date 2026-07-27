@@ -318,3 +318,68 @@ class PredictionEvaluation(Base):
     evaluated_at_utc: Mapped[datetime] = mapped_column(
         DateTime(timezone=True), index=True
     )
+
+
+class ModelVersion(Base):
+    """Immutable metadata for a production model or challenger."""
+
+    __tablename__ = "model_versions"
+
+    version: Mapped[str] = mapped_column(String(96), primary_key=True)
+    family: Mapped[str] = mapped_column(String(48), index=True)
+    stage: Mapped[str] = mapped_column(String(24), index=True)
+    created_at_utc: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), index=True
+    )
+    activated_at_utc: Mapped[datetime | None] = mapped_column(
+        DateTime(timezone=True)
+    )
+    trained_through: Mapped[str] = mapped_column(String(16))
+    training_matches: Mapped[int] = mapped_column(Integer)
+    validation_matches: Mapped[int] = mapped_column(Integer)
+    transformation: Mapped[str] = mapped_column(String(32))
+    parameters_json: Mapped[str] = mapped_column(Text)
+    artifact_checksum: Mapped[str] = mapped_column(String(64), index=True)
+    validation_log_loss: Mapped[float | None] = mapped_column(Float)
+    validation_brier_score: Mapped[float | None] = mapped_column(Float)
+    validation_accuracy: Mapped[float | None] = mapped_column(Float)
+    validation_macro_f1: Mapped[float | None] = mapped_column(Float)
+    eligible_for_promotion: Mapped[bool] = mapped_column(Boolean)
+    parent_version: Mapped[str | None] = mapped_column(String(96))
+    training_run_id: Mapped[str | None] = mapped_column(
+        String(32), index=True
+    )
+    notes: Mapped[str | None] = mapped_column(Text)
+
+
+class ModelTrainingRun(Base):
+    """Auditable execution of the controlled challenger pipeline."""
+
+    __tablename__ = "model_training_runs"
+
+    run_id: Mapped[str] = mapped_column(String(32), primary_key=True)
+    trigger: Mapped[str] = mapped_column(String(24))
+    status: Mapped[str] = mapped_column(String(24), index=True)
+    started_at_utc: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), index=True
+    )
+    finished_at_utc: Mapped[datetime | None] = mapped_column(
+        DateTime(timezone=True)
+    )
+    champion_version: Mapped[str] = mapped_column(String(96))
+    candidate_version: Mapped[str | None] = mapped_column(String(96))
+    evaluated_matches: Mapped[int] = mapped_column(Integer)
+    completed_matchdays: Mapped[int] = mapped_column(Integer)
+    minimum_matches: Mapped[int] = mapped_column(Integer)
+    minimum_matchdays: Mapped[int] = mapped_column(Integer)
+    train_matches: Mapped[int] = mapped_column(Integer)
+    validation_matches: Mapped[int] = mapped_column(Integer)
+    champion_log_loss: Mapped[float | None] = mapped_column(Float)
+    candidate_log_loss: Mapped[float | None] = mapped_column(Float)
+    log_loss_improvement: Mapped[float | None] = mapped_column(Float)
+    champion_brier_score: Mapped[float | None] = mapped_column(Float)
+    candidate_brier_score: Mapped[float | None] = mapped_column(Float)
+    selected_temperature: Mapped[float | None] = mapped_column(Float)
+    eligible_for_promotion: Mapped[bool] = mapped_column(Boolean)
+    duration_seconds: Mapped[float | None] = mapped_column(Float)
+    error_message: Mapped[str | None] = mapped_column(Text)

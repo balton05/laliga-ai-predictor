@@ -1,9 +1,9 @@
 {
   "name": "laliga-ai-predictor-web",
-  "version": "12.0.0",
+  "version": "16.0.0",
   "private": true,
   "scripts": {
-    "start": "ng serve --open",
+    "start": "ng serve --open --proxy-config proxy.conf.json",
     "build": "ng build --configuration production",
     "test": "ng test --watch=false"
   },

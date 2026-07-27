@@ -245,3 +245,70 @@ class CalibrationBinOut(APIModel):
     matches: int
     mean_confidence: float | None
     observed_accuracy: float | None
+
+
+class ModelVersionOut(APIModel):
+    version: str
+    family: str
+    stage: str
+    created_at_utc: datetime
+    activated_at_utc: datetime | None
+    trained_through: str
+    training_matches: int
+    validation_matches: int
+    transformation: str
+    artifact_checksum: str
+    validation_log_loss: float | None
+    validation_brier_score: float | None
+    validation_accuracy: float | None
+    validation_macro_f1: float | None
+    eligible_for_promotion: bool
+    parent_version: str | None
+    training_run_id: str | None
+    notes: str | None
+
+
+class ModelTrainingRunOut(APIModel):
+    run_id: str
+    trigger: str
+    status: str
+    started_at_utc: datetime
+    finished_at_utc: datetime | None
+    champion_version: str
+    candidate_version: str | None
+    evaluated_matches: int
+    completed_matchdays: int
+    minimum_matches: int
+    minimum_matchdays: int
+    train_matches: int
+    validation_matches: int
+    champion_log_loss: float | None
+    candidate_log_loss: float | None
+    log_loss_improvement: float | None
+    champion_brier_score: float | None
+    candidate_brier_score: float | None
+    selected_temperature: float | None
+    eligible_for_promotion: bool
+    duration_seconds: float | None
+    error_message: str | None
+
+
+class ModelStatusOut(APIModel):
+    active_model: str
+    active_trained_through: str
+    evaluated_matches: int
+    completed_matchdays: int
+    minimum_matches: int
+    minimum_matchdays: int
+    ready_to_retrain: bool
+    latest_training_run: ModelTrainingRunOut | None
+
+
+class PromoteModelInput(APIModel):
+    confirm: bool
+
+
+class PromotionOut(APIModel):
+    active_model: str
+    previous_model: str
+    applied_from_next_pipeline_run: bool = True

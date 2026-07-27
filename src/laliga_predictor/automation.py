@@ -15,7 +15,7 @@ from sqlalchemy.orm import Session, sessionmaker
 from laliga_predictor.api.models import PipelineRun, PipelineStep
 from laliga_predictor.api.schemas import MatchdayUpdateInput
 from laliga_predictor.api.service import DataSyncService
-from laliga_predictor.evaluation import MODEL_VERSION
+from laliga_predictor.model_runtime import active_model_version
 from laliga_predictor.sources.football_data import (
     FootballDataSnapshot,
     SourceUnavailableError,
@@ -84,7 +84,7 @@ class AutomationRunner:
             odds_added=0,
             update_id=None,
             simulations=self.config.simulations,
-            model_version=MODEL_VERSION,
+            model_version=active_model_version(self.project_root),
             duration_seconds=None,
             error_type=None,
             error_message=None,

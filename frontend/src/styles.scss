@@ -2634,3 +2634,328 @@ footer {
     min-width: 680px;
   }
 }
+
+/* Phase 15 — model registry and controlled retraining */
+.model-governance-badge {
+  display: flex;
+  min-width: 258px;
+  align-items: center;
+  gap: 12px;
+  padding: 15px 18px;
+  border: 1px solid rgba(45, 212, 191, 0.22);
+  border-radius: 14px;
+  background: rgba(15, 118, 110, 0.08);
+}
+
+.model-governance-badge > span {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  border-radius: 50%;
+  background: rgba(45, 212, 191, 0.18);
+  color: #5eead4;
+  font-weight: 900;
+}
+
+.model-governance-badge div {
+  display: grid;
+  gap: 3px;
+}
+
+.model-governance-badge strong {
+  font-size: 12px;
+}
+
+.model-governance-badge small {
+  color: var(--muted);
+  font-size: 9px;
+}
+
+.model-kpis {
+  display: grid;
+  grid-template-columns: minmax(230px, 1.5fr) repeat(3, minmax(150px, 1fr));
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+.model-kpis .card {
+  display: grid;
+  min-height: 112px;
+  align-content: center;
+  gap: 7px;
+  padding: 20px;
+}
+
+.model-kpis span,
+.version-metric span {
+  color: var(--muted);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.model-kpis strong {
+  color: var(--text);
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 25px;
+  line-height: 1.05;
+}
+
+.model-kpi-wide strong {
+  font-size: 18px;
+  text-transform: capitalize;
+}
+
+.model-kpis small {
+  color: var(--muted);
+  font-size: 9px;
+}
+
+.retraining-policy {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(260px, 0.8fr);
+  gap: 40px;
+  align-items: center;
+  margin-bottom: 16px;
+  padding: 26px 30px;
+  background:
+    radial-gradient(circle at 88% 20%, rgba(239, 76, 76, 0.1), transparent 28%),
+    var(--surface);
+}
+
+.policy-copy h2 {
+  margin: 4px 0 9px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 22px;
+}
+
+.policy-copy > p:last-child {
+  max-width: 720px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+.readiness-meter {
+  display: grid;
+  gap: 8px;
+}
+
+.readiness-meter > div:not(.meter-track) {
+  display: flex;
+  justify-content: space-between;
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.readiness-meter strong {
+  color: var(--text);
+}
+
+.meter-track {
+  height: 7px;
+  overflow: hidden;
+  border-radius: 99px;
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.meter-track i {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--brand-coral), #fb7185);
+}
+
+.meter-track.secondary i {
+  background: linear-gradient(90deg, #0f766e, #2dd4bf);
+}
+
+.models-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.7fr) minmax(270px, 0.75fr);
+  gap: 16px;
+}
+
+.registry-card,
+.training-card {
+  padding: 22px;
+}
+
+.model-version-list {
+  display: grid;
+  gap: 10px;
+  margin-top: 17px;
+}
+
+.model-version-row {
+  display: grid;
+  grid-template-columns: 78px minmax(200px, 1fr) repeat(3, 78px);
+  gap: 14px;
+  align-items: center;
+  padding: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.018);
+}
+
+.version-state {
+  padding: 6px 8px;
+  border-radius: 99px;
+  background: rgba(148, 163, 184, 0.11);
+  color: var(--muted);
+  font-size: 8px;
+  font-weight: 900;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.version-state.active,
+.version-state.candidate {
+  background: rgba(45, 212, 191, 0.12);
+  color: #5eead4;
+}
+
+.version-state.rejected {
+  background: rgba(239, 76, 76, 0.1);
+  color: #fb7185;
+}
+
+.version-main {
+  display: grid;
+  gap: 4px;
+}
+
+.version-main strong {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 12px;
+  text-transform: capitalize;
+}
+
+.version-main small {
+  color: var(--muted);
+  font-size: 9px;
+}
+
+.version-metric {
+  display: grid;
+  gap: 4px;
+  text-align: right;
+}
+
+.version-metric strong {
+  font-size: 12px;
+}
+
+.training-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 18px 0;
+  padding: 7px 10px;
+  border-radius: 99px;
+  background: rgba(148, 163, 184, 0.1);
+  color: var(--muted);
+  font-size: 9px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.training-status > span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.training-status.candidate_ready {
+  background: rgba(45, 212, 191, 0.12);
+  color: #5eead4;
+}
+
+.training-status.rejected,
+.training-status.failed {
+  background: rgba(239, 76, 76, 0.1);
+  color: #fb7185;
+}
+
+.training-card dl {
+  display: grid;
+  gap: 0;
+  margin: 0;
+}
+
+.training-card dl div {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.055);
+}
+
+.training-card dt,
+.training-card dd {
+  margin: 0;
+  font-size: 10px;
+}
+
+.training-card dt,
+.training-card > p,
+.training-empty p {
+  color: var(--muted);
+}
+
+.training-card > p,
+.training-empty p {
+  margin: 16px 0 0;
+  font-size: 10px;
+  line-height: 1.6;
+}
+
+.training-empty {
+  display: grid;
+  min-height: 190px;
+  place-content: center;
+  text-align: center;
+}
+
+@media (max-width: 1100px) {
+  .model-kpis {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .models-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 760px) {
+  .model-governance-badge {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .model-kpis,
+  .retraining-policy {
+    grid-template-columns: 1fr;
+  }
+
+  .retraining-policy {
+    gap: 24px;
+    padding: 22px;
+  }
+
+  .model-version-row {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .version-main {
+    grid-column: 1 / -1;
+    grid-row: 1;
+  }
+
+  .version-state {
+    justify-self: start;
+  }
+}

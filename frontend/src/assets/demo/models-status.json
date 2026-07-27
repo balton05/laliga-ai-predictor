@@ -1,0 +1,10 @@
+{
+  "active_model": "ensemble-v1-trained-through-2025-26",
+  "active_trained_through": "2025/26",
+  "evaluated_matches": 0,
+  "completed_matchdays": 0,
+  "minimum_matches": 80,
+  "minimum_matchdays": 8,
+  "ready_to_retrain": false,
+  "latest_training_run": null
+}

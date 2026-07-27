@@ -1,0 +1,14 @@
+.git
+.github
+.venv
+.test-venv
+.pytest_cache
+**/__pycache__
+**/*.pyc
+backups
+artifacts
+frontend/node_modules
+frontend/dist
+notebooks
+powerbi
+tests

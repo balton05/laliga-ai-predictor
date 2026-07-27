@@ -1,0 +1,68 @@
+{
+  "phase": 16,
+  "generated_at_utc": "2026-07-27T00:37:13.581786+00:00",
+  "status": "passed",
+  "checks_passed": 10,
+  "checks_total": 10,
+  "checks": [
+    {
+      "name": "release_documentation",
+      "passed": true,
+      "detail": "complete"
+    },
+    {
+      "name": "no_local_env_in_release",
+      "passed": true,
+      "detail": ".env is absent"
+    },
+    {
+      "name": "production_secret_guards",
+      "passed": true,
+      "detail": "required variables and private database network configured"
+    },
+    {
+      "name": "non_root_api_image",
+      "passed": true,
+      "detail": "non-root user and container healthcheck configured"
+    },
+    {
+      "name": "hardened_web_proxy",
+      "passed": true,
+      "detail": "same-origin API proxy and defensive headers configured"
+    },
+    {
+      "name": "fixture_contract",
+      "passed": true,
+      "detail": "380 rows; 380 unique ids"
+    },
+    {
+      "name": "prediction_contract",
+      "passed": true,
+      "detail": "380 pending + 0 completed; max simplex error 3.331e-16"
+    },
+    {
+      "name": "live_api_contract",
+      "passed": true,
+      "detail": "status=ok; fixtures=380; predictions=380"
+    },
+    {
+      "name": "live_security_headers",
+      "passed": true,
+      "detail": "required response headers present"
+    },
+    {
+      "name": "live_model_registry",
+      "passed": true,
+      "detail": "active_model=ensemble-v1-trained-through-2025-26"
+    }
+  ],
+  "core_file_sha256": {
+    "src/laliga_predictor/api/main.py": "d7ac49e36fba53af32925718963977b62172ea14c881133af311d6ca0991c396",
+    "src/laliga_predictor/api/settings.py": "ddce4617a9e49662a98c2070a1543e190539b0b82129c4392da10e64848f04ba",
+    "src/laliga_predictor/model_management.py": "659beb147f709272f649a233a8c1aad6d77509cf39ad52d633a63a6bc060f3c7",
+    "src/laliga_predictor/evaluation.py": "a8636462b63618eeb529c025d7cd2175c1e323d83b1bcf738925f8365f6b04b0",
+    "frontend/src/app/data.service.ts": "d2925e177e806a0123e410f79ba25488f1376bce4071d172a69f48dcf55a6a1a",
+    "frontend/nginx.conf": "104941643180370b174a88a534cb8ab4e687dfb2a9b9c724b0718bc01884beef",
+    "Dockerfile": "2ce32d377db72401623e0f9cbce439db3cfbba14f57bd78603fbd18749297e7d"
+  }
+}

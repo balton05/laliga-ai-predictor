@@ -9,6 +9,9 @@ import {
   Fixture,
   Health,
   MatchdayPerformance,
+  ModelStatus,
+  ModelTrainingRun,
+  ModelVersion,
   PerformanceHistory,
   PerformanceSummary,
   Prediction,
@@ -23,7 +26,7 @@ export class DataService {
   private readonly http = inject(HttpClient);
   private readonly apiUrl =
     (globalThis as typeof globalThis & { LALIGA_API_URL?: string })
-      .LALIGA_API_URL ?? 'http://localhost:8000';
+      .LALIGA_API_URL ?? '/api';
 
   readonly mode = signal<DataMode>('connecting');
   readonly modeLabel = computed(() => {
@@ -107,6 +110,21 @@ export class DataService {
     return this.request<CalibrationBin[]>(
       '/performance/calibration',
       'performance-calibration.json',
+    );
+  }
+
+  modelStatus(): Promise<ModelStatus> {
+    return this.request<ModelStatus>('/models/status', 'models-status.json');
+  }
+
+  modelVersions(): Promise<ModelVersion[]> {
+    return this.request<ModelVersion[]>('/models', 'models-versions.json');
+  }
+
+  modelTrainingRuns(): Promise<ModelTrainingRun[]> {
+    return this.request<ModelTrainingRun[]>(
+      '/models/training-runs?limit=10',
+      'models-training-runs.json',
     );
   }
 }

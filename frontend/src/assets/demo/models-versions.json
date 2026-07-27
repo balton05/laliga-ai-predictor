@@ -1,0 +1,22 @@
+[
+  {
+    "version": "ensemble-v1-trained-through-2025-26",
+    "family": "ensemble",
+    "stage": "active",
+    "created_at_utc": "2026-07-26T00:00:00Z",
+    "activated_at_utc": "2026-07-26T00:00:00Z",
+    "trained_through": "2025/26",
+    "training_matches": 3420,
+    "validation_matches": 380,
+    "transformation": "identity",
+    "artifact_checksum": "demo",
+    "validation_log_loss": 0.9672428527,
+    "validation_brier_score": 0.5723705861,
+    "validation_accuracy": 0.5394736842,
+    "validation_macro_f1": 0.3776683087,
+    "eligible_for_promotion": true,
+    "parent_version": null,
+    "training_run_id": null,
+    "notes": "Campeón inicial validado temporalmente en 2025/26."
+  }
+]

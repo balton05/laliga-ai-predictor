@@ -173,3 +173,60 @@ export interface CalibrationBin {
   mean_confidence: number | null;
   observed_accuracy: number | null;
 }
+
+export interface ModelTrainingRun {
+  run_id: string;
+  trigger: string;
+  status: 'running' | 'not_ready' | 'candidate_ready' | 'rejected' | 'failed';
+  started_at_utc: string;
+  finished_at_utc: string | null;
+  champion_version: string;
+  candidate_version: string | null;
+  evaluated_matches: number;
+  completed_matchdays: number;
+  minimum_matches: number;
+  minimum_matchdays: number;
+  train_matches: number;
+  validation_matches: number;
+  champion_log_loss: number | null;
+  candidate_log_loss: number | null;
+  log_loss_improvement: number | null;
+  champion_brier_score: number | null;
+  candidate_brier_score: number | null;
+  selected_temperature: number | null;
+  eligible_for_promotion: boolean;
+  duration_seconds: number | null;
+  error_message: string | null;
+}
+
+export interface ModelStatus {
+  active_model: string;
+  active_trained_through: string;
+  evaluated_matches: number;
+  completed_matchdays: number;
+  minimum_matches: number;
+  minimum_matchdays: number;
+  ready_to_retrain: boolean;
+  latest_training_run: ModelTrainingRun | null;
+}
+
+export interface ModelVersion {
+  version: string;
+  family: string;
+  stage: 'active' | 'candidate' | 'rejected' | 'archived';
+  created_at_utc: string;
+  activated_at_utc: string | null;
+  trained_through: string;
+  training_matches: number;
+  validation_matches: number;
+  transformation: string;
+  artifact_checksum: string;
+  validation_log_loss: number | null;
+  validation_brier_score: number | null;
+  validation_accuracy: number | null;
+  validation_macro_f1: number | null;
+  eligible_for_promotion: boolean;
+  parent_version: string | null;
+  training_run_id: string | null;
+  notes: string | null;
+}

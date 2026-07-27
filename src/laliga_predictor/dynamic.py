@@ -23,6 +23,7 @@ from .goal_modeling import (
     _top_scorelines,
 )
 from .modeling import CLASS_LABELS, MARKET_FEATURES, SPORT_FEATURES
+from .model_runtime import apply_active_model
 from .simulation import (
     RANDOM_SEED,
     SIMULATIONS,
@@ -1251,6 +1252,7 @@ def run_phase9(
             joblib.load(REPORTS_DIR / "phase7_production_ensemble.joblib"),
         )
         predictions = _predict_remaining(features, goal_predictions, odds)
+    predictions, active_model = apply_active_model(predictions)
 
     simulation = _simulate_with_completed(
         predictions,
@@ -1332,14 +1334,16 @@ def run_phase9(
         "quality_checks": len(quality),
         "quality_passed": quality_passed,
         "pipeline_mode": "preseason_noop" if results.empty else "dynamic_update",
+        "model_version": active_model["version"],
         "partial_update_allowed": bool(allow_partial),
         "market_policy": (
             "Use ensemble_market per fixture only when a complete current "
             "1X2 odds snapshot is available; otherwise use ensemble_sports."
         ),
         "model_retraining_policy": (
-            "Classifiers remain frozen through 2025/26; sports features and "
-            "Elo update each run; Poisson is refitted when 2026/27 results exist."
+            "The registered champion supplies the probability-calibration "
+            "layer; sports features and Elo update each run; Poisson is "
+            "refitted when 2026/27 results exist."
         ),
     }
 
