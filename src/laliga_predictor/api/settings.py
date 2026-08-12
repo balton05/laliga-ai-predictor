@@ -38,9 +38,10 @@ class Settings:
     database_url: str = DEFAULT_DATABASE_URL
     project_root: Path = PROJECT_ROOT
     api_title: str = "LaLiga AI Predictor API"
-    api_version: str = "1.6.0"
+    api_version: str = "1.7.0"
     environment: str = "development"
     auto_sync: bool = True
+    bootstrap_empty_database: bool = False
     automation_enabled: bool = True
     automation_interval_minutes: int = 360
     automation_source_url: str = DEFAULT_FOOTBALL_DATA_URL
@@ -105,6 +106,13 @@ class Settings:
         ).strip().lower()
         docs_default = environment != "production"
         admin_api_key = os.getenv("LALIGA_ADMIN_API_KEY", "").strip() or None
+        allowed_hosts = _environment_tuple(
+            "LALIGA_ALLOWED_HOSTS",
+            "localhost,127.0.0.1,testserver,api",
+        )
+        render_hostname = os.getenv("RENDER_EXTERNAL_HOSTNAME", "").strip()
+        if render_hostname and render_hostname not in allowed_hosts:
+            allowed_hosts = (*allowed_hosts, render_hostname)
         return cls(
             database_url=os.getenv(
                 "LALIGA_DATABASE_URL", DEFAULT_DATABASE_URL
@@ -114,6 +122,9 @@ class Settings:
             ).resolve(),
             environment=environment,
             auto_sync=_environment_bool("LALIGA_AUTO_SYNC", True),
+            bootstrap_empty_database=_environment_bool(
+                "LALIGA_BOOTSTRAP_EMPTY_DATABASE", False
+            ),
             automation_enabled=_environment_bool(
                 "LALIGA_AUTOMATION_ENABLED", True
             ),
@@ -165,8 +176,5 @@ class Settings:
                 "LALIGA_CORS_ORIGINS",
                 "http://localhost:4200,http://127.0.0.1:4200",
             ),
-            allowed_hosts=_environment_tuple(
-                "LALIGA_ALLOWED_HOSTS",
-                "localhost,127.0.0.1,testserver,api",
-            ),
+            allowed_hosts=allowed_hosts,
         )

@@ -20,7 +20,7 @@ pueda auditarse con resultados reales.
 | Evaluación | Accuracy, Log Loss, Brier Score, calibración y comparación de cuotas |
 | MLOps | Automatización, snapshots, modelos versionados y champion–challenger |
 | Producto | Angular 20, FastAPI, PostgreSQL, Docker y Power BI |
-| Calidad | 16 fases, pruebas automatizadas, CI y controles de seguridad |
+| Calidad | 17 fases, pruebas automatizadas, CI y controles de seguridad |
 
 ## Inicio rápido
 
@@ -42,8 +42,21 @@ Documentación complementaria:
 - [Arquitectura](docs/architecture.md)
 - [Seguridad](docs/security.md)
 - [Pruebas y lanzamiento](docs/testing_and_release.md)
+- [Despliegue gratuito](docs/phase17_free_deployment.md)
 - [Contribución](CONTRIBUTING.md)
 - [Historial de cambios](CHANGELOG.md)
+
+## Aplicación pública
+
+La Fase 17 permite publicar Angular y FastAPI en un único servicio gratuito de
+Render, con PostgreSQL persistente en Neon y actualización programada mediante
+GitHub Actions. El despliegue conserva `/api` en el mismo origen, restaura el
+modelo campeón desde la base de datos y solo carga la pretemporada cuando la
+base está vacía.
+
+La infraestructura reproducible está definida en `render.yaml` y
+`Dockerfile.render`. Consulta la
+[guía de despliegue](docs/phase17_free_deployment.md).
 
 ## Estado actual
 

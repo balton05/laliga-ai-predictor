@@ -23,6 +23,11 @@ from laliga_predictor.automation import (  # noqa: E402
     AutomationConfig,
     AutomationRunner,
 )
+from laliga_predictor.model_management import (  # noqa: E402
+    active_model,
+    bootstrap_model_registry,
+)
+from laliga_predictor.model_runtime import write_active_model  # noqa: E402
 
 
 def parse_args() -> argparse.Namespace:
@@ -61,9 +66,17 @@ def main() -> int:
         return 0
     engine = build_engine(settings.database_url)
     Base.metadata.create_all(engine)
+    session_factory = build_session_factory(engine)
+    with session_factory.begin() as session:
+        bootstrap_model_registry(session, settings.project_root)
+        champion = active_model(session)
+        write_active_model(
+            json.loads(champion.parameters_json),
+            settings.project_root,
+        )
     runner = AutomationRunner(
         settings.project_root,
-        build_session_factory(engine),
+        session_factory,
         AutomationConfig(
             source_url=settings.automation_source_url,
             timeout_seconds=settings.automation_timeout_seconds,

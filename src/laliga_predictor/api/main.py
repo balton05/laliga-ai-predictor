@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from contextlib import asynccontextmanager
+import json
 import logging
 from secrets import compare_digest
 from uuid import uuid4
@@ -68,12 +69,14 @@ from laliga_predictor.evaluation import (
 )
 from laliga_predictor.model_management import (
     ModelTrainingService,
+    active_model,
     bootstrap_model_registry,
     list_models,
     list_training_runs,
     promote_model,
     promotion_readiness,
 )
+from laliga_predictor.model_runtime import write_active_model
 
 
 LOGGER = logging.getLogger(__name__)
@@ -106,7 +109,18 @@ def create_app(settings: Settings | None = None) -> FastAPI:
         Base.metadata.create_all(engine)
         with session_factory.begin() as session:
             bootstrap_model_registry(session, settings.project_root)
-        if settings.auto_sync:
+            champion = active_model(session)
+            write_active_model(
+                json.loads(champion.parameters_json),
+                settings.project_root,
+            )
+            fixture_count = int(
+                session.scalar(select(func.count()).select_from(Fixture)) or 0
+            )
+        should_bootstrap = settings.auto_sync or (
+            settings.bootstrap_empty_database and fixture_count == 0
+        )
+        if should_bootstrap:
             service.sync_current_state()
         apply_powerbi_views(engine, settings.project_root)
         yield

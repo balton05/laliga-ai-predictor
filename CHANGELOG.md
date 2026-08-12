@@ -1,5 +1,15 @@
 # Historial de cambios
 
+## 1.7.0 — Fase 17
+
+- Publicación preparada para un repositorio público sin secretos.
+- Imagen única de Render para Angular y FastAPI bajo el mismo origen.
+- PostgreSQL persistente en Neon mediante una cadena de conexión secreta.
+- Inicialización de datos únicamente cuando la base está vacía.
+- Restauración del modelo champion desde PostgreSQL en cada arranque.
+- Automatización de temporada con GitHub Actions en zona America/Lima.
+- Verificador offline y comprobación del despliegue público.
+
 ## 1.6.0 — Fase 16
 
 - Suite final de seguridad y preparación para publicación.
