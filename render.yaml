@@ -3,7 +3,7 @@ services:
     name: laliga-ai-predictor-josue
     runtime: docker
     plan: free
-    region: oregon
+    region: virginia
     dockerfilePath: ./Dockerfile.render
     dockerContext: .
     healthCheckPath: /api/health
