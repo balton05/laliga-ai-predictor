@@ -39,6 +39,7 @@ TEAM_ALIASES = {
     "deportivo": "deportivo",
     "la coruna": "deportivo",
     "deportivo la coruna": "deportivo",
+    "dep a coruna": "deportivo",
     "elche": "elche",
     "espanol": "espanyol",
     "espanyol": "espanyol",
