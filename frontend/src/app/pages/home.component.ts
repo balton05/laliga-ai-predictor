@@ -17,8 +17,8 @@ import { TeamLogoComponent } from '../shared/team-logo.component';
   template: `
     <section class="page home-page">
       <div class="hero-copy">
-        <p class="eyebrow">INTELIGENCIA DEPORTIVA · PRETEMPORADA</p>
-        <h1>LaLiga 2026/27,<br><span>predicha partido a partido.</span></h1>
+        <p class="eyebrow">INTELIGENCIA DEPORTIVA · TEMPORADA EN CURSO</p>
+        <h1>LaLiga 2026/27,<br><span>predice partido a partido.</span></h1>
         <p class="hero-description">
           Probabilidades 1X2, marcadores esperados y 50,000 temporadas
           simuladas con información disponible antes de cada encuentro.
