@@ -185,15 +185,20 @@ export class TeamDetailComponent {
   readonly simulation = computed(() =>
     this.simulations().find((row) => row.team_id === this.team?.teamId),
   );
-  readonly nextFixtures = computed(() =>
-    this.fixtures()
+  readonly nextFixtures = computed(() => {
+    const pendingFixtureIds = new Set(
+      this.predictions().map((prediction) => prediction.fixture_id),
+    );
+
+    return this.fixtures()
       .filter(
         (fixture) =>
-          fixture.home_team_id === this.team?.teamId ||
-          fixture.away_team_id === this.team?.teamId,
+          pendingFixtureIds.has(fixture.fixture_id) &&
+          (fixture.home_team_id === this.team?.teamId ||
+            fixture.away_team_id === this.team?.teamId),
       )
-      .slice(0, 5),
-  );
+      .slice(0, 5);
+  });
   readonly nextPredictions = computed(() =>
     this.predictions()
       .filter(
