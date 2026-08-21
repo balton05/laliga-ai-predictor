@@ -29,6 +29,7 @@ TEAM_ALIASES = {
     "athletic bilbao": "athletic_bilbao",
     "athletic club": "athletic_bilbao",
     "ath madrid": "atletico_madrid",
+    "atl madrid": "atletico_madrid",
     "atletico madrid": "atletico_madrid",
     "barcelona": "barcelona",
     "fc barcelona": "barcelona",
